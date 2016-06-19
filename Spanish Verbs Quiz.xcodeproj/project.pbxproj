@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8EC4ABCB1D17358D007359FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4ABCA1D17358D007359FF /* AppDelegate.swift */; };
+		8EC4ABCD1D17358D007359FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4ABCC1D17358D007359FF /* ViewController.swift */; };
+		8EC4ABD01D17358D007359FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC4ABCE1D17358D007359FF /* Main.storyboard */; };
+		8EC4ABD21D17358D007359FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EC4ABD11D17358D007359FF /* Assets.xcassets */; };
+		8EC4ABD51D17358D007359FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC4ABD31D17358D007359FF /* LaunchScreen.storyboard */; };
+		8EC4ABE01D17358E007359FF /* Spanish_Verbs_QuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4ABDF1D17358E007359FF /* Spanish_Verbs_QuizTests.swift */; };
+		8EC4ABEB1D17358E007359FF /* Spanish_Verbs_QuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4ABEA1D17358E007359FF /* Spanish_Verbs_QuizUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8EC4ABDC1D17358E007359FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EC4ABBF1D17358D007359FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EC4ABC61D17358D007359FF;
+			remoteInfo = "Spanish Verbs Quiz";
+		};
+		8EC4ABE71D17358E007359FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EC4ABBF1D17358D007359FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EC4ABC61D17358D007359FF;
+			remoteInfo = "Spanish Verbs Quiz";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8EC4ABC71D17358D007359FF /* Spanish Verbs Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spanish Verbs Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EC4ABCA1D17358D007359FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8EC4ABCC1D17358D007359FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8EC4ABCF1D17358D007359FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8EC4ABD11D17358D007359FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8EC4ABD41D17358D007359FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8EC4ABD61D17358D007359FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EC4ABDB1D17358E007359FF /* Spanish Verbs QuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Spanish Verbs QuizTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EC4ABDF1D17358E007359FF /* Spanish_Verbs_QuizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spanish_Verbs_QuizTests.swift; sourceTree = "<group>"; };
+		8EC4ABE11D17358E007359FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EC4ABE61D17358E007359FF /* Spanish Verbs QuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Spanish Verbs QuizUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EC4ABEA1D17358E007359FF /* Spanish_Verbs_QuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spanish_Verbs_QuizUITests.swift; sourceTree = "<group>"; };
+		8EC4ABEC1D17358E007359FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8EC4ABC41D17358D007359FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EC4ABD81D17358E007359FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EC4ABE31D17358E007359FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8EC4ABBE1D17358D007359FF = {
+			isa = PBXGroup;
+			children = (
+				8EC4ABC91D17358D007359FF /* Spanish Verbs Quiz */,
+				8EC4ABDE1D17358E007359FF /* Spanish Verbs QuizTests */,
+				8EC4ABE91D17358E007359FF /* Spanish Verbs QuizUITests */,
+				8EC4ABC81D17358D007359FF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8EC4ABC81D17358D007359FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8EC4ABC71D17358D007359FF /* Spanish Verbs Quiz.app */,
+				8EC4ABDB1D17358E007359FF /* Spanish Verbs QuizTests.xctest */,
+				8EC4ABE61D17358E007359FF /* Spanish Verbs QuizUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8EC4ABC91D17358D007359FF /* Spanish Verbs Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				8EC4ABCA1D17358D007359FF /* AppDelegate.swift */,
+				8EC4ABCC1D17358D007359FF /* ViewController.swift */,
+				8EC4ABCE1D17358D007359FF /* Main.storyboard */,
+				8EC4ABD11D17358D007359FF /* Assets.xcassets */,
+				8EC4ABD31D17358D007359FF /* LaunchScreen.storyboard */,
+				8EC4ABD61D17358D007359FF /* Info.plist */,
+			);
+			path = "Spanish Verbs Quiz";
+			sourceTree = "<group>";
+		};
+		8EC4ABDE1D17358E007359FF /* Spanish Verbs QuizTests */ = {
+			isa = PBXGroup;
+			children = (
+				8EC4ABDF1D17358E007359FF /* Spanish_Verbs_QuizTests.swift */,
+				8EC4ABE11D17358E007359FF /* Info.plist */,
+			);
+			path = "Spanish Verbs QuizTests";
+			sourceTree = "<group>";
+		};
+		8EC4ABE91D17358E007359FF /* Spanish Verbs QuizUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8EC4ABEA1D17358E007359FF /* Spanish_Verbs_QuizUITests.swift */,
+				8EC4ABEC1D17358E007359FF /* Info.plist */,
+			);
+			path = "Spanish Verbs QuizUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8EC4ABC61D17358D007359FF /* Spanish Verbs Quiz */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EC4ABEF1D17358E007359FF /* Build configuration list for PBXNativeTarget "Spanish Verbs Quiz" */;
+			buildPhases = (
+				8EC4ABC31D17358D007359FF /* Sources */,
+				8EC4ABC41D17358D007359FF /* Frameworks */,
+				8EC4ABC51D17358D007359FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Spanish Verbs Quiz";
+			productName = "Spanish Verbs Quiz";
+			productReference = 8EC4ABC71D17358D007359FF /* Spanish Verbs Quiz.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8EC4ABDA1D17358E007359FF /* Spanish Verbs QuizTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EC4ABF21D17358E007359FF /* Build configuration list for PBXNativeTarget "Spanish Verbs QuizTests" */;
+			buildPhases = (
+				8EC4ABD71D17358E007359FF /* Sources */,
+				8EC4ABD81D17358E007359FF /* Frameworks */,
+				8EC4ABD91D17358E007359FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8EC4ABDD1D17358E007359FF /* PBXTargetDependency */,
+			);
+			name = "Spanish Verbs QuizTests";
+			productName = "Spanish Verbs QuizTests";
+			productReference = 8EC4ABDB1D17358E007359FF /* Spanish Verbs QuizTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8EC4ABE51D17358E007359FF /* Spanish Verbs QuizUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EC4ABF51D17358E007359FF /* Build configuration list for PBXNativeTarget "Spanish Verbs QuizUITests" */;
+			buildPhases = (
+				8EC4ABE21D17358E007359FF /* Sources */,
+				8EC4ABE31D17358E007359FF /* Frameworks */,
+				8EC4ABE41D17358E007359FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8EC4ABE81D17358E007359FF /* PBXTargetDependency */,
+			);
+			name = "Spanish Verbs QuizUITests";
+			productName = "Spanish Verbs QuizUITests";
+			productReference = 8EC4ABE61D17358E007359FF /* Spanish Verbs QuizUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8EC4ABBF1D17358D007359FF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Normand Martin";
+				TargetAttributes = {
+					8EC4ABC61D17358D007359FF = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					8EC4ABDA1D17358E007359FF = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 8EC4ABC61D17358D007359FF;
+					};
+					8EC4ABE51D17358E007359FF = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 8EC4ABC61D17358D007359FF;
+					};
+				};
+			};
+			buildConfigurationList = 8EC4ABC21D17358D007359FF /* Build configuration list for PBXProject "Spanish Verbs Quiz" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8EC4ABBE1D17358D007359FF;
+			productRefGroup = 8EC4ABC81D17358D007359FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8EC4ABC61D17358D007359FF /* Spanish Verbs Quiz */,
+				8EC4ABDA1D17358E007359FF /* Spanish Verbs QuizTests */,
+				8EC4ABE51D17358E007359FF /* Spanish Verbs QuizUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8EC4ABC51D17358D007359FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EC4ABD51D17358D007359FF /* LaunchScreen.storyboard in Resources */,
+				8EC4ABD21D17358D007359FF /* Assets.xcassets in Resources */,
+				8EC4ABD01D17358D007359FF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EC4ABD91D17358E007359FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EC4ABE41D17358E007359FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8EC4ABC31D17358D007359FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EC4ABCD1D17358D007359FF /* ViewController.swift in Sources */,
+				8EC4ABCB1D17358D007359FF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EC4ABD71D17358E007359FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EC4ABE01D17358E007359FF /* Spanish_Verbs_QuizTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EC4ABE21D17358E007359FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EC4ABEB1D17358E007359FF /* Spanish_Verbs_QuizUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8EC4ABDD1D17358E007359FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EC4ABC61D17358D007359FF /* Spanish Verbs Quiz */;
+			targetProxy = 8EC4ABDC1D17358E007359FF /* PBXContainerItemProxy */;
+		};
+		8EC4ABE81D17358E007359FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EC4ABC61D17358D007359FF /* Spanish Verbs Quiz */;
+			targetProxy = 8EC4ABE71D17358E007359FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8EC4ABCE1D17358D007359FF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8EC4ABCF1D17358D007359FF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8EC4ABD31D17358D007359FF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8EC4ABD41D17358D007359FF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8EC4ABED1D17358E007359FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8EC4ABEE1D17358E007359FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8EC4ABF01D17358E007359FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Spanish Verbs Quiz/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NM.Spanish-Verbs-Quiz";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8EC4ABF11D17358E007359FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Spanish Verbs Quiz/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NM.Spanish-Verbs-Quiz";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8EC4ABF31D17358E007359FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Spanish Verbs QuizTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NM.Spanish-Verbs-QuizTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spanish Verbs Quiz.app/Spanish Verbs Quiz";
+			};
+			name = Debug;
+		};
+		8EC4ABF41D17358E007359FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Spanish Verbs QuizTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NM.Spanish-Verbs-QuizTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spanish Verbs Quiz.app/Spanish Verbs Quiz";
+			};
+			name = Release;
+		};
+		8EC4ABF61D17358E007359FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Spanish Verbs QuizUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NM.Spanish-Verbs-QuizUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Spanish Verbs Quiz";
+			};
+			name = Debug;
+		};
+		8EC4ABF71D17358E007359FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Spanish Verbs QuizUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NM.Spanish-Verbs-QuizUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Spanish Verbs Quiz";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8EC4ABC21D17358D007359FF /* Build configuration list for PBXProject "Spanish Verbs Quiz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EC4ABED1D17358E007359FF /* Debug */,
+				8EC4ABEE1D17358E007359FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EC4ABEF1D17358E007359FF /* Build configuration list for PBXNativeTarget "Spanish Verbs Quiz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EC4ABF01D17358E007359FF /* Debug */,
+				8EC4ABF11D17358E007359FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8EC4ABF21D17358E007359FF /* Build configuration list for PBXNativeTarget "Spanish Verbs QuizTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EC4ABF31D17358E007359FF /* Debug */,
+				8EC4ABF41D17358E007359FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8EC4ABF51D17358E007359FF /* Build configuration list for PBXNativeTarget "Spanish Verbs QuizUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EC4ABF61D17358E007359FF /* Debug */,
+				8EC4ABF71D17358E007359FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8EC4ABBF1D17358D007359FF /* Project object */;
+}
