@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8EB837AD1D19B2B10005DC91 /* Conjug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EB837AC1D19B2B10005DC91 /* Conjug.plist */; };
 		8EC4ABCB1D17358D007359FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4ABCA1D17358D007359FF /* AppDelegate.swift */; };
 		8EC4ABCD1D17358D007359FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4ABCC1D17358D007359FF /* ViewController.swift */; };
 		8EC4ABD01D17358D007359FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC4ABCE1D17358D007359FF /* Main.storyboard */; };
@@ -14,6 +15,9 @@
 		8EC4ABD51D17358D007359FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC4ABD31D17358D007359FF /* LaunchScreen.storyboard */; };
 		8EC4ABE01D17358E007359FF /* Spanish_Verbs_QuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4ABDF1D17358E007359FF /* Spanish_Verbs_QuizTests.swift */; };
 		8EC4ABEB1D17358E007359FF /* Spanish_Verbs_QuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4ABEA1D17358E007359FF /* Spanish_Verbs_QuizUITests.swift */; };
+		8EC4ABFF1D186BB4007359FF /* DataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4ABFE1D186BB4007359FF /* DataStructure.swift */; };
+		8EF577FE1D1C4E3B00C8C6DE /* verbListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF577FD1D1C4E3B00C8C6DE /* verbListViewController.swift */; };
+		8EF578001D1C7AB200C8C6DE /* tempsDeVerbeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF577FF1D1C7AB200C8C6DE /* tempsDeVerbeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8EB837AC1D19B2B10005DC91 /* Conjug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Conjug.plist; path = ../../../../Desktop/Conjug.plist; sourceTree = "<group>"; };
 		8EC4ABC71D17358D007359FF /* Spanish Verbs Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spanish Verbs Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC4ABCA1D17358D007359FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EC4ABCC1D17358D007359FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +52,9 @@
 		8EC4ABE61D17358E007359FF /* Spanish Verbs QuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Spanish Verbs QuizUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC4ABEA1D17358E007359FF /* Spanish_Verbs_QuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spanish_Verbs_QuizUITests.swift; sourceTree = "<group>"; };
 		8EC4ABEC1D17358E007359FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EC4ABFE1D186BB4007359FF /* DataStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructure.swift; sourceTree = "<group>"; };
+		8EF577FD1D1C4E3B00C8C6DE /* verbListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = verbListViewController.swift; sourceTree = "<group>"; };
+		8EF577FF1D1C7AB200C8C6DE /* tempsDeVerbeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tempsDeVerbeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +105,16 @@
 		8EC4ABC91D17358D007359FF /* Spanish Verbs Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				8EB837AC1D19B2B10005DC91 /* Conjug.plist */,
 				8EC4ABCA1D17358D007359FF /* AppDelegate.swift */,
 				8EC4ABCC1D17358D007359FF /* ViewController.swift */,
 				8EC4ABCE1D17358D007359FF /* Main.storyboard */,
 				8EC4ABD11D17358D007359FF /* Assets.xcassets */,
 				8EC4ABD31D17358D007359FF /* LaunchScreen.storyboard */,
 				8EC4ABD61D17358D007359FF /* Info.plist */,
+				8EC4ABFE1D186BB4007359FF /* DataStructure.swift */,
+				8EF577FD1D1C4E3B00C8C6DE /* verbListViewController.swift */,
+				8EF577FF1D1C7AB200C8C6DE /* tempsDeVerbeTableViewController.swift */,
 			);
 			path = "Spanish Verbs Quiz";
 			sourceTree = "<group>";
@@ -229,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EB837AD1D19B2B10005DC91 /* Conjug.plist in Resources */,
 				8EC4ABD51D17358D007359FF /* LaunchScreen.storyboard in Resources */,
 				8EC4ABD21D17358D007359FF /* Assets.xcassets in Resources */,
 				8EC4ABD01D17358D007359FF /* Main.storyboard in Resources */,
@@ -256,6 +269,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EC4ABFF1D186BB4007359FF /* DataStructure.swift in Sources */,
+				8EF577FE1D1C4E3B00C8C6DE /* verbListViewController.swift in Sources */,
+				8EF578001D1C7AB200C8C6DE /* tempsDeVerbeTableViewController.swift in Sources */,
 				8EC4ABCD1D17358D007359FF /* ViewController.swift in Sources */,
 				8EC4ABCB1D17358D007359FF /* AppDelegate.swift in Sources */,
 			);
@@ -484,6 +500,7 @@
 				8EC4ABF11D17358E007359FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8EC4ABF21D17358E007359FF /* Build configuration list for PBXNativeTarget "Spanish Verbs QuizTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +509,7 @@
 				8EC4ABF41D17358E007359FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8EC4ABF51D17358E007359FF /* Build configuration list for PBXNativeTarget "Spanish Verbs QuizUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +518,7 @@
 				8EC4ABF71D17358E007359FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
