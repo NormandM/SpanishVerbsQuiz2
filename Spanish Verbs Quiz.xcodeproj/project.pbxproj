@@ -18,6 +18,7 @@
 		8EC4ABFF1D186BB4007359FF /* DataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4ABFE1D186BB4007359FF /* DataStructure.swift */; };
 		8EF577FE1D1C4E3B00C8C6DE /* verbListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF577FD1D1C4E3B00C8C6DE /* verbListViewController.swift */; };
 		8EF578001D1C7AB200C8C6DE /* tempsDeVerbeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF577FF1D1C7AB200C8C6DE /* tempsDeVerbeTableViewController.swift */; };
+		8EF578021D1DC82C00C8C6DE /* VerbeFinalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF578011D1DC82C00C8C6DE /* VerbeFinalTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		8EC4ABFE1D186BB4007359FF /* DataStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructure.swift; sourceTree = "<group>"; };
 		8EF577FD1D1C4E3B00C8C6DE /* verbListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = verbListViewController.swift; sourceTree = "<group>"; };
 		8EF577FF1D1C7AB200C8C6DE /* tempsDeVerbeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tempsDeVerbeTableViewController.swift; sourceTree = "<group>"; };
+		8EF578011D1DC82C00C8C6DE /* VerbeFinalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerbeFinalTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				8EC4ABFE1D186BB4007359FF /* DataStructure.swift */,
 				8EF577FD1D1C4E3B00C8C6DE /* verbListViewController.swift */,
 				8EF577FF1D1C7AB200C8C6DE /* tempsDeVerbeTableViewController.swift */,
+				8EF578011D1DC82C00C8C6DE /* VerbeFinalTableViewController.swift */,
 			);
 			path = "Spanish Verbs Quiz";
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				8EC4ABFF1D186BB4007359FF /* DataStructure.swift in Sources */,
 				8EF577FE1D1C4E3B00C8C6DE /* verbListViewController.swift in Sources */,
 				8EF578001D1C7AB200C8C6DE /* tempsDeVerbeTableViewController.swift in Sources */,
+				8EF578021D1DC82C00C8C6DE /* VerbeFinalTableViewController.swift in Sources */,
 				8EC4ABCD1D17358D007359FF /* ViewController.swift in Sources */,
 				8EC4ABCB1D17358D007359FF /* AppDelegate.swift in Sources */,
 			);

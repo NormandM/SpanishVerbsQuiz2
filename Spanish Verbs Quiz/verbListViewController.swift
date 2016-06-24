@@ -103,11 +103,11 @@ class verbListViewController: UIViewController, UITableViewDataSource, UITableVi
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showTempsVerbe"{
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                let verbeChoisi = listeVerbe[indexPath.row]
+            if let indexPath = self.tableView.indexPathForSelectedRow, let verbeChoisi = tableView.cellForRowAtIndexPath(indexPath)?.textLabel?.text {
+                //let verbeChoisi = listeVerbe[indexPath.row]
                 let controller = segue.destinationViewController as! tempsDeVerbeTableViewController
                 controller.verbeInfinitif = verbeChoisi
-                print(verbeChoisi)
+               
             }
             
             
