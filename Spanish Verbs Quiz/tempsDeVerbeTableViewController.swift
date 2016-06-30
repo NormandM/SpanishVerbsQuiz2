@@ -16,7 +16,7 @@ class tempsDeVerbeTableViewController: UITableViewController {
     var verbeTotal = ["", "", ""]
     
     let sectionListe = ["INDICATIVO", "SUBJUNTIVO", "CONDICIONAL", "IMPERATIVO"]
-    let item = [["Presente", "Imperfecto", "Pretérito", "Futuro", "Presente progresivo", "Pretérito perfecto", "Pluscuamperfecto", "Futuro perfecto", "Pretérito anterior"], ["Presente", "Imperfecto", "Futuro", "Pretérito perfecto", "Pluscuamperfecto"], ["Condicional", "Perfecto"], ["Presente"]]
+    let item = [["Presente", "Imperfecto", "Pretérito", "Futuro", "Presente progresivo", "Pretérito perfecto", "Pluscuamperfecto", "Futuro perfecto", "Pretérito anterior"], ["Presente", "Imperfecto", "Futuro", "Pretérito perfecto", "Pluscuamperfecto"], ["Condicional", "Perfecto"], ["Positivo", "Negativo"]]
     
     
     override func viewDidLoad() {
@@ -67,19 +67,25 @@ class tempsDeVerbeTableViewController: UITableViewController {
         if segue.identifier == "showLeVerbeFinal"{
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 leTemps = item[indexPath.section][indexPath.row]
-                if item[indexPath.section].count == 9{
+                nomSection = sectionListe[indexPath.section]
+                if nomSection == "INDICATIVO"{
                     nomSection = "Indicativo"
-                }else if item[indexPath.section].count == 5 {
+                }else if nomSection == "SUBJUNTIVO"{
                     nomSection = "Subjuntivo"
-                }else if item[indexPath.section].count == 2{
+                    leTemps = nomSection + " " + leTemps.lowercaseString
+                }else if nomSection == "CONDICIONAL"{
                     nomSection = "Condicional"
-                }else if item[indexPath.section].count == 1{
+                        if leTemps == "Perfecto"{
+                          leTemps = nomSection + " " + leTemps.lowercaseString
+                        }
+                }else if nomSection == "IMPERATIVO"{
                     nomSection = "Imperativo"
+                    leTemps = nomSection + " " + leTemps.lowercaseString
                 }
                 verbeTotal = [verbeInfinitif, nomSection, leTemps ]
                 let controller = segue.destinationViewController as! VerbeFinalTableViewController
                 controller.selectionVerbe = verbeTotal
-        
+                print(verbeTotal)
                 
             }
             

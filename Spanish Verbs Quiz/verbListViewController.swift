@@ -84,7 +84,6 @@ class verbListViewController: UIViewController, UITableViewDataSource, UITableVi
         if(searchActive) {
             return filtered.count
         }
-        print (listeVerbe.count)
         return listeVerbe.count;
     }
     

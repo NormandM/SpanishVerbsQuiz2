@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E9E0F991D22FEAB009DBC2D /* FinalVerbDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9E0F981D22FEAB009DBC2D /* FinalVerbDisplayViewController.swift */; };
 		8EB837AD1D19B2B10005DC91 /* Conjug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EB837AC1D19B2B10005DC91 /* Conjug.plist */; };
 		8EC4ABCB1D17358D007359FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4ABCA1D17358D007359FF /* AppDelegate.swift */; };
 		8EC4ABCD1D17358D007359FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4ABCC1D17358D007359FF /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E9E0F981D22FEAB009DBC2D /* FinalVerbDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalVerbDisplayViewController.swift; sourceTree = "<group>"; };
 		8EB837AC1D19B2B10005DC91 /* Conjug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Conjug.plist; path = ../../../../Desktop/Conjug.plist; sourceTree = "<group>"; };
 		8EC4ABC71D17358D007359FF /* Spanish Verbs Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spanish Verbs Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC4ABCA1D17358D007359FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				8EF577FD1D1C4E3B00C8C6DE /* verbListViewController.swift */,
 				8EF577FF1D1C7AB200C8C6DE /* tempsDeVerbeTableViewController.swift */,
 				8EF578011D1DC82C00C8C6DE /* VerbeFinalTableViewController.swift */,
+				8E9E0F981D22FEAB009DBC2D /* FinalVerbDisplayViewController.swift */,
 			);
 			path = "Spanish Verbs Quiz";
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			files = (
 				8EC4ABFF1D186BB4007359FF /* DataStructure.swift in Sources */,
 				8EF577FE1D1C4E3B00C8C6DE /* verbListViewController.swift in Sources */,
+				8E9E0F991D22FEAB009DBC2D /* FinalVerbDisplayViewController.swift in Sources */,
 				8EF578001D1C7AB200C8C6DE /* tempsDeVerbeTableViewController.swift in Sources */,
 				8EF578021D1DC82C00C8C6DE /* VerbeFinalTableViewController.swift in Sources */,
 				8EC4ABCD1D17358D007359FF /* ViewController.swift in Sources */,
@@ -425,6 +429,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NM.Spanish-Verbs-Quiz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -436,6 +441,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NM.Spanish-Verbs-Quiz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

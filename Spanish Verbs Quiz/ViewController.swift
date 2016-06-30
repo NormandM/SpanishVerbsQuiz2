@@ -9,22 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var nombre: Int = 0
-    var randomVerb: Int = 0
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let plistPath = NSBundle.mainBundle().pathForResource("Conjug", ofType: "plist"),
-            verbArray = NSArray(contentsOfFile: plistPath){
-            nombre = verbArray.count
-            aleatoire(nombre)
-            let allVerbs = VerbeEspagnol(verbArray: verbArray, n: randomVerb )
-            let testYo = allVerbs.verbo
-            print(testYo)
 
-        }
         
     }
 
@@ -32,10 +22,10 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func aleatoire(nombre: Int) -> Int {
-        randomVerb = Int(arc4random_uniform(UInt32(nombre)))
-        return randomVerb
-    }
+ //   func aleatoire(nombre: Int) -> Int {
+  //      randomVerb = Int(arc4random_uniform(UInt32(nombre)))
+  //      return randomVerb
+ //   }
 
 
 }

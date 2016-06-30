@@ -116,7 +116,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Afg-s9-XWd" kind="show" identifier="showLeVerbeFinal" id="9Wc-fj-CAG"/>
+                                    <segue destination="NVt-kw-gPn" kind="show" identifier="showLeVerbeFinal" id="bjL-9W-f9e"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -130,42 +130,224 @@
             </objects>
             <point key="canvasLocation" x="2460" y="381"/>
         </scene>
-        <!--Verbe Final Table View Controller-->
-        <scene sceneID="FzR-Al-YDw">
+        <!--Final Verb Display View Controller-->
+        <scene sceneID="dBz-iK-VUl">
             <objects>
-                <tableViewController id="Afg-s9-XWd" customClass="VerbeFinalTableViewController" customModule="Spanish_Verbs_Quiz" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hgd-20-Uyy">
+                <viewController id="TtM-5q-zBF" customClass="FinalVerbDisplayViewController" customModule="Spanish_Verbs_Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gdf-kZ-vAw"/>
+                        <viewControllerLayoutGuide type="bottom" id="mHK-cH-iTI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZVq-Bo-BNc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Infinitivo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccd-yu-pq0">
+                                <rect key="frame" x="20" y="89" width="560" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Presente" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMm-Tq-9Pe">
+                                <rect key="frame" x="20" y="143.5" width="560" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="tu" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DD-3C-otL">
+                                <rect key="frame" x="20" y="247.5" width="560" height="23.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="282.5" width="360" height="23.5"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="20" y="326.5" width="760" height="23.5"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="el" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0D-1s-NyN">
+                                <rect key="frame" x="20" y="300.5" width="560" height="23.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="326" width="360" height="23.5"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="20" y="379.5" width="760" height="23.5"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="nosotros" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mne-gO-Atd">
+                                <rect key="frame" x="20" y="354.5" width="560" height="23.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="369.5" width="360" height="23.5"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="20" y="432.5" width="760" height="23.5"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="vosotros" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkH-4J-GhH">
+                                <rect key="frame" x="20" y="407.5" width="560" height="23.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="413" width="360" height="23.5"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="20" y="485.5" width="760" height="23.5"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="yo" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8S-1b-956">
+                                <rect key="frame" x="20" y="193.5" width="560" height="23.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="239" width="360" height="23.5"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="20" y="273.5" width="760" height="23.5"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="ellos" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cle-Qt-EmQ">
+                                <rect key="frame" x="20" y="460.5" width="560" height="23.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="456.5" width="360" height="23.5"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="20" y="538.5" width="760" height="23.5"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="D0D-1s-NyN" firstAttribute="top" secondItem="0DD-3C-otL" secondAttribute="bottom" constant="30" id="0HG-Uc-snq">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="Mne-gO-Atd" firstAttribute="top" secondItem="D0D-1s-NyN" secondAttribute="bottom" constant="30" id="36f-DR-Kui">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="R8S-1b-956" firstAttribute="leading" secondItem="ZVq-Bo-BNc" secondAttribute="leadingMargin" id="3Dw-Xh-2Wq"/>
+                            <constraint firstItem="vMm-Tq-9Pe" firstAttribute="top" secondItem="Ccd-yu-pq0" secondAttribute="bottom" constant="25" id="7Kb-OU-5cM">
+                                <variation key="widthClass=compact" constant="10"/>
+                            </constraint>
+                            <constraint firstItem="R8S-1b-956" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vMm-Tq-9Pe" secondAttribute="bottom" constant="64.5" id="7Qd-QG-PMd">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="cle-Qt-EmQ" firstAttribute="top" secondItem="fkH-4J-GhH" secondAttribute="bottom" constant="30" id="9Va-J2-Obp">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="R8S-1b-956" firstAttribute="top" relation="lessThanOrEqual" secondItem="vMm-Tq-9Pe" secondAttribute="bottom" constant="60" id="9jt-oS-jBG"/>
+                            <constraint firstItem="R8S-1b-956" firstAttribute="top" relation="lessThanOrEqual" secondItem="vMm-Tq-9Pe" secondAttribute="bottom" constant="60" id="CJQ-Qo-Mfk">
+                                <variation key="widthClass=compact" constant="90"/>
+                            </constraint>
+                            <constraint firstItem="0DD-3C-otL" firstAttribute="top" secondItem="R8S-1b-956" secondAttribute="bottom" constant="30" id="FNp-Lo-J2p">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="D0D-1s-NyN" firstAttribute="leading" secondItem="ZVq-Bo-BNc" secondAttribute="leadingMargin" id="IYQ-Uf-cXz"/>
+                            <constraint firstItem="vMm-Tq-9Pe" firstAttribute="trailing" secondItem="ZVq-Bo-BNc" secondAttribute="trailingMargin" id="J53-op-CyQ"/>
+                            <constraint firstItem="Mne-gO-Atd" firstAttribute="leading" secondItem="ZVq-Bo-BNc" secondAttribute="leadingMargin" id="JQj-e3-hNV"/>
+                            <constraint firstItem="0DD-3C-otL" firstAttribute="trailing" secondItem="ZVq-Bo-BNc" secondAttribute="trailingMargin" id="R3J-31-OWF"/>
+                            <constraint firstItem="R8S-1b-956" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vMm-Tq-9Pe" secondAttribute="bottom" constant="60" id="Rhf-Cb-Kus"/>
+                            <constraint firstItem="D0D-1s-NyN" firstAttribute="trailing" secondItem="ZVq-Bo-BNc" secondAttribute="trailingMargin" id="Rhf-xJ-Hsv"/>
+                            <constraint firstItem="fkH-4J-GhH" firstAttribute="top" secondItem="Mne-gO-Atd" secondAttribute="bottom" constant="30" id="TJb-3a-B9c">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="vMm-Tq-9Pe" firstAttribute="top" secondItem="Ccd-yu-pq0" secondAttribute="bottom" constant="25" id="XuU-ax-xps"/>
+                            <constraint firstItem="Mne-gO-Atd" firstAttribute="trailing" secondItem="ZVq-Bo-BNc" secondAttribute="trailingMargin" id="bEC-Sj-ytb"/>
+                            <constraint firstItem="Ccd-yu-pq0" firstAttribute="top" secondItem="gdf-kZ-vAw" secondAttribute="bottom" constant="25" id="cry-eF-lSa">
+                                <variation key="widthClass=compact" constant="10"/>
+                            </constraint>
+                            <constraint firstItem="D0D-1s-NyN" firstAttribute="top" secondItem="0DD-3C-otL" secondAttribute="bottom" constant="30" id="dMI-mZ-zjf"/>
+                            <constraint firstItem="0DD-3C-otL" firstAttribute="leading" secondItem="ZVq-Bo-BNc" secondAttribute="leadingMargin" id="eys-X5-fww"/>
+                            <constraint firstItem="fkH-4J-GhH" firstAttribute="leading" secondItem="ZVq-Bo-BNc" secondAttribute="leadingMargin" id="gTk-we-zJI"/>
+                            <constraint firstItem="R8S-1b-956" firstAttribute="trailing" secondItem="ZVq-Bo-BNc" secondAttribute="trailingMargin" id="jsf-bq-8Wf"/>
+                            <constraint firstItem="cle-Qt-EmQ" firstAttribute="trailing" secondItem="ZVq-Bo-BNc" secondAttribute="trailingMargin" id="kvx-T5-cMd"/>
+                            <constraint firstItem="mHK-cH-iTI" firstAttribute="top" relation="lessThanOrEqual" secondItem="cle-Qt-EmQ" secondAttribute="bottom" constant="106" id="mMb-AC-Iry">
+                                <variation key="widthClass=compact" constant="115"/>
+                            </constraint>
+                            <constraint firstItem="cle-Qt-EmQ" firstAttribute="leading" secondItem="ZVq-Bo-BNc" secondAttribute="leadingMargin" id="r5R-a6-iA0"/>
+                            <constraint firstItem="Ccd-yu-pq0" firstAttribute="leading" secondItem="ZVq-Bo-BNc" secondAttribute="leadingMargin" id="t7s-D7-Opz"/>
+                            <constraint firstItem="R8S-1b-956" firstAttribute="top" secondItem="vMm-Tq-9Pe" secondAttribute="bottom" constant="20" id="x5w-zm-PPI">
+                                <variation key="heightClass=regular" constant="90"/>
+                                <variation key="widthClass=compact" constant="25"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="fkH-4J-GhH" firstAttribute="trailing" secondItem="ZVq-Bo-BNc" secondAttribute="trailingMargin" id="x9V-EB-eND"/>
+                            <constraint firstItem="mHK-cH-iTI" firstAttribute="top" relation="lessThanOrEqual" secondItem="cle-Qt-EmQ" secondAttribute="bottom" constant="106" id="y30-h1-06f">
+                                <variation key="widthClass=compact" constant="180"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="vMm-Tq-9Pe" firstAttribute="leading" secondItem="ZVq-Bo-BNc" secondAttribute="leadingMargin" id="yl0-Sa-FPo"/>
+                            <constraint firstItem="Ccd-yu-pq0" firstAttribute="trailing" secondItem="ZVq-Bo-BNc" secondAttribute="trailingMargin" id="zgn-wy-oa8"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="XuU-ax-xps"/>
+                                <exclude reference="7Qd-QG-PMd"/>
+                                <exclude reference="9jt-oS-jBG"/>
+                                <exclude reference="CJQ-Qo-Mfk"/>
+                                <exclude reference="Rhf-Cb-Kus"/>
+                                <exclude reference="dMI-mZ-zjf"/>
+                                <exclude reference="mMb-AC-Iry"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="7Qd-QG-PMd"/>
+                                <exclude reference="CJQ-Qo-Mfk"/>
+                                <exclude reference="x5w-zm-PPI"/>
+                                <exclude reference="mMb-AC-Iry"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="elLabel" destination="D0D-1s-NyN" id="vn4-2d-WEg"/>
+                        <outlet property="ellosLabel" destination="cle-Qt-EmQ" id="DOT-ha-37V"/>
+                        <outlet property="infinitoLabel" destination="Ccd-yu-pq0" id="bMv-za-eXC"/>
+                        <outlet property="nosotrosLabel" destination="Mne-gO-Atd" id="fOR-9b-AKo"/>
+                        <outlet property="tiempoLabel" destination="vMm-Tq-9Pe" id="PXq-W6-tZq"/>
+                        <outlet property="tuLabel" destination="0DD-3C-otL" id="dPj-mJ-dI9"/>
+                        <outlet property="vosotrosLabel" destination="fkH-4J-GhH" id="wij-yd-o2n"/>
+                        <outlet property="yoLabel" destination="R8S-1b-956" id="O5v-sF-dQh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rOp-sy-8Yw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3216" y="1083"/>
+        </scene>
+        <!--Verbe Final Table View Controller-->
+        <scene sceneID="Kmr-BJ-fSV">
+            <objects>
+                <tableViewController id="NVt-kw-gPn" customClass="VerbeFinalTableViewController" customModule="Spanish_Verbs_Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="D1o-KA-uLw">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="plM-Ee-8Oh" style="IBUITableViewCellStyleDefault" id="VrY-oJ-9qx">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellVerb" id="w3s-7V-vnP">
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VrY-oJ-9qx" id="MhO-5i-8uR">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w3s-7V-vnP" id="Ezc-ju-UsY">
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="plM-Ee-8Oh">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="Afg-s9-XWd" id="1pv-EX-4iE"/>
-                            <outlet property="delegate" destination="Afg-s9-XWd" id="d4X-1n-BR4"/>
+                            <outlet property="dataSource" destination="NVt-kw-gPn" id="gbP-GA-u9w"/>
+                            <outlet property="delegate" destination="NVt-kw-gPn" id="oep-fO-Q2w"/>
                         </connections>
                     </tableView>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FBw-Rs-8pd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="icr-Dr-EfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3160" y="381"/>
+            <point key="canvasLocation" x="3847.5" y="369"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="E6I-Lm-7Fv">
