@@ -79,7 +79,7 @@ class VerbeFinalTableViewController: UITableViewController {
                             let tenPerson = "que nosotros " + AllVerbs2.nosotros
                             let elevenPerson = "que vosotros " + AllVerbs2.vosotros
                             let twelvePerson = "que ellos " + AllVerbs2.ellos
-                            finalVerb = [firstperson, secondperson, thirdPerson, fourthPerson, fifthPerson, sixthPerson, seventhPerson, eightPerson, ninePerson, tenPerson, elevenPerson, twelvePerson]
+                            finalVerb = [firstperson, secondperson, thirdPerson, fourthPerson, fifthPerson, sixthPerson," ", "*** Otra forma***", seventhPerson, eightPerson, ninePerson, tenPerson, elevenPerson, twelvePerson]
 
                         case .Imperativonegativo, .Imperativopositivo:
                             let firstperson = ""
@@ -97,8 +97,11 @@ class VerbeFinalTableViewController: UITableViewController {
             
             
         }
-        
-        sectionListe = [selectionVerbe[1] + " " + selectionVerbe[2]]
+        if selectionVerbe[1] == "Indicativo" {
+            sectionListe = [selectionVerbe[1] + " " + selectionVerbe[2]]
+        }else{
+            sectionListe = [selectionVerbe[2]]
+        }
         print(selectionVerbe)
         print(sectionListe)
 
@@ -130,14 +133,14 @@ class VerbeFinalTableViewController: UITableViewController {
     //override func tableView( tableView : UITableView,  titleForHeaderInSection section: Int)->String {
      //   return  sectionListe
    // }
-
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return " \(sectionListe[0])"
+    }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CellVerb", forIndexPath: indexPath)
 
-        cell.textLabel?.text = sectionListe[0]
         cell.textLabel!.text = finalVerb[indexPath.row]
-
         return cell
     }
 
