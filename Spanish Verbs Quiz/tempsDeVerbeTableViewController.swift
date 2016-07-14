@@ -17,6 +17,14 @@ class tempsDeVerbeTableViewController: UITableViewController {
     
     let sectionListe = ["INDICATIVO", "SUBJUNTIVO", "CONDICIONAL", "IMPERATIVO"]
     let item = [["Presente", "Imperfecto", "Pretérito", "Futuro", "Presente progresivo", "Pretérito perfecto", "Pluscuamperfecto", "Futuro perfecto", "Pretérito anterior"], ["Presente", "Imperfecto", "Futuro", "Pretérito perfecto", "Pluscuamperfecto"], ["Condicional", "Perfecto"], ["Positivo", "Negativo"]]
+    // Changing backgroung colors of the header of sections
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
+        header.contentView.backgroundColor = UIColor(red: 151/255, green: 156/255, blue: 159/255, alpha: 1.0) //make the background color light blue
+        header.textLabel!.textColor = UIColor.whiteColor() //make the text white
+        header.alpha = 1.0 //make the header transparent
+        
+    }
     
     
     override func viewDidLoad() {

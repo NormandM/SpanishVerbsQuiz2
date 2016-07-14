@@ -31,9 +31,12 @@ struct VerbeEspagnol{
         nosotros = verbeChoisi[7] as! String
         vosotros = verbeChoisi[8] as! String
         ellos = verbeChoisi[9] as! String
-        
     }
-    
+}
+
+struct Alternate {
+    let verbo: String = ""
+    let selected: Bool = false
 }
 
 

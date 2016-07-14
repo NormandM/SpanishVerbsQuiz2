@@ -1,0 +1,2022 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<string>0</string>
+		<string>olvidar</string>
+		<string>Indicativo</string>
+		<string>Presente</string>
+		<string>olvido</string>
+		<string>olvidas</string>
+		<string>olvida</string>
+		<string>olvidamos</string>
+		<string>olvidáis</string>
+		<string>olvidan</string>
+	</array>
+	<array>
+		<string>1</string>
+		<string>olvidar</string>
+		<string>Indicativo</string>
+		<string>Pretérito</string>
+		<string>olvidé</string>
+		<string>olvidaste</string>
+		<string>olvidó</string>
+		<string>olvidamos</string>
+		<string>olvidasteis</string>
+		<string>olvidaron</string>
+	</array>
+	<array>
+		<string>2</string>
+		<string>olvidar</string>
+		<string>Indicativo</string>
+		<string>Futuro</string>
+		<string>olvidaré</string>
+		<string>olvidarás</string>
+		<string>olvidará</string>
+		<string>olvidaremos</string>
+		<string>olvidaréis</string>
+		<string>olvidarán</string>
+	</array>
+	<array>
+		<string>3</string>
+		<string>olvidar</string>
+		<string>Condicional</string>
+		<string>Condicional</string>
+		<string>olvidaría</string>
+		<string>olvidarías</string>
+		<string>olvidaría</string>
+		<string>olvidaríamos</string>
+		<string>olvidaríais</string>
+		<string>olvidarían</string>
+	</array>
+	<array>
+		<string>4</string>
+		<string>olvidar</string>
+		<string>Indicativo</string>
+		<string>Imperfecto</string>
+		<string>olvidaba</string>
+		<string>olvidabas</string>
+		<string>olvidaba</string>
+		<string>olvidábamos</string>
+		<string>olvidabais</string>
+		<string>olvidaban</string>
+	</array>
+	<array>
+		<string>5</string>
+		<string>olvidar</string>
+		<string>Indicativo</string>
+		<string>Presente progresivo</string>
+		<string>estoy olvidando</string>
+		<string>estás olvidando</string>
+		<string>está olvidando</string>
+		<string>estamos olvidando</string>
+		<string>estáis olvidando</string>
+		<string>están olvidando</string>
+	</array>
+	<array>
+		<string>6</string>
+		<string>olvidar</string>
+		<string>Indicativo</string>
+		<string>Pretérito perfecto</string>
+		<string>he olvidado</string>
+		<string>has olvidado</string>
+		<string>ha olvidado</string>
+		<string>hemos olvidado</string>
+		<string>habéis olvidado</string>
+		<string>han olvidado</string>
+	</array>
+	<array>
+		<string>7</string>
+		<string>olvidar</string>
+		<string>Indicativo</string>
+		<string>Pluscuamperfecto</string>
+		<string>había olvidado</string>
+		<string>habías olvidado</string>
+		<string>había olvidado</string>
+		<string>habíamos olvidado</string>
+		<string>habíais olvidado</string>
+		<string>habían olvidado</string>
+	</array>
+	<array>
+		<string>8</string>
+		<string>olvidar</string>
+		<string>Indicativo</string>
+		<string>Futuro perfecto</string>
+		<string>habré olvidado</string>
+		<string>habrás olvidado</string>
+		<string>habrá olvidado</string>
+		<string>habremos olvidado</string>
+		<string>habréis olvidado</string>
+		<string>habrán olvidado</string>
+	</array>
+	<array>
+		<string>9</string>
+		<string>olvidar</string>
+		<string>Condicional</string>
+		<string>Condicional perfecto</string>
+		<string>habría olvidado</string>
+		<string>habrías olvidado</string>
+		<string>habría olvidado</string>
+		<string>habríamos olvidado</string>
+		<string>habríais olvidado</string>
+		<string>habrían olvidado</string>
+	</array>
+	<array>
+		<string>10</string>
+		<string>olvidar</string>
+		<string>Indicativo</string>
+		<string>Pretérito anterior</string>
+		<string>hube olvidado</string>
+		<string>hubiste olvidado</string>
+		<string>hubo olvidado</string>
+		<string>hubimos olvidado</string>
+		<string>hubisteis olvidado</string>
+		<string>hubieron olvidado</string>
+	</array>
+	<array>
+		<string>11</string>
+		<string>olvidar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo presente</string>
+		<string>olvide</string>
+		<string>olvides</string>
+		<string>olvide</string>
+		<string>olvidemos</string>
+		<string>olvidéis</string>
+		<string>olviden</string>
+	</array>
+	<array>
+		<string>12</string>
+		<string>olvidar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo imperfecto</string>
+		<string>olvidara</string>
+		<string>olvidaras</string>
+		<string>olvidara</string>
+		<string>olvidáramos</string>
+		<string>olvidarais</string>
+		<string>olvidaran</string>
+	</array>
+	<array>
+		<string>13</string>
+		<string>olvidar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo imperfecto</string>
+		<string>olvidase</string>
+		<string>olvidases</string>
+		<string>olvidase</string>
+		<string>olvidásemos</string>
+		<string>olvidaseis</string>
+		<string>olvidasen</string>
+	</array>
+	<array>
+		<string>14</string>
+		<string>olvidar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo futuro</string>
+		<string>olvidare</string>
+		<string>olvidares</string>
+		<string>olvidare</string>
+		<string>olvidáremos</string>
+		<string>olvidareis</string>
+		<string>olvidaren</string>
+	</array>
+	<array>
+		<string>15</string>
+		<string>olvidar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pretérito perfecto</string>
+		<string>haya olvidado</string>
+		<string>hayas olvidado</string>
+		<string>haya olvidado</string>
+		<string>hayamos olvidado</string>
+		<string>hayáis olvidado</string>
+		<string>hayan olvidado</string>
+	</array>
+	<array>
+		<string>16</string>
+		<string>olvidar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pluscuamperfecto</string>
+		<string>hubiera olvidado</string>
+		<string>hubieras olvidado</string>
+		<string>hubiera olvidado</string>
+		<string>hubiéramos olvidado</string>
+		<string>hubierais olvidado</string>
+		<string>hubieran olvidado</string>
+	</array>
+	<array>
+		<string>17</string>
+		<string>olvidar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pluscuamperfecto</string>
+		<string>hubiese olvidado</string>
+		<string>hubieses olvidado</string>
+		<string>hubiese olvidado</string>
+		<string>hubiésemos olvidado</string>
+		<string>hubieseis olvidado</string>
+		<string>hubiesen olvidado</string>
+	</array>
+	<array>
+		<string>18</string>
+		<string>olvidar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo futuro perfecto</string>
+		<string>hubiere olvidado</string>
+		<string>hubieres olvidado</string>
+		<string>hubiere olvidado</string>
+		<string>hubiéremos olvidado</string>
+		<string>hubiereis olvidado</string>
+		<string>hubieren olvidado</string>
+	</array>
+	<array>
+		<string>19</string>
+		<string>olvidar</string>
+		<string>Imperativo</string>
+		<string>Imperativo positivo</string>
+		<string></string>
+		<string>olvida</string>
+		<string>olvide</string>
+		<string>olvidemos</string>
+		<string>olvidad</string>
+		<string>olviden</string>
+	</array>
+	<array>
+		<string>20</string>
+		<string>olvidar</string>
+		<string>Imperativo</string>
+		<string>Imperativo negativo</string>
+		<string></string>
+		<string>olvides</string>
+		<string>olvide</string>
+		<string>olvidemos</string>
+		<string>olvidéis</string>
+		<string>olviden</string>
+	</array>
+	<array>
+		<string>21</string>
+		<string>caber</string>
+		<string>Indicativo</string>
+		<string>Presente</string>
+		<string>quepo</string>
+		<string>cabes</string>
+		<string>cabe</string>
+		<string>cabemos</string>
+		<string>cabéis</string>
+		<string>caben</string>
+	</array>
+	<array>
+		<string>22</string>
+		<string>caber</string>
+		<string>Indicativo</string>
+		<string>Pretérito</string>
+		<string>cupe</string>
+		<string>cupiste</string>
+		<string>cupo</string>
+		<string>cupimos</string>
+		<string>cupisteis</string>
+		<string>cupieron</string>
+	</array>
+	<array>
+		<string>23</string>
+		<string>caber</string>
+		<string>Indicativo</string>
+		<string>Futuro</string>
+		<string>cabré</string>
+		<string>cabrás</string>
+		<string>cabrá</string>
+		<string>cabremos</string>
+		<string>cabréis</string>
+		<string>cabrán</string>
+	</array>
+	<array>
+		<string>24</string>
+		<string>caber</string>
+		<string>Condicional</string>
+		<string>Condicional</string>
+		<string>cabría</string>
+		<string>cabrías</string>
+		<string>cabría</string>
+		<string>cabríamos</string>
+		<string>cabríais</string>
+		<string>cabrían</string>
+	</array>
+	<array>
+		<string>25</string>
+		<string>caber</string>
+		<string>Indicativo</string>
+		<string>Imperfecto</string>
+		<string>cabía</string>
+		<string>cabías</string>
+		<string>cabía</string>
+		<string>cabíamos</string>
+		<string>cabíais</string>
+		<string>cabían</string>
+	</array>
+	<array>
+		<string>26</string>
+		<string>caber</string>
+		<string>Indicativo</string>
+		<string>Presente progresivo</string>
+		<string>estoy cabiendo</string>
+		<string>estás cabiendo</string>
+		<string>está cabiendo</string>
+		<string>estamos cabiendo</string>
+		<string>estáis cabiendo</string>
+		<string>están cabiendo</string>
+	</array>
+	<array>
+		<string>27</string>
+		<string>caber</string>
+		<string>Indicativo</string>
+		<string>Pretérito perfecto</string>
+		<string>he cabido</string>
+		<string>has cabido</string>
+		<string>ha cabido</string>
+		<string>hemos cabido</string>
+		<string>habéis cabido</string>
+		<string>han cabido</string>
+	</array>
+	<array>
+		<string>28</string>
+		<string>caber</string>
+		<string>Indicativo</string>
+		<string>Pluscuamperfecto</string>
+		<string>había cabido</string>
+		<string>habías cabido</string>
+		<string>había cabido</string>
+		<string>habíamos cabido</string>
+		<string>habíais cabido</string>
+		<string>habían cabido</string>
+	</array>
+	<array>
+		<string>29</string>
+		<string>caber</string>
+		<string>Indicativo</string>
+		<string>Futuro perfecto</string>
+		<string>habré cabido</string>
+		<string>habrás cabido</string>
+		<string>habrá cabido</string>
+		<string>habremos cabido</string>
+		<string>habréis cabido</string>
+		<string>habrán cabido</string>
+	</array>
+	<array>
+		<string>30</string>
+		<string>caber</string>
+		<string>Condicional</string>
+		<string>Condicional perfecto</string>
+		<string>habría cabido</string>
+		<string>habrías cabido</string>
+		<string>habría cabido</string>
+		<string>habríamos cabido</string>
+		<string>habríais cabido</string>
+		<string>habrían cabido</string>
+	</array>
+	<array>
+		<string>31</string>
+		<string>caber</string>
+		<string>Indicativo</string>
+		<string>Pretérito anterior</string>
+		<string>hube cabido</string>
+		<string>hubiste cabido</string>
+		<string>hubo cabido</string>
+		<string>hubimos cabido</string>
+		<string>hubisteis cabido</string>
+		<string>hubieron cabido</string>
+	</array>
+	<array>
+		<string>32</string>
+		<string>caber</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo presente</string>
+		<string>quepa</string>
+		<string>quepas</string>
+		<string>quepa</string>
+		<string>quepamos</string>
+		<string>quepáis</string>
+		<string>quepan</string>
+	</array>
+	<array>
+		<string>33</string>
+		<string>caber</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo imperfecto</string>
+		<string>cupiera</string>
+		<string>cupieras</string>
+		<string>cupiera</string>
+		<string>cupiéramos</string>
+		<string>cupierais</string>
+		<string>cupieran</string>
+	</array>
+	<array>
+		<string>34</string>
+		<string>caber</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo imperfecto</string>
+		<string>cupiese</string>
+		<string>cupieses</string>
+		<string>cupiese</string>
+		<string>cupiésemos</string>
+		<string>cupieseis</string>
+		<string>cupiesen</string>
+	</array>
+	<array>
+		<string>35</string>
+		<string>caber</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo futuro</string>
+		<string>cupiere</string>
+		<string>cupieres</string>
+		<string>cupiere</string>
+		<string>cupiéremos</string>
+		<string>cupiereis</string>
+		<string>cupieren</string>
+	</array>
+	<array>
+		<string>36</string>
+		<string>caber</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pretérito perfecto</string>
+		<string>haya cabido</string>
+		<string>hayas cabido</string>
+		<string>haya cabido</string>
+		<string>hayamos cabido</string>
+		<string>hayáis cabido</string>
+		<string>hayan cabido</string>
+	</array>
+	<array>
+		<string>37</string>
+		<string>caber</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pluscuamperfecto</string>
+		<string>hubiera cabido</string>
+		<string>hubieras cabido</string>
+		<string>hubiera cabido</string>
+		<string>hubiéramos cabido</string>
+		<string>hubierais cabido</string>
+		<string>hubieran cabido</string>
+	</array>
+	<array>
+		<string>38</string>
+		<string>caber</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pluscuamperfecto</string>
+		<string>hubiese cabido</string>
+		<string>hubieses cabido</string>
+		<string>hubiese cabido</string>
+		<string>hubiésemos cabido</string>
+		<string>hubieseis cabido</string>
+		<string>hubiesen cabido</string>
+	</array>
+	<array>
+		<string>39</string>
+		<string>caber</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo futuro perfecto</string>
+		<string>hubiere cabido</string>
+		<string>hubieres cabido</string>
+		<string>hubiere cabido</string>
+		<string>hubiéremos cabido</string>
+		<string>hubiereis cabido</string>
+		<string>hubieren cabido</string>
+	</array>
+	<array>
+		<string>40</string>
+		<string>caber</string>
+		<string>Imperativo</string>
+		<string>Imperativo positivo</string>
+		<string></string>
+		<string>cabe</string>
+		<string>quepa</string>
+		<string>quepamos</string>
+		<string>cabed</string>
+		<string>quepan</string>
+	</array>
+	<array>
+		<string>41</string>
+		<string>caber</string>
+		<string>Imperativo</string>
+		<string>Imperativo negativo</string>
+		<string></string>
+		<string>quepas</string>
+		<string>quepa</string>
+		<string>quepamos</string>
+		<string>quepáis</string>
+		<string>quepan</string>
+	</array>
+	<array>
+		<string>42</string>
+		<string>llenar</string>
+		<string>Indicativo</string>
+		<string>Presente</string>
+		<string>lleno</string>
+		<string>llenas</string>
+		<string>llena</string>
+		<string>llenamos</string>
+		<string>llenáis</string>
+		<string>llenan</string>
+	</array>
+	<array>
+		<string>43</string>
+		<string>llenar</string>
+		<string>Indicativo</string>
+		<string>Pretérito</string>
+		<string>llené</string>
+		<string>llenaste</string>
+		<string>llenó</string>
+		<string>llenamos</string>
+		<string>llenasteis</string>
+		<string>llenaron</string>
+	</array>
+	<array>
+		<string>44</string>
+		<string>llenar</string>
+		<string>Indicativo</string>
+		<string>Futuro</string>
+		<string>llenaré</string>
+		<string>llenarás</string>
+		<string>llenará</string>
+		<string>llenaremos</string>
+		<string>llenaréis</string>
+		<string>llenarán</string>
+	</array>
+	<array>
+		<string>45</string>
+		<string>llenar</string>
+		<string>Condicional</string>
+		<string>Condicional</string>
+		<string>llenaría</string>
+		<string>llenarías</string>
+		<string>llenaría</string>
+		<string>llenaríamos</string>
+		<string>llenaríais</string>
+		<string>llenarían</string>
+	</array>
+	<array>
+		<string>46</string>
+		<string>llenar</string>
+		<string>Indicativo</string>
+		<string>Imperfecto</string>
+		<string>llenaba</string>
+		<string>llenabas</string>
+		<string>llenaba</string>
+		<string>llenábamos</string>
+		<string>llenabais</string>
+		<string>llenaban</string>
+	</array>
+	<array>
+		<string>47</string>
+		<string>llenar</string>
+		<string>Indicativo</string>
+		<string>Presente progresivo</string>
+		<string>estoy llenando</string>
+		<string>estás llenando</string>
+		<string>está llenando</string>
+		<string>estamos llenando</string>
+		<string>estáis llenando</string>
+		<string>están llenando</string>
+	</array>
+	<array>
+		<string>48</string>
+		<string>llenar</string>
+		<string>Indicativo</string>
+		<string>Pretérito perfecto</string>
+		<string>he llenado</string>
+		<string>has llenado</string>
+		<string>ha llenado</string>
+		<string>hemos llenado</string>
+		<string>habéis llenado</string>
+		<string>han llenado</string>
+	</array>
+	<array>
+		<string>49</string>
+		<string>llenar</string>
+		<string>Indicativo</string>
+		<string>Pluscuamperfecto</string>
+		<string>había llenado</string>
+		<string>habías llenado</string>
+		<string>había llenado</string>
+		<string>habíamos llenado</string>
+		<string>habíais llenado</string>
+		<string>habían llenado</string>
+	</array>
+	<array>
+		<string>50</string>
+		<string>llenar</string>
+		<string>Indicativo</string>
+		<string>Futuro perfecto</string>
+		<string>habré llenado</string>
+		<string>habrás llenado</string>
+		<string>habrá llenado</string>
+		<string>habremos llenado</string>
+		<string>habréis llenado</string>
+		<string>habrán llenado</string>
+	</array>
+	<array>
+		<string>51</string>
+		<string>llenar</string>
+		<string>Condicional</string>
+		<string>Condicional perfecto</string>
+		<string>habría llenado</string>
+		<string>habrías llenado</string>
+		<string>habría llenado</string>
+		<string>habríamos llenado</string>
+		<string>habríais llenado</string>
+		<string>habrían llenado</string>
+	</array>
+	<array>
+		<string>52</string>
+		<string>llenar</string>
+		<string>Indicativo</string>
+		<string>Pretérito anterior</string>
+		<string>hube llenado</string>
+		<string>hubiste llenado</string>
+		<string>hubo llenado</string>
+		<string>hubimos llenado</string>
+		<string>hubisteis llenado</string>
+		<string>hubieron llenado</string>
+	</array>
+	<array>
+		<string>53</string>
+		<string>llenar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo presente</string>
+		<string>llene</string>
+		<string>llenes</string>
+		<string>llene</string>
+		<string>llenemos</string>
+		<string>llenéis</string>
+		<string>llenen</string>
+	</array>
+	<array>
+		<string>54</string>
+		<string>llenar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo imperfecto</string>
+		<string>llenara</string>
+		<string>llenaras</string>
+		<string>llenara</string>
+		<string>llenáramos</string>
+		<string>llenarais</string>
+		<string>llenaran</string>
+	</array>
+	<array>
+		<string>55</string>
+		<string>llenar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo imperfecto</string>
+		<string>llenase</string>
+		<string>llenases</string>
+		<string>llenase</string>
+		<string>llenásemos</string>
+		<string>llenaseis</string>
+		<string>llenasen</string>
+	</array>
+	<array>
+		<string>56</string>
+		<string>llenar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo futuro</string>
+		<string>llenare</string>
+		<string>llenares</string>
+		<string>llenare</string>
+		<string>llenáremos</string>
+		<string>llenareis</string>
+		<string>llenaren</string>
+	</array>
+	<array>
+		<string>57</string>
+		<string>llenar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pretérito perfecto</string>
+		<string>haya llenado</string>
+		<string>hayas llenado</string>
+		<string>haya llenado</string>
+		<string>hayamos llenado</string>
+		<string>hayáis llenado</string>
+		<string>hayan llenado</string>
+	</array>
+	<array>
+		<string>58</string>
+		<string>llenar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pluscuamperfecto</string>
+		<string>hubiera llenado</string>
+		<string>hubieras llenado</string>
+		<string>hubiera llenado</string>
+		<string>hubiéramos llenado</string>
+		<string>hubierais llenado</string>
+		<string>hubieran llenado</string>
+	</array>
+	<array>
+		<string>59</string>
+		<string>llenar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pluscuamperfecto</string>
+		<string>hubiese llenado</string>
+		<string>hubieses llenado</string>
+		<string>hubiese llenado</string>
+		<string>hubiésemos llenado</string>
+		<string>hubieseis llenado</string>
+		<string>hubiesen llenado</string>
+	</array>
+	<array>
+		<string>60</string>
+		<string>llenar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo futuro perfecto</string>
+		<string>hubiere llenado</string>
+		<string>hubieres llenado</string>
+		<string>hubiere llenado</string>
+		<string>hubiéremos llenado</string>
+		<string>hubiereis llenado</string>
+		<string>hubieren llenado</string>
+	</array>
+	<array>
+		<string>61</string>
+		<string>llenar</string>
+		<string>Imperativo</string>
+		<string>Imperativo positivo</string>
+		<string></string>
+		<string>llena</string>
+		<string>llene</string>
+		<string>llenemos</string>
+		<string>llenad</string>
+		<string>llenen</string>
+	</array>
+	<array>
+		<string>62</string>
+		<string>llenar</string>
+		<string>Imperativo</string>
+		<string>Imperativo negativo</string>
+		<string></string>
+		<string>llenes</string>
+		<string>llene</string>
+		<string>llenemos</string>
+		<string>llenéis</string>
+		<string>llenen</string>
+	</array>
+	<array>
+		<string>63</string>
+		<string>dibujar</string>
+		<string>Indicativo</string>
+		<string>Presente</string>
+		<string>dibujo</string>
+		<string>dibujas</string>
+		<string>dibuja</string>
+		<string>dibujamos</string>
+		<string>dibujáis</string>
+		<string>dibujan</string>
+	</array>
+	<array>
+		<string>64</string>
+		<string>dibujar</string>
+		<string>Indicativo</string>
+		<string>Pretérito</string>
+		<string>dibujé</string>
+		<string>dibujaste</string>
+		<string>dibujó</string>
+		<string>dibujamos</string>
+		<string>dibujasteis</string>
+		<string>dibujaron</string>
+	</array>
+	<array>
+		<string>65</string>
+		<string>dibujar</string>
+		<string>Indicativo</string>
+		<string>Futuro</string>
+		<string>dibujaré</string>
+		<string>dibujarás</string>
+		<string>dibujará</string>
+		<string>dibujaremos</string>
+		<string>dibujaréis</string>
+		<string>dibujarán</string>
+	</array>
+	<array>
+		<string>66</string>
+		<string>dibujar</string>
+		<string>Condicional</string>
+		<string>Condicional</string>
+		<string>dibujaría</string>
+		<string>dibujarías</string>
+		<string>dibujaría</string>
+		<string>dibujaríamos</string>
+		<string>dibujaríais</string>
+		<string>dibujarían</string>
+	</array>
+	<array>
+		<string>67</string>
+		<string>dibujar</string>
+		<string>Indicativo</string>
+		<string>Imperfecto</string>
+		<string>dibujaba</string>
+		<string>dibujabas</string>
+		<string>dibujaba</string>
+		<string>dibujábamos</string>
+		<string>dibujabais</string>
+		<string>dibujaban</string>
+	</array>
+	<array>
+		<string>68</string>
+		<string>dibujar</string>
+		<string>Indicativo</string>
+		<string>Presente progresivo</string>
+		<string>estoy dibujando</string>
+		<string>estás dibujando</string>
+		<string>está dibujando</string>
+		<string>estamos dibujando</string>
+		<string>estáis dibujando</string>
+		<string>están dibujando</string>
+	</array>
+	<array>
+		<string>69</string>
+		<string>dibujar</string>
+		<string>Indicativo</string>
+		<string>Pretérito perfecto</string>
+		<string>he dibujado</string>
+		<string>has dibujado</string>
+		<string>ha dibujado</string>
+		<string>hemos dibujado</string>
+		<string>habéis dibujado</string>
+		<string>han dibujado</string>
+	</array>
+	<array>
+		<string>70</string>
+		<string>dibujar</string>
+		<string>Indicativo</string>
+		<string>Pluscuamperfecto</string>
+		<string>había dibujado</string>
+		<string>habías dibujado</string>
+		<string>había dibujado</string>
+		<string>habíamos dibujado</string>
+		<string>habíais dibujado</string>
+		<string>habían dibujado</string>
+	</array>
+	<array>
+		<string>71</string>
+		<string>dibujar</string>
+		<string>Indicativo</string>
+		<string>Futuro perfecto</string>
+		<string>habré dibujado</string>
+		<string>habrás dibujado</string>
+		<string>habrá dibujado</string>
+		<string>habremos dibujado</string>
+		<string>habréis dibujado</string>
+		<string>habrán dibujado</string>
+	</array>
+	<array>
+		<string>72</string>
+		<string>dibujar</string>
+		<string>Condicional</string>
+		<string>Condicional perfecto</string>
+		<string>habría dibujado</string>
+		<string>habrías dibujado</string>
+		<string>habría dibujado</string>
+		<string>habríamos dibujado</string>
+		<string>habríais dibujado</string>
+		<string>habrían dibujado</string>
+	</array>
+	<array>
+		<string>73</string>
+		<string>dibujar</string>
+		<string>Indicativo</string>
+		<string>Pretérito anterior</string>
+		<string>hube dibujado</string>
+		<string>hubiste dibujado</string>
+		<string>hubo dibujado</string>
+		<string>hubimos dibujado</string>
+		<string>hubisteis dibujado</string>
+		<string>hubieron dibujado</string>
+	</array>
+	<array>
+		<string>74</string>
+		<string>dibujar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo presente</string>
+		<string>dibuje</string>
+		<string>dibujes</string>
+		<string>dibuje</string>
+		<string>dibujemos</string>
+		<string>dibujéis</string>
+		<string>dibujen</string>
+	</array>
+	<array>
+		<string>75</string>
+		<string>dibujar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo imperfecto</string>
+		<string>dibujara</string>
+		<string>dibujaras</string>
+		<string>dibujara</string>
+		<string>dibujáramos</string>
+		<string>dibujarais</string>
+		<string>dibujaran</string>
+	</array>
+	<array>
+		<string>76</string>
+		<string>dibujar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo imperfecto</string>
+		<string>dibujase</string>
+		<string>dibujases</string>
+		<string>dibujase</string>
+		<string>dibujásemos</string>
+		<string>dibujaseis</string>
+		<string>dibujasen</string>
+	</array>
+	<array>
+		<string>77</string>
+		<string>dibujar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo futuro</string>
+		<string>dibujare</string>
+		<string>dibujares</string>
+		<string>dibujare</string>
+		<string>dibujáremos</string>
+		<string>dibujareis</string>
+		<string>dibujaren</string>
+	</array>
+	<array>
+		<string>78</string>
+		<string>dibujar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pretérito perfecto</string>
+		<string>haya dibujado</string>
+		<string>hayas dibujado</string>
+		<string>haya dibujado</string>
+		<string>hayamos dibujado</string>
+		<string>hayáis dibujado</string>
+		<string>hayan dibujado</string>
+	</array>
+	<array>
+		<string>79</string>
+		<string>dibujar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pluscuamperfecto</string>
+		<string>hubiera dibujado</string>
+		<string>hubieras dibujado</string>
+		<string>hubiera dibujado</string>
+		<string>hubiéramos dibujado</string>
+		<string>hubierais dibujado</string>
+		<string>hubieran dibujado</string>
+	</array>
+	<array>
+		<string>80</string>
+		<string>dibujar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pluscuamperfecto</string>
+		<string>hubiese dibujado</string>
+		<string>hubieses dibujado</string>
+		<string>hubiese dibujado</string>
+		<string>hubiésemos dibujado</string>
+		<string>hubieseis dibujado</string>
+		<string>hubiesen dibujado</string>
+	</array>
+	<array>
+		<string>81</string>
+		<string>dibujar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo futuro perfecto</string>
+		<string>hubiere dibujado</string>
+		<string>hubieres dibujado</string>
+		<string>hubiere dibujado</string>
+		<string>hubiéremos dibujado</string>
+		<string>hubiereis dibujado</string>
+		<string>hubieren dibujado</string>
+	</array>
+	<array>
+		<string>82</string>
+		<string>dibujar</string>
+		<string>Imperativo</string>
+		<string>Imperativo positivo</string>
+		<string></string>
+		<string>dibuja</string>
+		<string>dibuje</string>
+		<string>dibujemos</string>
+		<string>dibujad</string>
+		<string>dibujen</string>
+	</array>
+	<array>
+		<string>83</string>
+		<string>dibujar</string>
+		<string>Imperativo</string>
+		<string>Imperativo negativo</string>
+		<string></string>
+		<string>dibujes</string>
+		<string>dibuje</string>
+		<string>dibujemos</string>
+		<string>dibujéis</string>
+		<string>dibujen</string>
+	</array>
+	<array>
+		<string>84</string>
+		<string>bailar</string>
+		<string>Indicativo</string>
+		<string>Presente</string>
+		<string>bailo</string>
+		<string>bailas</string>
+		<string>baila</string>
+		<string>bailamos</string>
+		<string>bailáis</string>
+		<string>bailan</string>
+	</array>
+	<array>
+		<string>85</string>
+		<string>bailar</string>
+		<string>Indicativo</string>
+		<string>Pretérito</string>
+		<string>bailé</string>
+		<string>bailaste</string>
+		<string>bailó</string>
+		<string>bailamos</string>
+		<string>bailasteis</string>
+		<string>bailaron</string>
+	</array>
+	<array>
+		<string>86</string>
+		<string>bailar</string>
+		<string>Indicativo</string>
+		<string>Futuro</string>
+		<string>bailaré</string>
+		<string>bailarás</string>
+		<string>bailará</string>
+		<string>bailaremos</string>
+		<string>bailaréis</string>
+		<string>bailarán</string>
+	</array>
+	<array>
+		<string>87</string>
+		<string>bailar</string>
+		<string>Condicional</string>
+		<string>Condicional</string>
+		<string>bailaría</string>
+		<string>bailarías</string>
+		<string>bailaría</string>
+		<string>bailaríamos</string>
+		<string>bailaríais</string>
+		<string>bailarían</string>
+	</array>
+	<array>
+		<string>88</string>
+		<string>bailar</string>
+		<string>Indicativo</string>
+		<string>Imperfecto</string>
+		<string>bailaba</string>
+		<string>bailabas</string>
+		<string>bailaba</string>
+		<string>bailábamos</string>
+		<string>bailabais</string>
+		<string>bailaban</string>
+	</array>
+	<array>
+		<string>89</string>
+		<string>bailar</string>
+		<string>Indicativo</string>
+		<string>Presente progresivo</string>
+		<string>estoy bailando</string>
+		<string>estás bailando</string>
+		<string>está bailando</string>
+		<string>estamos bailando</string>
+		<string>estáis bailando</string>
+		<string>están bailando</string>
+	</array>
+	<array>
+		<string>90</string>
+		<string>bailar</string>
+		<string>Indicativo</string>
+		<string>Pretérito perfecto</string>
+		<string>he bailado</string>
+		<string>has bailado</string>
+		<string>ha bailado</string>
+		<string>hemos bailado</string>
+		<string>habéis bailado</string>
+		<string>han bailado</string>
+	</array>
+	<array>
+		<string>91</string>
+		<string>bailar</string>
+		<string>Indicativo</string>
+		<string>Pluscuamperfecto</string>
+		<string>había bailado</string>
+		<string>habías bailado</string>
+		<string>había bailado</string>
+		<string>habíamos bailado</string>
+		<string>habíais bailado</string>
+		<string>habían bailado</string>
+	</array>
+	<array>
+		<string>92</string>
+		<string>bailar</string>
+		<string>Indicativo</string>
+		<string>Futuro perfecto</string>
+		<string>habré bailado</string>
+		<string>habrás bailado</string>
+		<string>habrá bailado</string>
+		<string>habremos bailado</string>
+		<string>habréis bailado</string>
+		<string>habrán bailado</string>
+	</array>
+	<array>
+		<string>93</string>
+		<string>bailar</string>
+		<string>Condicional</string>
+		<string>Condicional perfecto</string>
+		<string>habría bailado</string>
+		<string>habrías bailado</string>
+		<string>habría bailado</string>
+		<string>habríamos bailado</string>
+		<string>habríais bailado</string>
+		<string>habrían bailado</string>
+	</array>
+	<array>
+		<string>94</string>
+		<string>bailar</string>
+		<string>Indicativo</string>
+		<string>Pretérito anterior</string>
+		<string>hube bailado</string>
+		<string>hubiste bailado</string>
+		<string>hubo bailado</string>
+		<string>hubimos bailado</string>
+		<string>hubisteis bailado</string>
+		<string>hubieron bailado</string>
+	</array>
+	<array>
+		<string>95</string>
+		<string>bailar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo presente</string>
+		<string>baile</string>
+		<string>bailes</string>
+		<string>baile</string>
+		<string>bailemos</string>
+		<string>bailéis</string>
+		<string>bailen</string>
+	</array>
+	<array>
+		<string>96</string>
+		<string>bailar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo imperfecto</string>
+		<string>bailara</string>
+		<string>bailaras</string>
+		<string>bailara</string>
+		<string>bailáramos</string>
+		<string>bailarais</string>
+		<string>bailaran</string>
+	</array>
+	<array>
+		<string>97</string>
+		<string>bailar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo imperfecto</string>
+		<string>bailase</string>
+		<string>bailases</string>
+		<string>bailase</string>
+		<string>bailásemos</string>
+		<string>bailaseis</string>
+		<string>bailasen</string>
+	</array>
+	<array>
+		<string>98</string>
+		<string>bailar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo futuro</string>
+		<string>bailare</string>
+		<string>bailares</string>
+		<string>bailare</string>
+		<string>bailáremos</string>
+		<string>bailareis</string>
+		<string>bailaren</string>
+	</array>
+	<array>
+		<string>99</string>
+		<string>bailar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pretérito perfecto</string>
+		<string>haya bailado</string>
+		<string>hayas bailado</string>
+		<string>haya bailado</string>
+		<string>hayamos bailado</string>
+		<string>hayáis bailado</string>
+		<string>hayan bailado</string>
+	</array>
+	<array>
+		<string>100</string>
+		<string>bailar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pluscuamperfecto</string>
+		<string>hubiera bailado</string>
+		<string>hubieras bailado</string>
+		<string>hubiera bailado</string>
+		<string>hubiéramos bailado</string>
+		<string>hubierais bailado</string>
+		<string>hubieran bailado</string>
+	</array>
+	<array>
+		<string>101</string>
+		<string>bailar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pluscuamperfecto</string>
+		<string>hubiese bailado</string>
+		<string>hubieses bailado</string>
+		<string>hubiese bailado</string>
+		<string>hubiésemos bailado</string>
+		<string>hubieseis bailado</string>
+		<string>hubiesen bailado</string>
+	</array>
+	<array>
+		<string>102</string>
+		<string>bailar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo futuro perfecto</string>
+		<string>hubiere bailado</string>
+		<string>hubieres bailado</string>
+		<string>hubiere bailado</string>
+		<string>hubiéremos bailado</string>
+		<string>hubiereis bailado</string>
+		<string>hubieren bailado</string>
+	</array>
+	<array>
+		<string>103</string>
+		<string>bailar</string>
+		<string>Imperativo</string>
+		<string>Imperativo positivo</string>
+		<string></string>
+		<string>baila</string>
+		<string>baile</string>
+		<string>bailemos</string>
+		<string>bailad</string>
+		<string>bailen</string>
+	</array>
+	<array>
+		<string>104</string>
+		<string>bailar</string>
+		<string>Imperativo</string>
+		<string>Imperativo negativo</string>
+		<string></string>
+		<string>bailes</string>
+		<string>baile</string>
+		<string>bailemos</string>
+		<string>bailéis</string>
+		<string>bailen</string>
+	</array>
+	<array>
+		<string>105</string>
+		<string>romper</string>
+		<string>Indicativo</string>
+		<string>Presente</string>
+		<string>rompo</string>
+		<string>rompes</string>
+		<string>rompe</string>
+		<string>rompemos</string>
+		<string>rompéis</string>
+		<string>rompen</string>
+	</array>
+	<array>
+		<string>106</string>
+		<string>romper</string>
+		<string>Indicativo</string>
+		<string>Pretérito</string>
+		<string>rompí</string>
+		<string>rompiste</string>
+		<string>rompió</string>
+		<string>rompimos</string>
+		<string>rompisteis</string>
+		<string>rompieron</string>
+	</array>
+	<array>
+		<string>107</string>
+		<string>romper</string>
+		<string>Indicativo</string>
+		<string>Futuro</string>
+		<string>romperé</string>
+		<string>romperás</string>
+		<string>romperá</string>
+		<string>romperemos</string>
+		<string>romperéis</string>
+		<string>romperán</string>
+	</array>
+	<array>
+		<string>108</string>
+		<string>romper</string>
+		<string>Condicional</string>
+		<string>Condicional</string>
+		<string>rompería</string>
+		<string>romperías</string>
+		<string>rompería</string>
+		<string>romperíamos</string>
+		<string>romperíais</string>
+		<string>romperían</string>
+	</array>
+	<array>
+		<string>109</string>
+		<string>romper</string>
+		<string>Indicativo</string>
+		<string>Imperfecto</string>
+		<string>rompía</string>
+		<string>rompías</string>
+		<string>rompía</string>
+		<string>rompíamos</string>
+		<string>rompíais</string>
+		<string>rompían</string>
+	</array>
+	<array>
+		<string>110</string>
+		<string>romper</string>
+		<string>Indicativo</string>
+		<string>Presente progresivo</string>
+		<string>estoy rompiendo</string>
+		<string>estás rompiendo</string>
+		<string>está rompiendo</string>
+		<string>estamos rompiendo</string>
+		<string>estáis rompiendo</string>
+		<string>están rompiendo</string>
+	</array>
+	<array>
+		<string>111</string>
+		<string>romper</string>
+		<string>Indicativo</string>
+		<string>Pretérito perfecto</string>
+		<string>he roto</string>
+		<string>has roto</string>
+		<string>ha roto</string>
+		<string>hemos roto</string>
+		<string>habéis roto</string>
+		<string>han roto</string>
+	</array>
+	<array>
+		<string>112</string>
+		<string>romper</string>
+		<string>Indicativo</string>
+		<string>Pluscuamperfecto</string>
+		<string>había roto</string>
+		<string>habías roto</string>
+		<string>había roto</string>
+		<string>habíamos roto</string>
+		<string>habíais roto</string>
+		<string>habían roto</string>
+	</array>
+	<array>
+		<string>113</string>
+		<string>romper</string>
+		<string>Indicativo</string>
+		<string>Futuro perfecto</string>
+		<string>habré roto</string>
+		<string>habrás roto</string>
+		<string>habrá roto</string>
+		<string>habremos roto</string>
+		<string>habréis roto</string>
+		<string>habrán roto</string>
+	</array>
+	<array>
+		<string>114</string>
+		<string>romper</string>
+		<string>Condicional</string>
+		<string>Condicional perfecto</string>
+		<string>habría roto</string>
+		<string>habrías roto</string>
+		<string>habría roto</string>
+		<string>habríamos roto</string>
+		<string>habríais roto</string>
+		<string>habrían roto</string>
+	</array>
+	<array>
+		<string>115</string>
+		<string>romper</string>
+		<string>Indicativo</string>
+		<string>Pretérito anterior</string>
+		<string>hube roto</string>
+		<string>hubiste roto</string>
+		<string>hubo roto</string>
+		<string>hubimos roto</string>
+		<string>hubisteis roto</string>
+		<string>hubieron roto</string>
+	</array>
+	<array>
+		<string>116</string>
+		<string>romper</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo presente</string>
+		<string>rompa</string>
+		<string>rompas</string>
+		<string>rompa</string>
+		<string>rompamos</string>
+		<string>rompáis</string>
+		<string>rompan</string>
+	</array>
+	<array>
+		<string>117</string>
+		<string>romper</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo imperfecto</string>
+		<string>rompiera</string>
+		<string>rompieras</string>
+		<string>rompiera</string>
+		<string>rompiéramos</string>
+		<string>rompierais</string>
+		<string>rompieran</string>
+	</array>
+	<array>
+		<string>118</string>
+		<string>romper</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo imperfecto</string>
+		<string>rompiese</string>
+		<string>rompieses</string>
+		<string>rompiese</string>
+		<string>rompiésemos</string>
+		<string>rompieseis</string>
+		<string>rompiesen</string>
+	</array>
+	<array>
+		<string>119</string>
+		<string>romper</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo futuro</string>
+		<string>rompiere</string>
+		<string>rompieres</string>
+		<string>rompiere</string>
+		<string>rompiéremos</string>
+		<string>rompiereis</string>
+		<string>rompieren</string>
+	</array>
+	<array>
+		<string>120</string>
+		<string>romper</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pretérito perfecto</string>
+		<string>haya roto</string>
+		<string>hayas roto</string>
+		<string>haya roto</string>
+		<string>hayamos roto</string>
+		<string>hayáis roto</string>
+		<string>hayan roto</string>
+	</array>
+	<array>
+		<string>121</string>
+		<string>romper</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pluscuamperfecto</string>
+		<string>hubiera roto</string>
+		<string>hubieras roto</string>
+		<string>hubiera roto</string>
+		<string>hubiéramos roto</string>
+		<string>hubierais roto</string>
+		<string>hubieran roto</string>
+	</array>
+	<array>
+		<string>122</string>
+		<string>romper</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pluscuamperfecto</string>
+		<string>hubiese roto</string>
+		<string>hubieses roto</string>
+		<string>hubiese roto</string>
+		<string>hubiésemos roto</string>
+		<string>hubieseis roto</string>
+		<string>hubiesen roto</string>
+	</array>
+	<array>
+		<string>123</string>
+		<string>romper</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo futuro perfecto</string>
+		<string>hubiere roto</string>
+		<string>hubieres roto</string>
+		<string>hubiere roto</string>
+		<string>hubiéremos roto</string>
+		<string>hubiereis roto</string>
+		<string>hubieren roto</string>
+	</array>
+	<array>
+		<string>124</string>
+		<string>romper</string>
+		<string>Imperativo</string>
+		<string>Imperativo positivo</string>
+		<string></string>
+		<string>rompe</string>
+		<string>rompa</string>
+		<string>rompamos</string>
+		<string>romped</string>
+		<string>rompan</string>
+	</array>
+	<array>
+		<string>125</string>
+		<string>romper</string>
+		<string>Imperativo</string>
+		<string>Imperativo negativo</string>
+		<string></string>
+		<string>rompas</string>
+		<string>rompa</string>
+		<string>rompamos</string>
+		<string>rompáis</string>
+		<string>rompan</string>
+	</array>
+	<array>
+		<string>126</string>
+		<string>cancelar</string>
+		<string>Indicativo</string>
+		<string>Presente</string>
+		<string>cancelo</string>
+		<string>cancelas</string>
+		<string>cancela</string>
+		<string>cancelamos</string>
+		<string>canceláis</string>
+		<string>cancelan</string>
+	</array>
+	<array>
+		<string>127</string>
+		<string>cancelar</string>
+		<string>Indicativo</string>
+		<string>Pretérito</string>
+		<string>cancelé</string>
+		<string>cancelaste</string>
+		<string>canceló</string>
+		<string>cancelamos</string>
+		<string>cancelasteis</string>
+		<string>cancelaron</string>
+	</array>
+	<array>
+		<string>128</string>
+		<string>cancelar</string>
+		<string>Indicativo</string>
+		<string>Futuro</string>
+		<string>cancelaré</string>
+		<string>cancelarás</string>
+		<string>cancelará</string>
+		<string>cancelaremos</string>
+		<string>cancelaréis</string>
+		<string>cancelarán</string>
+	</array>
+	<array>
+		<string>129</string>
+		<string>cancelar</string>
+		<string>Condicional</string>
+		<string>Condicional</string>
+		<string>cancelaría</string>
+		<string>cancelarías</string>
+		<string>cancelaría</string>
+		<string>cancelaríamos</string>
+		<string>cancelaríais</string>
+		<string>cancelarían</string>
+	</array>
+	<array>
+		<string>130</string>
+		<string>cancelar</string>
+		<string>Indicativo</string>
+		<string>Imperfecto</string>
+		<string>cancelaba</string>
+		<string>cancelabas</string>
+		<string>cancelaba</string>
+		<string>cancelábamos</string>
+		<string>cancelabais</string>
+		<string>cancelaban</string>
+	</array>
+	<array>
+		<string>131</string>
+		<string>cancelar</string>
+		<string>Indicativo</string>
+		<string>Presente progresivo</string>
+		<string>estoy cancelando</string>
+		<string>estás cancelando</string>
+		<string>está cancelando</string>
+		<string>estamos cancelando</string>
+		<string>estáis cancelando</string>
+		<string>están cancelando</string>
+	</array>
+	<array>
+		<string>132</string>
+		<string>cancelar</string>
+		<string>Indicativo</string>
+		<string>Pretérito perfecto</string>
+		<string>he cancelado</string>
+		<string>has cancelado</string>
+		<string>ha cancelado</string>
+		<string>hemos cancelado</string>
+		<string>habéis cancelado</string>
+		<string>han cancelado</string>
+	</array>
+	<array>
+		<string>133</string>
+		<string>cancelar</string>
+		<string>Indicativo</string>
+		<string>Pluscuamperfecto</string>
+		<string>había cancelado</string>
+		<string>habías cancelado</string>
+		<string>había cancelado</string>
+		<string>habíamos cancelado</string>
+		<string>habíais cancelado</string>
+		<string>habían cancelado</string>
+	</array>
+	<array>
+		<string>134</string>
+		<string>cancelar</string>
+		<string>Indicativo</string>
+		<string>Futuro perfecto</string>
+		<string>habré cancelado</string>
+		<string>habrás cancelado</string>
+		<string>habrá cancelado</string>
+		<string>habremos cancelado</string>
+		<string>habréis cancelado</string>
+		<string>habrán cancelado</string>
+	</array>
+	<array>
+		<string>135</string>
+		<string>cancelar</string>
+		<string>Condicional</string>
+		<string>Condicional perfecto</string>
+		<string>habría cancelado</string>
+		<string>habrías cancelado</string>
+		<string>habría cancelado</string>
+		<string>habríamos cancelado</string>
+		<string>habríais cancelado</string>
+		<string>habrían cancelado</string>
+	</array>
+	<array>
+		<string>136</string>
+		<string>cancelar</string>
+		<string>Indicativo</string>
+		<string>Pretérito anterior</string>
+		<string>hube cancelado</string>
+		<string>hubiste cancelado</string>
+		<string>hubo cancelado</string>
+		<string>hubimos cancelado</string>
+		<string>hubisteis cancelado</string>
+		<string>hubieron cancelado</string>
+	</array>
+	<array>
+		<string>137</string>
+		<string>cancelar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo presente</string>
+		<string>cancele</string>
+		<string>canceles</string>
+		<string>cancele</string>
+		<string>cancelemos</string>
+		<string>canceléis</string>
+		<string>cancelen</string>
+	</array>
+	<array>
+		<string>138</string>
+		<string>cancelar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo imperfecto</string>
+		<string>cancelara</string>
+		<string>cancelaras</string>
+		<string>cancelara</string>
+		<string>canceláramos</string>
+		<string>cancelarais</string>
+		<string>cancelaran</string>
+	</array>
+	<array>
+		<string>139</string>
+		<string>cancelar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo imperfecto</string>
+		<string>cancelase</string>
+		<string>cancelases</string>
+		<string>cancelase</string>
+		<string>cancelásemos</string>
+		<string>cancelaseis</string>
+		<string>cancelasen</string>
+	</array>
+	<array>
+		<string>140</string>
+		<string>cancelar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo futuro</string>
+		<string>cancelare</string>
+		<string>cancelares</string>
+		<string>cancelare</string>
+		<string>canceláremos</string>
+		<string>cancelareis</string>
+		<string>cancelaren</string>
+	</array>
+	<array>
+		<string>141</string>
+		<string>cancelar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pretérito perfecto</string>
+		<string>haya cancelado</string>
+		<string>hayas cancelado</string>
+		<string>haya cancelado</string>
+		<string>hayamos cancelado</string>
+		<string>hayáis cancelado</string>
+		<string>hayan cancelado</string>
+	</array>
+	<array>
+		<string>142</string>
+		<string>cancelar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pluscuamperfecto</string>
+		<string>hubiera cancelado</string>
+		<string>hubieras cancelado</string>
+		<string>hubiera cancelado</string>
+		<string>hubiéramos cancelado</string>
+		<string>hubierais cancelado</string>
+		<string>hubieran cancelado</string>
+	</array>
+	<array>
+		<string>143</string>
+		<string>cancelar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pluscuamperfecto</string>
+		<string>hubiese cancelado</string>
+		<string>hubieses cancelado</string>
+		<string>hubiese cancelado</string>
+		<string>hubiésemos cancelado</string>
+		<string>hubieseis cancelado</string>
+		<string>hubiesen cancelado</string>
+	</array>
+	<array>
+		<string>144</string>
+		<string>cancelar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo futuro perfecto</string>
+		<string>hubiere cancelado</string>
+		<string>hubieres cancelado</string>
+		<string>hubiere cancelado</string>
+		<string>hubiéremos cancelado</string>
+		<string>hubiereis cancelado</string>
+		<string>hubieren cancelado</string>
+	</array>
+	<array>
+		<string>145</string>
+		<string>cancelar</string>
+		<string>Imperativo</string>
+		<string>Imperativo positivo</string>
+		<string></string>
+		<string>cancela</string>
+		<string>cancele</string>
+		<string>cancelemos</string>
+		<string>cancelad</string>
+		<string>cancelen</string>
+	</array>
+	<array>
+		<string>146</string>
+		<string>cancelar</string>
+		<string>Imperativo</string>
+		<string>Imperativo negativo</string>
+		<string></string>
+		<string>canceles</string>
+		<string>cancele</string>
+		<string>cancelemos</string>
+		<string>canceléis</string>
+		<string>cancelen</string>
+	</array>
+	<array>
+		<string>147</string>
+		<string>limpiar</string>
+		<string>Indicativo</string>
+		<string>Presente</string>
+		<string>limpio</string>
+		<string>limpias</string>
+		<string>limpia</string>
+		<string>limpiamos</string>
+		<string>limpiáis</string>
+		<string>limpian</string>
+	</array>
+	<array>
+		<string>148</string>
+		<string>limpiar</string>
+		<string>Indicativo</string>
+		<string>Pretérito</string>
+		<string>limpié</string>
+		<string>limpiaste</string>
+		<string>limpió</string>
+		<string>limpiamos</string>
+		<string>limpiasteis</string>
+		<string>limpiaron</string>
+	</array>
+	<array>
+		<string>149</string>
+		<string>limpiar</string>
+		<string>Indicativo</string>
+		<string>Futuro</string>
+		<string>limpiaré</string>
+		<string>limpiarás</string>
+		<string>limpiará</string>
+		<string>limpiaremos</string>
+		<string>limpiaréis</string>
+		<string>limpiarán</string>
+	</array>
+	<array>
+		<string>150</string>
+		<string>limpiar</string>
+		<string>Condicional</string>
+		<string>Condicional</string>
+		<string>limpiaría</string>
+		<string>limpiarías</string>
+		<string>limpiaría</string>
+		<string>limpiaríamos</string>
+		<string>limpiaríais</string>
+		<string>limpiarían</string>
+	</array>
+	<array>
+		<string>151</string>
+		<string>limpiar</string>
+		<string>Indicativo</string>
+		<string>Imperfecto</string>
+		<string>limpiaba</string>
+		<string>limpiabas</string>
+		<string>limpiaba</string>
+		<string>limpiábamos</string>
+		<string>limpiabais</string>
+		<string>limpiaban</string>
+	</array>
+	<array>
+		<string>152</string>
+		<string>limpiar</string>
+		<string>Indicativo</string>
+		<string>Presente progresivo</string>
+		<string>estoy limpiando</string>
+		<string>estás limpiando</string>
+		<string>está limpiando</string>
+		<string>estamos limpiando</string>
+		<string>estáis limpiando</string>
+		<string>están limpiando</string>
+	</array>
+	<array>
+		<string>153</string>
+		<string>limpiar</string>
+		<string>Indicativo</string>
+		<string>Pretérito perfecto</string>
+		<string>he limpiado</string>
+		<string>has limpiado</string>
+		<string>ha limpiado</string>
+		<string>hemos limpiado</string>
+		<string>habéis limpiado</string>
+		<string>han limpiado</string>
+	</array>
+	<array>
+		<string>154</string>
+		<string>limpiar</string>
+		<string>Indicativo</string>
+		<string>Pluscuamperfecto</string>
+		<string>había limpiado</string>
+		<string>habías limpiado</string>
+		<string>había limpiado</string>
+		<string>habíamos limpiado</string>
+		<string>habíais limpiado</string>
+		<string>habían limpiado</string>
+	</array>
+	<array>
+		<string>155</string>
+		<string>limpiar</string>
+		<string>Indicativo</string>
+		<string>Futuro perfecto</string>
+		<string>habré limpiado</string>
+		<string>habrás limpiado</string>
+		<string>habrá limpiado</string>
+		<string>habremos limpiado</string>
+		<string>habréis limpiado</string>
+		<string>habrán limpiado</string>
+	</array>
+	<array>
+		<string>156</string>
+		<string>limpiar</string>
+		<string>Condicional</string>
+		<string>Condicional perfecto</string>
+		<string>habría limpiado</string>
+		<string>habrías limpiado</string>
+		<string>habría limpiado</string>
+		<string>habríamos limpiado</string>
+		<string>habríais limpiado</string>
+		<string>habrían limpiado</string>
+	</array>
+	<array>
+		<string>157</string>
+		<string>limpiar</string>
+		<string>Indicativo</string>
+		<string>Pretérito anterior</string>
+		<string>hube limpiado</string>
+		<string>hubiste limpiado</string>
+		<string>hubo limpiado</string>
+		<string>hubimos limpiado</string>
+		<string>hubisteis limpiado</string>
+		<string>hubieron limpiado</string>
+	</array>
+	<array>
+		<string>158</string>
+		<string>limpiar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo presente</string>
+		<string>limpie</string>
+		<string>limpies</string>
+		<string>limpie</string>
+		<string>limpiemos</string>
+		<string>limpiéis</string>
+		<string>limpien</string>
+	</array>
+	<array>
+		<string>159</string>
+		<string>limpiar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo imperfecto</string>
+		<string>limpiara</string>
+		<string>limpiaras</string>
+		<string>limpiara</string>
+		<string>limpiáramos</string>
+		<string>limpiarais</string>
+		<string>limpiaran</string>
+	</array>
+	<array>
+		<string>160</string>
+		<string>limpiar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo imperfecto</string>
+		<string>limpiase</string>
+		<string>limpiases</string>
+		<string>limpiase</string>
+		<string>limpiásemos</string>
+		<string>limpiaseis</string>
+		<string>limpiasen</string>
+	</array>
+	<array>
+		<string>161</string>
+		<string>limpiar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo futuro</string>
+		<string>limpiare</string>
+		<string>limpiares</string>
+		<string>limpiare</string>
+		<string>limpiáremos</string>
+		<string>limpiareis</string>
+		<string>limpiaren</string>
+	</array>
+	<array>
+		<string>162</string>
+		<string>limpiar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pretérito perfecto</string>
+		<string>haya limpiado</string>
+		<string>hayas limpiado</string>
+		<string>haya limpiado</string>
+		<string>hayamos limpiado</string>
+		<string>hayáis limpiado</string>
+		<string>hayan limpiado</string>
+	</array>
+	<array>
+		<string>163</string>
+		<string>limpiar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pluscuamperfecto</string>
+		<string>hubiera limpiado</string>
+		<string>hubieras limpiado</string>
+		<string>hubiera limpiado</string>
+		<string>hubiéramos limpiado</string>
+		<string>hubierais limpiado</string>
+		<string>hubieran limpiado</string>
+	</array>
+	<array>
+		<string>164</string>
+		<string>limpiar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo pluscuamperfecto</string>
+		<string>hubiese limpiado</string>
+		<string>hubieses limpiado</string>
+		<string>hubiese limpiado</string>
+		<string>hubiésemos limpiado</string>
+		<string>hubieseis limpiado</string>
+		<string>hubiesen limpiado</string>
+	</array>
+	<array>
+		<string>165</string>
+		<string>limpiar</string>
+		<string>Subjuntivo</string>
+		<string>Subjuntivo futuro perfecto</string>
+		<string>hubiere limpiado</string>
+		<string>hubieres limpiado</string>
+		<string>hubiere limpiado</string>
+		<string>hubiéremos limpiado</string>
+		<string>hubiereis limpiado</string>
+		<string>hubieren limpiado</string>
+	</array>
+	<array>
+		<string>166</string>
+		<string>limpiar</string>
+		<string>Imperativo</string>
+		<string>Imperativo positivo</string>
+		<string></string>
+		<string>limpia</string>
+		<string>limpie</string>
+		<string>limpiemos</string>
+		<string>limpiad</string>
+		<string>limpien</string>
+	</array>
+	<array>
+		<string>167</string>
+		<string>limpiar</string>
+		<string>Imperativo</string>
+		<string>Imperativo negativo</string>
+		<string></string>
+		<string>limpies</string>
+		<string>limpie</string>
+		<string>limpiemos</string>
+		<string>limpiéis</string>
+		<string>limpien</string>
+	</array>
+</array>
+</plist>

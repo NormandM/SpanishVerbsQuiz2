@@ -23,7 +23,7 @@ class verbListViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.dataSource = self
         searchBar.delegate = self
 
-        if let plistPath = NSBundle.mainBundle().pathForResource("Conjug", ofType: "plist"),
+        if let plistPath = NSBundle.mainBundle().pathForResource("arr5", ofType: "plist"),
             verbArray = NSArray(contentsOfFile: plistPath){
             let i = verbArray.count
             while randomVerb < i {
