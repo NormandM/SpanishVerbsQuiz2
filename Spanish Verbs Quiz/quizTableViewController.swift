@@ -10,7 +10,7 @@ import UIKit
 
 class quizTableViewController: UITableViewController {
     var arraySelection: [String] = []
-    var result = Alternate()
+
     let sectionListe = ["INDICATIVO", "SUBJUNTIVO", "CONDICIONAL", "IMPERATIVO"]
     let item = [["Presente ", "Imperfecto ", "Pretérito ", "Futuro ", "Presente progresivo ", "Pretérito perfecto ", "Pluscuamperfecto ", "Futuro perfecto ", "Pretérito anterior "], ["Presente", "Imperfecto", "Futuro", "Pretérito perfecto", "Pluscuamperfecto"], ["Condicional", "Perfecto"], ["Positivo", "Negativo"]]
     
@@ -24,17 +24,13 @@ class quizTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+       
     }
 
     // MARK: - Table view data source
@@ -66,34 +62,38 @@ class quizTableViewController: UITableViewController {
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         if cell?.accessoryType == .Checkmark{
             cell?.accessoryType = .None
-            let n = arraySelection.indexOf((cell!.textLabel!.text)!)
-            arraySelection.removeAtIndex(n!)
+            if let text = cell?.textLabel?.text, n = arraySelection.indexOf(text){
+                arraySelection.removeAtIndex(n)
+            }
+            
         }else{
             cell?.accessoryType = .Checkmark
             arraySelection.append(self.item[indexPath.section][indexPath.row])
         }
 
         
-        print(arraySelection)
+        
         
     }
 
     
     // MARK: - Navigation
 
-    @IBAction func quizSelectionButton(sender: UIBarButtonItem) {
+    @IBAction func listo(sender: UIBarButtonItem) {
         var i = 0
         i = arraySelection.count
-
-        if i == 0{
         
+        if i == 0{
+            
             performSegueWithIdentifier("alerteChoixTemps", sender: UIBarButtonItem.self)
         }else{
-        
-        performSegueWithIdentifier("showQuestionFinal", sender: UIBarButtonItem.self)
+            
+            performSegueWithIdentifier("showQuestionFinal", sender: UIBarButtonItem.self)
         }
 
-        }
+        
+    }
+
  
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

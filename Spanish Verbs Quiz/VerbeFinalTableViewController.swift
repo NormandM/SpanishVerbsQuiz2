@@ -102,39 +102,38 @@ class VerbeFinalTableViewController: UITableViewController {
         }else{
             sectionListe = [selectionVerbe[2]]
         }
-        print(selectionVerbe)
-        print(sectionListe)
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+       
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
         
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        
         return sectionListe.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        
         return finalVerb.count
     }
     
-    //override func tableView( tableView : UITableView,  titleForHeaderInSection section: Int)->String {
-     //   return  sectionListe
-   // }
+
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return " \(sectionListe[0])"
+    }
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
+        header.contentView.backgroundColor = UIColor(red: 165/255, green: 200/255, blue: 233/255, alpha: 1.0) //make the background color light blue
+        header.textLabel!.textColor = UIColor.whiteColor() //make the text white
+        header.alpha = 1.0 //make the header transparent
+        header.textLabel?.textAlignment = NSTextAlignment.Center
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

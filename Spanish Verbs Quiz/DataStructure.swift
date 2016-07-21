@@ -34,9 +34,6 @@ struct VerbeEspagnol{
     }
 }
 
-struct Alternate {
-    let verbo: String = ""
-    let selected: Bool = false
-}
+
 
 

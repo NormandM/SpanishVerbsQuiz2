@@ -36,7 +36,7 @@ class tempsDeVerbeTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
 
     // MARK: - Table view data source
@@ -93,7 +93,6 @@ class tempsDeVerbeTableViewController: UITableViewController {
                 verbeTotal = [verbeInfinitif, nomSection, leTemps ]
                 let controller = segue.destinationViewController as! VerbeFinalTableViewController
                 controller.selectionVerbe = verbeTotal
-                print(verbeTotal)
                 
             }
             

@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E02D7F61D4140DC00F96891 /* Error Warning.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8E02D7F51D4140DC00F96891 /* Error Warning.wav */; };
+		8E02D7F81D4140FB00F96891 /* Incoming Text 01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8E02D7F71D4140FB00F96891 /* Incoming Text 01.wav */; };
 		8E2EA16A1D36D86900445DCC /* arr5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E2EA1691D36D86900445DCC /* arr5.plist */; };
 		8E8F123E1D2B030300351BC9 /* quizTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8F123D1D2B030300351BC9 /* quizTableViewController.swift */; };
+		8E948E5E1D3C189500297896 /* plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E948E5D1D3C189500297896 /* plist.swift */; };
+		8EBBA5D01D3D59E600A1E5C5 /* StatisticsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBA5CF1D3D59E600A1E5C5 /* StatisticsTableViewController.swift */; };
 		8EC4ABCB1D17358D007359FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4ABCA1D17358D007359FF /* AppDelegate.swift */; };
 		8EC4ABCD1D17358D007359FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4ABCC1D17358D007359FF /* ViewController.swift */; };
 		8EC4ABD01D17358D007359FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC4ABCE1D17358D007359FF /* Main.storyboard */; };
@@ -18,7 +22,6 @@
 		8EC4ABEB1D17358E007359FF /* Spanish_Verbs_QuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4ABEA1D17358E007359FF /* Spanish_Verbs_QuizUITests.swift */; };
 		8EC4ABFF1D186BB4007359FF /* DataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4ABFE1D186BB4007359FF /* DataStructure.swift */; };
 		8ECAEF3F1D3035A300638EB6 /* QuestionFinaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAEF3E1D3035A300638EB6 /* QuestionFinaleViewController.swift */; };
-		8ECAEF411D31835500638EB6 /* verbosModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAEF401D31835500638EB6 /* verbosModalViewController.swift */; };
 		8ECAEF431D318F5A00638EB6 /* tiempoModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAEF421D318F5A00638EB6 /* tiempoModalViewController.swift */; };
 		8EF577FE1D1C4E3B00C8C6DE /* verbListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF577FD1D1C4E3B00C8C6DE /* verbListViewController.swift */; };
 		8EF578001D1C7AB200C8C6DE /* tempsDeVerbeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF577FF1D1C7AB200C8C6DE /* tempsDeVerbeTableViewController.swift */; };
@@ -43,8 +46,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E02D7F51D4140DC00F96891 /* Error Warning.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Error Warning.wav"; sourceTree = "<group>"; };
+		8E02D7F71D4140FB00F96891 /* Incoming Text 01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Incoming Text 01.wav"; sourceTree = "<group>"; };
 		8E2EA1691D36D86900445DCC /* arr5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = arr5.plist; sourceTree = "<group>"; };
 		8E8F123D1D2B030300351BC9 /* quizTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = quizTableViewController.swift; sourceTree = "<group>"; };
+		8E948E5D1D3C189500297896 /* plist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = plist.swift; sourceTree = "<group>"; };
+		8EBBA5CF1D3D59E600A1E5C5 /* StatisticsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsTableViewController.swift; sourceTree = "<group>"; };
 		8EC4ABC71D17358D007359FF /* Spanish Verbs Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spanish Verbs Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC4ABCA1D17358D007359FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EC4ABCC1D17358D007359FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +67,6 @@
 		8EC4ABEC1D17358E007359FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EC4ABFE1D186BB4007359FF /* DataStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructure.swift; sourceTree = "<group>"; };
 		8ECAEF3E1D3035A300638EB6 /* QuestionFinaleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionFinaleViewController.swift; sourceTree = "<group>"; };
-		8ECAEF401D31835500638EB6 /* verbosModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = verbosModalViewController.swift; sourceTree = "<group>"; };
 		8ECAEF421D318F5A00638EB6 /* tiempoModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tiempoModalViewController.swift; sourceTree = "<group>"; };
 		8EF577FD1D1C4E3B00C8C6DE /* verbListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = verbListViewController.swift; sourceTree = "<group>"; };
 		8EF577FF1D1C7AB200C8C6DE /* tempsDeVerbeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tempsDeVerbeTableViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +98,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E02D7F41D41404D00F96891 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				8E02D7F71D4140FB00F96891 /* Incoming Text 01.wav */,
+				8E02D7F51D4140DC00F96891 /* Error Warning.wav */,
+			);
+			name = Sound;
+			path = "Spanish Verbs Quiz";
+			sourceTree = "<group>";
+		};
 		8E2EA1151D32A81800445DCC /* Plist */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				8ECAEF421D318F5A00638EB6 /* tiempoModalViewController.swift */,
-				8ECAEF401D31835500638EB6 /* verbosModalViewController.swift */,
 			);
 			name = "Modal ViewControllers";
 			sourceTree = "<group>";
@@ -113,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				8EC4ABC91D17358D007359FF /* Spanish Verbs Quiz */,
+				8E02D7F41D41404D00F96891 /* Sound */,
 				8EC4ABDE1D17358E007359FF /* Spanish Verbs QuizTests */,
 				8EC4ABE91D17358E007359FF /* Spanish Verbs QuizUITests */,
 				8EC4ABC81D17358D007359FF /* Products */,
@@ -146,6 +162,8 @@
 				8EF578011D1DC82C00C8C6DE /* VerbeFinalTableViewController.swift */,
 				8E8F123D1D2B030300351BC9 /* quizTableViewController.swift */,
 				8ECAEF3E1D3035A300638EB6 /* QuestionFinaleViewController.swift */,
+				8E948E5D1D3C189500297896 /* plist.swift */,
+				8EBBA5CF1D3D59E600A1E5C5 /* StatisticsTableViewController.swift */,
 			);
 			path = "Spanish Verbs Quiz";
 			sourceTree = "<group>";
@@ -272,7 +290,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E02D7F61D4140DC00F96891 /* Error Warning.wav in Resources */,
 				8E2EA16A1D36D86900445DCC /* arr5.plist in Resources */,
+				8E02D7F81D4140FB00F96891 /* Incoming Text 01.wav in Resources */,
 				8EC4ABD51D17358D007359FF /* LaunchScreen.storyboard in Resources */,
 				8EC4ABD21D17358D007359FF /* Assets.xcassets in Resources */,
 				8EC4ABD01D17358D007359FF /* Main.storyboard in Resources */,
@@ -300,13 +320,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8ECAEF411D31835500638EB6 /* verbosModalViewController.swift in Sources */,
 				8EC4ABFF1D186BB4007359FF /* DataStructure.swift in Sources */,
 				8E8F123E1D2B030300351BC9 /* quizTableViewController.swift in Sources */,
 				8ECAEF3F1D3035A300638EB6 /* QuestionFinaleViewController.swift in Sources */,
+				8E948E5E1D3C189500297896 /* plist.swift in Sources */,
 				8EF577FE1D1C4E3B00C8C6DE /* verbListViewController.swift in Sources */,
 				8EF578001D1C7AB200C8C6DE /* tempsDeVerbeTableViewController.swift in Sources */,
 				8EF578021D1DC82C00C8C6DE /* VerbeFinalTableViewController.swift in Sources */,
+				8EBBA5D01D3D59E600A1E5C5 /* StatisticsTableViewController.swift in Sources */,
 				8EC4ABCD1D17358D007359FF /* ViewController.swift in Sources */,
 				8ECAEF431D318F5A00638EB6 /* tiempoModalViewController.swift in Sources */,
 				8EC4ABCB1D17358D007359FF /* AppDelegate.swift in Sources */,

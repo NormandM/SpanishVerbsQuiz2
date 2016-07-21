@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PX9-hV-lJm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PX9-hV-lJm">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Escoger el modo: -->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Spanish_Verbs_Quiz" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,40 +15,58 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uB8-6n-aep">
-                                <rect key="frame" x="20" y="385" width="560" height="30"/>
-                                <state key="normal" title="Lista de los Verbos"/>
+                                <rect key="frame" x="16" y="223" width="122" height="325"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Lista Verbos"/>
                                 <connections>
                                     <segue destination="Azy-iS-UYV" kind="show" id="zMs-L7-q6A"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxj-Nf-Bja">
-                                <rect key="frame" x="20" y="258" width="560" height="30"/>
+                                <rect key="frame" x="146" y="223" width="158" height="325"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Quiz"/>
                                 <connections>
                                     <segue destination="UQe-cW-mYT" kind="show" id="Olf-lx-E4V"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estudiar mas o listo por el Quiz" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHI-c7-J9h">
+                                <rect key="frame" x="16" y="64" width="288" height="156"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="156" id="lGO-nZ-6NM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uB8-6n-aep" secondAttribute="bottom" constant="185" id="6ra-uf-dPd"/>
-                            <constraint firstItem="uB8-6n-aep" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="GV5-65-YW7"/>
-                            <constraint firstItem="uB8-6n-aep" firstAttribute="top" secondItem="wxj-Nf-Bja" secondAttribute="bottom" constant="97" id="K5j-fr-ffx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="uB8-6n-aep" secondAttribute="trailing" id="m8U-Fj-JXN"/>
-                            <constraint firstItem="wxj-Nf-Bja" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="194" id="sas-jI-9sR"/>
-                            <constraint firstItem="wxj-Nf-Bja" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="v93-Qs-X3X"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wxj-Nf-Bja" secondAttribute="trailing" id="xid-Bs-goa"/>
+                            <constraint firstItem="wxj-Nf-Bja" firstAttribute="height" secondItem="uB8-6n-aep" secondAttribute="height" id="BpT-px-0cj"/>
+                            <constraint firstItem="wxj-Nf-Bja" firstAttribute="width" secondItem="uB8-6n-aep" secondAttribute="width" constant="36" id="GO7-fC-rDK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wxj-Nf-Bja" secondAttribute="bottom" constant="20" id="MNP-9s-Pvb"/>
+                            <constraint firstItem="wxj-Nf-Bja" firstAttribute="leading" secondItem="uB8-6n-aep" secondAttribute="trailing" constant="8" id="P2a-98-yGZ"/>
+                            <constraint firstItem="wxj-Nf-Bja" firstAttribute="leading" secondItem="uB8-6n-aep" secondAttribute="trailing" constant="8" id="Pd6-Ak-eIA"/>
+                            <constraint firstItem="uB8-6n-aep" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fJ0-s7-oCC"/>
+                            <constraint firstItem="wxj-Nf-Bja" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="hw9-I6-ML2"/>
+                            <constraint firstItem="wxj-Nf-Bja" firstAttribute="top" secondItem="DHI-c7-J9h" secondAttribute="bottom" constant="3" id="msx-7B-W0R"/>
+                            <constraint firstItem="DHI-c7-J9h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="x1c-fG-PpR"/>
+                            <constraint firstItem="DHI-c7-J9h" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="xHl-jE-eGB"/>
+                            <constraint firstItem="DHI-c7-J9h" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="xod-EB-2PZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uB8-6n-aep" secondAttribute="bottom" constant="20" id="zw1-rg-1Jc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="jzu-FQ-VLG"/>
+                    <navigationItem key="navigationItem" title="Escoger el modo: " id="F8V-7B-aaR"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117" y="381"/>
+            <point key="canvasLocation" x="672" y="381"/>
         </scene>
         <!--Escoger un verbo-->
         <scene sceneID="bEz-Cd-odD">
@@ -59,14 +77,14 @@
                         <viewControllerLayoutGuide type="bottom" id="NLV-hH-RgG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Een-YX-FKH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nnl-ml-wWj">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" id="1cQ-bQ-60g">
-                                    <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <scopeButtonTitles>
@@ -75,15 +93,15 @@
                                     </scopeButtonTitles>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Gx2-dA-Ywr" style="IBUITableViewCellStyleDefault" id="EFG-Hs-abq">
-                                        <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Gx2-dA-Ywr" style="IBUITableViewCellStyleDefault" id="EFG-Hs-abq">
+                                        <rect key="frame" x="0.0" y="136" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EFG-Hs-abq" id="FAe-xg-AM4">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gx2-dA-Ywr">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -92,7 +110,6 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.64705882349999999" green="0.7843137255" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="eth-gc-h9L" kind="show" identifier="showTempsVerbe" id="Kj1-eE-pY2"/>
                                         </connections>
@@ -109,6 +126,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Escoger un verbo" id="wA7-Ry-p7Y"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="searchBar" destination="1cQ-bQ-60g" id="bGg-5n-70l"/>
                         <outlet property="tableView" destination="Nnl-ml-wWj" id="Rfo-kV-5id"/>
@@ -116,39 +134,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="buA-2C-62t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800" y="381"/>
+            <point key="canvasLocation" x="1102" y="387"/>
         </scene>
         <!--Quiz Table View Controller-->
         <scene sceneID="jsh-bx-QLu">
             <objects>
                 <tableViewController id="UQe-cW-mYT" customClass="quizTableViewController" customModule="Spanish_Verbs_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="L3y-lS-trt">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="Uwc-nT-9th">
-                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="Selectionar los tempos de verbos y confirmar  →" id="6E8-zi-SeK">
-                                    <barButtonItem key="rightBarButtonItem" title="Listo" id="6Q0-ZG-6zi">
-                                        <connections>
-                                            <action selector="quizSelectionButton:" destination="UQe-cW-mYT" id="RhA-6o-jBP"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </navigationItem>
-                            </items>
-                        </navigationBar>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escoger los tiempos de verbos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fhu-gi-TnG">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.64705882349999999" green="0.7843137255" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="verbCell" textLabel="D50-JB-b3q" style="IBUITableViewCellStyleDefault" id="ySq-Fd-rCX">
-                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="verbCell" textLabel="D50-JB-b3q" style="IBUITableViewCellStyleDefault" id="ySq-Fd-rCX">
+                                <rect key="frame" x="0.0" y="136" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ySq-Fd-rCX" id="78s-on-PGf">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="D50-JB-b3q">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -164,7 +177,15 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="gbq-PQ-G9U">
+                        <barButtonItem key="rightBarButtonItem" title="Listo -&gt;" id="5vm-Xm-iD4">
+                            <connections>
+                                <action selector="listo:" destination="UQe-cW-mYT" id="uDM-H0-0UT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <segue destination="WsX-EU-CXA" kind="show" identifier="showQuestionFinal" id="nSS-EN-cIg"/>
                         <segue destination="fy0-xs-acK" kind="presentation" identifier="alerteChoixTemps" modalPresentationStyle="formSheet" id="UNL-8T-Bgq"/>
@@ -172,22 +193,22 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nI9-Ws-vJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1806" y="1057"/>
+            <point key="canvasLocation" x="672" y="1060"/>
         </scene>
-        <!--Question Finale View Controller-->
+        <!--Escribir el verbo conjugado-->
         <scene sceneID="bDP-vY-vN0">
             <objects>
-                <viewController id="WsX-EU-CXA" customClass="QuestionFinaleViewController" customModule="Spanish_Verbs_Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Escribir el verbo conjugado" id="WsX-EU-CXA" customClass="QuestionFinaleViewController" customModule="Spanish_Verbs_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZP6-8R-A6T"/>
                         <viewControllerLayoutGuide type="bottom" id="w7i-7w-9HR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JaZ-DG-fKH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="verbe à l'infinitif" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MxH-Fa-p14">
-                                <rect key="frame" x="0.0" y="109" width="600" height="35"/>
+                                <rect key="frame" x="0.0" y="109" width="320" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="pMB-6t-fmu"/>
                                 </constraints>
@@ -196,7 +217,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mode du verbe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnZ-eR-ifb">
-                                <rect key="frame" x="0.0" y="164" width="600" height="35"/>
+                                <rect key="frame" x="0.0" y="164" width="320" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="bp3-xC-GkK"/>
                                 </constraints>
@@ -205,7 +226,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="temps du verbe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgz-3s-ZO8">
-                                <rect key="frame" x="0.0" y="209" width="600" height="35"/>
+                                <rect key="frame" x="0.0" y="209" width="320" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="1H0-cQ-wEI"/>
                                 </constraints>
@@ -214,31 +235,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAZ-wJ-t5o">
-                                <rect key="frame" x="218" y="455" width="165" height="50"/>
+                                <rect key="frame" x="78" y="423" width="165" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="H6J-0f-Jcq"/>
                                     <constraint firstAttribute="width" constant="165" id="mEG-b8-ng7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
-                                <state key="normal" title="¡Ottro!"/>
+                                <state key="normal" title="¡Otro!"/>
+                                <connections>
+                                    <action selector="otro:" destination="WsX-EU-CXA" eventType="touchUpInside" id="zVw-rX-jur"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S1i-Q8-IDZ">
-                                <rect key="frame" x="102" y="285" width="451" height="30"/>
+                                <rect key="frame" x="98" y="269" width="179" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="WsX-EU-CXA" id="aWV-13-z09"/>
+                                </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="el" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cia-YD-BQ8">
-                                <rect key="frame" x="0.0" y="294" width="94" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="94" id="QU7-sn-YRq"/>
-                                    <constraint firstAttribute="height" constant="21" id="XTi-3n-JGc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="correction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wym-xb-QiZ">
-                                <rect key="frame" x="0.0" y="346" width="600" height="39"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wym-xb-QiZ">
+                                <rect key="frame" x="0.0" y="330" width="320" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="FdM-lB-jgR"/>
                                 </constraints>
@@ -247,10 +264,24 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hi-pR-rCB">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <color key="backgroundColor" red="1" green="0.93015008219999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="27"/>
-                                <state key="normal" title="ver statistica"/>
+                                <state key="normal" title="ver statistica →"/>
+                                <connections>
+                                    <segue destination="ZGU-pe-Fof" kind="show" id="rkJ-tU-YOD"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="el" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Cia-YD-BQ8">
+                                <rect key="frame" x="0.0" y="278" width="90" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="QU7-sn-YRq"/>
+                                    <constraint firstAttribute="height" constant="21" id="XTi-3n-JGc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -260,6 +291,7 @@
                             <constraint firstItem="5Hi-pR-rCB" firstAttribute="leading" secondItem="wym-xb-QiZ" secondAttribute="leading" id="5XO-fc-a8q"/>
                             <constraint firstItem="xnZ-eR-ifb" firstAttribute="leading" secondItem="JaZ-DG-fKH" secondAttribute="leading" id="8aJ-lf-1hy"/>
                             <constraint firstItem="MxH-Fa-p14" firstAttribute="leading" secondItem="JaZ-DG-fKH" secondAttribute="leading" id="C0Y-9b-iuD"/>
+                            <constraint firstItem="S1i-Q8-IDZ" firstAttribute="leading" secondItem="Cia-YD-BQ8" secondAttribute="trailing" constant="8" id="DzQ-Yd-5tJ"/>
                             <constraint firstItem="S1i-Q8-IDZ" firstAttribute="centerY" secondItem="JaZ-DG-fKH" secondAttribute="centerY" id="ETO-OB-ROF"/>
                             <constraint firstAttribute="trailing" secondItem="MxH-Fa-p14" secondAttribute="trailing" id="JnI-yd-Dc2"/>
                             <constraint firstItem="5Hi-pR-rCB" firstAttribute="leading" secondItem="JaZ-DG-fKH" secondAttribute="leading" id="KYt-ph-yEn"/>
@@ -286,34 +318,44 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="XRB-Vt-iRu"/>
                                 <exclude reference="LYQ-vA-mIW"/>
                                 <exclude reference="KYt-ph-yEn"/>
                             </mask>
                         </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="correction" destination="wym-xb-QiZ" id="qRa-MJ-r5b"/>
+                        <outlet property="leTempsDuVerbe" destination="Mgz-3s-ZO8" id="SVS-hl-FwN"/>
+                        <outlet property="modeDuVerbe" destination="xnZ-eR-ifb" id="Q8J-4H-HUK"/>
+                        <outlet property="personneDuVerbe" destination="Cia-YD-BQ8" id="1ia-96-O7v"/>
+                        <outlet property="reponse" destination="S1i-Q8-IDZ" id="gIN-UT-eh0"/>
+                        <outlet property="verbeInfinitif" destination="MxH-Fa-p14" id="8xg-KW-GP9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7h-m7-4EN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2562" y="1940"/>
+            <point key="canvasLocation" x="1258" y="1060"/>
         </scene>
-        <!--Temps De Verbe Table View Controller-->
+        <!--Escoger un tiempo de verbo-->
         <scene sceneID="Rjb-eG-Jnr">
             <objects>
-                <tableViewController id="eth-gc-h9L" customClass="tempsDeVerbeTableViewController" customModule="Spanish_Verbs_Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Escoger un tiempo de verbo" id="eth-gc-h9L" customClass="tempsDeVerbeTableViewController" customModule="Spanish_Verbs_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zHu-d0-B1B">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="verbCell2" textLabel="959-RK-j53" style="IBUITableViewCellStyleDefault" id="FHW-KM-ffR">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="verbCell2" textLabel="959-RK-j53" style="IBUITableViewCellStyleDefault" id="FHW-KM-ffR">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FHW-KM-ffR" id="VAc-Lo-zWV">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="959-RK-j53">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -331,25 +373,26 @@
                             <outlet property="delegate" destination="eth-gc-h9L" id="J2H-6E-XcC"/>
                         </connections>
                     </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lc8-Zk-UZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2556" y="381"/>
+            <point key="canvasLocation" x="1524" y="387"/>
         </scene>
         <!--Verbe Final Table View Controller-->
         <scene sceneID="Kmr-BJ-fSV">
             <objects>
                 <tableViewController id="NVt-kw-gPn" customClass="VerbeFinalTableViewController" customModule="Spanish_Verbs_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="D1o-KA-uLw">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellVerb" id="w3s-7V-vnP">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w3s-7V-vnP" id="Ezc-ju-UsY">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -362,7 +405,45 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="icr-Dr-EfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3234" y="381"/>
+            <point key="canvasLocation" x="1920" y="387"/>
+        </scene>
+        <!--Resultados por cada tiempo-->
+        <scene sceneID="ktm-8J-8lA">
+            <objects>
+                <tableViewController title="Resultados por cada tiempo" id="ZGU-pe-Fof" customClass="StatisticsTableViewController" customModule="Spanish_Verbs_Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Q3h-Pj-mZq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="A3a-cW-4bJ" style="IBUITableViewCellStyleDefault" id="u29-5Q-Lsu">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u29-5Q-Lsu" id="d4q-oj-3mV">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="A3a-cW-4bJ">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ZGU-pe-Fof" id="p1q-Bk-8Lh"/>
+                            <outlet property="delegate" destination="ZGU-pe-Fof" id="5bA-tC-weF"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gco-eO-HDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1735" y="1060"/>
         </scene>
         <!--Tiempo Modal View Controller-->
         <scene sceneID="efj-JD-ZKO">
@@ -373,11 +454,11 @@
                         <viewControllerLayoutGuide type="bottom" id="jg8-JH-weu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Iac-eL-zZt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1r-j7-zaa">
-                                <rect key="frame" x="-4" y="0.0" width="383" height="44"/>
+                                <rect key="frame" x="-4" y="0.0" width="328" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="x8l-iV-syE"/>
                                 </constraints>
@@ -392,7 +473,7 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hay que escoger al menos un tiempo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xx-2G-owU">
-                                <rect key="frame" x="16" y="323.5" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="274" width="288" height="20.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.060655785720000001" green="0.15792367539999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -410,26 +491,32 @@
                         </constraints>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5tk-uP-zXt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3347" y="1872"/>
+            <point key="canvasLocation" x="672" y="1755"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="E6I-Lm-7Fv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PX9-hV-lJm" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="zCn-9R-E3E">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zCn-9R-E3E">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.59215686270000001" green="0.61176470589999998" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="lqY-fT-tB1">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dBa-VL-qgY"/>
                     </connections>

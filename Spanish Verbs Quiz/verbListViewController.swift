@@ -37,7 +37,6 @@ class verbListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         listeVerbe = listeVerbe.sort(alpha)
         
-        // Do any additional setup after loading the view.
     }
   // Setting up the searchBar active: Ttrue/False
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {

@@ -22,10 +22,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
- //   func aleatoire(nombre: Int) -> Int {
-  //      randomVerb = Int(arc4random_uniform(UInt32(nombre)))
-  //      return randomVerb
- //   }
+
 
 
 }
