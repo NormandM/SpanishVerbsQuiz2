@@ -10,7 +10,10 @@ import UIKit
 
 class quizTableViewController: UITableViewController {
     var arraySelection: [String] = []
-
+    var refIndexPath = [NSIndexPath]()
+     var selectedTimeVerbes = NSMutableSet()
+    
+    
     let sectionListe = ["INDICATIVO", "SUBJUNTIVO", "CONDICIONAL", "IMPERATIVO"]
     let item = [["Presente ", "Imperfecto ", "Pretérito ", "Futuro ", "Presente progresivo ", "Pretérito perfecto ", "Pluscuamperfecto ", "Futuro perfecto ", "Pretérito anterior "], ["Presente", "Imperfecto", "Futuro", "Pretérito perfecto", "Pluscuamperfecto"], ["Condicional", "Perfecto"], ["Positivo", "Negativo"]]
     
@@ -49,32 +52,49 @@ class quizTableViewController: UITableViewController {
       
         return item[section].count
     }
+    
+
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("verbCell", forIndexPath: indexPath)
-        cell.textLabel!.text = self.item[indexPath.section][indexPath.row]
-        return cell
+ 
         
+        cell.textLabel!.text = self.item[indexPath.section][indexPath.row]
+        
+        cell.selectionStyle = .None
+       configure(cell, forRowAtIndexPath: indexPath)
+        return cell
     }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
-        if cell?.accessoryType == .Checkmark{
-            cell?.accessoryType = .None
-            if let text = cell?.textLabel?.text, n = arraySelection.indexOf(text){
-                arraySelection.removeAtIndex(n)
-            }
-            
-        }else{
-            cell?.accessoryType = .Checkmark
+    func configure(cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if selectedTimeVerbes.containsObject(indexPath) {
+            // selected
+            cell.accessoryType = .Checkmark
             arraySelection.append(self.item[indexPath.section][indexPath.row])
         }
-
-        
-        
-        
+        else {
+            // not selected
+            cell.accessoryType = .None
+            if let text = cell.textLabel?.text, n = arraySelection.indexOf(text){
+                arraySelection.removeAtIndex(n)
+            }
+        }
     }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+
+        if selectedTimeVerbes.containsObject(indexPath) {
+            // deselect
+            selectedTimeVerbes.removeObject(indexPath)
+        }
+        else {
+            // select
+            selectedTimeVerbes.addObject(indexPath)
+        }
+        let cell = tableView.cellForRowAtIndexPath(indexPath)!
+        configure(cell, forRowAtIndexPath: indexPath)
+    }
+        
+
 
     
     // MARK: - Navigation
@@ -100,6 +120,7 @@ class quizTableViewController: UITableViewController {
 
         if segue.identifier == "showQuestionFinal"{
             let controller = segue.destinationViewController as! QuestionFinaleViewController
+            print(arraySelection)
             controller.infoQuiz = arraySelection
 
        }

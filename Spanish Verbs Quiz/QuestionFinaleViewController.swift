@@ -23,11 +23,13 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
     var arr: NSMutableArray = []
     var arrN: [[String]] = []
     var verbeCorrige = ""
+    var verbeCorrigeSubj = ""
     var personneVerbeCount = 0
     var personneChoisi = ""
     var infoQuiz: [String] = []
     var verbeChoisi = ""
     var indexVerbe = 0
+    var IndexVerbeSubj2 = 0
     var indexTemps = 0
     var modo: [String] = []
     var tempsVerbe = ""
@@ -44,6 +46,16 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Setting up notification to detect when appa goes into the background
+        //let notificationCenter = NSNotificationCenter.defaultCenter()
+       // notificationCenter.addObserver(self, selector: #selector(QuestionFinaleViewController.appMovedToBackground, name: UIApplicationWillResignActiveNotification, object: nil)
+        
+        // Setting up notification to detect rotation
+       // let notificationCenter2 = NSNotificationCenter.defaultCenter()
+      //  notificationCenter2.addObserver(self, selector: #selector(QuestionFinaleViewController.rotated), name: UIDeviceOrientationDidChangeNotification, object: nil)
+
+        
+        
         if let plist = Plist(name: "arr5") {
             var n = 0
             arr = plist.getMutablePlistFile()!
@@ -85,7 +97,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
         choixDeVerbe()
     }
         
-        func choixDeVerbe() -> String{
+        func choixDeVerbe() -> [String]{
             if let plistPath = NSBundle.mainBundle().pathForResource("arr5", ofType: "plist"),
                verbArray = NSArray(contentsOfFile: plistPath){
             var n = 0
@@ -147,10 +159,13 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
                     modo.append(tempsVerbe)
                     modo.append ("Subjuntivo")
                     indexVerbe = indexVerbe + Ref.ImperfectoSub.rawValue
+                    IndexVerbeSubj2 = indexVerbe + 1
+                    
                 case .PluscuamperfectoSub:
                     modo.append(tempsVerbe)
                     modo.append ("Subjuntivo")
                     indexVerbe = indexVerbe + Ref.PluscuamperfectoSub.rawValue
+                    IndexVerbeSubj2 = indexVerbe + 1
                 case .PresenteSub:
                     modo.append(tempsVerbe)
                     modo.append ("Subjuntivo")
@@ -183,6 +198,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
                
                 modeDuVerbe.text = modo[1]
                 leTempsDuVerbe.text = modo[0]
+                print(modo[0])
                 let verbeChoisi2 = verbeChoisi.uppercaseString
                 verbeInfinitif.text? = verbeChoisi2
                
@@ -190,6 +206,8 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
             }
             
             let allVerbs = VerbeEspagnol(verbArray: verbArray, n: indexVerbe)
+            let allVerbsSubj2 = VerbeEspagnol(verbArray: verbArray, n: IndexVerbeSubj2)
+                
             
             if modo[1] == "Imperativo" {
                 personneVerbeCount = 5
@@ -205,26 +223,31 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
                 case .yo:
                     personneChoisi = "yo"
                     verbeCorrige = allVerbs.yo
+                    verbeCorrigeSubj = allVerbsSubj2.yo
                     
                 case .tu:
                     personneChoisi = "tu"
                     verbeCorrige = allVerbs.tu
-                    
+                    verbeCorrigeSubj = allVerbsSubj2.tu
                 case .el:
                     personneChoisi = "el"
                     verbeCorrige = allVerbs.el
+                    verbeCorrigeSubj = allVerbsSubj2.el
                     
                 case .nosotros:
                     personneChoisi = "nosotros"
                     verbeCorrige = allVerbs.nosotros
+                    verbeCorrigeSubj = allVerbsSubj2.nosotros
                     
                 case .vosotros:
                     personneChoisi = "vosotros"
                     verbeCorrige = allVerbs.vosotros
+                    verbeCorrigeSubj = allVerbsSubj2.vosotros
                     
                 case .ellos:
                     personneChoisi = "ellos"
                     verbeCorrige = allVerbs.ellos
+                    verbeCorrigeSubj = allVerbsSubj2.ellos
                     
                 }
             }
@@ -239,13 +262,37 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
             
            }
         
-    
-    return verbeCorrige
+            print(verbeCorrigeSubj)
+            print(verbeCorrige)
+    return [verbeCorrige, verbeCorrigeSubj]
+            
     
     }
     
     func textFieldShouldReturn(reponse: UITextField) -> Bool {
         arrN[indexVerbe][11] = String(Int(arrN[indexVerbe][11])! + 1)
+        print(verbeCorrigeSubj)
+        print(verbeCorrige)
+        if (leTempsDuVerbe.text == "Pluscuamperfecto" || leTempsDuVerbe.text == "Imperfecto") && modeDuVerbe.text == "Subjuntivo" {
+            if reponse.text == verbeCorrigeSubj || reponse.text == verbeCorrige{
+                arrN[indexVerbe][10] = String(Int(arrN[indexVerbe][10])! + 1)
+                let filePath = NSBundle.mainBundle().pathForResource("Incoming Text 01", ofType: "wav")
+                soundURL = NSURL(fileURLWithPath: filePath!)
+                AudioServicesCreateSystemSoundID(soundURL!, &soundID)
+                AudioServicesPlaySystemSound(soundID)
+                correction.text = "¡Muy Bien¡"
+                correction.textColor = UIColor(red: 0/255, green: 255/255, blue: 0/255, alpha: 1.0)
+            }else{
+                let filePath = NSBundle.mainBundle().pathForResource("Error Warning", ofType: "wav")
+                soundURL = NSURL(fileURLWithPath: filePath!)
+                AudioServicesCreateSystemSoundID(soundURL!, &soundID)
+                AudioServicesPlaySystemSound(soundID)
+                
+                correction.text = "\(verbeCorrige) o \(verbeCorrigeSubj)"
+                correction.textColor = UIColor(red: 255/255, green: 17/255, blue: 93/255, alpha: 1.0)
+                
+            }
+        }else{
         if reponse.text == verbeCorrige{
             arrN[indexVerbe][10] = String(Int(arrN[indexVerbe][10])! + 1)
             let filePath = NSBundle.mainBundle().pathForResource("Incoming Text 01", ofType: "wav")
@@ -255,7 +302,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
             correction.text = "¡Muy Bien¡"
             correction.textColor = UIColor(red: 0/255, green: 255/255, blue: 0/255, alpha: 1.0)
             
-        }else{
+                }else{
             let filePath = NSBundle.mainBundle().pathForResource("Error Warning", ofType: "wav")
             soundURL = NSURL(fileURLWithPath: filePath!)
             AudioServicesCreateSystemSoundID(soundURL!, &soundID)
@@ -263,6 +310,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
 
             correction.text = verbeCorrige
             correction.textColor = UIColor(red: 255/255, green: 17/255, blue: 93/255, alpha: 1.0)
+            }
         }
         if Int(arrN[indexVerbe][11]) > 0 {
             arrN[indexVerbe][12] = String(Double(arrN[indexVerbe][10])! / Double(arrN[indexVerbe][11])! * 100) + "%"
@@ -287,7 +335,22 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
+    // the 3 next function moves the KeyBoards when keyboard appears or hides
+    func textFieldDidBeginEditing(textField: UITextField) {
+        animateViewMoving(true, moveValue: 50)
+    }
+    func textFieldDidEndEditing(textField: UITextField) {
+        animateViewMoving(false, moveValue: 50)
+    }
+    func animateViewMoving (up:Bool, moveValue :CGFloat){
+        let movementDuration:NSTimeInterval = 0.3
+        let movement:CGFloat = ( up ? -moveValue : moveValue)
+        UIView.beginAnimations( "animateView", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(movementDuration )
+        self.view.frame = CGRectOffset(self.view.frame, 0,  movement)
+        UIView.commitAnimations()
+    }
     /*
     // MARK: - Navigation
 

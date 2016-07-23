@@ -27,8 +27,9 @@ class VerbeFinalTableViewController: UITableViewController {
             verbArray = NSArray(contentsOfFile: plistPath){
             nombre = verbArray.count
             var allVerbs = VerbeEspagnol(verbArray: verbArray, n: randomVerb )
-            for verb in verbArray{
-                if selectionVerbe[0] == verb[1] as! String && selectionVerbe[1] == verb[2] as! String && selectionVerbe[2] == verb[3] as! String{
+            let transVerbArray: [[String]] = verbArray as! [[String]]
+            for verb in transVerbArray{
+                if selectionVerbe[0] == verb[1]  && selectionVerbe[1] == verb[2] && selectionVerbe[2] == verb[3] {
                     allVerbs = VerbeEspagnol(verbArray: verbArray, n: i)
                     if selectionVerbe[2] == "Subjuntivo imperfecto" || selectionVerbe[2] == "Subjuntivo pluscuamperfecto"{
                         subjImp = i
