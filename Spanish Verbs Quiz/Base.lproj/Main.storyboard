@@ -280,7 +280,7 @@
                                     <constraint firstAttribute="height" constant="30" id="2bN-Es-QwH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="27"/>
-                                <state key="normal" title="Ver estatisticas →"/>
+                                <state key="normal" title="Ver estadisticas →"/>
                                 <connections>
                                     <segue destination="ZGU-pe-Fof" kind="show" id="gtf-q2-xVO"/>
                                 </connections>
@@ -422,6 +422,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7aj-8V-eJ7">
+                            <rect key="frame" x="0.0" y="136" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="1" green="0.93015008219999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                            <state key="normal" title="Borrar las estadísticas"/>
+                            <connections>
+                                <action selector="borrarEstadisticas:" destination="ZGU-pe-Fof" eventType="touchUpInside" id="8f8-a7-4Zj"/>
+                            </connections>
+                        </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="A3a-cW-4bJ" style="IBUITableViewCellStyleDefault" id="u29-5Q-Lsu">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>

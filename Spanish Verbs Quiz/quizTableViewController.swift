@@ -12,6 +12,7 @@ class quizTableViewController: UITableViewController {
     var arraySelection: [String] = []
     var refIndexPath = [NSIndexPath]()
      var selectedTimeVerbes = NSMutableSet()
+    var arr: NSMutableArray = []
     
     
     let sectionListe = ["INDICATIVO", "SUBJUNTIVO", "CONDICIONAL", "IMPERATIVO"]
@@ -24,10 +25,6 @@ class quizTableViewController: UITableViewController {
         header.textLabel!.textColor = UIColor.whiteColor() //make the text white
         header.alpha = 1.0 //make the header transparent
         
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
     }
     
 
@@ -57,41 +54,41 @@ class quizTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("verbCell", forIndexPath: indexPath)
- 
-        
         cell.textLabel!.text = self.item[indexPath.section][indexPath.row]
-        
         cell.selectionStyle = .None
-       configure(cell, forRowAtIndexPath: indexPath)
+        configure(cell, forRowAtIndexPath: indexPath)
         return cell
     }
     func configure(cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if selectedTimeVerbes.containsObject(indexPath) {
             // selected
             cell.accessoryType = .Checkmark
-            arraySelection.append(self.item[indexPath.section][indexPath.row])
         }
         else {
             // not selected
             cell.accessoryType = .None
-            if let text = cell.textLabel?.text, n = arraySelection.indexOf(text){
-                arraySelection.removeAtIndex(n)
-            }
         }
+        
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-
         if selectedTimeVerbes.containsObject(indexPath) {
             // deselect
             selectedTimeVerbes.removeObject(indexPath)
+            let cell2 = tableView.cellForRowAtIndexPath(indexPath)!
+            if let text = cell2.textLabel?.text, n = arraySelection.indexOf(text){
+                 arraySelection.removeAtIndex(n)
+                }
+            
         }
         else {
             // select
             selectedTimeVerbes.addObject(indexPath)
+            arraySelection.append(self.item[indexPath.section][indexPath.row])
         }
         let cell = tableView.cellForRowAtIndexPath(indexPath)!
         configure(cell, forRowAtIndexPath: indexPath)
+
     }
         
 
@@ -100,18 +97,15 @@ class quizTableViewController: UITableViewController {
     // MARK: - Navigation
 
     @IBAction func listo(sender: UIBarButtonItem) {
+
+// Making sure at least one time verb is selected if not a modal View appears.
         var i = 0
         i = arraySelection.count
-        
         if i == 0{
-            
             performSegueWithIdentifier("alerteChoixTemps", sender: UIBarButtonItem.self)
         }else{
-            
             performSegueWithIdentifier("showQuestionFinal", sender: UIBarButtonItem.self)
         }
-
-        
     }
 
  
@@ -120,9 +114,8 @@ class quizTableViewController: UITableViewController {
 
         if segue.identifier == "showQuestionFinal"{
             let controller = segue.destinationViewController as! QuestionFinaleViewController
-            print(arraySelection)
             controller.infoQuiz = arraySelection
-
+            
        }
     }
     

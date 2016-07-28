@@ -107,10 +107,6 @@ class verbListViewController: UIViewController, UITableViewDataSource, UITableVi
                 controller.verbeInfinitif = verbeChoisi
                
             }
-            
-            
         }
-        
     }
-
 }

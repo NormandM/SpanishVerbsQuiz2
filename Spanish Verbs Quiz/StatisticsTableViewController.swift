@@ -30,11 +30,13 @@ class StatisticsTableViewController: UITableViewController {
     var positivo = ""
     var negativo = ""
     var item = [[""]]
+    var refresh = false
     
     let sectionListe = ["INDICATIVO", "SUBJUNTIVO", "CONDICIONAL", "IMPERATIVO"]
 
 
     var arrN: [[String]] = []
+    var arrNN: [[String]] = []
     var arr: NSMutableArray = []
     var scoreVerbeTotal: [Int] = []
     var scoreBonVerbe: [Int] = []
@@ -95,106 +97,101 @@ class StatisticsTableViewController: UITableViewController {
     }
         override func viewDidLoad() {
         super.viewDidLoad()
+        loadDataonDemand ()
 
- 
+    }
 
+    
+    func loadDataonDemand () {
+        // gets the mutable plist
         if let plist = Plist(name: "arr5") {
             var n = 0
             arr = plist.getMutablePlistFile()!
             var i = arr.count
-            while n < i {
-               arrN.append(arr[n] as! [String])
-               n = n + 1
+            while n < i{
+                arrN.append(arr[n] as! [String])
+                n = n + 1
             }
+            // calculations to have results per time of verb
             n = 0
             i = arrN.count
-            while n < i {
+            while n < i  {
                 var nn = 0
                 while nn < 21 {
-            if let ref = Ref(rawValue: nn){
-                switch ref{
-                case .PresenteInd:
-                    presenteBon = presenteBon + Int(arrN[n + nn][10])!
-                    presenteTot = presenteTot + Int(arrN[n + nn][11])!
-                case .ImperfectoInd:
-                    imperfectoBon = imperfectoBon + Int(arrN[n + nn][10])!
-                    imperfectoTot = imperfectoTot + Int(arrN[n + nn][11])!
-                case .PretéritoPerfectoInd:
-                    preteritoPerfectoBon = preteritoPerfectoBon + Int(arrN[n + nn][10])!
-                    preteritoPerfectoTot = preteritoPerfectoTot + Int(arrN[n + nn][11])!
-                    
-                case .PretéritoInd:
-                    preteritoBon = preteritoBon + Int(arrN[n + nn][10])!
-                    preteritoTot = preteritoTot + Int(arrN[n + nn][11])!
-                case .FuturoInd:
-                    futuroBon = futuroBon + Int(arrN[n + nn][10])!
-                    futuroTot = futuroTot + Int(arrN[n + nn][11])!
-                case .PluscuamperfectoInd:
-                    pluscuamperfectoBon = pluscuamperfectoBon + Int(arrN[n + nn][10])!
-                    pluscuamperfectoTot = pluscuamperfectoTot + Int(arrN[n + nn][11])!
-                case .FuturoPerfectoInd:
-                    futuroPerfectoBon = futuroPerfectoBon + Int(arrN[n + nn][10])!
-                    futuroPerfectoTot = futuroPerfectoTot + Int(arrN[n + nn][11])!
-
-                case .PresenteProgresivoInd:
-                    presenteProgresivoBon = presenteProgresivoBon + Int(arrN[n + nn][10])!
-                    presenteProgresivoTot = presenteProgresivoTot + Int(arrN[n + nn][11])!
-
-                case .PretéritoAnteriorInd:
-                    preteritoAnteriorBon = preteritoAnteriorBon + Int(arrN[n + nn][10])!
-                    preteritoAnteriorTot = preteritoAnteriorTot + Int(arrN[n + nn][11])!
-
-                case .FuturoSub:
-                    subjuntivoFuturoBon = subjuntivoFuturoBon + Int(arrN[n + nn][10])!
-                    subjuntivoFuturoTot = subjuntivoFuturoTot + Int(arrN[n + nn][11])!
-                case .ImperfectoSub:
-                    subjuntivoImperfectoBon = subjuntivoImperfectoBon + Int(arrN[n + nn][10])!
-                    subjuntivoImperfectoTot = subjuntivoImperfectoTot + Int(arrN[n + nn][11])!
-
-                case .ImperfectoSub2:
-                    subjuntivoImperfecto2Bon = subjuntivoImperfecto2Bon + Int(arrN[n + nn][10])!
-                    subjuntivoImperfecto2Tot = subjuntivoImperfecto2Tot + Int(arrN[n + nn][11])!
-
-                case .PluscuamperfectoSub:
-                    subjuntivoPluscuamperfectoBon = subjuntivoPluscuamperfectoBon + Int(arrN[n + nn][10])!
-                    subjuntivoPluscuamperfectoTot = subjuntivoPluscuamperfectoTot + Int(arrN[n + nn][11])!
-                case .PluscuamperfectoSub2:
-                    subjuntivoPluscuamperfecto2Bon = subjuntivoPluscuamperfecto2Bon + Int(arrN[n + nn][10])!
-                    subjuntivoPluscuamperfecto2Tot = subjuntivoPluscuamperfecto2Tot + Int(arrN[n + nn][11])!
-                case .PresenteSub:
-                    subjuntivoPresenteBon = subjuntivoPresenteBon + Int(arrN[n + nn][10])!
-                    subjuntivoPresenteTot = subjuntivoPresenteTot + Int(arrN[n + nn][11])!
-                case .PretéritoPerfectoSub:
-                    subjuntivoPreteritoPerfectoBon = subjuntivoPreteritoPerfectoBon + Int(arrN[n + nn][10])!
-                    subjuntivoPreteritoPerfectoTot = subjuntivoPreteritoPerfectoTot + Int(arrN[n + nn][11])!
-
-                case .FuturoPerfectoSub:
-                    subjuntivoFuturoPerfectoBon = subjuntivoFuturoPerfectoBon + Int(arrN[n + nn][10])!
-                    subjuntivoFuturoPerfectoTot = subjuntivoFuturoPerfectoTot + Int(arrN[n + nn][11])!
-
-                case .PerfectoCond:
-                    condicionalPerfectoBon = condicionalPerfectoBon + Int(arrN[n + nn][10])!
-                    condicionalPerfectoTot = condicionalPerfectoTot + Int(arrN[n + nn][11])!
-
-                case .CondicionalCond:
-                    condicionalBon = condicionalBon + Int(arrN[n + nn][10])!
-                    condicionalTot = condicionalTot + Int(arrN[n + nn][11])!
-                case .PositivoImp:
-                    imperativoPositivoBon = imperativoPositivoBon + Int(arrN[n + nn][10])!
-                    imperativoPositivoTot = imperativoPositivoTot + Int(arrN[n + nn][11])!
-
-                case .NegativoImp:
-                    imperativoNegativoBon = imperativoNegativoBon + Int(arrN[n + nn][10])!
-                    imperativoNegativoTot = imperativoNegativoTot + Int(arrN[n + nn][11])!
-                }
-                }
-                nn = nn + 1
+                    if let ref = Ref(rawValue: nn){
+                        switch ref{
+                        case .PresenteInd:
+                            presenteBon = presenteBon + Int(arrN[n + nn][10])!
+                            presenteTot = presenteTot + Int(arrN[n + nn][11])!
+                        case .ImperfectoInd:
+                            imperfectoBon = imperfectoBon + Int(arrN[n + nn][10])!
+                            imperfectoTot = imperfectoTot + Int(arrN[n + nn][11])!
+                        case .PretéritoPerfectoInd:
+                            preteritoPerfectoBon = preteritoPerfectoBon + Int(arrN[n + nn][10])!
+                            preteritoPerfectoTot = preteritoPerfectoTot + Int(arrN[n + nn][11])!
+                        case .PretéritoInd:
+                            preteritoBon = preteritoBon + Int(arrN[n + nn][10])!
+                            preteritoTot = preteritoTot + Int(arrN[n + nn][11])!
+                        case .FuturoInd:
+                            futuroBon = futuroBon + Int(arrN[n + nn][10])!
+                            futuroTot = futuroTot + Int(arrN[n + nn][11])!
+                        case .PluscuamperfectoInd:
+                            pluscuamperfectoBon = pluscuamperfectoBon + Int(arrN[n + nn][10])!
+                            pluscuamperfectoTot = pluscuamperfectoTot + Int(arrN[n + nn][11])!
+                        case .FuturoPerfectoInd:
+                            futuroPerfectoBon = futuroPerfectoBon + Int(arrN[n + nn][10])!
+                            futuroPerfectoTot = futuroPerfectoTot + Int(arrN[n + nn][11])!
+                        case .PresenteProgresivoInd:
+                            presenteProgresivoBon = presenteProgresivoBon + Int(arrN[n + nn][10])!
+                            presenteProgresivoTot = presenteProgresivoTot + Int(arrN[n + nn][11])!
+                        case .PretéritoAnteriorInd:
+                            preteritoAnteriorBon = preteritoAnteriorBon + Int(arrN[n + nn][10])!
+                            preteritoAnteriorTot = preteritoAnteriorTot + Int(arrN[n + nn][11])!
+                        case .FuturoSub:
+                            subjuntivoFuturoBon = subjuntivoFuturoBon + Int(arrN[n + nn][10])!
+                            subjuntivoFuturoTot = subjuntivoFuturoTot + Int(arrN[n + nn][11])!
+                        case .ImperfectoSub:
+                            subjuntivoImperfectoBon = subjuntivoImperfectoBon + Int(arrN[n + nn][10])!
+                            subjuntivoImperfectoTot = subjuntivoImperfectoTot + Int(arrN[n + nn][11])!
+                        case .ImperfectoSub2:
+                            subjuntivoImperfecto2Bon = subjuntivoImperfecto2Bon + Int(arrN[n + nn][10])!
+                            subjuntivoImperfecto2Tot = subjuntivoImperfecto2Tot + Int(arrN[n + nn][11])!
+                        case .PluscuamperfectoSub:
+                            subjuntivoPluscuamperfectoBon = subjuntivoPluscuamperfectoBon + Int(arrN[n + nn][10])!
+                            subjuntivoPluscuamperfectoTot = subjuntivoPluscuamperfectoTot + Int(arrN[n + nn][11])!
+                        case .PluscuamperfectoSub2:
+                            subjuntivoPluscuamperfecto2Bon = subjuntivoPluscuamperfecto2Bon + Int(arrN[n + nn][10])!
+                            subjuntivoPluscuamperfecto2Tot = subjuntivoPluscuamperfecto2Tot + Int(arrN[n + nn][11])!
+                        case .PresenteSub:
+                            subjuntivoPresenteBon = subjuntivoPresenteBon + Int(arrN[n + nn][10])!
+                            subjuntivoPresenteTot = subjuntivoPresenteTot + Int(arrN[n + nn][11])!
+                        case .PretéritoPerfectoSub:
+                            subjuntivoPreteritoPerfectoBon = subjuntivoPreteritoPerfectoBon + Int(arrN[n + nn][10])!
+                            subjuntivoPreteritoPerfectoTot = subjuntivoPreteritoPerfectoTot + Int(arrN[n + nn][11])!
+                        case .FuturoPerfectoSub:
+                            subjuntivoFuturoPerfectoBon = subjuntivoFuturoPerfectoBon + Int(arrN[n + nn][10])!
+                            subjuntivoFuturoPerfectoTot = subjuntivoFuturoPerfectoTot + Int(arrN[n + nn][11])!
+                        case .PerfectoCond:
+                            condicionalPerfectoBon = condicionalPerfectoBon + Int(arrN[n + nn][10])!
+                            condicionalPerfectoTot = condicionalPerfectoTot + Int(arrN[n + nn][11])!
+                        case .CondicionalCond:
+                            condicionalBon = condicionalBon + Int(arrN[n + nn][10])!
+                            condicionalTot = condicionalTot + Int(arrN[n + nn][11])!
+                        case .PositivoImp:
+                            imperativoPositivoBon = imperativoPositivoBon + Int(arrN[n + nn][10])!
+                            imperativoPositivoTot = imperativoPositivoTot + Int(arrN[n + nn][11])!
+                        case .NegativoImp:
+                            imperativoNegativoBon = imperativoNegativoBon + Int(arrN[n + nn][10])!
+                            imperativoNegativoTot = imperativoNegativoTot + Int(arrN[n + nn][11])!
+                        }
+                    }
+                    nn = nn + 1
                 }
                 n = n + 21
             }
             func write (bonne: Int, totale: Int) -> String {
                 let reponse: String
-                if totale > 0 && bonne > 0 {
+                if totale > 0  && refresh == false{
                     reponse = String(round(Double(bonne)/Double(totale) * 100)) + "%"
                 }else{
                     reponse = "__"
@@ -203,14 +200,16 @@ class StatisticsTableViewController: UITableViewController {
             }
             func writeImp (bonne: Int, totale: Int, bonne2: Int, total2: Int) -> String {
                 let reponseImp: String
-                if (totale > 0 || total2 > 0) && (bonne > 0 || bonne2 > 0) {
+                if (totale > 0 || total2 > 0) && refresh == false {
                     reponseImp = String (round(Double(bonne + bonne2) / Double(totale + total2) * 100)) + "%"
                 }else{
                     reponseImp = "__"
                 }
                 return reponseImp
             }
- 
+            
+            
+            
             presenteInd = "Presente: " + write(presenteBon, totale: presenteTot)
             imperfectoInd = "Imperfecto: " + write(imperfectoBon, totale: imperfectoTot)
             pretéritoInd = "Pretérito: " + write(preteritoBon, totale: preteritoTot)
@@ -231,42 +230,79 @@ class StatisticsTableViewController: UITableViewController {
             negativo = "Negativo: " + write(imperativoNegativoBon, totale: imperativoNegativoTot)
             let itemInt = [[presenteInd, imperfectoInd, pretéritoInd, futuroInd, presenteProgresivoInd, pretéritoPerfectoInd, pluscuamperfectoInd, futuroPerfectoInd, pretéritoAnteriorInd], [presenteSub, imperfectoSub, futuroSub, pretéritoPerfectoSub, pluscuamperfectoSub], [condicional, perfectoCond], [positivo, negativo]]
             item = itemInt
-
         
-
+        }
         
-    }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
+
+    // button to reset to 0 all statistics
+    @IBAction func borrarEstadisticas(sender: UIButton) {
+            arrNN = []
+            if let plist = Plist(name: "arr5") {
+                var n = 0
+                arr = plist.getMutablePlistFile()!
+                let i = arr.count
+                while n < i {
+                    arrNN.append(arr[n] as! [String])
+                    n = n + 1
+                }
+                let ii = arrNN.count
+                n = 0
+                while n < ii {
+                    arrNN[n][10] = "0"
+                    arrNN[n][11] = "0"
+                    arrNN[n][12] = "0"
+                    n = n + 1
+                }
+                
+            }
+            if let plist = Plist(name: "arr5"){
+                do {
+                    try plist.addValuesToPlistFile(arrNN)
+                    
+                } catch {
+                    print(error)
+                }
+            }else{
+                print("unable to get plist")
+            }
+        
+        
+        refresh = true
+        loadDataonDemand()
+        tableView.reloadData()
+        }
+
+
+       
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         return sectionListe[section]
     }
-
-
+    
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
         return sectionListe.count
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return item[section].count
     }
 
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         cell.textLabel!.text = self.item[indexPath.section][indexPath.row]
         return cell
     }
-    
+
 
  
 }

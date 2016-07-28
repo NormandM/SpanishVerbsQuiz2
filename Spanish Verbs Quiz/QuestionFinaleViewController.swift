@@ -46,16 +46,6 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Setting up notification to detect when appa goes into the background
-        //let notificationCenter = NSNotificationCenter.defaultCenter()
-       // notificationCenter.addObserver(self, selector: #selector(QuestionFinaleViewController.appMovedToBackground, name: UIApplicationWillResignActiveNotification, object: nil)
-        
-        // Setting up notification to detect rotation
-       // let notificationCenter2 = NSNotificationCenter.defaultCenter()
-      //  notificationCenter2.addObserver(self, selector: #selector(QuestionFinaleViewController.rotated), name: UIDeviceOrientationDidChangeNotification, object: nil)
-
-        
-        
         if let plist = Plist(name: "arr5") {
             var n = 0
             arr = plist.getMutablePlistFile()!
@@ -64,39 +54,36 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
                 arrN.append(arr[n] as! [String])
                 n = n + 1
             }
+            // adding if necessary three elements tpo the array for statistical results
             let ii = arrN.count
             n = 0
-            while n < ii {
-                if arrN[n].count < 13{
+            if arrN[n].count < 13{
+                while n < ii {
                     arrN[n].append("0")
                     arrN[n].append("0")
                     arrN[n].append("0")
-                }
                     n = n + 1
+                }
+            if let plist = Plist(name: "arr5"){
+                do {
+                    try plist.addValuesToPlistFile(arrN)
+                } catch {
+                    print(error)
+                }
+            }else{
+                print("unable to get plist")
             }
-            
         }
-        if let plist = Plist(name: "arr5"){
-            do {
-                try plist.addValuesToPlistFile(arrN)
-            } catch {
-                print(error)
-            }
-        }else{
-            print("unable to get plist")
-        }
-
+    }
+        
         choixDeVerbe()
-    
-        }
-    
-    
-    @IBAction func otro(sender: UIButton) {
+       }
+       @IBAction func otro(sender: UIButton) {
         correction.text = ""
         reponse.text = ""
         choixDeVerbe()
     }
-        
+// this functions selects a verb for the quiz, the time the person and returns the verb
         func choixDeVerbe() -> [String]{
             if let plistPath = NSBundle.mainBundle().pathForResource("arr5", ofType: "plist"),
                verbArray = NSArray(contentsOfFile: plistPath){
@@ -198,7 +185,6 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
                
                 modeDuVerbe.text = modo[1]
                 leTempsDuVerbe.text = modo[0]
-                print(modo[0])
                 let verbeChoisi2 = verbeChoisi.uppercaseString
                 verbeInfinitif.text? = verbeChoisi2
                
@@ -206,6 +192,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
             }
             
             let allVerbs = VerbeEspagnol(verbArray: verbArray, n: indexVerbe)
+                
             let allVerbsSubj2 = VerbeEspagnol(verbArray: verbArray, n: IndexVerbeSubj2)
                 
             
@@ -223,6 +210,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
                 case .yo:
                     personneChoisi = "yo"
                     verbeCorrige = allVerbs.yo
+
                     verbeCorrigeSubj = allVerbsSubj2.yo
                     
                 case .tu:
@@ -261,18 +249,25 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
             modo = []
             
            }
-        
-            print(verbeCorrigeSubj)
-            print(verbeCorrige)
     return [verbeCorrige, verbeCorrigeSubj]
             
-    
     }
     
     func textFieldShouldReturn(reponse: UITextField) -> Bool {
+        arrN = []
+        if let plist = Plist(name: "arr5") {
+           
+            var n = 0
+            arr = plist.getMutablePlistFile()!
+            let i = arr.count
+            while n < i {
+                arrN.append(arr[n] as! [String])
+                n = n + 1
+            }
+            
+// informs the user if the answer is good or bad, if bad what is the good answer and performs calculations for the statistics
         arrN[indexVerbe][11] = String(Int(arrN[indexVerbe][11])! + 1)
-        print(verbeCorrigeSubj)
-        print(verbeCorrige)
+        
         if (leTempsDuVerbe.text == "Pluscuamperfecto" || leTempsDuVerbe.text == "Imperfecto") && modeDuVerbe.text == "Subjuntivo" {
             if reponse.text == verbeCorrigeSubj || reponse.text == verbeCorrige{
                 arrN[indexVerbe][10] = String(Int(arrN[indexVerbe][10])! + 1)
@@ -295,6 +290,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
         }else{
         if reponse.text == verbeCorrige{
             arrN[indexVerbe][10] = String(Int(arrN[indexVerbe][10])! + 1)
+            //sound signal for good answer
             let filePath = NSBundle.mainBundle().pathForResource("Incoming Text 01", ofType: "wav")
             soundURL = NSURL(fileURLWithPath: filePath!)
             AudioServicesCreateSystemSoundID(soundURL!, &soundID)
@@ -303,6 +299,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
             correction.textColor = UIColor(red: 0/255, green: 255/255, blue: 0/255, alpha: 1.0)
             
                 }else{
+            //sound signal for bad answer
             let filePath = NSBundle.mainBundle().pathForResource("Error Warning", ofType: "wav")
             soundURL = NSURL(fileURLWithPath: filePath!)
             AudioServicesCreateSystemSoundID(soundURL!, &soundID)
@@ -315,7 +312,6 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
         if Int(arrN[indexVerbe][11]) > 0 {
             arrN[indexVerbe][12] = String(Double(arrN[indexVerbe][10])! / Double(arrN[indexVerbe][11])! * 100) + "%"
         }
-
         if let plist = Plist(name: "arr5"){
             do {
                 try plist.addValuesToPlistFile(arrN)
@@ -325,7 +321,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
         }else{
             print("unable to get plist")
         }
-
+        }
         reponse.resignFirstResponder()
         return true
         
@@ -351,14 +347,5 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
         self.view.frame = CGRectOffset(self.view.frame, 0,  movement)
         UIView.commitAnimations()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+ 
 }
