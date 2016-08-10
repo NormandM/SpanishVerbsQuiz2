@@ -35,7 +35,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
     var tempsVerbe = ""
 
     enum ModoChoix: String{
-        case PresenteInd = "Presente ", ImperfectoInd = "Imperfecto ", PretéritoInd = "Pretérito ", FuturoInd = "Futuro ", PresenteProgresivoInd = "Presente progresivo ", PretéritoPerfectoInd = "Pretérito perfecto ", PluscuamperfectoInd = "Pluscuamperfecto ", FuturoPerfectoInd = "Futuro perfecto ", PretéritoAnteriorInd = "Pretérito anterior ", PresenteSub = "Presente", ImperfectoSub = "Imperfecto", FuturoSub = "Futuro", PretéritoPerfectoSub = "Pretérito perfecto", PluscuamperfectoSub = "Pluscuamperfecto", CondicionalCond = "Condicional", PerfectoCond = "Perfecto", PositivoImp = "Positivo", NegativoImp = "Negativo", FuturoPerfectoSub = "Futuro perfecto"
+        case PresenteInd = "Presente ", ImperfectoInd = "Imperfecto ", PretéritoInd = "Pretérito ", FuturoInd = "Futuro ", PresenteProgresivoInd = "Presente Continuo ", PretéritoPerfectoInd = "Pretérito perfecto ", PluscuamperfectoInd = "Pluscuamperfecto ", FuturoPerfectoInd = "Futuro perfecto ", PretéritoAnteriorInd = "Pretérito anterior ", PresenteSub = "Presente", ImperfectoSub = "Imperfecto", FuturoSub = "Futuro", PretéritoPerfectoSub = "Pretérito perfecto", PluscuamperfectoSub = "Pluscuamperfecto", CondicionalCond = "Condicional", PerfectoCond = "Perfecto", PositivoImp = "Positivo", NegativoImp = "Negativo", FuturoPerfectoSub = "Futuro perfecto"
     }
     enum Ref: Int{
         case PresenteInd = 0, ImperfectoInd = 4, PretéritoInd = 1, FuturoInd = 2, PresenteProgresivoInd = 5, PretéritoPerfectoInd = 6, PluscuamperfectoInd = 7, FuturoPerfectoInd = 8, PretéritoAnteriorInd = 10, PresenteSub = 11, ImperfectoSub = 12, FuturoSub = 14, PretéritoPerfectoSub = 15, PluscuamperfectoSub = 16, CondicionalCond = 3, PerfectoCond = 9, PositivoImp = 19, NegativoImp = 20, FuturoPerfectoSub = 18
@@ -47,34 +47,9 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let plist = Plist(name: "arr5") {
-            var n = 0
             arr = plist.getMutablePlistFile()!
-            let i = arr.count
-            while n < i {
-                arrN.append(arr[n] as! [String])
-                n = n + 1
-            }
-            // adding if necessary three elements tpo the array for statistical results
-            let ii = arrN.count
-            n = 0
-            if arrN[n].count < 13{
-                while n < ii {
-                    arrN[n].append("0")
-                    arrN[n].append("0")
-                    arrN[n].append("0")
-                    n = n + 1
-                }
-            if let plist = Plist(name: "arr5"){
-                do {
-                    try plist.addValuesToPlistFile(arrN)
-                } catch {
-                    print(error)
-                }
-            }else{
-                print("unable to get plist")
-            }
+            arrN = arr.map{($0 as! [String])}
         }
-    }
         
         choixDeVerbe()
        }
@@ -256,14 +231,9 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(reponse: UITextField) -> Bool {
         arrN = []
         if let plist = Plist(name: "arr5") {
-           
-            var n = 0
             arr = plist.getMutablePlistFile()!
-            let i = arr.count
-            while n < i {
-                arrN.append(arr[n] as! [String])
-                n = n + 1
-            }
+            arrN = arr.map{($0 as! [String])}
+        }
             
 // informs the user if the answer is good or bad, if bad what is the good answer and performs calculations for the statistics
         arrN[indexVerbe][11] = String(Int(arrN[indexVerbe][11])! + 1)
@@ -321,7 +291,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
         }else{
             print("unable to get plist")
         }
-        }
+    
         reponse.resignFirstResponder()
         return true
         

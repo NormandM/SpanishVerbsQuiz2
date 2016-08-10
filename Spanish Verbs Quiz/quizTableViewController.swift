@@ -16,7 +16,7 @@ class quizTableViewController: UITableViewController {
     
     
     let sectionListe = ["INDICATIVO", "SUBJUNTIVO", "CONDICIONAL", "IMPERATIVO"]
-    let item = [["Presente ", "Imperfecto ", "Pretérito ", "Futuro ", "Presente progresivo ", "Pretérito perfecto ", "Pluscuamperfecto ", "Futuro perfecto ", "Pretérito anterior "], ["Presente", "Imperfecto", "Futuro", "Pretérito perfecto", "Pluscuamperfecto"], ["Condicional", "Perfecto"], ["Positivo", "Negativo"]]
+    let item = [["Presente ", "Imperfecto ", "Pretérito ", "Futuro ", "Presente Continuo ", "Pretérito perfecto ", "Pluscuamperfecto ", "Futuro perfecto ", "Pretérito anterior "], ["Presente", "Imperfecto", "Futuro", "Pretérito perfecto", "Pluscuamperfecto"], ["Condicional", "Perfecto"], ["Positivo", "Negativo"]]
     
     // Changing backgroung colors of the header of sections
     override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -113,6 +113,12 @@ class quizTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
         if segue.identifier == "showQuestionFinal"{
+            
+           
+            let backItem = UIBarButtonItem()
+            backItem.title = ""
+            navigationItem.backBarButtonItem = backItem
+           
             let controller = segue.destinationViewController as! QuestionFinaleViewController
             controller.infoQuiz = arraySelection
             

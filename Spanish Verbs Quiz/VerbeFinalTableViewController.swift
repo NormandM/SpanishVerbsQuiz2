@@ -10,7 +10,7 @@ import UIKit
 
 class VerbeFinalTableViewController: UITableViewController {
     enum TiempoVerbo: String {
-        case IndicativoPresente = "IndicativoPresente", IndicativoPretérito = "IndicativoPretérito", IndicativoFuturo = "IndicativoFuturo", Condicional = "Condicional", IndicativoImperfecto = "IndicativoImperfecto", IndicativoPresenteprogresivo = "IndicativoPresenteprogresivo", IndicativoPretéritoperfecto = "IndicativoPretéritoperfecto", IndicativoPluscuamperfecto = "IndicativoPluscuamperfecto", IndicativoFuturoperfecto = "IndicativoFuturoperfecto", Condicionalperfecto = "Condicionalperfecto", IndicativoPretéritoanterior = "IndicativoPretéritoanterior", Subjuntivopresente = "Subjuntivopresente", Subjuntivoimperfecto = "Subjuntivoimperfecto", Subjuntivofuturo = "Subjuntivofuturo", Subjuntivopretéritoperfecto = "Subjuntivopretéritoperfecto", Subjuntivopluscuamperfecto = "Subjuntivopluscuamperfecto", Subjuntivofuturoperfecto = "Subjuntivofuturoperfecto", Imperativopositivo = "Imperativopositivo", Imperativonegativo = "Imperativonegativo"
+        case IndicativoPresente = "IndicativoPresente", IndicativoPretérito = "IndicativoPretérito", IndicativoFuturo = "IndicativoFuturo", Condicional = "Condicional", IndicativoImperfecto = "IndicativoImperfecto", IndicativoPresenteContinuo = "IndicativoPresenteContinuo", IndicativoPretéritoperfecto = "IndicativoPretéritoperfecto", IndicativoPluscuamperfecto = "IndicativoPluscuamperfecto", IndicativoFuturoperfecto = "IndicativoFuturoperfecto", Condicionalperfecto = "Condicionalperfecto", IndicativoPretéritoanterior = "IndicativoPretéritoanterior", Subjuntivopresente = "Subjuntivopresente", Subjuntivoimperfecto = "Subjuntivoimperfecto", Subjuntivofuturo = "Subjuntivofuturo", Subjuntivopretéritoperfecto = "Subjuntivopretéritoperfecto", Subjuntivopluscuamperfecto = "Subjuntivopluscuamperfecto", Subjuntivofuturoperfecto = "Subjuntivofuturoperfecto", Imperativopositivo = "Imperativopositivo", Imperativonegativo = "Imperativonegativo"
     }
     var selectionVerbe = ["", "", ""]
     var nombre: Int = 0
@@ -48,7 +48,7 @@ class VerbeFinalTableViewController: UITableViewController {
             }
                 if let tiempoVerbo = TiempoVerbo(rawValue: tiempo){
                     switch tiempoVerbo{
-                        case .IndicativoPresente, .IndicativoPretérito, .IndicativoFuturo, .Condicional, .IndicativoImperfecto, .IndicativoPresenteprogresivo, .IndicativoPretéritoperfecto, .IndicativoPluscuamperfecto, .IndicativoFuturoperfecto, .Condicionalperfecto, .IndicativoPretéritoanterior:
+                        case .IndicativoPresente, .IndicativoPretérito, .IndicativoFuturo, .Condicional, .IndicativoImperfecto, .IndicativoPresenteContinuo, .IndicativoPretéritoperfecto, .IndicativoPluscuamperfecto, .IndicativoFuturoperfecto, .Condicionalperfecto, .IndicativoPretéritoanterior:
                             let firstperson = "yo " + allVerbs.yo
                             let secondperson = "tu " + allVerbs.tu
                             let thirdPerson = "el " + allVerbs.el

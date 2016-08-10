@@ -107,14 +107,10 @@ class StatisticsTableViewController: UITableViewController {
         if let plist = Plist(name: "arr5") {
             var n = 0
             arr = plist.getMutablePlistFile()!
-            var i = arr.count
-            while n < i{
-                arrN.append(arr[n] as! [String])
-                n = n + 1
-            }
+            arrN = arr.map{($0 as! [String])}
             // calculations to have results per time of verb
             n = 0
-            i = arrN.count
+            let i = arrN.count
             while n < i  {
                 var nn = 0
                 while nn < 21 {
@@ -214,7 +210,7 @@ class StatisticsTableViewController: UITableViewController {
             imperfectoInd = "Imperfecto: " + write(imperfectoBon, totale: imperfectoTot)
             pretéritoInd = "Pretérito: " + write(preteritoBon, totale: preteritoTot)
             futuroInd = "Futuro: " + write(futuroBon, totale: futuroTot)
-            presenteProgresivoInd = "Presente progresivo: " + write(presenteProgresivoBon, totale: presenteProgresivoTot)
+            presenteProgresivoInd = "Presente Continuo: " + write(presenteProgresivoBon, totale: presenteProgresivoTot)
             pretéritoPerfectoInd = "Pretérito perfecto: " + write(preteritoPerfectoBon, totale: preteritoPerfectoTot)
             pluscuamperfectoInd = "Pluscuamperfecto: " + write(pluscuamperfectoBon, totale: pluscuamperfectoTot)
             futuroPerfectoInd = "Futuro perfecto: " + write(futuroPerfectoBon, totale: futuroPerfectoTot)
@@ -247,11 +243,7 @@ class StatisticsTableViewController: UITableViewController {
             if let plist = Plist(name: "arr5") {
                 var n = 0
                 arr = plist.getMutablePlistFile()!
-                let i = arr.count
-                while n < i {
-                    arrNN.append(arr[n] as! [String])
-                    n = n + 1
-                }
+                arrNN = arr.map{($0 as! [String])}
                 let ii = arrNN.count
                 n = 0
                 while n < ii {

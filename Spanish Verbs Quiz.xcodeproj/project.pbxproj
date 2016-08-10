@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8E02D7F61D4140DC00F96891 /* Error Warning.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8E02D7F51D4140DC00F96891 /* Error Warning.wav */; };
 		8E02D7F81D4140FB00F96891 /* Incoming Text 01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8E02D7F71D4140FB00F96891 /* Incoming Text 01.wav */; };
-		8E2EA16A1D36D86900445DCC /* arr5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E2EA1691D36D86900445DCC /* arr5.plist */; };
+		8E4EE0EE1D4D84BB00C4C477 /* arr5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E4EE0ED1D4D84BB00C4C477 /* arr5.plist */; };
 		8E8F123E1D2B030300351BC9 /* quizTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8F123D1D2B030300351BC9 /* quizTableViewController.swift */; };
 		8E948E5E1D3C189500297896 /* plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E948E5D1D3C189500297896 /* plist.swift */; };
 		8EBBA5D01D3D59E600A1E5C5 /* StatisticsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBA5CF1D3D59E600A1E5C5 /* StatisticsTableViewController.swift */; };
@@ -48,7 +48,7 @@
 /* Begin PBXFileReference section */
 		8E02D7F51D4140DC00F96891 /* Error Warning.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Error Warning.wav"; sourceTree = "<group>"; };
 		8E02D7F71D4140FB00F96891 /* Incoming Text 01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Incoming Text 01.wav"; sourceTree = "<group>"; };
-		8E2EA1691D36D86900445DCC /* arr5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = arr5.plist; sourceTree = "<group>"; };
+		8E4EE0ED1D4D84BB00C4C477 /* arr5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = arr5.plist; sourceTree = "<group>"; };
 		8E8F123D1D2B030300351BC9 /* quizTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = quizTableViewController.swift; sourceTree = "<group>"; };
 		8E948E5D1D3C189500297896 /* plist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = plist.swift; sourceTree = "<group>"; };
 		8EBBA5CF1D3D59E600A1E5C5 /* StatisticsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsTableViewController.swift; sourceTree = "<group>"; };
@@ -108,18 +108,11 @@
 			path = "Spanish Verbs Quiz";
 			sourceTree = "<group>";
 		};
-		8E2EA1151D32A81800445DCC /* Plist */ = {
-			isa = PBXGroup;
-			children = (
-				8E2EA1691D36D86900445DCC /* arr5.plist */,
-			);
-			name = Plist;
-			sourceTree = "<group>";
-		};
 		8E2EA1161D32A86400445DCC /* Modal ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				8ECAEF421D318F5A00638EB6 /* tiempoModalViewController.swift */,
+				8E4EE0ED1D4D84BB00C4C477 /* arr5.plist */,
 			);
 			name = "Modal ViewControllers";
 			sourceTree = "<group>";
@@ -149,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				8E2EA1161D32A86400445DCC /* Modal ViewControllers */,
-				8E2EA1151D32A81800445DCC /* Plist */,
 				8EC4ABCA1D17358D007359FF /* AppDelegate.swift */,
 				8EC4ABCC1D17358D007359FF /* ViewController.swift */,
 				8EC4ABCE1D17358D007359FF /* Main.storyboard */,
@@ -254,6 +246,7 @@
 				TargetAttributes = {
 					8EC4ABC61D17358D007359FF = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = X6D769Z7F4;
 					};
 					8EC4ABDA1D17358E007359FF = {
 						CreatedOnToolsVersion = 7.3;
@@ -291,8 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E02D7F61D4140DC00F96891 /* Error Warning.wav in Resources */,
-				8E2EA16A1D36D86900445DCC /* arr5.plist in Resources */,
 				8E02D7F81D4140FB00F96891 /* Incoming Text 01.wav in Resources */,
+				8E4EE0EE1D4D84BB00C4C477 /* arr5.plist in Resources */,
 				8EC4ABD51D17358D007359FF /* LaunchScreen.storyboard in Resources */,
 				8EC4ABD21D17358D007359FF /* Assets.xcassets in Resources */,
 				8EC4ABD01D17358D007359FF /* Main.storyboard in Resources */,
@@ -474,10 +467,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Spanish Verbs Quiz/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NM.Spanish-Verbs-Quiz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -486,10 +482,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Spanish Verbs Quiz/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NM.Spanish-Verbs-Quiz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

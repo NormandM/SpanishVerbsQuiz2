@@ -16,7 +16,7 @@ class tempsDeVerbeTableViewController: UITableViewController {
     var verbeTotal = ["", "", ""]
     
     let sectionListe = ["INDICATIVO", "SUBJUNTIVO", "CONDICIONAL", "IMPERATIVO"]
-    let item = [["Presente", "Imperfecto", "Pretérito", "Futuro", "Presente progresivo", "Pretérito perfecto", "Pluscuamperfecto", "Futuro perfecto", "Pretérito anterior"], ["Presente", "Imperfecto", "Futuro", "Pretérito perfecto", "Pluscuamperfecto"], ["Condicional", "Perfecto"], ["Positivo", "Negativo"]]
+    let item = [["Presente", "Imperfecto", "Pretérito", "Futuro", "Presente Continuo", "Pretérito perfecto", "Pluscuamperfecto", "Futuro perfecto", "Pretérito anterior"], ["Presente", "Imperfecto", "Futuro", "Pretérito perfecto", "Pluscuamperfecto"], ["Condicional", "Perfecto"], ["Positivo", "Negativo"]]
     // Changing backgroung colors of the header of sections
     override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
@@ -90,6 +90,11 @@ class tempsDeVerbeTableViewController: UITableViewController {
                     nomSection = "Imperativo"
                     leTemps = nomSection + " " + leTemps.lowercaseString
                 }
+               
+                    let backItem = UIBarButtonItem()
+                    backItem.title = ""
+                    navigationItem.backBarButtonItem = backItem 
+                
                 verbeTotal = [verbeInfinitif, nomSection, leTemps ]
                 let controller = segue.destinationViewController as! VerbeFinalTableViewController
                 controller.selectionVerbe = verbeTotal
