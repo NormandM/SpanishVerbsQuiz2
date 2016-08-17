@@ -28,6 +28,7 @@ class VerbeFinalTableViewController: UITableViewController {
             nombre = verbArray.count
             var allVerbs = VerbeEspagnol(verbArray: verbArray, n: randomVerb )
             let transVerbArray: [[String]] = verbArray as! [[String]]
+    // Finding the selected verb in the Array
             for verb in transVerbArray{
                 if selectionVerbe[0] == verb[1]  && selectionVerbe[1] == verb[2] && selectionVerbe[2] == verb[3] {
                     allVerbs = VerbeEspagnol(verbArray: verbArray, n: i)
@@ -92,7 +93,7 @@ class VerbeFinalTableViewController: UITableViewController {
                             finalVerb = [firstperson, secondperson, thirdPerson, fourthPerson, fifthPerson, sixthPerson]
 
                     }
-
+                    navigationItem.title = allVerbs.verbo
                 }
 
             

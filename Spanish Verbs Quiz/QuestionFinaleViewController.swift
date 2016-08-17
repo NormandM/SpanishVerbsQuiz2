@@ -19,6 +19,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var correction: UILabel!
     @IBOutlet weak var reponse: UITextField!
     @IBOutlet weak var leTempsDuVerbe: UILabel!
+    @IBOutlet weak var checkButton: UIButton!
     
     var arr: NSMutableArray = []
     var arrN: [[String]] = []
@@ -53,9 +54,11 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
         
         choixDeVerbe()
        }
+    // Choosing another verb to conjugate
        @IBAction func otro(sender: UIButton) {
         correction.text = ""
         reponse.text = ""
+        checkButton.enabled = true
         choixDeVerbe()
     }
 // this functions selects a verb for the quiz, the time the person and returns the verb
@@ -227,15 +230,15 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
     return [verbeCorrige, verbeCorrigeSubj]
             
     }
-    
-    func textFieldShouldReturn(reponse: UITextField) -> Bool {
+
+    func boutonReponse() {
         arrN = []
         if let plist = Plist(name: "arr5") {
             arr = plist.getMutablePlistFile()!
             arrN = arr.map{($0 as! [String])}
         }
-            
-// informs the user if the answer is good or bad, if bad what is the good answer and performs calculations for the statistics
+        
+        // informs the user if the answer is good or bad, if bad what is the good answer and performs calculations for the statistics
         arrN[indexVerbe][11] = String(Int(arrN[indexVerbe][11])! + 1)
         
         if (leTempsDuVerbe.text == "Pluscuamperfecto" || leTempsDuVerbe.text == "Imperfecto") && modeDuVerbe.text == "Subjuntivo" {
@@ -258,25 +261,25 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
                 
             }
         }else{
-        if reponse.text == verbeCorrige{
-            arrN[indexVerbe][10] = String(Int(arrN[indexVerbe][10])! + 1)
-            //sound signal for good answer
-            let filePath = NSBundle.mainBundle().pathForResource("Incoming Text 01", ofType: "wav")
-            soundURL = NSURL(fileURLWithPath: filePath!)
-            AudioServicesCreateSystemSoundID(soundURL!, &soundID)
-            AudioServicesPlaySystemSound(soundID)
-            correction.text = "¡Muy Bien¡"
-            correction.textColor = UIColor(red: 0/255, green: 255/255, blue: 0/255, alpha: 1.0)
-            
-                }else{
-            //sound signal for bad answer
-            let filePath = NSBundle.mainBundle().pathForResource("Error Warning", ofType: "wav")
-            soundURL = NSURL(fileURLWithPath: filePath!)
-            AudioServicesCreateSystemSoundID(soundURL!, &soundID)
-            AudioServicesPlaySystemSound(soundID)
-
-            correction.text = verbeCorrige
-            correction.textColor = UIColor(red: 255/255, green: 17/255, blue: 93/255, alpha: 1.0)
+            if reponse.text == verbeCorrige{
+                arrN[indexVerbe][10] = String(Int(arrN[indexVerbe][10])! + 1)
+                //sound signal for good answer
+                let filePath = NSBundle.mainBundle().pathForResource("Incoming Text 01", ofType: "wav")
+                soundURL = NSURL(fileURLWithPath: filePath!)
+                AudioServicesCreateSystemSoundID(soundURL!, &soundID)
+                AudioServicesPlaySystemSound(soundID)
+                correction.text = "¡Muy Bien¡"
+                correction.textColor = UIColor(red: 0/255, green: 255/255, blue: 0/255, alpha: 1.0)
+                
+            }else{
+                //sound signal for bad answer
+                let filePath = NSBundle.mainBundle().pathForResource("Error Warning", ofType: "wav")
+                soundURL = NSURL(fileURLWithPath: filePath!)
+                AudioServicesCreateSystemSoundID(soundURL!, &soundID)
+                AudioServicesPlaySystemSound(soundID)
+                
+                correction.text = verbeCorrige
+                correction.textColor = UIColor(red: 255/255, green: 17/255, blue: 93/255, alpha: 1.0)
             }
         }
         if Int(arrN[indexVerbe][11]) > 0 {
@@ -291,10 +294,14 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
         }else{
             print("unable to get plist")
         }
+    }
+
     
-        reponse.resignFirstResponder()
+    func textFieldShouldReturn(reponse: UITextField) -> Bool {
+            boutonReponse()
+            reponse.resignFirstResponder()
         return true
-        
+       
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -317,5 +324,12 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
         self.view.frame = CGRectOffset(self.view.frame, 0,  movement)
         UIView.commitAnimations()
     }
- 
+ // Adding a button thet will act like the return button
+    @IBAction func checkButton(sender: UIButton) {
+        self.reponse.resignFirstResponder()
+        checkButton.enabled = false
+        checkButton.setTitleColor(UIColor.grayColor(), forState: .Disabled)
+        boutonReponse()
+        
+    }
 }

@@ -51,7 +51,7 @@ class quizTableViewController: UITableViewController {
     }
     
 
-
+// Next code is to enable checks for each cell selected
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("verbCell", forIndexPath: indexPath)
         cell.textLabel!.text = self.item[indexPath.section][indexPath.row]
