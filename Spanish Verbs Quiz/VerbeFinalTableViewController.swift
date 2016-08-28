@@ -12,6 +12,7 @@ class VerbeFinalTableViewController: UITableViewController {
     enum TiempoVerbo: String {
         case IndicativoPresente = "IndicativoPresente", IndicativoPretérito = "IndicativoPretérito", IndicativoFuturo = "IndicativoFuturo", Condicional = "Condicional", IndicativoImperfecto = "IndicativoImperfecto", IndicativoPresenteContinuo = "IndicativoPresenteContinuo", IndicativoPretéritoperfecto = "IndicativoPretéritoperfecto", IndicativoPluscuamperfecto = "IndicativoPluscuamperfecto", IndicativoFuturoperfecto = "IndicativoFuturoperfecto", Condicionalperfecto = "Condicionalperfecto", IndicativoPretéritoanterior = "IndicativoPretéritoanterior", Subjuntivopresente = "Subjuntivopresente", Subjuntivoimperfecto = "Subjuntivoimperfecto", Subjuntivofuturo = "Subjuntivofuturo", Subjuntivopretéritoperfecto = "Subjuntivopretéritoperfecto", Subjuntivopluscuamperfecto = "Subjuntivopluscuamperfecto", Subjuntivofuturoperfecto = "Subjuntivofuturoperfecto", Imperativopositivo = "Imperativopositivo", Imperativonegativo = "Imperativonegativo"
     }
+    var arrayVerbe: NSArray = []
     var selectionVerbe = ["", "", ""]
     var nombre: Int = 0
     var randomVerb: Int = 0
@@ -23,15 +24,14 @@ class VerbeFinalTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let plistPath = NSBundle.mainBundle().pathForResource("arr5", ofType: "plist"),
-            verbArray = NSArray(contentsOfFile: plistPath){
-            nombre = verbArray.count
-            var allVerbs = VerbeEspagnol(verbArray: verbArray, n: randomVerb )
-            let transVerbArray: [[String]] = verbArray as! [[String]]
+
+            nombre = arrayVerbe.count
+            var allVerbs = VerbeEspagnol(verbArray: arrayVerbe, n: randomVerb )
+            let transVerbArray: [[String]] = arrayVerbe as! [[String]]
     // Finding the selected verb in the Array
             for verb in transVerbArray{
                 if selectionVerbe[0] == verb[1]  && selectionVerbe[1] == verb[2] && selectionVerbe[2] == verb[3] {
-                    allVerbs = VerbeEspagnol(verbArray: verbArray, n: i)
+                    allVerbs = VerbeEspagnol(verbArray: arrayVerbe, n: i)
                     if selectionVerbe[2] == "Subjuntivo imperfecto" || selectionVerbe[2] == "Subjuntivo pluscuamperfecto"{
                         subjImp = i
                         
@@ -74,7 +74,7 @@ class VerbeFinalTableViewController: UITableViewController {
                             let fourthPerson = "que nosotros " + allVerbs.nosotros
                             let fifthPerson = "que vosotros " + allVerbs.vosotros
                             let sixthPerson = "que ellos " + allVerbs.ellos
-                            let AllVerbs2 = VerbeEspagnol(verbArray: verbArray, n: subjImp - 1)
+                            let AllVerbs2 = VerbeEspagnol(verbArray: arrayVerbe, n: subjImp - 1)
                             let seventhPerson = "que yo " + AllVerbs2.yo
                             let eightPerson = "que tu " + AllVerbs2.tu
                             let ninePerson = "que el " + AllVerbs2.el
@@ -95,10 +95,7 @@ class VerbeFinalTableViewController: UITableViewController {
                     }
                     navigationItem.title = allVerbs.verbo
                 }
-
-            
-            
-        }
+        
         if selectionVerbe[1] == "Indicativo" {
             sectionListe = [selectionVerbe[1] + " " + selectionVerbe[2]]
         }else{

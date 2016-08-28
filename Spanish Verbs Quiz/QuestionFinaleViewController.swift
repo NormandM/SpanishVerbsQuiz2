@@ -20,7 +20,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var reponse: UITextField!
     @IBOutlet weak var leTempsDuVerbe: UILabel!
     @IBOutlet weak var checkButton: UIButton!
-    
+    var arrayVerbe: NSArray = []
     var arr: NSMutableArray = []
     var arrN: [[String]] = []
     var verbeCorrige = ""
@@ -49,131 +49,134 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         if let plist = Plist(name: "arr5") {
             arr = plist.getMutablePlistFile()!
+            if arr.count != arrayVerbe.count{
+                if let plist = Plist(name: "arr5"){
+                    do {
+                        try plist.addValuesToPlistFile(arrayVerbe)
+                    } catch {
+                        print(error)
+                    }
+                }else{
+                    print("unable to get plist")
+                }
+            }
             arrN = arr.map{($0 as! [String])}
         }
         
         choixDeVerbe()
-       }
+    }
+    
     // Choosing another verb to conjugate
        @IBAction func otro(sender: UIButton) {
         correction.text = ""
         reponse.text = ""
         checkButton.enabled = true
         choixDeVerbe()
+
     }
 // this functions selects a verb for the quiz, the time the person and returns the verb
         func choixDeVerbe() -> [String]{
-            if let plistPath = NSBundle.mainBundle().pathForResource("arr5", ofType: "plist"),
-               verbArray = NSArray(contentsOfFile: plistPath){
+
             var n = 0
-            n = verbArray.count/21
+            n = arrayVerbe.count/21
             indexVerbe = (Int(arc4random_uniform(UInt32(n))) - 1) * 21
             if indexVerbe < 0 {
-                indexVerbe = 0
-            }
-            let i = infoQuiz.count
-            indexTemps = Int(arc4random_uniform(UInt32(i)))
-            tempsVerbe = infoQuiz[indexTemps]
-                let intVerbArray: [[String]] = verbArray as! [[String]]
+            }else{
+                let i = infoQuiz.count
+                indexTemps = Int(arc4random_uniform(UInt32(i)))
+                tempsVerbe = infoQuiz[indexTemps]
+                let intVerbArray: [[String]] = arrayVerbe as! [[String]]
                 verbeChoisi = intVerbArray[indexVerbe][1]
-            
-            
-            if let modoChoix = ModoChoix(rawValue: tempsVerbe){
-                switch modoChoix{
-                case .PresenteInd:
-                    modo.append(tempsVerbe)
-                    modo.append("Infinitivo")
-                    indexVerbe = indexVerbe + Ref.PresenteInd.rawValue
-                case .ImperfectoInd:
-                    modo.append(tempsVerbe)
-                    modo.append("Infinitivo")
-                    indexVerbe = indexVerbe + Ref.ImperfectoInd.rawValue
-                case .PretéritoPerfectoInd:
-                    modo.append(tempsVerbe)
-                    modo.append("Infinitivo")
-                    indexVerbe = indexVerbe + Ref.PretéritoPerfectoInd.rawValue
-                case .PretéritoInd:
-                    modo.append(tempsVerbe)
-                    modo.append("Infinitivo")
-                    indexVerbe = indexVerbe + Ref.PretéritoInd.rawValue
-                case .FuturoInd:
-                    modo.append(tempsVerbe)
-                    modo.append("Infinitivo")
-                    indexVerbe = indexVerbe + Ref.FuturoInd.rawValue
-                case .PluscuamperfectoInd:
-                    modo.append(tempsVerbe)
-                    modo.append("Infinitivo")
-                    indexVerbe = indexVerbe + Ref.PluscuamperfectoInd.rawValue
-                case .FuturoPerfectoInd:
-                    modo.append(tempsVerbe)
-                    modo.append("Infinitivo")
-                    indexVerbe = indexVerbe + Ref.FuturoPerfectoInd.rawValue
-                case .PresenteProgresivoInd:
-                    modo.append(tempsVerbe)
-                    modo.append("Infinitivo")
-                    indexVerbe = indexVerbe + Ref.PresenteProgresivoInd.rawValue
-                case .PretéritoAnteriorInd:
-                    modo.append(tempsVerbe)
-                    modo.append("Infinitivo")
-                    indexVerbe = indexVerbe + Ref.PretéritoAnteriorInd.rawValue
-                case .FuturoSub:
-                    modo.append(tempsVerbe)
-                    modo.append ("Subjuntivo")
-                    indexVerbe = indexVerbe + Ref.FuturoSub.rawValue
-                case .ImperfectoSub:
-                    modo.append(tempsVerbe)
-                    modo.append ("Subjuntivo")
-                    indexVerbe = indexVerbe + Ref.ImperfectoSub.rawValue
-                    IndexVerbeSubj2 = indexVerbe + 1
-                    
-                case .PluscuamperfectoSub:
-                    modo.append(tempsVerbe)
-                    modo.append ("Subjuntivo")
-                    indexVerbe = indexVerbe + Ref.PluscuamperfectoSub.rawValue
-                    IndexVerbeSubj2 = indexVerbe + 1
-                case .PresenteSub:
-                    modo.append(tempsVerbe)
-                    modo.append ("Subjuntivo")
-                    indexVerbe = indexVerbe + Ref.PresenteSub.rawValue
-                case .PretéritoPerfectoSub:
-                    modo.append(tempsVerbe)
-                    modo.append ("Subjuntivo")
-                    indexVerbe = indexVerbe + Ref.PretéritoPerfectoSub.rawValue
-                case .FuturoPerfectoSub:
-                    modo.append(tempsVerbe)
-                    modo.append ("Subjuntivo")
-                    indexVerbe = indexVerbe + Ref.FuturoPerfectoSub.rawValue
-                case .PerfectoCond:
-                    modo.append(tempsVerbe)
-                    modo.append("Condicional")
-                    indexVerbe = indexVerbe + Ref.PerfectoCond.rawValue
-                case .CondicionalCond:
-                    modo.append(tempsVerbe)
-                    modo.append("Condicional")
-                    indexVerbe = indexVerbe + Ref.CondicionalCond.rawValue
-                case .PositivoImp:
-                    modo.append(tempsVerbe)
-                    modo.append("Imperativo")
-                    indexVerbe = indexVerbe + Ref.PositivoImp.rawValue
-                case .NegativoImp:
-                    modo.append(tempsVerbe)
-                    modo.append("Imperativo")
-                    indexVerbe = indexVerbe + Ref.NegativoImp.rawValue
+                if let modoChoix = ModoChoix(rawValue: tempsVerbe){
+                    switch modoChoix{
+                    case .PresenteInd:
+                        modo.append(tempsVerbe)
+                        modo.append("Infinitivo")
+                        indexVerbe = indexVerbe + Ref.PresenteInd.rawValue
+                    case .ImperfectoInd:
+                        modo.append(tempsVerbe)
+                        modo.append("Infinitivo")
+                        indexVerbe = indexVerbe + Ref.ImperfectoInd.rawValue
+                    case .PretéritoPerfectoInd:
+                        modo.append(tempsVerbe)
+                        modo.append("Infinitivo")
+                        indexVerbe = indexVerbe + Ref.PretéritoPerfectoInd.rawValue
+                    case .PretéritoInd:
+                        modo.append(tempsVerbe)
+                        modo.append("Infinitivo")
+                        indexVerbe = indexVerbe + Ref.PretéritoInd.rawValue
+                    case .FuturoInd:
+                        modo.append(tempsVerbe)
+                        modo.append("Infinitivo")
+                        indexVerbe = indexVerbe + Ref.FuturoInd.rawValue
+                    case .PluscuamperfectoInd:
+                        modo.append(tempsVerbe)
+                        modo.append("Infinitivo")
+                        indexVerbe = indexVerbe + Ref.PluscuamperfectoInd.rawValue
+                    case .FuturoPerfectoInd:
+                        modo.append(tempsVerbe)
+                        modo.append("Infinitivo")
+                        indexVerbe = indexVerbe + Ref.FuturoPerfectoInd.rawValue
+                    case .PresenteProgresivoInd:
+                        modo.append(tempsVerbe)
+                        modo.append("Infinitivo")
+                        indexVerbe = indexVerbe + Ref.PresenteProgresivoInd.rawValue
+                    case .PretéritoAnteriorInd:
+                        modo.append(tempsVerbe)
+                        modo.append("Infinitivo")
+                        indexVerbe = indexVerbe + Ref.PretéritoAnteriorInd.rawValue
+                    case .FuturoSub:
+                        modo.append(tempsVerbe)
+                        modo.append ("Subjuntivo")
+                        indexVerbe = indexVerbe + Ref.FuturoSub.rawValue
+                    case .ImperfectoSub:
+                        modo.append(tempsVerbe)
+                        modo.append ("Subjuntivo")
+                        indexVerbe = indexVerbe + Ref.ImperfectoSub.rawValue
+                        IndexVerbeSubj2 = indexVerbe + 1
+                    case .PluscuamperfectoSub:
+                        modo.append(tempsVerbe)
+                        modo.append ("Subjuntivo")
+                        indexVerbe = indexVerbe + Ref.PluscuamperfectoSub.rawValue
+                        IndexVerbeSubj2 = indexVerbe + 1
+                    case .PresenteSub:
+                        modo.append(tempsVerbe)
+                        modo.append ("Subjuntivo")
+                        indexVerbe = indexVerbe + Ref.PresenteSub.rawValue
+                    case .PretéritoPerfectoSub:
+                        modo.append(tempsVerbe)
+                        modo.append ("Subjuntivo")
+                        indexVerbe = indexVerbe + Ref.PretéritoPerfectoSub.rawValue
+                    case .FuturoPerfectoSub:
+                        modo.append(tempsVerbe)
+                        modo.append ("Subjuntivo")
+                        indexVerbe = indexVerbe + Ref.FuturoPerfectoSub.rawValue
+                    case .PerfectoCond:
+                        modo.append(tempsVerbe)
+                        modo.append("Condicional")
+                        indexVerbe = indexVerbe + Ref.PerfectoCond.rawValue
+                    case .CondicionalCond:
+                        modo.append(tempsVerbe)
+                        modo.append("Condicional")
+                        indexVerbe = indexVerbe + Ref.CondicionalCond.rawValue
+                    case .PositivoImp:
+                        modo.append(tempsVerbe)
+                        modo.append("Imperativo")
+                        indexVerbe = indexVerbe + Ref.PositivoImp.rawValue
+                    case .NegativoImp:
+                        modo.append(tempsVerbe)
+                        modo.append("Imperativo")
+                        indexVerbe = indexVerbe + Ref.NegativoImp.rawValue
                 }
                
                 modeDuVerbe.text = modo[1]
                 leTempsDuVerbe.text = modo[0]
                 let verbeChoisi2 = verbeChoisi.uppercaseString
                 verbeInfinitif.text? = verbeChoisi2
-               
-
             }
             
-            let allVerbs = VerbeEspagnol(verbArray: verbArray, n: indexVerbe)
-                
-            let allVerbsSubj2 = VerbeEspagnol(verbArray: verbArray, n: IndexVerbeSubj2)
-                
-            
+            let allVerbs = VerbeEspagnol(verbArray: arrayVerbe, n: indexVerbe)
+            let allVerbsSubj2 = VerbeEspagnol(verbArray: arrayVerbe, n: IndexVerbeSubj2)
             if modo[1] == "Imperativo" {
                 personneVerbeCount = 5
             }else {
@@ -188,9 +191,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
                 case .yo:
                     personneChoisi = "yo"
                     verbeCorrige = allVerbs.yo
-
                     verbeCorrigeSubj = allVerbsSubj2.yo
-                    
                 case .tu:
                     personneChoisi = "tu"
                     verbeCorrige = allVerbs.tu
@@ -199,17 +200,14 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
                     personneChoisi = "el"
                     verbeCorrige = allVerbs.el
                     verbeCorrigeSubj = allVerbsSubj2.el
-                    
                 case .nosotros:
                     personneChoisi = "nosotros"
                     verbeCorrige = allVerbs.nosotros
                     verbeCorrigeSubj = allVerbsSubj2.nosotros
-                    
                 case .vosotros:
                     personneChoisi = "vosotros"
                     verbeCorrige = allVerbs.vosotros
                     verbeCorrigeSubj = allVerbsSubj2.vosotros
-                    
                 case .ellos:
                     personneChoisi = "ellos"
                     verbeCorrige = allVerbs.ellos
@@ -222,15 +220,11 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
             }else if modo[1] == "Imperativo"{
                 personneChoisi = "(\(personneChoisi))"
             }
-            
             personneDuVerbe.text = personneChoisi
             modo = []
-            
            }
     return [verbeCorrige, verbeCorrigeSubj]
-            
     }
-
     func boutonReponse() {
         arrN = []
         if let plist = Plist(name: "arr5") {
@@ -281,6 +275,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
                 correction.text = verbeCorrige
                 correction.textColor = UIColor(red: 255/255, green: 17/255, blue: 93/255, alpha: 1.0)
             }
+            
         }
         if Int(arrN[indexVerbe][11]) > 0 {
             arrN[indexVerbe][12] = String(Double(arrN[indexVerbe][10])! / Double(arrN[indexVerbe][11])! * 100) + "%"

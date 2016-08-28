@@ -28,7 +28,6 @@ struct Plist {
         return (dir as NSString).stringByAppendingPathComponent("\(name).plist")
         
         
-        
     }
     init?(name:String) {
         //1

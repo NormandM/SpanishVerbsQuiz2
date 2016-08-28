@@ -14,29 +14,23 @@ class verbListViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var searchBar: UISearchBar!
     var searchActive : Bool = false
     var filtered:[String] = []
-
+    var arrayVerbe: NSArray = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
-
-        if let plistPath = NSBundle.mainBundle().pathForResource("arr5", ofType: "plist"),
-            verbArray = NSArray(contentsOfFile: plistPath){
-            let i = verbArray.count
-            while randomVerb < i {
-                let allVerbs = VerbeEspagnol(verbArray: verbArray, n: randomVerb)
-                listeVerbe.append(allVerbs.verbo)
-                randomVerb = randomVerb + 21
-            }
+        let i = arrayVerbe.count
+        while randomVerb < i {
+            let allVerbs = VerbeEspagnol(verbArray: arrayVerbe, n: randomVerb)
+            listeVerbe.append(allVerbs.verbo)
+            randomVerb = randomVerb + 21
         }
         func alpha (s1: String, s2: String) -> Bool {
             return s1 < s2
         }
         listeVerbe = listeVerbe.sort(alpha)
-        
     }
   // Setting up the searchBar active: Ttrue/False
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
@@ -107,6 +101,7 @@ class verbListViewController: UIViewController, UITableViewDataSource, UITableVi
                     navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
                 let controller = segue.destinationViewController as! tempsDeVerbeTableViewController
                 controller.verbeInfinitif = verbeChoisi
+                controller.arrayVerbe = arrayVerbe
                
             }
         }

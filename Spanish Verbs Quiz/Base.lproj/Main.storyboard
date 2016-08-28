@@ -71,12 +71,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="1ba-VO-RLe">
                     <connections>
-                        <segue destination="Azy-iS-UYV" kind="show" id="F85-zU-uOc"/>
+                        <segue destination="Azy-iS-UYV" kind="show" identifier="transmitArray" id="F85-zU-uOc"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="R7M-u2-2Qr">
                     <connections>
-                        <segue destination="UQe-cW-mYT" kind="show" id="UEp-W0-6Db"/>
+                        <segue destination="UQe-cW-mYT" kind="show" identifier="transmitArrayAgain" id="UEp-W0-6Db"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="euQ-TM-kJ8">
@@ -227,7 +227,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAZ-wJ-t5o">
-                                <rect key="frame" x="78" y="418" width="165" height="50"/>
+                                <rect key="frame" x="78" y="374" width="165" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="H6J-0f-Jcq"/>
                                     <constraint firstAttribute="width" constant="165" id="mEG-b8-ng7"/>
@@ -481,10 +481,11 @@
                             <outlet property="delegate" destination="NVt-kw-gPn" id="oep-fO-Q2w"/>
                         </connections>
                     </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="icr-Dr-EfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1920" y="387"/>
+            <point key="canvasLocation" x="2047" y="387"/>
         </scene>
         <!--Resultados por cada tiempo-->
         <scene sceneID="ktm-8J-8lA">
@@ -552,7 +553,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1r-j7-zaa">
-                                <rect key="frame" x="-4" y="20" width="328" height="44"/>
+                                <rect key="frame" x="-4" y="0.0" width="328" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="x8l-iV-syE"/>
                                 </constraints>

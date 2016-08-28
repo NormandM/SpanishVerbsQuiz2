@@ -9,7 +9,7 @@
 import UIKit
 
 class tempsDeVerbeTableViewController: UITableViewController {
-    
+    var arrayVerbe: NSArray = []
     var verbeInfinitif: String = ""
     var nomSection: String = ""
     var leTemps: String = ""
@@ -98,7 +98,7 @@ class tempsDeVerbeTableViewController: UITableViewController {
                 verbeTotal = [verbeInfinitif, nomSection, leTemps ]
                 let controller = segue.destinationViewController as! VerbeFinalTableViewController
                 controller.selectionVerbe = verbeTotal
-                
+                controller.arrayVerbe = arrayVerbe
             }
             
             

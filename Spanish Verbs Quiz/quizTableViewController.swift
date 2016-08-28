@@ -11,9 +11,9 @@ import UIKit
 class quizTableViewController: UITableViewController {
     var arraySelection: [String] = []
     var refIndexPath = [NSIndexPath]()
-     var selectedTimeVerbes = NSMutableSet()
+    var selectedTimeVerbes = NSMutableSet()
     var arr: NSMutableArray = []
-    
+    var arrayVerbe: NSArray = []
     
     let sectionListe = ["INDICATIVO", "SUBJUNTIVO", "CONDICIONAL", "IMPERATIVO"]
     let item = [["Presente ", "Imperfecto ", "Pretérito ", "Futuro ", "Presente Continuo ", "Pretérito perfecto ", "Pluscuamperfecto ", "Futuro perfecto ", "Pretérito anterior "], ["Presente", "Imperfecto", "Futuro", "Pretérito perfecto", "Pluscuamperfecto"], ["Condicional", "Perfecto"], ["Positivo", "Negativo"]]
@@ -121,6 +121,7 @@ class quizTableViewController: UITableViewController {
            
             let controller = segue.destinationViewController as! QuestionFinaleViewController
             controller.infoQuiz = arraySelection
+            controller.arrayVerbe = arrayVerbe
             
        }
     }

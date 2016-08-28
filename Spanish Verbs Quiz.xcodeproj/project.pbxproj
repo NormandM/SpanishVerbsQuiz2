@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8E02D7F61D4140DC00F96891 /* Error Warning.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8E02D7F51D4140DC00F96891 /* Error Warning.wav */; };
 		8E02D7F81D4140FB00F96891 /* Incoming Text 01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8E02D7F71D4140FB00F96891 /* Incoming Text 01.wav */; };
-		8E4EE0EE1D4D84BB00C4C477 /* arr5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E4EE0ED1D4D84BB00C4C477 /* arr5.plist */; };
+		8E24418B1D6F6646007862DB /* arr5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E24418A1D6F6646007862DB /* arr5.plist */; };
 		8E8F123E1D2B030300351BC9 /* quizTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8F123D1D2B030300351BC9 /* quizTableViewController.swift */; };
 		8E948E5E1D3C189500297896 /* plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E948E5D1D3C189500297896 /* plist.swift */; };
 		8EBBA5D01D3D59E600A1E5C5 /* StatisticsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBA5CF1D3D59E600A1E5C5 /* StatisticsTableViewController.swift */; };
@@ -48,7 +48,7 @@
 /* Begin PBXFileReference section */
 		8E02D7F51D4140DC00F96891 /* Error Warning.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Error Warning.wav"; sourceTree = "<group>"; };
 		8E02D7F71D4140FB00F96891 /* Incoming Text 01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Incoming Text 01.wav"; sourceTree = "<group>"; };
-		8E4EE0ED1D4D84BB00C4C477 /* arr5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = arr5.plist; sourceTree = "<group>"; };
+		8E24418A1D6F6646007862DB /* arr5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = arr5.plist; sourceTree = "<group>"; };
 		8E8F123D1D2B030300351BC9 /* quizTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = quizTableViewController.swift; sourceTree = "<group>"; };
 		8E948E5D1D3C189500297896 /* plist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = plist.swift; sourceTree = "<group>"; };
 		8EBBA5CF1D3D59E600A1E5C5 /* StatisticsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsTableViewController.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				8ECAEF421D318F5A00638EB6 /* tiempoModalViewController.swift */,
-				8E4EE0ED1D4D84BB00C4C477 /* arr5.plist */,
+				8E24418A1D6F6646007862DB /* arr5.plist */,
 			);
 			name = "Modal ViewControllers";
 			sourceTree = "<group>";
@@ -285,8 +285,8 @@
 			files = (
 				8E02D7F61D4140DC00F96891 /* Error Warning.wav in Resources */,
 				8E02D7F81D4140FB00F96891 /* Incoming Text 01.wav in Resources */,
-				8E4EE0EE1D4D84BB00C4C477 /* arr5.plist in Resources */,
 				8EC4ABD51D17358D007359FF /* LaunchScreen.storyboard in Resources */,
+				8E24418B1D6F6646007862DB /* arr5.plist in Resources */,
 				8EC4ABD21D17358D007359FF /* Assets.xcassets in Resources */,
 				8EC4ABD01D17358D007359FF /* Main.storyboard in Resources */,
 			);
