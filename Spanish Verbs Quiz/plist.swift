@@ -25,6 +25,7 @@ struct Plist {
     var destPath:String? {
         guard sourcePath != .None else { return .None }
         let dir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        print(dir)
         return (dir as NSString).stringByAppendingPathComponent("\(name).plist")
         
         

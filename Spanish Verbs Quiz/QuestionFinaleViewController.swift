@@ -64,6 +64,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
         }
         
         choixDeVerbe()
+
     }
     
     // Choosing another verb to conjugate
@@ -72,6 +73,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
         reponse.text = ""
         checkButton.enabled = true
         choixDeVerbe()
+    
 
     }
 // this functions selects a verb for the quiz, the time the person and returns the verb
@@ -81,6 +83,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
             n = arrayVerbe.count/21
             indexVerbe = (Int(arc4random_uniform(UInt32(n))) - 1) * 21
             if indexVerbe < 0 {
+                indexVerbe = 0
             }else{
                 let i = infoQuiz.count
                 indexTemps = Int(arc4random_uniform(UInt32(i)))
@@ -233,6 +236,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
         }
         
         // informs the user if the answer is good or bad, if bad what is the good answer and performs calculations for the statistics
+        print(indexVerbe)
         arrN[indexVerbe][11] = String(Int(arrN[indexVerbe][11])! + 1)
         
         if (leTempsDuVerbe.text == "Pluscuamperfecto" || leTempsDuVerbe.text == "Imperfecto") && modeDuVerbe.text == "Subjuntivo" {
