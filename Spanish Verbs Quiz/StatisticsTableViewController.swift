@@ -86,13 +86,13 @@ class StatisticsTableViewController: UITableViewController {
     var imperativoNegativoBon = 0
     var imperativoNegativoTot = 0
     enum Ref: Int{
-        case PresenteInd = 0, ImperfectoInd = 4, PretéritoInd = 1, FuturoInd = 2, PresenteProgresivoInd = 5, PretéritoPerfectoInd = 6, PluscuamperfectoInd = 7, FuturoPerfectoInd = 8, PretéritoAnteriorInd = 10, PresenteSub = 11, ImperfectoSub = 12, ImperfectoSub2 = 13, FuturoSub = 14, PretéritoPerfectoSub = 15, PluscuamperfectoSub = 16, PluscuamperfectoSub2 = 17,CondicionalCond = 3, PerfectoCond = 9, PositivoImp = 19, NegativoImp = 20, FuturoPerfectoSub = 18
+        case presenteInd = 0, imperfectoInd = 4, pretéritoInd = 1, futuroInd = 2, presenteProgresivoInd = 5, pretéritoPerfectoInd = 6, pluscuamperfectoInd = 7, futuroPerfectoInd = 8, pretéritoAnteriorInd = 10, presenteSub = 11, imperfectoSub = 12, imperfectoSub2 = 13, futuroSub = 14, pretéritoPerfectoSub = 15, pluscuamperfectoSub = 16, pluscuamperfectoSub2 = 17,condicionalCond = 3, perfectoCond = 9, positivoImp = 19, negativoImp = 20, futuroPerfectoSub = 18
     }
     // Changing backgroung colors of the header of sections
-    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
         header.contentView.backgroundColor = UIColor(red: 151/255, green: 156/255, blue: 159/255, alpha: 1.0) //make the background color light blue
-        header.textLabel!.textColor = UIColor.whiteColor() //make the text white
+        header.textLabel!.textColor = UIColor.white //make the text white
         header.alpha = 1.0
     }
         override func viewDidLoad() {
@@ -116,67 +116,67 @@ class StatisticsTableViewController: UITableViewController {
                 while nn < 21 {
                     if let ref = Ref(rawValue: nn){
                         switch ref{
-                        case .PresenteInd:
+                        case .presenteInd:
                             presenteBon = presenteBon + Int(arrN[n + nn][10])!
                             presenteTot = presenteTot + Int(arrN[n + nn][11])!
-                        case .ImperfectoInd:
+                        case .imperfectoInd:
                             imperfectoBon = imperfectoBon + Int(arrN[n + nn][10])!
                             imperfectoTot = imperfectoTot + Int(arrN[n + nn][11])!
-                        case .PretéritoPerfectoInd:
+                        case .pretéritoPerfectoInd:
                             preteritoPerfectoBon = preteritoPerfectoBon + Int(arrN[n + nn][10])!
                             preteritoPerfectoTot = preteritoPerfectoTot + Int(arrN[n + nn][11])!
-                        case .PretéritoInd:
+                        case .pretéritoInd:
                             preteritoBon = preteritoBon + Int(arrN[n + nn][10])!
                             preteritoTot = preteritoTot + Int(arrN[n + nn][11])!
-                        case .FuturoInd:
+                        case .futuroInd:
                             futuroBon = futuroBon + Int(arrN[n + nn][10])!
                             futuroTot = futuroTot + Int(arrN[n + nn][11])!
-                        case .PluscuamperfectoInd:
+                        case .pluscuamperfectoInd:
                             pluscuamperfectoBon = pluscuamperfectoBon + Int(arrN[n + nn][10])!
                             pluscuamperfectoTot = pluscuamperfectoTot + Int(arrN[n + nn][11])!
-                        case .FuturoPerfectoInd:
+                        case .futuroPerfectoInd:
                             futuroPerfectoBon = futuroPerfectoBon + Int(arrN[n + nn][10])!
                             futuroPerfectoTot = futuroPerfectoTot + Int(arrN[n + nn][11])!
-                        case .PresenteProgresivoInd:
+                        case .presenteProgresivoInd:
                             presenteProgresivoBon = presenteProgresivoBon + Int(arrN[n + nn][10])!
                             presenteProgresivoTot = presenteProgresivoTot + Int(arrN[n + nn][11])!
-                        case .PretéritoAnteriorInd:
+                        case .pretéritoAnteriorInd:
                             preteritoAnteriorBon = preteritoAnteriorBon + Int(arrN[n + nn][10])!
                             preteritoAnteriorTot = preteritoAnteriorTot + Int(arrN[n + nn][11])!
-                        case .FuturoSub:
+                        case .futuroSub:
                             subjuntivoFuturoBon = subjuntivoFuturoBon + Int(arrN[n + nn][10])!
                             subjuntivoFuturoTot = subjuntivoFuturoTot + Int(arrN[n + nn][11])!
-                        case .ImperfectoSub:
+                        case .imperfectoSub:
                             subjuntivoImperfectoBon = subjuntivoImperfectoBon + Int(arrN[n + nn][10])!
                             subjuntivoImperfectoTot = subjuntivoImperfectoTot + Int(arrN[n + nn][11])!
-                        case .ImperfectoSub2:
+                        case .imperfectoSub2:
                             subjuntivoImperfecto2Bon = subjuntivoImperfecto2Bon + Int(arrN[n + nn][10])!
                             subjuntivoImperfecto2Tot = subjuntivoImperfecto2Tot + Int(arrN[n + nn][11])!
-                        case .PluscuamperfectoSub:
+                        case .pluscuamperfectoSub:
                             subjuntivoPluscuamperfectoBon = subjuntivoPluscuamperfectoBon + Int(arrN[n + nn][10])!
                             subjuntivoPluscuamperfectoTot = subjuntivoPluscuamperfectoTot + Int(arrN[n + nn][11])!
-                        case .PluscuamperfectoSub2:
+                        case .pluscuamperfectoSub2:
                             subjuntivoPluscuamperfecto2Bon = subjuntivoPluscuamperfecto2Bon + Int(arrN[n + nn][10])!
                             subjuntivoPluscuamperfecto2Tot = subjuntivoPluscuamperfecto2Tot + Int(arrN[n + nn][11])!
-                        case .PresenteSub:
+                        case .presenteSub:
                             subjuntivoPresenteBon = subjuntivoPresenteBon + Int(arrN[n + nn][10])!
                             subjuntivoPresenteTot = subjuntivoPresenteTot + Int(arrN[n + nn][11])!
-                        case .PretéritoPerfectoSub:
+                        case .pretéritoPerfectoSub:
                             subjuntivoPreteritoPerfectoBon = subjuntivoPreteritoPerfectoBon + Int(arrN[n + nn][10])!
                             subjuntivoPreteritoPerfectoTot = subjuntivoPreteritoPerfectoTot + Int(arrN[n + nn][11])!
-                        case .FuturoPerfectoSub:
+                        case .futuroPerfectoSub:
                             subjuntivoFuturoPerfectoBon = subjuntivoFuturoPerfectoBon + Int(arrN[n + nn][10])!
                             subjuntivoFuturoPerfectoTot = subjuntivoFuturoPerfectoTot + Int(arrN[n + nn][11])!
-                        case .PerfectoCond:
+                        case .perfectoCond:
                             condicionalPerfectoBon = condicionalPerfectoBon + Int(arrN[n + nn][10])!
                             condicionalPerfectoTot = condicionalPerfectoTot + Int(arrN[n + nn][11])!
-                        case .CondicionalCond:
+                        case .condicionalCond:
                             condicionalBon = condicionalBon + Int(arrN[n + nn][10])!
                             condicionalTot = condicionalTot + Int(arrN[n + nn][11])!
-                        case .PositivoImp:
+                        case .positivoImp:
                             imperativoPositivoBon = imperativoPositivoBon + Int(arrN[n + nn][10])!
                             imperativoPositivoTot = imperativoPositivoTot + Int(arrN[n + nn][11])!
-                        case .NegativoImp:
+                        case .negativoImp:
                             imperativoNegativoBon = imperativoNegativoBon + Int(arrN[n + nn][10])!
                             imperativoNegativoTot = imperativoNegativoTot + Int(arrN[n + nn][11])!
                         }
@@ -185,7 +185,7 @@ class StatisticsTableViewController: UITableViewController {
                 }
                 n = n + 21
             }
-            func write (bonne: Int, totale: Int) -> String {
+            func write (_ bonne: Int, totale: Int) -> String {
                 let reponse: String
                 if totale > 0  && refresh == false{
                     reponse = String(round(Double(bonne)/Double(totale) * 100)) + "%"
@@ -194,7 +194,7 @@ class StatisticsTableViewController: UITableViewController {
                 }
                 return reponse
             }
-            func writeImp (bonne: Int, totale: Int, bonne2: Int, total2: Int) -> String {
+            func writeImp (_ bonne: Int, totale: Int, bonne2: Int, total2: Int) -> String {
                 let reponseImp: String
                 if (totale > 0 || total2 > 0) && refresh == false {
                     reponseImp = String (round(Double(bonne + bonne2) / Double(totale + total2) * 100)) + "%"
@@ -238,7 +238,7 @@ class StatisticsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     // button to reset to 0 all statistics
-    @IBAction func borrarEstadisticas(sender: UIButton) {
+    @IBAction func borrarEstadisticas(_ sender: UIButton) {
             arrNN = []
             if let plist = Plist(name: "arr5") {
                 var n = 0
@@ -256,7 +256,7 @@ class StatisticsTableViewController: UITableViewController {
             }
             if let plist = Plist(name: "arr5"){
                 do {
-                    try plist.addValuesToPlistFile(arrNN)
+                    try plist.addValuesToPlistFile(arrNN as NSArray)
                     
                 } catch {
                     print(error)
@@ -273,24 +273,24 @@ class StatisticsTableViewController: UITableViewController {
 
 
        
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         return sectionListe[section]
     }
     
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return sectionListe.count
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return item[section].count
     }
 
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel!.text = self.item[indexPath.section][indexPath.row]
         return cell
     }

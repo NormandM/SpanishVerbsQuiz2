@@ -21,8 +21,8 @@ class tiempoModalViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func `return`(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(false, completion: nil)
+    @IBAction func `return`(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: false, completion: nil)
     }
 
 

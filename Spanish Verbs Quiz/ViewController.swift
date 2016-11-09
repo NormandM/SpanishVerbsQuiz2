@@ -14,8 +14,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let plistPath = NSBundle.mainBundle().pathForResource("arr5", ofType: "plist"),
-            verbArray = NSArray(contentsOfFile: plistPath){
+        if let plistPath = Bundle.main.path(forResource: "arr5", ofType: "plist"),
+            let verbArray = NSArray(contentsOfFile: plistPath){
             arrayVerbe = verbArray
             
         }
@@ -27,13 +27,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "transmitArrayAgain"{
-            let controller = segue.destinationViewController as! quizTableViewController
+            let controller = segue.destination as! quizTableViewController
             controller.arrayVerbe = arrayVerbe
         }
         if segue.identifier == "transmitArray"{
-            let controller = segue.destinationViewController as! verbListViewController
+            let controller = segue.destination as! verbListViewController
             controller.arrayVerbe = arrayVerbe
         }
         let backItem = UIBarButtonItem()

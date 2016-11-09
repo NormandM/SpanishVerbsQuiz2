@@ -8,7 +8,31 @@
 
 import UIKit
 import AudioToolbox
-var soundURL: NSURL?
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
+var soundURL: URL?
 var soundID:SystemSoundID = 0
 
 class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
@@ -39,7 +63,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
         case PresenteInd = "Presente ", ImperfectoInd = "Imperfecto ", PretéritoInd = "Pretérito ", FuturoInd = "Futuro ", PresenteProgresivoInd = "Presente Continuo ", PretéritoPerfectoInd = "Pretérito perfecto ", PluscuamperfectoInd = "Pluscuamperfecto ", FuturoPerfectoInd = "Futuro perfecto ", PretéritoAnteriorInd = "Pretérito anterior ", PresenteSub = "Presente", ImperfectoSub = "Imperfecto", FuturoSub = "Futuro", PretéritoPerfectoSub = "Pretérito perfecto", PluscuamperfectoSub = "Pluscuamperfecto", CondicionalCond = "Condicional", PerfectoCond = "Perfecto", PositivoImp = "Positivo", NegativoImp = "Negativo", FuturoPerfectoSub = "Futuro perfecto"
     }
     enum Ref: Int{
-        case PresenteInd = 0, ImperfectoInd = 4, PretéritoInd = 1, FuturoInd = 2, PresenteProgresivoInd = 5, PretéritoPerfectoInd = 6, PluscuamperfectoInd = 7, FuturoPerfectoInd = 8, PretéritoAnteriorInd = 10, PresenteSub = 11, ImperfectoSub = 12, FuturoSub = 14, PretéritoPerfectoSub = 15, PluscuamperfectoSub = 16, CondicionalCond = 3, PerfectoCond = 9, PositivoImp = 19, NegativoImp = 20, FuturoPerfectoSub = 18
+        case presenteInd = 0, imperfectoInd = 4, pretéritoInd = 1, futuroInd = 2, presenteProgresivoInd = 5, pretéritoPerfectoInd = 6, pluscuamperfectoInd = 7, futuroPerfectoInd = 8, pretéritoAnteriorInd = 10, presenteSub = 11, imperfectoSub = 12, futuroSub = 14, pretéritoPerfectoSub = 15, pluscuamperfectoSub = 16, condicionalCond = 3, perfectoCond = 9, positivoImp = 19, negativoImp = 20, futuroPerfectoSub = 18
     }
     enum Personne: Int{
         case yo = 0, tu = 1, el = 2, nosotros = 3, vosotros = 4, ellos = 5
@@ -68,16 +92,16 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
     }
     
     // Choosing another verb to conjugate
-       @IBAction func otro(sender: UIButton) {
+       @IBAction func otro(_ sender: UIButton) {
         correction.text = ""
         reponse.text = ""
-        checkButton.enabled = true
+        checkButton.isEnabled = true
         choixDeVerbe()
     
 
     }
 // this functions selects a verb for the quiz, the time the person and returns the verb
-        func choixDeVerbe() -> [String]{
+        @discardableResult func choixDeVerbe() -> [String]{
 
             var n = 0
             n = arrayVerbe.count/21
@@ -95,86 +119,86 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
                     case .PresenteInd:
                         modo.append(tempsVerbe)
                         modo.append("Infinitivo")
-                        indexVerbe = indexVerbe + Ref.PresenteInd.rawValue
+                        indexVerbe = indexVerbe + Ref.presenteInd.rawValue
                     case .ImperfectoInd:
                         modo.append(tempsVerbe)
                         modo.append("Infinitivo")
-                        indexVerbe = indexVerbe + Ref.ImperfectoInd.rawValue
+                        indexVerbe = indexVerbe + Ref.imperfectoInd.rawValue
                     case .PretéritoPerfectoInd:
                         modo.append(tempsVerbe)
                         modo.append("Infinitivo")
-                        indexVerbe = indexVerbe + Ref.PretéritoPerfectoInd.rawValue
+                        indexVerbe = indexVerbe + Ref.pretéritoPerfectoInd.rawValue
                     case .PretéritoInd:
                         modo.append(tempsVerbe)
                         modo.append("Infinitivo")
-                        indexVerbe = indexVerbe + Ref.PretéritoInd.rawValue
+                        indexVerbe = indexVerbe + Ref.pretéritoInd.rawValue
                     case .FuturoInd:
                         modo.append(tempsVerbe)
                         modo.append("Infinitivo")
-                        indexVerbe = indexVerbe + Ref.FuturoInd.rawValue
+                        indexVerbe = indexVerbe + Ref.futuroInd.rawValue
                     case .PluscuamperfectoInd:
                         modo.append(tempsVerbe)
                         modo.append("Infinitivo")
-                        indexVerbe = indexVerbe + Ref.PluscuamperfectoInd.rawValue
+                        indexVerbe = indexVerbe + Ref.pluscuamperfectoInd.rawValue
                     case .FuturoPerfectoInd:
                         modo.append(tempsVerbe)
                         modo.append("Infinitivo")
-                        indexVerbe = indexVerbe + Ref.FuturoPerfectoInd.rawValue
+                        indexVerbe = indexVerbe + Ref.futuroPerfectoInd.rawValue
                     case .PresenteProgresivoInd:
                         modo.append(tempsVerbe)
                         modo.append("Infinitivo")
-                        indexVerbe = indexVerbe + Ref.PresenteProgresivoInd.rawValue
+                        indexVerbe = indexVerbe + Ref.presenteProgresivoInd.rawValue
                     case .PretéritoAnteriorInd:
                         modo.append(tempsVerbe)
                         modo.append("Infinitivo")
-                        indexVerbe = indexVerbe + Ref.PretéritoAnteriorInd.rawValue
+                        indexVerbe = indexVerbe + Ref.pretéritoAnteriorInd.rawValue
                     case .FuturoSub:
                         modo.append(tempsVerbe)
                         modo.append ("Subjuntivo")
-                        indexVerbe = indexVerbe + Ref.FuturoSub.rawValue
+                        indexVerbe = indexVerbe + Ref.futuroSub.rawValue
                     case .ImperfectoSub:
                         modo.append(tempsVerbe)
                         modo.append ("Subjuntivo")
-                        indexVerbe = indexVerbe + Ref.ImperfectoSub.rawValue
+                        indexVerbe = indexVerbe + Ref.imperfectoSub.rawValue
                         IndexVerbeSubj2 = indexVerbe + 1
                     case .PluscuamperfectoSub:
                         modo.append(tempsVerbe)
                         modo.append ("Subjuntivo")
-                        indexVerbe = indexVerbe + Ref.PluscuamperfectoSub.rawValue
+                        indexVerbe = indexVerbe + Ref.pluscuamperfectoSub.rawValue
                         IndexVerbeSubj2 = indexVerbe + 1
                     case .PresenteSub:
                         modo.append(tempsVerbe)
                         modo.append ("Subjuntivo")
-                        indexVerbe = indexVerbe + Ref.PresenteSub.rawValue
+                        indexVerbe = indexVerbe + Ref.presenteSub.rawValue
                     case .PretéritoPerfectoSub:
                         modo.append(tempsVerbe)
                         modo.append ("Subjuntivo")
-                        indexVerbe = indexVerbe + Ref.PretéritoPerfectoSub.rawValue
+                        indexVerbe = indexVerbe + Ref.pretéritoPerfectoSub.rawValue
                     case .FuturoPerfectoSub:
                         modo.append(tempsVerbe)
                         modo.append ("Subjuntivo")
-                        indexVerbe = indexVerbe + Ref.FuturoPerfectoSub.rawValue
+                        indexVerbe = indexVerbe + Ref.futuroPerfectoSub.rawValue
                     case .PerfectoCond:
                         modo.append(tempsVerbe)
                         modo.append("Condicional")
-                        indexVerbe = indexVerbe + Ref.PerfectoCond.rawValue
+                        indexVerbe = indexVerbe + Ref.perfectoCond.rawValue
                     case .CondicionalCond:
                         modo.append(tempsVerbe)
                         modo.append("Condicional")
-                        indexVerbe = indexVerbe + Ref.CondicionalCond.rawValue
+                        indexVerbe = indexVerbe + Ref.condicionalCond.rawValue
                     case .PositivoImp:
                         modo.append(tempsVerbe)
                         modo.append("Imperativo")
-                        indexVerbe = indexVerbe + Ref.PositivoImp.rawValue
+                        indexVerbe = indexVerbe + Ref.positivoImp.rawValue
                     case .NegativoImp:
                         modo.append(tempsVerbe)
                         modo.append("Imperativo")
-                        indexVerbe = indexVerbe + Ref.NegativoImp.rawValue
+                        indexVerbe = indexVerbe + Ref.negativoImp.rawValue
                 }
                
                 modeDuVerbe.text = modo[1]
                 leTempsDuVerbe.text = modo[0]
-                let verbeChoisi2 = verbeChoisi.uppercaseString
+                let verbeChoisi2 = verbeChoisi.uppercased()
                 verbeInfinitif.text? = verbeChoisi2
             }
             
@@ -242,16 +266,16 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
         if (leTempsDuVerbe.text == "Pluscuamperfecto" || leTempsDuVerbe.text == "Imperfecto") && modeDuVerbe.text == "Subjuntivo" {
             if reponse.text == verbeCorrigeSubj || reponse.text == verbeCorrige{
                 arrN[indexVerbe][10] = String(Int(arrN[indexVerbe][10])! + 1)
-                let filePath = NSBundle.mainBundle().pathForResource("Incoming Text 01", ofType: "wav")
-                soundURL = NSURL(fileURLWithPath: filePath!)
-                AudioServicesCreateSystemSoundID(soundURL!, &soundID)
+                let filePath = Bundle.main.path(forResource: "Incoming Text 01", ofType: "wav")
+                soundURL = URL(fileURLWithPath: filePath!)
+                AudioServicesCreateSystemSoundID(soundURL! as CFURL, &soundID)
                 AudioServicesPlaySystemSound(soundID)
                 correction.text = "¡Muy Bien¡"
                 correction.textColor = UIColor(red: 0/255, green: 255/255, blue: 0/255, alpha: 1.0)
             }else{
-                let filePath = NSBundle.mainBundle().pathForResource("Error Warning", ofType: "wav")
-                soundURL = NSURL(fileURLWithPath: filePath!)
-                AudioServicesCreateSystemSoundID(soundURL!, &soundID)
+                let filePath = Bundle.main.path(forResource: "Error Warning", ofType: "wav")
+                soundURL = URL(fileURLWithPath: filePath!)
+                AudioServicesCreateSystemSoundID(soundURL! as CFURL, &soundID)
                 AudioServicesPlaySystemSound(soundID)
                 
                 correction.text = "\(verbeCorrige) o \(verbeCorrigeSubj)"
@@ -262,18 +286,18 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
             if reponse.text == verbeCorrige{
                 arrN[indexVerbe][10] = String(Int(arrN[indexVerbe][10])! + 1)
                 //sound signal for good answer
-                let filePath = NSBundle.mainBundle().pathForResource("Incoming Text 01", ofType: "wav")
-                soundURL = NSURL(fileURLWithPath: filePath!)
-                AudioServicesCreateSystemSoundID(soundURL!, &soundID)
+                let filePath = Bundle.main.path(forResource: "Incoming Text 01", ofType: "wav")
+                soundURL = URL(fileURLWithPath: filePath!)
+                AudioServicesCreateSystemSoundID(soundURL! as CFURL, &soundID)
                 AudioServicesPlaySystemSound(soundID)
                 correction.text = "¡Muy Bien¡"
                 correction.textColor = UIColor(red: 0/255, green: 255/255, blue: 0/255, alpha: 1.0)
                 
             }else{
                 //sound signal for bad answer
-                let filePath = NSBundle.mainBundle().pathForResource("Error Warning", ofType: "wav")
-                soundURL = NSURL(fileURLWithPath: filePath!)
-                AudioServicesCreateSystemSoundID(soundURL!, &soundID)
+                let filePath = Bundle.main.path(forResource: "Error Warning", ofType: "wav")
+                soundURL = URL(fileURLWithPath: filePath!)
+                AudioServicesCreateSystemSoundID(soundURL! as CFURL, &soundID)
                 AudioServicesPlaySystemSound(soundID)
                 
                 correction.text = verbeCorrige
@@ -286,7 +310,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
         }
         if let plist = Plist(name: "arr5"){
             do {
-                try plist.addValuesToPlistFile(arrN)
+                try plist.addValuesToPlistFile(arrN as NSArray)
             } catch {
                 print(error)
             }
@@ -296,7 +320,7 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
     }
 
     
-    func textFieldShouldReturn(reponse: UITextField) -> Bool {
+    func textFieldShouldReturn(_ reponse: UITextField) -> Bool {
             boutonReponse()
             reponse.resignFirstResponder()
         return true
@@ -308,26 +332,26 @@ class QuestionFinaleViewController: UIViewController, UITextFieldDelegate {
     }
     
     // the 3 next function moves the KeyBoards when keyboard appears or hides
-    func textFieldDidBeginEditing(textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         animateViewMoving(true, moveValue: 50)
     }
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         animateViewMoving(false, moveValue: 50)
     }
-    func animateViewMoving (up:Bool, moveValue :CGFloat){
-        let movementDuration:NSTimeInterval = 0.3
+    func animateViewMoving (_ up:Bool, moveValue :CGFloat){
+        let movementDuration:TimeInterval = 0.3
         let movement:CGFloat = ( up ? -moveValue : moveValue)
         UIView.beginAnimations( "animateView", context: nil)
         UIView.setAnimationBeginsFromCurrentState(true)
         UIView.setAnimationDuration(movementDuration )
-        self.view.frame = CGRectOffset(self.view.frame, 0,  movement)
+        self.view.frame = self.view.frame.offsetBy(dx: 0,  dy: movement)
         UIView.commitAnimations()
     }
  // Adding a button thet will act like the return button
-    @IBAction func checkButton(sender: UIButton) {
+    @IBAction func checkButton(_ sender: UIButton) {
         self.reponse.resignFirstResponder()
-        checkButton.enabled = false
-        checkButton.setTitleColor(UIColor.grayColor(), forState: .Disabled)
+        checkButton.isEnabled = false
+        checkButton.setTitleColor(UIColor.gray, for: .disabled)
         boutonReponse()
         
     }

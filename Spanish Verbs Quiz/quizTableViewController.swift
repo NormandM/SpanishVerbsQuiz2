@@ -10,7 +10,7 @@ import UIKit
 
 class quizTableViewController: UITableViewController {
     var arraySelection: [String] = []
-    var refIndexPath = [NSIndexPath]()
+    var refIndexPath = [IndexPath]()
     var selectedTimeVerbes = NSMutableSet()
     var arr: NSMutableArray = []
     var arrayVerbe: NSArray = []
@@ -19,10 +19,10 @@ class quizTableViewController: UITableViewController {
     let item = [["Presente ", "Imperfecto ", "Pretérito ", "Futuro ", "Presente Continuo ", "Pretérito perfecto ", "Pluscuamperfecto ", "Futuro perfecto ", "Pretérito anterior "], ["Presente", "Imperfecto", "Futuro", "Pretérito perfecto", "Pluscuamperfecto"], ["Condicional", "Perfecto"], ["Positivo", "Negativo"]]
     
     // Changing backgroung colors of the header of sections
-    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
         header.contentView.backgroundColor = UIColor(red: 151/255, green: 156/255, blue: 159/255, alpha: 1.0) //make the background color light blue
-        header.textLabel!.textColor = UIColor.whiteColor() //make the text white
+        header.textLabel!.textColor = UIColor.white //make the text white
         header.alpha = 1.0 //make the header transparent
         
     }
@@ -34,59 +34,59 @@ class quizTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         return sectionListe[section]
     }
 
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         
         return sectionListe.count
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       
         return item[section].count
     }
     
 
 // Next code is to enable checks for each cell selected
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("verbCell", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "verbCell", for: indexPath)
         cell.textLabel!.text = self.item[indexPath.section][indexPath.row]
-        cell.selectionStyle = .None
+        cell.selectionStyle = .none
         configure(cell, forRowAtIndexPath: indexPath)
         return cell
     }
-    func configure(cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if selectedTimeVerbes.containsObject(indexPath) {
+    func configure(_ cell: UITableViewCell, forRowAtIndexPath indexPath: IndexPath) {
+        if selectedTimeVerbes.contains(indexPath) {
             // selected
-            cell.accessoryType = .Checkmark
+            cell.accessoryType = .checkmark
         }
         else {
             // not selected
-            cell.accessoryType = .None
+            cell.accessoryType = .none
         }
         
     }
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        if selectedTimeVerbes.containsObject(indexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if selectedTimeVerbes.contains(indexPath) {
             // deselect
-            selectedTimeVerbes.removeObject(indexPath)
-            let cell2 = tableView.cellForRowAtIndexPath(indexPath)!
-            if let text = cell2.textLabel?.text, n = arraySelection.indexOf(text){
-                 arraySelection.removeAtIndex(n)
+            selectedTimeVerbes.remove(indexPath)
+            let cell2 = tableView.cellForRow(at: indexPath)!
+            if let text = cell2.textLabel?.text, let n = arraySelection.index(of: text){
+                 arraySelection.remove(at: n)
                 }
             
         }
         else {
             // select
-            selectedTimeVerbes.addObject(indexPath)
+            selectedTimeVerbes.add(indexPath)
             arraySelection.append(self.item[indexPath.section][indexPath.row])
         }
-        let cell = tableView.cellForRowAtIndexPath(indexPath)!
+        let cell = tableView.cellForRow(at: indexPath)!
         configure(cell, forRowAtIndexPath: indexPath)
 
     }
@@ -96,21 +96,21 @@ class quizTableViewController: UITableViewController {
     
     // MARK: - Navigation
 
-    @IBAction func listo(sender: UIBarButtonItem) {
+    @IBAction func listo(_ sender: UIBarButtonItem) {
 
 // Making sure at least one time verb is selected if not a modal View appears.
         var i = 0
         i = arraySelection.count
         if i == 0{
-            performSegueWithIdentifier("alerteChoixTemps", sender: UIBarButtonItem.self)
+            performSegue(withIdentifier: "alerteChoixTemps", sender: UIBarButtonItem.self)
         }else{
-            performSegueWithIdentifier("showQuestionFinal", sender: UIBarButtonItem.self)
+            performSegue(withIdentifier: "showQuestionFinal", sender: UIBarButtonItem.self)
         }
     }
 
  
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if segue.identifier == "showQuestionFinal"{
             
@@ -119,7 +119,7 @@ class quizTableViewController: UITableViewController {
             backItem.title = ""
             navigationItem.backBarButtonItem = backItem
            
-            let controller = segue.destinationViewController as! QuestionFinaleViewController
+            let controller = segue.destination as! QuestionFinaleViewController
             controller.infoQuiz = arraySelection
             controller.arrayVerbe = arrayVerbe
             

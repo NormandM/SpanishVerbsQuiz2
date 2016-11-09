@@ -41,7 +41,7 @@ class VerbeFinalTableViewController: UITableViewController {
                 i = i + 1
             }
 
-            let replaced = allVerbs.tiempo.stringByReplacingOccurrencesOfString(" ", withString: "")
+            let replaced = allVerbs.tiempo.replacingOccurrences(of: " ", with: "")
             if allVerbs.modo == "Indicativo"{
                 tiempo = allVerbs.modo + replaced
             }else{
@@ -113,30 +113,30 @@ class VerbeFinalTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         
         return sectionListe.count
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return finalVerb.count
     }
     
 
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return " \(sectionListe[0])"
     }
-    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
         header.contentView.backgroundColor = UIColor(red: 165/255, green: 200/255, blue: 233/255, alpha: 1.0) //make the background color light blue
-        header.textLabel!.textColor = UIColor.whiteColor() //make the text white
+        header.textLabel!.textColor = UIColor.white //make the text white
         header.alpha = 1.0 //make the header transparent
-        header.textLabel?.textAlignment = NSTextAlignment.Center
+        header.textLabel?.textAlignment = NSTextAlignment.center
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CellVerb", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellVerb", for: indexPath)
 
         cell.textLabel!.text = finalVerb[indexPath.row]
         return cell
