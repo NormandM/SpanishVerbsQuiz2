@@ -247,13 +247,16 @@
 					8EC4ABC61D17358D007359FF = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = X6D769Z7F4;
+						LastSwiftMigration = 0810;
 					};
 					8EC4ABDA1D17358E007359FF = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 						TestTargetID = 8EC4ABC61D17358D007359FF;
 					};
 					8EC4ABE51D17358E007359FF = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 						TestTargetID = 8EC4ABC61D17358D007359FF;
 					};
 				};
@@ -474,6 +477,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "NM.Spanish-Verbs-Quiz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -489,6 +493,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "NM.Spanish-Verbs-Quiz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -501,6 +506,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NM.Spanish-Verbs-QuizTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spanish Verbs Quiz.app/Spanish Verbs Quiz";
 			};
 			name = Debug;
@@ -513,6 +519,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NM.Spanish-Verbs-QuizTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spanish Verbs Quiz.app/Spanish Verbs Quiz";
 			};
 			name = Release;
@@ -524,6 +531,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NM.Spanish-Verbs-QuizUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = "Spanish Verbs Quiz";
 			};
 			name = Debug;
@@ -535,6 +543,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NM.Spanish-Verbs-QuizUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = "Spanish Verbs Quiz";
 			};
 			name = Release;
