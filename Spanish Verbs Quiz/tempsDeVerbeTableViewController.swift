@@ -1,23 +1,24 @@
 //
 //  tempsDeVerbeTableViewController.swift
-//  Spanish Verbs Quiz
+//  French Verbs Quiz
 //
-//  Created by Normand Martin on 16-06-23.
+//  Created by Normand Martin on 2016-12-02.
 //  Copyright © 2016 Normand Martin. All rights reserved.
 //
 
 import UIKit
 
 class tempsDeVerbeTableViewController: UITableViewController {
-    var arrayVerbe: NSArray = []
+    var arrayVerbe: [[String]] = []
     var verbeInfinitif: String = ""
     var nomSection: String = ""
     var leTemps: String = ""
     var verbeTotal = ["", "", ""]
     
+    
     let sectionListe = ["INDICATIVO", "SUBJUNTIVO", "CONDICIONAL", "IMPERATIVO"]
     let item = [["Presente", "Imperfecto", "Pretérito", "Futuro", "Presente Continuo", "Pretérito perfecto", "Pluscuamperfecto", "Futuro perfecto", "Pretérito anterior"], ["Presente", "Imperfecto", "Futuro", "Pretérito perfecto", "Pluscuamperfecto"], ["Condicional", "Perfecto"], ["Positivo", "Negativo"]]
-    // Changing backgroung colors of the header of sections
+    
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
         header.contentView.backgroundColor = UIColor(red: 151/255, green: 156/255, blue: 159/255, alpha: 1.0) //make the background color light blue
@@ -25,18 +26,15 @@ class tempsDeVerbeTableViewController: UITableViewController {
         header.alpha = 1.0 //make the header transparent
         
     }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Scegliere il tempo"
 
-    }
-    
-
+     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
+        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -57,18 +55,14 @@ class tempsDeVerbeTableViewController: UITableViewController {
         return item[section].count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "verbCell2", for: indexPath)
-
-        cell.textLabel!.text = self.item[indexPath.section][indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let helper = Helper()
+        cell.textLabel!.text = helper.capitalize(word: self.item[indexPath.section][indexPath.row]) 
         return cell
         
-    }
- 
+     }
 
-
-    // MARK: - Navigation
 
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -80,23 +74,20 @@ class tempsDeVerbeTableViewController: UITableViewController {
                     nomSection = "Indicativo"
                 }else if nomSection == "SUBJUNTIVO"{
                     nomSection = "Subjuntivo"
-                    leTemps = nomSection + " " + leTemps.lowercased()
                 }else if nomSection == "CONDICIONAL"{
                     nomSection = "Condicional"
-                        if leTemps == "Perfecto"{
-                          leTemps = nomSection + " " + leTemps.lowercased()
-                        }
+                   
                 }else if nomSection == "IMPERATIVO"{
                     nomSection = "Imperativo"
-                    leTemps = nomSection + " " + leTemps.lowercased()
+                    
                 }
-               
-                    let backItem = UIBarButtonItem()
-                    backItem.title = ""
-                    navigationItem.backBarButtonItem = backItem 
+                
+                let backItem = UIBarButtonItem()
+                backItem.title = ""
+                navigationItem.backBarButtonItem = backItem
                 
                 verbeTotal = [verbeInfinitif, nomSection, leTemps ]
-                let controller = segue.destination as! VerbeFinalTableViewController
+                let controller = segue.destination as! FinalVerbeViewController
                 controller.selectionVerbe = verbeTotal
                 controller.arrayVerbe = arrayVerbe
             }
@@ -105,6 +96,5 @@ class tempsDeVerbeTableViewController: UITableViewController {
         }
         
     }
-
 
 }
