@@ -28,28 +28,29 @@ class FinalVerbeViewController: UIViewController {
     @IBOutlet weak var fourth: UILabel!
     @IBOutlet weak var fifth: UILabel!
     @IBOutlet weak var sixth: UILabel!
+    @IBOutlet weak var otraForma: UIButton!
     
     @IBOutlet weak var masterConstraint: NSLayoutConstraint!
     let screenSize: CGRect = UIScreen.main.bounds
-    
-
-    
+    var counter: Int = 0
+    var buttonPressed: Bool = false
+    let helper = Helper()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Verbo coniugato"
+        self.title = "Verbo conjugado"
         masterConstraint.constant = 0.08 * screenSize.height
-        print(selectionVerbe)
-        var n = 0
+        counter = 0
         for verb in arrayVerbe{
             if verb[0] == selectionVerbe[1] && verb[1] == selectionVerbe[2] && verb[2] == selectionVerbe[0]{
-                noItem = n
+                noItem = counter
                 break
             }
-            n = n + 1
+            counter = counter + 1
         }
+        print(noItem)
         let verbeItalien = VerbeItalien(verbArray: arrayVerbe, n: noItem)
       
-        let helper = Helper()
+        
         infinitif.text = helper.capitalize(word: verbeItalien.verbe)
         mode.text = helper.capitalize(word: verbeItalien.mode)
         temps.text = helper.capitalize(word: verbeItalien.temps)
@@ -77,6 +78,15 @@ class FinalVerbeViewController: UIViewController {
             sixth.text = personneVerbe.sixth
             
         }
+
+        if mode.text != "Subjuntivo" || (temps.text != "Imperfecto" && temps.text != "Pluscuamperfecto") {
+            otraForma.tintColor = UIColor.clear
+            otraForma.isUserInteractionEnabled = false
+        }else if temps.text == "Imperfecto"{
+            otraForma.setTitle("Ver otra forma del Subjuntivo Imperfecto", for: .normal)
+        }else if temps.text == "Pluscuamperfecto" {
+            otraForma.setTitle("Ver otra forma del Subjuntivo Pluscuamperfecto", for: .normal)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,5 +95,28 @@ class FinalVerbeViewController: UIViewController {
     }
     
 
+    @IBAction func otraFormaVerbo(_ sender: UIButton) {
+        
+        if (mode.text == "Subjuntivo" && (temps.text != "Imperfecto" || temps.text != "Pluscuamperfecto")) && buttonPressed == false  {
+            noItem = noItem + 1
+            buttonPressed = true
+            
+        }else{
+            noItem = noItem - 1
+            buttonPressed = false
+        }
+        print(noItem)
+        let verbeItalien = VerbeItalien(verbArray: arrayVerbe, n: noItem)
+        infinitif.text = helper.capitalize(word: verbeItalien.verbe)
+        mode.text = helper.capitalize(word: verbeItalien.mode)
+        temps.text = helper.capitalize(word: verbeItalien.temps)
+        premier.text = verbeItalien.premier
+        deuxieme.text = verbeItalien.deuxieme
+        troisieme.text = verbeItalien.troisieme
+        quatrieme.text = verbeItalien.quatrieme
+        cinquieme.text = verbeItalien.cinquieme
+        sixieme.text = verbeItalien.sixieme
+
+    }
 
 }

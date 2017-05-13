@@ -104,7 +104,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="q26-FZ-BjX"/>
-                                <barButtonItem title="Remettre les statistiques à 0" id="h1t-EE-4G1">
+                                <barButtonItem title="Borrar las estadisticas" id="h1t-EE-4G1">
                                     <connections>
                                         <action selector="remettreAZero:" destination="0GJ-EO-iYI" id="1BA-IR-56B"/>
                                     </connections>
@@ -223,7 +223,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BonneReponse" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hu7-so-V2Z">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BonneReponse" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hu7-so-V2Z">
                                 <rect key="frame" x="16" y="357" width="288" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <nil key="textColor"/>
@@ -609,6 +609,14 @@
                                 <color key="textColor" red="0.060655785720000001" green="0.15792367539999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="11A-63-cGV">
+                                <rect key="frame" x="16" y="504" width="288" height="33"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Otra Forma del Verbo"/>
+                                <connections>
+                                    <action selector="otraFormaVerbo:" destination="chx-yj-rjr" eventType="touchUpInside" id="u8b-6o-gKr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -635,6 +643,7 @@
                             <constraint firstItem="csa-2R-shG" firstAttribute="leading" secondItem="Bb6-FD-LdW" secondAttribute="leading" id="MkQ-wM-a8r"/>
                             <constraint firstItem="jat-lW-vxg" firstAttribute="centerX" secondItem="wPw-Z7-LMA" secondAttribute="centerX" id="OwI-jF-ygF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jat-lW-vxg" secondAttribute="trailing" id="QNn-iq-WMr"/>
+                            <constraint firstItem="11A-63-cGV" firstAttribute="top" secondItem="bmq-aC-O89" secondAttribute="bottom" constant="50.5" id="ROI-UX-lGT"/>
                             <constraint firstItem="jat-lW-vxg" firstAttribute="leading" secondItem="wPw-Z7-LMA" secondAttribute="leadingMargin" id="SHr-e5-hPa"/>
                             <constraint firstItem="Bb6-FD-LdW" firstAttribute="leading" secondItem="6PJ-em-gtH" secondAttribute="trailing" constant="3.5" id="T08-cg-hg1"/>
                             <constraint firstItem="Vyw-pn-5i0" firstAttribute="leading" secondItem="K6L-jU-QJJ" secondAttribute="trailing" constant="3.5" id="TLt-ih-xFx"/>
@@ -650,6 +659,8 @@
                             <constraint firstItem="bmq-aC-O89" firstAttribute="top" secondItem="Vyw-pn-5i0" secondAttribute="bottom" constant="20" id="hXi-Sk-uyY"/>
                             <constraint firstItem="Vyw-pn-5i0" firstAttribute="top" secondItem="vhM-QR-trJ" secondAttribute="bottom" constant="21" id="iRS-Zo-tRd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="U9W-Ff-ugi" secondAttribute="trailing" id="jxw-GS-5hS"/>
+                            <constraint firstItem="11A-63-cGV" firstAttribute="trailing" secondItem="wPw-Z7-LMA" secondAttribute="trailingMargin" id="kTw-xh-wfq"/>
+                            <constraint firstItem="11A-63-cGV" firstAttribute="leading" secondItem="wPw-Z7-LMA" secondAttribute="leadingMargin" id="lDr-aS-q0x"/>
                             <constraint firstItem="g3u-Cj-HOX" firstAttribute="leading" secondItem="bp8-yt-Sd5" secondAttribute="trailing" constant="3.5" id="lrV-nO-5Sl"/>
                             <constraint firstItem="bmq-aC-O89" firstAttribute="bottom" secondItem="em7-Ij-VU1" secondAttribute="bottom" id="mKx-1S-JdB"/>
                             <constraint firstItem="Vyw-pn-5i0" firstAttribute="bottom" secondItem="K6L-jU-QJJ" secondAttribute="bottom" id="msH-Vk-lt5"/>
@@ -665,6 +676,7 @@
                         <outlet property="infinitif" destination="3oA-Ne-o3I" id="bmr-I1-Qd1"/>
                         <outlet property="masterConstraint" destination="32D-1I-7iB" id="v17-d5-KoI"/>
                         <outlet property="mode" destination="jat-lW-vxg" id="QFy-64-YPT"/>
+                        <outlet property="otraForma" destination="11A-63-cGV" id="ss6-Yg-T4z"/>
                         <outlet property="premier" destination="Bb6-FD-LdW" id="bOM-YQ-idR"/>
                         <outlet property="quatrieme" destination="vhM-QR-trJ" id="98f-fx-Doy"/>
                         <outlet property="second" destination="F2U-Vg-HJO" id="azf-n2-mEj"/>

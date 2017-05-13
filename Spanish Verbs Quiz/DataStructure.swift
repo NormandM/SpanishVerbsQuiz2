@@ -54,8 +54,10 @@ struct Personne{
     var second: String{
         if verbArray.mode == "Subjuntivo"{
             return "que tu"
-        }else if verbArray.mode == "Imperativo"{
+        }else if verbArray.mode == "Imperativo" && verbArray.temps == "Positivo"{
             return"(tu)"
+        }else if verbArray.mode == "Imperativo" && verbArray.temps == "Negativo"{
+                return"(tu) no"
         }else{
             return "tu"
         }
@@ -63,8 +65,10 @@ struct Personne{
     var third: String {
         if verbArray.mode == "Subjuntivo"{
             return "que el"
-        }else if verbArray.mode == "Imperativo"{
+        }else if verbArray.mode == "Imperativo" && verbArray.temps == "Positivo"{
             return"(el)"
+        }else if verbArray.mode == "Imperativo" && verbArray.temps == "Negativo"{
+            return"(el) no"
         }else{
             return "el"
         }
@@ -72,8 +76,10 @@ struct Personne{
     var fourth: String{
         if verbArray.mode == "Subjuntivo"{
             return "que nosotros"
-        }else if verbArray.mode == "Imperativo"{
+        }else if verbArray.mode == "Imperativo" && verbArray.temps == "Positivo"{
             return"(nosotros)"
+        }else if verbArray.mode == "Imperativo" && verbArray.temps == "Negativo"{
+            return"(nosotros) no"
         }else{
             return "nosotros"
         }
@@ -81,8 +87,10 @@ struct Personne{
     var fifth: String{
         if verbArray.mode == "Subjuntivo"{
             return "que vosotros"
-        }else if verbArray.mode == "Imperativo"{
+        }else if verbArray.mode == "Imperativo" && verbArray.temps == "Positivo"{
             return"(vosotros)"
+        }else if verbArray.mode == "Imperativo" && verbArray.temps == "Negativo"{
+            return"(vosotros) no"
         }else{
             return "vosotros"
         }
@@ -90,8 +98,10 @@ struct Personne{
     var sixth: String {
         if verbArray.mode == "Subjuntivo"{
             return "que ellos"
-        }else if verbArray.mode == "Imperativo"{
+        }else if verbArray.mode == "Imperativo" && verbArray.temps == "Positivo"{
             return"(ellos)"
+        }else if verbArray.mode == "Imperativo" && verbArray.temps == "Negativo"{
+            return"(ellos) no"
         }else{
             return "ellos"
         }

@@ -23,6 +23,8 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate {
     var noItem: Int = 0
     var choixPersonne: String = ""
     var reponseBonne: String = ""
+    var isSecondSubjontivo: Bool = false
+    var reponseBonneSubj2: String = ""
     var progress: Float = 0.0
     var progressInt: Float = 0.0
     var goodResponse: Int = 0
@@ -65,7 +67,7 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate {
         masterConstraint.constant = 0.10 * screenSize.height
         tempsConstraint.constant = 0.10 * screenSize.height
         testCompltete = false
-        self.title = "Rispondere"
+        self.title = "Escriba el verbo conjugato"
         barreProgression.progress = 0.0
         selectionQuestion()
         do {
@@ -171,9 +173,9 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate {
         if n == 0 {
             modeChoisi = "Indicativo"
         }else if n == 1{
-            modeChoisi = "Congiuntivo"
+            modeChoisi = "Subjuntivo"
         }else if n == 2{
-            modeChoisi = "Condizionale"
+            modeChoisi = "Condicional"
         }else if n == 3{
             modeChoisi = "Imperativo"
         }
@@ -187,7 +189,7 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate {
             }else{
                 listeVerbe.append(allVerbs.verbe)
             }
-            infinitifVerb = infinitifVerb + 16
+            infinitifVerb = infinitifVerb + 21
         }
         let noDeverbe = listeVerbe.count
         let indexVerbeChoisi = Int(arc4random_uniform(UInt32(noDeverbe)))
@@ -227,6 +229,7 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate {
 
 
         let verbeFrancais = VerbeItalien(verbArray: arrayVerbe, n: noItem)
+        let verbFrançaisSubj2 = VerbeItalien(verbArray: arrayVerbe, n: noItem + 1)
         let personneVerbe = Personne(verbArray: verbeFrancais)
         verbeFinal = verbeFrancais.verbe
         modeFinal = verbeFrancais.mode
@@ -237,41 +240,52 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate {
         temps.text = helper.capitalize(word: tempsFinal)
     
         bonneReponse.text = ""
-        if verbeFinal == "bisognare"{
+        if verbeFinal == "nevare"{
             noPersonne = 3
         }
         if noPersonne == 1{
             choixPersonne = "premier"
             reponseBonne = verbeFrancais.premier
+            reponseBonneSubj2 = verbFrançaisSubj2.premier
             personne.text = personneVerbe.first
         }else if noPersonne == 2 {
             choixPersonne = "deuxieme"
             reponseBonne = verbeFrancais.deuxieme
+            reponseBonneSubj2 = verbFrançaisSubj2.deuxieme
             personne.text = personneVerbe.second
         }else if noPersonne == 3 {
             choixPersonne = "troisieme"
             reponseBonne = verbeFrancais.troisieme
+            reponseBonneSubj2 = verbFrançaisSubj2.troisieme
             personne.text = personneVerbe.third
         }else if noPersonne == 4 {
             choixPersonne = "quatrieme"
             reponseBonne = verbeFrancais.quatrieme
+            reponseBonneSubj2 = verbFrançaisSubj2.quatrieme
             personne.text = personneVerbe.fourth
         }else if noPersonne == 5 {
             choixPersonne = "cinquieme"
             reponseBonne = verbeFrancais.cinquieme
+            reponseBonneSubj2 = verbFrançaisSubj2.cinquieme
             personne.text = personneVerbe.fifth
         }else if noPersonne == 6 {
             choixPersonne = "sixieme"
             reponseBonne = verbeFrancais.sixieme
+            reponseBonneSubj2 = verbFrançaisSubj2.sixieme
             personne.text = personneVerbe.sixth
+        }
+        if mode.text == "Subjuntivo" && (temps.text == "Imperfecto" || temps.text == "Pluscuamperfecto")  {
+                isSecondSubjontivo = true
+        }else{
+                isSecondSubjontivo = false
         }
         
     }
 
     func evaluationReponse(){
-        if reponse.text == reponseBonne{
+        if reponse.text == reponseBonne || (isSecondSubjontivo == true && reponse.text == reponseBonneSubj2){
             goodResponse = goodResponse + 1
-            bonneReponse.text = "Buonissimo!"
+            bonneReponse.text = "¡Muy Bien!"
             let filePath = Bundle.main.path(forResource: "Incoming Text 01", ofType: "wav")
             soundURL = NSURL(fileURLWithPath: filePath!)
             AudioServicesCreateSystemSoundID(soundURL!, &soundID)
@@ -315,7 +329,11 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate {
             }
             
             dataController.saveContext()
-            bonneReponse.text = reponseBonne
+            if isSecondSubjontivo == true {
+                bonneReponse.text = reponseBonne + " o " + reponseBonneSubj2
+            }else{
+                bonneReponse.text = reponseBonne
+            }
             bonneReponse.textColor = UIColor(red: 255/255, green: 17/255, blue: 93/255, alpha: 1.0)
             let filePath = Bundle.main.path(forResource: "Error Warning", ofType: "wav")
             soundURL = NSURL(fileURLWithPath: filePath!)
@@ -351,13 +369,13 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate {
     
     func showAlert4 () {
         
-        let alert = UIAlertController(title: "Verbi Italiani Quiz", message: "La sua opinione è importante per migliorare l'applicazione. Per favore dia i suoi commenti", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Va bene", style: UIAlertActionStyle.default, handler:{(alert: UIAlertAction!) in self.rateApp(appId: "id1087151566") { success in
+        let alert = UIAlertController(title: "Verbos Españoles Quiz", message: "Su opinión es importante para mejorar la aplicación. Por favor, dé sus comentarios", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "De acuerdo", style: UIAlertActionStyle.default, handler:{(alert: UIAlertAction!) in self.rateApp(appId: "id1140560211") { success in
             print("RateApp \(success)")
             }}))
-        alert.addAction(UIAlertAction(title: "Più tardi", style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Más tarde", style: UIAlertActionStyle.default, handler: nil))
         //self.present(alert, animated: true, completion: nil)
-        alert.addAction(UIAlertAction(title: "Non mostrare mai questo", style: UIAlertActionStyle.default, handler: {(alert: UIAlertAction!) in self.fenetre = true; UserDefaults.standard.set(self.fenetre, forKey: "fenetre") }))
+        alert.addAction(UIAlertAction(title: "No mostrar más esto", style: UIAlertActionStyle.default, handler: {(alert: UIAlertAction!) in self.fenetre = true; UserDefaults.standard.set(self.fenetre, forKey: "fenetre") }))
         self.present(alert, animated: true, completion: nil)
     }
     func rateApp(appId: String, completion: @escaping ((_ success: Bool)->())) {

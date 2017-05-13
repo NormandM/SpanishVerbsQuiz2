@@ -16,7 +16,7 @@ class QuizOptionsController: UITableViewController {
     var arr: NSMutableArray = []
 
     let sectionListe = ["INDICATIVO", "SUBJUNTIVO", "CONDICIONAL", "IMPERATIVO"]
-    let item = [["Presente", "Imperfecto", "Pretérito", "Futuro", "Presente Continuo", "Pretérito perfecto", "Pluscuamperfecto", "Futuro perfecto", "Pretérito anterior"], ["Presente", "Imperfecto", "Futuro", "Pretérito perfecto", "Pluscuamperfecto"], ["Condicional", "Perfecto"], ["Positivo", "Negativo"]]
+    let item = [["Presente", "Imperfecto", "Pretérito", "Futuro", "Presente continuo", "Pretérito perfecto", "Pluscuamperfecto", "Futuro perfecto", "Pretérito anterior"], ["Presente ", "Imperfecto ", "Futuro ", "Pretérito perfecto ", "Pluscuamperfecto "], ["Condicional  ", "Perfecto  "], ["Positivo   ", "Negativo   "]]
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
         header.contentView.backgroundColor = UIColor(red: 151/255, green: 156/255, blue: 159/255, alpha: 1.0) //make the background color light blue
@@ -28,7 +28,7 @@ class QuizOptionsController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Scegliere i tempi"
+        self.title = "Escoja los tiempos verbales"
 
     }
 
@@ -60,7 +60,6 @@ class QuizOptionsController: UITableViewController {
     // Next code is to enable checks for each cell selected
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        //let helper = Helper()
         cell.textLabel!.text = self.item[indexPath.section][indexPath.row]
         cell.selectionStyle = .none
         configure(cell, forRowAtIndexPath: indexPath)
@@ -116,12 +115,9 @@ class QuizOptionsController: UITableViewController {
         }
     }
     func showAlert () {
-        let alertController = UIAlertController(title: "È necessario scegliere almeno un tempo verbale.", message: nil, preferredStyle: .actionSheet)
-        alertController.popoverPresentationController?.sourceView = self.view
-        alertController.popoverPresentationController?.sourceRect = tableView.rectForHeader(inSection: 1)
-        
-        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: dismissAlert)
-        alertController.addAction(okAction)
+        let alertController = UIAlertController(title: "Elija por lo menos un tiempo verbal", message: nil, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Listo", style: UIAlertActionStyle.default, handler: nil))
+
         
         present(alertController, animated: true, completion: nil)
     }

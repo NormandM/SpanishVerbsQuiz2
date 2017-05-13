@@ -23,26 +23,29 @@ class StatistiqueTableViewController: UITableViewController {
         return request
     }()
     
-    let sectionListe = ["INDICATIVO", "CONGIUNTIVO", "CONDIZIONALE", "IMPERATIVO"]
-    let itemInitial = [["Presente", "Imperfetto", "Passato prossimo", "Futuro semplice", "Passato remoto", "Trapassato prossimo", "Futuro anteriore", "Trapassato remoto"], ["Presente", "Passato", "Imperfetto", "Trapassato"], ["Presente", "Passato"], ["Presente"]]
+    let sectionListe = ["INDICATIVO", "SUBJUNTIVO", "CONDICIONAL", "IMPERATIVO"]
+    let itemInitial = [["Presente", "Imperfecto", "Pretérito", "Futuro", "Presente Continuo", "Pretérito perfecto", "Pluscuamperfecto", "Futuro perfecto", "Pretérito anterior"], ["Presente", "Imperfecto", "Futuro", "Pretérito perfecto", "Pluscuamperfecto"], ["Condicional", "Perfecto"], ["Positivo", "Negativo"]]
     var items: [ItemVerbe] = []
 
     enum TempsDeVerbe: String {
         case Presente = "IndicativoPresente"
-        case Imperfetto = "IndicativoImperfetto"
-        case Passato = "IndicativoPassato prossimo"
-        case Passatoremoto = "IndicativoPassato remoto"
-        case Trapassatoprossimo = "IndicativoTrapassato prossimo"
-        case Futurosemplice = "IndicativoFuturo semplice"
-        case Trapassatoremoto = "IndicativoTrapassato remoto"
-        case Futuroanteriore = "IndicativoFuturo anteriore"
-        case CongiuntivoPresente = "CongiuntivoPresente"
-        case CongiuntivoPassato = "CongiuntivoPassato"
-        case CongiuntivoImperfetto = "CongiuntivoImperfetto"
-        case CongiuntivoTrapassato = "CongiuntivoTrapassato"
-        case CondizionalePresente = "CondizionalePresente"
-        case CondizionalePassato = "CondizionalePassato"
-        case ImperativoPresente = "ImperativoPresente"
+        case Imperfecto = "IndicativoImperfecto"
+        case Pretéritoperfecto = "IndicativoPretérito perfecto"
+        case Pretérito = "IndicativoPretérito"
+        case Pluscuamperfecto = "IndicativoPluscuamperfecto"
+        case Futuro = "IndicativoFuturo"
+        case Pretéritoanterior = "IndicativoPretérito anterior"
+        case Futuroperfecto = "IndicativoFuturo perfecto"
+        case Presentecontinuo = "IndicativoPresente continuo"
+        case SubjuntivoPresente = "SubjuntivoPresente"
+        case SubjuntivoPretérito = "SubjuntivoPretérito perfecto"
+        case SubjuntivoImperfecto = "SubjuntivoImperfecto"
+        case SubjuntivoPluscuamperfecto = "SubjuntivoPluscuamperfecto"
+        case SubjuntivoFuturo = "SubjuntivoFuturo"
+        case CondicionalCondicional = "CondicionalCondicional"
+        case CondicionalPerfecto = "CondicionalPerfecto"
+        case ImperativoPositivo = "ImperativoPositivo"
+        case ImperativoNegativo = "ImperativoNegativo"
     
     }
     
@@ -53,27 +56,19 @@ class StatistiqueTableViewController: UITableViewController {
         header.alpha = 1.0 //make the header transparent
         
     }
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Statistiche"
+        self.title = "Resultados por cada tiempo"
         populateData()
- 
      }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
         return sectionListe[section]
     }
-
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
         return sectionListe.count
     }
 
@@ -84,7 +79,6 @@ class StatistiqueTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
- 
         cell.textLabel?.text = self.itemFinal[indexPath.section][indexPath.row]
         return cell
     }
@@ -103,64 +97,69 @@ class StatistiqueTableViewController: UITableViewController {
             try managedObjectContext.save()
             
         } catch {
-            // Error Handling
-            // ...
-        }
 
+        }
             populateData()
             tableView.reloadData()
-            // Save Changes
-
     }
 ////////////////////////////////////////////
 // MARK: ALL FUNCTIONS
 ///////////////////////////////////////////
     func populateData() {
         var IndicativoPresenteP: String = ""
-        var IndicativoImperfettoP: String = ""
-        var IndicativoPassatoprossimoP: String = ""
-        var IndicativoPassatoremotoP: String = ""
-        var IndicativoTrapassatoprossimoP: String = ""
-        var IndicativoFuturosempliceP: String = ""
-        var IndicativoTrapassatoremotoP: String = ""
-        var IndicativoFuturoanterioreP: String = ""
-        var CongiuntivoPresenteP: String = ""
-        var CongiuntivoPassatoP: String = ""
-        var CongiuntivoImperfettoP: String = ""
-        var CongiuntivoTrapassatoP: String = ""
-        var CondizionalePresenteP: String = ""
-        var CondizionalePassatoP: String = ""
-        var ImperativoPresenteP: String = ""
+        var IndicativoImperfectoP: String = ""
+        var IndicativoPretéritoperfectoP: String = ""
+        var IndicativoPretéritoP: String = ""
+        var IndicativoPluscuamperfectoP: String = ""
+        var IndicativoFuturoP: String = ""
+        var IndicativoPretéritoanteriorP: String = ""
+        var IndicativoFuturoperfectoP: String = ""
+        var IndicativoPresentecontinuoP: String = ""
+        var SubjuntivoPresenteP: String = ""
+        var SubjuntivoPretéritoperfectoP: String = ""
+        var SubjuntivoImperfectoP: String = ""
+        var SubjuntivoPluscuamperfectoP: String = ""
+        var SubjuntivoFuturoP: String = ""
+        var CondicionalCondicionalP: String = ""
+        var CondicionalPerfectoP: String = ""
+        var ImperativoPositivoP: String = ""
+        var ImperativoNegativoP: String = ""
         var IndicativoPresenteB: Int = 0
         var IndicativoPresenteM: Int = 0
-        var IndicativoImperfettoB: Int = 0
-        var IndicativoImperfettoM: Int = 0
-        var IndicativoPassatoprossimoB: Int = 0
-        var IndicativoPassatoprossimoM: Int = 0
-        var IndicativoPassatoremotoB: Int = 0
-        var IndicativoPassatoremotoM: Int = 0
-        var IndicativoTrapassatoprossimoB: Int = 0
-        var IndicativoTrapassatoprossimoM: Int = 0
-        var IndicativoFuturosempliceB: Int = 0
-        var IndicativoFuturosempliceM: Int = 0
-        var IndicativoTrapassatoremotoB: Int = 0
-        var IndicativoTrapassatoremotoM: Int = 0
-        var IndicativoFuturoanterioreB: Int = 0
-        var IndicativoFuturoanterioreM: Int = 0
-        var CongiuntivoPresenteB: Int = 0
-        var CongiuntivoPresenteM: Int = 0
-        var CongiuntivoPassatoB: Int = 0
-        var CongiuntivoPassatoM: Int = 0
-        var CongiuntivoImperfettoB: Int = 0
-        var CongiuntivoImperfettoM: Int = 0
-        var CongiuntivoTrapassatoB: Int = 0
-        var CongiuntivoTrapassatoM: Int = 0
-        var CondizionalePresenteB: Int = 0
-        var CondizionalePresenteM: Int = 0
-        var CondizionalePassatoB: Int = 0
-        var CondizionalePassatoM: Int = 0
-        var ImperativoPresenteB: Int = 0
-        var ImperativoPresenteM: Int = 0
+        var IndicativoImperfectoB: Int = 0
+        var IndicativoImperfectoM: Int = 0
+        var IndicativoPretéritoperfectoB: Int = 0
+        var IndicativoPretéritoperfectoM: Int = 0
+        var IndicativoPretéritoB: Int = 0
+        var IndicativoPretéritoM: Int = 0
+        var IndicativoPluscuamperfectoB: Int = 0
+        var IndicativoPluscuamperfectoM: Int = 0
+        var IndicativoFuturoB: Int = 0
+        var IndicativoFuturoM: Int = 0
+        var IndicativoPretéritoanteriorB: Int = 0
+        var IndicativoPretéritoanteriorM: Int = 0
+        var IndicativoFuturoperfectoB: Int = 0
+        var IndicativoFuturoperfectoM: Int = 0
+        var IndicativoPresentecontinuoB: Int = 0
+        var IndicativoPresentecontinuoM: Int = 0
+        var SubjuntivoPresenteB: Int = 0
+        var SubjuntivoPresenteM: Int = 0
+        var SubjuntivoPretéritoperfectoB: Int = 0
+        var SubjuntivoPretéritoperfectoM: Int = 0
+        var SubjuntivoImperfectoB: Int = 0
+        var SubjuntivoImperfectoM: Int = 0
+        var SubjuntivoPluscuamperfectoB: Int = 0
+        var SubjuntivoPluscuamperfectoM: Int = 0
+        var SubjuntivoFuturoB: Int = 0
+        var SubjuntivoFuturoM: Int = 0
+        var CondicionalCondicionalB: Int = 0
+        var CondicionalCondicionalM: Int = 0
+        var CondicionalPerfectoB: Int = 0
+        var CondicionalPerfectoM: Int = 0
+        var ImperativoPositivoB: Int = 0
+        var ImperativoPositivoM: Int = 0
+        var ImperativoNegativoB: Int = 0
+        var ImperativoNegativoM: Int = 0
 
 
         do {
@@ -170,76 +169,97 @@ class StatistiqueTableViewController: UITableViewController {
         }
         for item in items {
             if let tempVerbe = TempsDeVerbe(rawValue: (item.modeVerbe! + item.tempsVerbe!)){
-
+                print(tempVerbe)
                 switch tempVerbe {
                     
                 case .Presente:
                     IndicativoPresenteB = IndicativoPresenteB + Int(item.bonneReponse)
                     IndicativoPresenteM = IndicativoPresenteM + Int(item.mauvaiseReponse)
-                case .CondizionalePassato:
-                    CondizionalePassatoB = CondizionalePassatoB + Int(item.bonneReponse)
-                    CondizionalePassatoM = CondizionalePassatoM + Int(item.mauvaiseReponse)
-                case .CondizionalePresente:
-                    CondizionalePresenteB = CondizionalePresenteB + Int(item.bonneReponse)
-                    CondizionalePresenteM = CondizionalePresenteM + Int(item.mauvaiseReponse)
-                case .Futuroanteriore:
-                    IndicativoFuturoanterioreB = IndicativoFuturoanterioreB + Int(item.bonneReponse)
-                    IndicativoFuturoanterioreM = IndicativoFuturoanterioreM + Int(item.mauvaiseReponse)
-                case .Futurosemplice:
-                    IndicativoFuturosempliceB = IndicativoFuturosempliceB + Int(item.bonneReponse)
-                    IndicativoFuturosempliceM = IndicativoFuturosempliceM + Int(item.mauvaiseReponse)
-                case .Imperfetto:
-                    IndicativoImperfettoB = IndicativoImperfettoB + Int(item.bonneReponse)
-                    IndicativoImperfettoM = IndicativoImperfettoM + Int(item.mauvaiseReponse)
-                case .ImperativoPresente:
-                    ImperativoPresenteB = ImperativoPresenteB + Int(item.bonneReponse)
-                    ImperativoPresenteM = ImperativoPresenteM + Int(item.mauvaiseReponse)
-                case .Passato:
-                    IndicativoPassatoprossimoB = IndicativoPassatoprossimoB + Int(item.bonneReponse)
-                    IndicativoPassatoprossimoM = IndicativoPassatoprossimoM + Int(item.mauvaiseReponse)
-                case .Trapassatoprossimo:
-                    IndicativoTrapassatoprossimoB = IndicativoTrapassatoprossimoB + Int(item.bonneReponse)
-                    IndicativoTrapassatoprossimoM = IndicativoTrapassatoprossimoM + Int(item.mauvaiseReponse)
-                case .Passatoremoto:
-                    IndicativoPassatoremotoB = IndicativoPassatoremotoB + Int(item.bonneReponse)
-                    IndicativoPassatoremotoM = IndicativoPassatoremotoM + Int(item.mauvaiseReponse)
-                case .Trapassatoremoto:
-                    IndicativoTrapassatoremotoB = IndicativoTrapassatoremotoB + Int(item.bonneReponse)
-                    IndicativoTrapassatoremotoM = IndicativoTrapassatoremotoM + Int(item.mauvaiseReponse)
-                case .CongiuntivoImperfetto:
-                    CongiuntivoImperfettoB = CongiuntivoImperfettoB + Int(item.bonneReponse)
-                    CongiuntivoImperfettoM = CongiuntivoImperfettoM + Int(item.mauvaiseReponse)
-                case .CongiuntivoPassato:
-                    CongiuntivoPassatoB = CongiuntivoPassatoB + Int(item.bonneReponse)
-                    CongiuntivoPassatoM = CongiuntivoPassatoM + Int(item.mauvaiseReponse)
-                case .CongiuntivoTrapassato:
-                    CongiuntivoTrapassatoB = CongiuntivoTrapassatoB + Int(item.bonneReponse)
-                    CongiuntivoTrapassatoM = CongiuntivoTrapassatoM + Int(item.mauvaiseReponse)
-                case .CongiuntivoPresente:
-                    CongiuntivoPresenteB = CongiuntivoPresenteB + Int(item.bonneReponse)
-                    CongiuntivoPresenteM = CongiuntivoPresenteM + Int(item.mauvaiseReponse)
+                    print(IndicativoPresenteB)
+                    print(IndicativoPresenteM)
+
+                case .CondicionalPerfecto:
+                    CondicionalPerfectoB = CondicionalPerfectoB + Int(item.bonneReponse)
+                    CondicionalPerfectoM = CondicionalPerfectoM + Int(item.mauvaiseReponse)
+                case .CondicionalCondicional:
+                    CondicionalCondicionalB = CondicionalCondicionalB + Int(item.bonneReponse)
+                    CondicionalCondicionalM = CondicionalCondicionalM + Int(item.mauvaiseReponse)
+                case .Futuroperfecto:
+                    IndicativoFuturoperfectoB = IndicativoFuturoperfectoB + Int(item.bonneReponse)
+                    IndicativoFuturoperfectoM = IndicativoFuturoperfectoM + Int(item.mauvaiseReponse)
+                case .Futuro:
+                    IndicativoFuturoB = IndicativoFuturoB + Int(item.bonneReponse)
+                    IndicativoFuturoM = IndicativoFuturoM + Int(item.mauvaiseReponse)
+                case .Imperfecto:
+                    IndicativoImperfectoB = IndicativoImperfectoB + Int(item.bonneReponse)
+                    IndicativoImperfectoM = IndicativoImperfectoM + Int(item.mauvaiseReponse)
+                case .ImperativoPositivo:
+                    ImperativoPositivoB = ImperativoPositivoB + Int(item.bonneReponse)
+                    ImperativoPositivoM = ImperativoPositivoM + Int(item.mauvaiseReponse)
+                case .ImperativoNegativo:
+                    ImperativoNegativoB = ImperativoNegativoB + Int(item.bonneReponse)
+                    ImperativoNegativoM = ImperativoNegativoM + Int(item.mauvaiseReponse)
+                    
+                case .Pretéritoperfecto:
+                    IndicativoPretéritoperfectoB = IndicativoPretéritoperfectoB + Int(item.bonneReponse)
+                    IndicativoPretéritoperfectoM = IndicativoPretéritoperfectoM + Int(item.mauvaiseReponse)
+                case .Pretérito:
+                    IndicativoPretéritoB = IndicativoPretéritoB + Int(item.bonneReponse)
+                    IndicativoPretéritoM = IndicativoPretéritoM + Int(item.mauvaiseReponse)
+                case .Pretéritoanterior:
+                    IndicativoPretéritoanteriorB = IndicativoPretéritoanteriorB + Int(item.bonneReponse)
+                    IndicativoPretéritoanteriorM = IndicativoPretéritoanteriorM + Int(item.mauvaiseReponse)
+                case .Pluscuamperfecto:
+                    IndicativoPluscuamperfectoB = IndicativoPluscuamperfectoB + Int(item.bonneReponse)
+                    IndicativoPluscuamperfectoM = IndicativoPluscuamperfectoM + Int(item.mauvaiseReponse)
+                case .Presentecontinuo:
+                    
+                    IndicativoPresentecontinuoB = IndicativoPresentecontinuoB + Int(item.bonneReponse)
+                    IndicativoPresentecontinuoM = IndicativoPresentecontinuoM + Int(item.mauvaiseReponse)
+                    print(IndicativoPresentecontinuoB)
+                    print(IndicativoPresentecontinuoM)
+                case .SubjuntivoImperfecto:
+                    SubjuntivoImperfectoB = SubjuntivoImperfectoB + Int(item.bonneReponse)
+                    SubjuntivoImperfectoM = SubjuntivoImperfectoM + Int(item.mauvaiseReponse)
+                case .SubjuntivoPretérito:
+                    SubjuntivoPretéritoperfectoB = SubjuntivoPretéritoperfectoB + Int(item.bonneReponse)
+                    SubjuntivoPretéritoperfectoM = SubjuntivoPretéritoperfectoM + Int(item.mauvaiseReponse)
+                case .SubjuntivoPluscuamperfecto:
+                    SubjuntivoPluscuamperfectoB = SubjuntivoPluscuamperfectoB + Int(item.bonneReponse)
+                    SubjuntivoPluscuamperfectoM = SubjuntivoPluscuamperfectoM + Int(item.mauvaiseReponse)
+                case .SubjuntivoPresente:
+                    SubjuntivoPresenteB = SubjuntivoPresenteB + Int(item.bonneReponse)
+                    SubjuntivoPresenteM = SubjuntivoPresenteM + Int(item.mauvaiseReponse)
+                case .SubjuntivoFuturo:
+                    SubjuntivoFuturoB = SubjuntivoFuturoB + Int(item.bonneReponse)
+                    SubjuntivoFuturoM = SubjuntivoFuturoM + Int(item.mauvaiseReponse)
+                    
+                    
                 }
             }
             
         }
         IndicativoPresenteP = "Presente: " + pourcentage(bonne: IndicativoPresenteB, mauvaise: IndicativoPresenteM)
-        IndicativoImperfettoP = "Imperfetto: " + pourcentage(bonne: IndicativoImperfettoB, mauvaise: IndicativoImperfettoM)
-        IndicativoPassatoprossimoP = "Passato prossimo: " + pourcentage(bonne: IndicativoPassatoprossimoB, mauvaise: IndicativoPassatoprossimoM)
-        IndicativoPassatoremotoP = "Passato remoto: " + pourcentage(bonne: IndicativoPassatoremotoB, mauvaise: IndicativoPassatoremotoM)
-        IndicativoTrapassatoprossimoP = "Trapassato prossimo: " + pourcentage(bonne: IndicativoTrapassatoprossimoB, mauvaise: IndicativoTrapassatoprossimoM)
-        IndicativoFuturosempliceP = "Futuro semplice: " + pourcentage(bonne: IndicativoFuturosempliceB, mauvaise: IndicativoFuturosempliceM)
-        IndicativoTrapassatoremotoP = "Trapassato remoto: " + pourcentage(bonne: IndicativoTrapassatoremotoB, mauvaise: IndicativoTrapassatoremotoM)
-        IndicativoFuturoanterioreP = "Futuro anteriore " + pourcentage(bonne: IndicativoFuturoanterioreB, mauvaise: IndicativoFuturoanterioreM)
-        CongiuntivoPresenteP = "Presente: " + pourcentage(bonne: CongiuntivoPresenteB, mauvaise: CongiuntivoPresenteM)
-        CongiuntivoPassatoP = "Passato: " + pourcentage(bonne: CongiuntivoPassatoB, mauvaise: CongiuntivoPassatoM)
-        CongiuntivoImperfettoP = "Imperfetto: " + pourcentage(bonne: CongiuntivoImperfettoB, mauvaise: CongiuntivoImperfettoM)
-        CongiuntivoTrapassatoP = "Trapassato: " + pourcentage(bonne: CongiuntivoTrapassatoB, mauvaise: CongiuntivoTrapassatoM)
-        CondizionalePresenteP = "Presente: " + pourcentage(bonne: CondizionalePresenteB, mauvaise: CondizionalePresenteM)
-        CondizionalePassatoP = "Passato: " + pourcentage(bonne: CondizionalePassatoB, mauvaise: CondizionalePassatoM)
-        ImperativoPresenteP = "Presente: " + pourcentage(bonne: ImperativoPresenteB, mauvaise: ImperativoPresenteM)
+        IndicativoImperfectoP = "Imperfecto: " + pourcentage(bonne: IndicativoImperfectoB, mauvaise: IndicativoImperfectoM)
+        IndicativoPretéritoperfectoP = "Pretérito perfecto " + pourcentage(bonne: IndicativoPretéritoperfectoB, mauvaise: IndicativoPretéritoperfectoM)
+        IndicativoPretéritoP = "Pretérito: " + pourcentage(bonne: IndicativoPretéritoB, mauvaise: IndicativoPretéritoM)
+        IndicativoPluscuamperfectoP = "Pluscuamperfecto: " + pourcentage(bonne: IndicativoPluscuamperfectoB, mauvaise: IndicativoPluscuamperfectoM)
+        IndicativoFuturoP = "Futuro: " + pourcentage(bonne: IndicativoFuturoB, mauvaise: IndicativoFuturoM)
+        IndicativoPretéritoanteriorP = "Pretérito anterior: " + pourcentage(bonne: IndicativoPretéritoanteriorB, mauvaise: IndicativoPretéritoanteriorM)
+        IndicativoFuturoperfectoP = "Futuro perfecto " + pourcentage(bonne: IndicativoFuturoperfectoB, mauvaise: IndicativoFuturoperfectoM)
+        IndicativoPresentecontinuoP = "Presente continuo: " + pourcentage(bonne: IndicativoPresentecontinuoB, mauvaise: IndicativoPresentecontinuoM)
+        SubjuntivoPresenteP = "Presente: " + pourcentage(bonne: SubjuntivoPresenteB, mauvaise: SubjuntivoPresenteM)
+        SubjuntivoPretéritoperfectoP = "Pretérito perfecto: " + pourcentage(bonne: SubjuntivoPretéritoperfectoB, mauvaise: SubjuntivoPretéritoperfectoM)
+        SubjuntivoImperfectoP = "Imperfecto: " + pourcentage(bonne: SubjuntivoImperfectoB, mauvaise: SubjuntivoImperfectoM)
+        SubjuntivoPluscuamperfectoP = "Pluscuamperfecto: " + pourcentage(bonne: SubjuntivoPluscuamperfectoB, mauvaise: SubjuntivoPluscuamperfectoM)
+        SubjuntivoFuturoP = "Futuro: " + pourcentage(bonne: SubjuntivoFuturoB, mauvaise: SubjuntivoFuturoM)
+        CondicionalCondicionalP = "Condicional: " + pourcentage(bonne: CondicionalCondicionalB, mauvaise: CondicionalCondicionalM)
+        CondicionalPerfectoP = "Perfecto: " + pourcentage(bonne: CondicionalPerfectoB, mauvaise: CondicionalPerfectoM)
+        ImperativoPositivoP = "Positivo: " + pourcentage(bonne: ImperativoPositivoB, mauvaise: ImperativoPositivoM)
+        ImperativoNegativoP = "Negativo: " + pourcentage(bonne: ImperativoNegativoB, mauvaise: ImperativoNegativoM)
         
         
-        itemFinal = [[IndicativoPresenteP, IndicativoImperfettoP, IndicativoPassatoprossimoP, IndicativoFuturosempliceP, IndicativoPassatoremotoP, IndicativoTrapassatoprossimoP, IndicativoFuturoanterioreP, IndicativoTrapassatoremotoP], [CongiuntivoPresenteP, CongiuntivoPassatoP, CongiuntivoImperfettoP, CongiuntivoTrapassatoP], [CondizionalePresenteP, CondizionalePassatoP], [ImperativoPresenteP]]
+        itemFinal = [[IndicativoPresenteP, IndicativoImperfectoP, IndicativoPretéritoperfectoP, IndicativoFuturoP, IndicativoPresentecontinuoP, IndicativoPretéritoP, IndicativoPluscuamperfectoP, IndicativoFuturoperfectoP, IndicativoPretéritoanteriorP], [SubjuntivoPresenteP, SubjuntivoPretéritoperfectoP, SubjuntivoImperfectoP, SubjuntivoPluscuamperfectoP, SubjuntivoFuturoP], [CondicionalCondicionalP, CondicionalPerfectoP], [ImperativoPositivoP, ImperativoNegativoP]]
 
     }
     
