@@ -9,34 +9,39 @@
 import UIKit
 
 class ResultViewController: UIViewController {
-    
+
     @IBOutlet weak var resultat: UILabel!
     @IBOutlet weak var message: UILabel!
     var testCompltete = UserDefaults.standard.bool(forKey: "testCompltete")
-    
-    
+    var totalProgress: Int = 0
     var goodResponse: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         testCompltete = true
         UserDefaults.standard.set(self.testCompltete, forKey: "testCompltete")
-        resultat.text = "\(goodResponse)/10"
-        // Do any additional setup after loading the view.
-        if goodResponse == 10{
-            message.text = "Perfetto! "
-        }else if goodResponse == 9 ||  goodResponse == 8 || goodResponse == 7{
-            message.text = "Ottimo!"
+        resultat.text = "\(goodResponse)/\(totalProgress)"
+        let result = Double(goodResponse)/Double(totalProgress)
+        let resultPercent = String(round(result*100)) + " %"
+        
+//        if goodResponse == 10{
+//            message.text = "¡Perfecto! "
+//        }else if goodResponse == 9 ||  goodResponse == 8 || goodResponse == 7{
+//            message.text = "¡Excelente!"
+//        }else{
+//            message.text = "Inténtelo de nuevo"
+//        }
+        if result == 1.0{
+            message.text = "¡Perfecto! "
+        }else if result < 1 && Double(result) >= 0.75{
+            message.text = "\(resultPercent) ¡Excelente!"
+        }else  if Double(result) >= 0.6 && Double(result) < 0.75{
+            message.text = "\(resultPercent)¡Muy Biene!"
         }else{
-            message.text = "Riprovare!"
+            message.text = "\(resultPercent) ¡Inténtelo de nuevo!"
         }
 
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "unwindToQuizController" {
             let controller = segue.destination as! QuizController
@@ -46,10 +51,8 @@ class ResultViewController: UIViewController {
 
     
     @IBAction func termine(_ sender: Any) {
-        performSegue(withIdentifier: "unwindToQuizController", sender: self)
-        
+        //performSegue(withIdentifier: "unwindToQuizController", sender: self)
         self.dismiss(animated: true, completion: nil)
-        
     }
 
 

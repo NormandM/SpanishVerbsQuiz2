@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>abandonar</key>
+	<string>to abandon</string>
+	<key>abrazar</key>
+	<string>to hug</string>
+	<key>abrir</key>
+	<string>to open</string>
+	<key>aburrir</key>
+	<string>to bore</string>
+	<key>acabar</key>
+	<string>to finish</string>
+	<key>aceptar</key>
+	<string>to accept</string>
+	<key>acordar</key>
+	<string>to agree, to remember</string>
+	<key>acostar</key>
+	<string>to lie down</string>
+	<key>ahorrar</key>
+	<string>to save, to save money</string>
+	<key>alcanzar</key>
+	<string>to reach</string>
+	<key>almorzar</key>
+	<string>to have lunch</string>
+	<key>amar</key>
+	<string>to love</string>
+	<key>andar</key>
+	<string>to walk</string>
+	<key>apagar</key>
+	<string>to turn off</string>
+	<key>aparecer</key>
+	<string>to appear</string>
+	<key>aprender</key>
+	<string>to learn</string>
+	<key>asistir</key>
+	<string>to attend</string>
+	<key>atraer</key>
+	<string>to attract</string>
+	<key>ayudar</key>
+	<string>to help</string>
+	<key>bailar</key>
+	<string>to dance</string>
+	<key>bajar</key>
+	<string>to go down</string>
+	<key>barrer</key>
+	<string>to sweep</string>
+	<key>bendecir</key>
+	<string>to bless</string>
+	<key>besar</key>
+	<string>to kiss</string>
+	<key>buscar</key>
+	<string>to search</string>
+	<key>caber</key>
+	<string>to fit</string>
+	<key>caer</key>
+	<string>to fall</string>
+	<key>calentar</key>
+	<string>to warm</string>
+	<key>callar</key>
+	<string>to shut up</string>
+	<key>caminar</key>
+	<string>to walk</string>
+	<key>cancelar</key>
+	<string>to cancel</string>
+	<key>cansar</key>
+	<string>to tire out</string>
+	<key>casar</key>
+	<string>to marry</string>
+	<key>cenar</key>
+	<string>to dine</string>
+	<key>cerrar</key>
+	<string>to close</string>
+	<key>cocinar</key>
+	<string>to cook</string>
+	<key>coger</key>
+	<string>to take</string>
+	<key>colgar</key>
+	<string>to hang up</string>
+	<key>comenzar</key>
+	<string>to start</string>
+	<key>comer</key>
+	<string>to eat</string>
+	<key>compartir</key>
+	<string>to share</string>
+	<key>comprar</key>
+	<string>to buy</string>
+	<key>comprender</key>
+	<string>to understand</string>
+	<key>conducir</key>
+	<string>to drive</string>
+	<key>conocer</key>
+	<string>to know</string>
+	<key>conseguir</key>
+	<string>to get</string>
+	<key>construir</key>
+	<string>to build</string>
+	<key>contar</key>
+	<string>to tell</string>
+	<key>contestar</key>
+	<string>to answer</string>
+	<key>continuar</key>
+	<string>to continue</string>
+	<key>contribuir</key>
+	<string>to contribute</string>
+	<key>convertir</key>
+	<string>to convert</string>
+	<key>corregir</key>
+	<string>to correct</string>
+	<key>correr</key>
+	<string>to run</string>
+	<key>cortar</key>
+	<string>to cut</string>
+	<key>costar</key>
+	<string>to cost</string>
+	<key>crear</key>
+	<string>to create</string>
+	<key>crecer</key>
+	<string>to grow</string>
+	<key>creer</key>
+	<string>to believe</string>
+	<key>cruzar</key>
+	<string>to cross</string>
+	<key>cubrir</key>
+	<string>to cover</string>
+	<key>cuidar</key>
+	<string>to look after</string>
+	<key>cumplir</key>
+	<string>to accomplish, to achieve</string>
+	<key>dar</key>
+	<string>to give</string>
+	<key>deber</key>
+	<string>to owe, must</string>
+	<key>decidir</key>
+	<string>to decide</string>
+	<key>decir</key>
+	<string>to say</string>
+	<key>defender</key>
+	<string>to defend</string>
+	<key>dejar</key>
+	<string>to leave</string>
+	<key>desayunar</key>
+	<string>to have breakfast</string>
+	<key>descansar</key>
+	<string>to rest</string>
+	<key>descubrir</key>
+	<string>to discover</string>
+	<key>desear</key>
+	<string>to wish</string>
+	<key>despedir</key>
+	<string>to say goodbye, to fire</string>
+	<key>despertar</key>
+	<string>to wake</string>
+	<key>destruir</key>
+	<string>to destroy</string>
+	<key>devolver</key>
+	<string>to give back</string>
+	<key>dibujar</key>
+	<string>to draw</string>
+	<key>dirigir</key>
+	<string>to lead</string>
+	<key>disfrutar</key>
+	<string>to enjoy</string>
+	<key>doler</key>
+	<string>to hurt</string>
+	<key>dormir</key>
+	<string>to sleep</string>
+	<key>duchar</key>
+	<string>to shower</string>
+	<key>echar</key>
+	<string>to throw</string>
+	<key>elegir</key>
+	<string>to choose</string>
+	<key>empezar</key>
+	<string>to start</string>
+	<key>encantar</key>
+	<string>to love</string>
+	<key>encender</key>
+	<string>to turn on</string>
+	<key>encontrar</key>
+	<string>to find</string>
+	<key>entender</key>
+	<string>to understand</string>
+	<key>entrar</key>
+	<string>to get in</string>
+	<key>entregar</key>
+	<string>to deliver</string>
+	<key>enviar</key>
+	<string>to send</string>
+	<key>escoger</key>
+	<string>to choose</string>
+	<key>escribir</key>
+	<string>to write</string>
+	<key>escuchar</key>
+	<string>to hear</string>
+	<key>esperar</key>
+	<string>to wait</string>
+	<key>estar</key>
+	<string>to be</string>
+	<key>estudiar</key>
+	<string>to study</string>
+	<key>exigir</key>
+	<string>to demand</string>
+	<key>explicar</key>
+	<string>to explain</string>
+	<key>fijar</key>
+	<string>to fix,  to pay attention</string>
+	<key>firmar</key>
+	<string>to sign</string>
+	<key>formar</key>
+	<string>to form</string>
+	<key>ganar</key>
+	<string>to win</string>
+	<key>gastar</key>
+	<string>to spend</string>
+	<key>graduar</key>
+	<string>to graduate</string>
+	<key>gustar</key>
+	<string>to like</string>
+	<key>haber</key>
+	<string>to have</string>
+	<key>hablar</key>
+	<string>to talk</string>
+	<key>hacer</key>
+	<string>to do</string>
+	<key>helar</key>
+	<string>to freeze</string>
+	<key>heredar</key>
+	<string>to inherit</string>
+	<key>herir</key>
+	<string>to wound</string>
+	<key>huir</key>
+	<string>to run away</string>
+	<key>hervir</key>
+	<string>to boil</string>
+	<key>incluir</key>
+	<string>to include</string>
+	<key>influir</key>
+	<string>to influence</string>
+	<key>intentar</key>
+	<string>to try</string>
+	<key>interesar</key>
+	<string>to interest</string>
+	<key>invertir</key>
+	<string>to invest</string>
+	<key>invitar</key>
+	<string>to invite</string>
+	<key>ir</key>
+	<string>to go</string>
+	<key>jugar</key>
+	<string>to play</string>
+	<key>juntar</key>
+	<string>to put together</string>
+	<key>lavar</key>
+	<string>to wash</string>
+	<key>leer</key>
+	<string>read</string>
+	<key>levantar</key>
+	<string>to lift up,  to raise</string>
+	<key>limpiar</key>
+	<string>to clean</string>
+	<key>llamar</key>
+	<string>to call</string>
+	<key>llegar</key>
+	<string>to arrive</string>
+	<key>llenar</key>
+	<string>to fill</string>
+	<key>llevar</key>
+	<string>to carry</string>
+	<key>llorar</key>
+	<string>to cry</string>
+	<key>lograr</key>
+	<string>to achieve</string>
+	<key>mandar</key>
+	<string>to send</string>
+	<key>manejar</key>
+	<string>to drive</string>
+	<key>mantener</key>
+	<string>to hold, to maintain</string>
+	<key>medir</key>
+	<string>to size</string>
+	<key>mentir</key>
+	<string>to lie</string>
+	<key>mezclar</key>
+	<string>to mix</string>
+	<key>mirar</key>
+	<string>to look</string>
+	<key>montar</key>
+	<string>to mount</string>
+	<key>morir</key>
+	<string>to die</string>
+	<key>mostrar</key>
+	<string>to show</string>
+	<key>mover</key>
+	<string>to move</string>
+	<key>nacer</key>
+	<string>to be born</string>
+	<key>nadar</key>
+	<string>to swim</string>
+	<key>navegar</key>
+	<string>to surf</string>
+	<key>necesitar</key>
+	<string>to need</string>
+	<key>negar</key>
+	<string>to deny</string>
+	<key>nevar</key>
+	<string>to snow</string>
+	<key>obedecer</key>
+	<string>to obey</string>
+	<key>obtener</key>
+	<string>to get</string>
+	<key>ofrecer</key>
+	<string>to offer</string>
+	<key>oler</key>
+	<string>to smell</string>
+	<key>olvidar</key>
+	<string>to forget</string>
+	<key>organizar</key>
+	<string>to organize</string>
+	<key>oír</key>
+	<string>to hear</string>
+	<key>pagar</key>
+	<string>to pay</string>
+	<key>parar</key>
+	<string>to stop</string>
+	<key>parecer</key>
+	<string>to seem</string>
+	<key>participar</key>
+	<string>to take part</string>
+	<key>pasar</key>
+	<string>to happen</string>
+	<key>patinar</key>
+	<string>to skate</string>
+	<key>pedir</key>
+	<string>to ask</string>
+	<key>peinar</key>
+	<string>to comb</string>
+	<key>pensar</key>
+	<string>to think</string>
+	<key>perder</key>
+	<string>to lose</string>
+	<key>permitir</key>
+	<string>to allow</string>
+	<key>poder</key>
+	<string>to ba able to</string>
+	<key>poner</key>
+	<string>to put</string>
+	<key>practicar</key>
+	<string>to practice</string>
+	<key>preferir</key>
+	<string>to prefer</string>
+	<key>preguntar</key>
+	<string>to ask</string>
+	<key>preparar</key>
+	<string>to prepare</string>
+	<key>presentar</key>
+	<string>to present</string>
+	<key>probar</key>
+	<string>to try</string>
+	<key>producir</key>
+	<string>to produce</string>
+	<key>proteger</key>
+	<string>to protect</string>
+	<key>quedar</key>
+	<string>to stay</string>
+	<key>querer</key>
+	<string>to want</string>
+	<key>realizar</key>
+	<string>to carry out</string>
+	<key>recibir</key>
+	<string>to receive</string>
+	<key>reciclar</key>
+	<string>to recycle</string>
+	<key>recoger</key>
+	<string>to collect</string>
+	<key>recomendar</key>
+	<string>to recommend</string>
+	<key>reconocer</key>
+	<string>to recognize</string>
+	<key>recordar</key>
+	<string>to remember</string>
+	<key>regar</key>
+	<string>to water</string>
+	<key>regresar</key>
+	<string>to return</string>
+	<key>repetir</key>
+	<string>to repeat</string>
+	<key>resolver</key>
+	<string>to solve</string>
+	<key>responder</key>
+	<string>to respond</string>
+	<key>resultar</key>
+	<string>to turn out</string>
+	<key>rogar</key>
+	<string>to beg</string>
+	<key>romper</key>
+	<string>to break</string>
+	<key>saber</key>
+	<string>to know</string>
+	<key>sacar</key>
+	<string>to take out</string>
+	<key>sacudir</key>
+	<string>to shake</string>
+	<key>salir</key>
+	<string>to go out</string>
+	<key>secar</key>
+	<string>to dry</string>
+	<key>seguir</key>
+	<string>to follow</string>
+	<key>sentar</key>
+	<string>to sit</string>
+	<key>sentir</key>
+	<string>to feel</string>
+	<key>ser</key>
+	<string>to be</string>
+	<key>servir</key>
+	<string>to serve</string>
+	<key>sonar</key>
+	<string>to sound</string>
+	<key>suponer</key>
+	<string>to suppose</string>
+	<key>temer</key>
+	<string>to fear</string>
+	<key>tener</key>
+	<string>to have</string>
+	<key>terminar</key>
+	<string>to finish</string>
+	<key>tocar</key>
+	<string>to touch</string>
+	<key>tomar</key>
+	<string>to take,  to  drink</string>
+	<key>torcer</key>
+	<string>to twist</string>
+	<key>trabajar</key>
+	<string>to work</string>
+	<key>traer</key>
+	<string>to bring</string>
+	<key>tratar</key>
+	<string>to try</string>
+	<key>usar</key>
+	<string>to use</string>
+	<key>utilizar</key>
+	<string>to use</string>
+	<key>valer</key>
+	<string>to be worth</string>
+	<key>vencer</key>
+	<string>to win</string>
+	<key>vender</key>
+	<string>to sell</string>
+	<key>venir</key>
+	<string>to come</string>
+	<key>ver</key>
+	<string>to see</string>
+	<key>vestir</key>
+	<string>vestir</string>
+	<key>viajar</key>
+	<string>to travel</string>
+	<key>visitar</key>
+	<string>to visit</string>
+	<key>vivir</key>
+	<string>to live</string>
+	<key>volar</key>
+	<string>to fly</string>
+	<key>volver</key>
+	<string>to return</string>
+</dict>
+</plist>

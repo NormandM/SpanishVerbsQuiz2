@@ -47,10 +47,7 @@ class FinalVerbeViewController: UIViewController {
             }
             counter = counter + 1
         }
-        print(noItem)
         let verbeItalien = VerbeItalien(verbArray: arrayVerbe, n: noItem)
-      
-        
         infinitif.text = helper.capitalize(word: verbeItalien.verbe)
         mode.text = helper.capitalize(word: verbeItalien.mode)
         temps.text = helper.capitalize(word: verbeItalien.temps)
@@ -60,7 +57,6 @@ class FinalVerbeViewController: UIViewController {
         quatrieme.text = verbeItalien.quatrieme
         cinquieme.text = verbeItalien.cinquieme
         sixieme.text = verbeItalien.sixieme
-        
         let personneVerbe = Personne(verbArray: verbeItalien)
         if verbeItalien.verbe == "bisognare" {
             first.text = "   "
@@ -105,7 +101,6 @@ class FinalVerbeViewController: UIViewController {
             noItem = noItem - 1
             buttonPressed = false
         }
-        print(noItem)
         let verbeItalien = VerbeItalien(verbArray: arrayVerbe, n: noItem)
         infinitif.text = helper.capitalize(word: verbeItalien.verbe)
         mode.text = helper.capitalize(word: verbeItalien.mode)
@@ -116,7 +111,6 @@ class FinalVerbeViewController: UIViewController {
         quatrieme.text = verbeItalien.quatrieme
         cinquieme.text = verbeItalien.cinquieme
         sixieme.text = verbeItalien.sixieme
-
     }
 
 }

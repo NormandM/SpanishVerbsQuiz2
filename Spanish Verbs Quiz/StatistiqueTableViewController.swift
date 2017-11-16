@@ -169,15 +169,10 @@ class StatistiqueTableViewController: UITableViewController {
         }
         for item in items {
             if let tempVerbe = TempsDeVerbe(rawValue: (item.modeVerbe! + item.tempsVerbe!)){
-                print(tempVerbe)
                 switch tempVerbe {
-                    
                 case .Presente:
                     IndicativoPresenteB = IndicativoPresenteB + Int(item.bonneReponse)
                     IndicativoPresenteM = IndicativoPresenteM + Int(item.mauvaiseReponse)
-                    print(IndicativoPresenteB)
-                    print(IndicativoPresenteM)
-
                 case .CondicionalPerfecto:
                     CondicionalPerfectoB = CondicionalPerfectoB + Int(item.bonneReponse)
                     CondicionalPerfectoM = CondicionalPerfectoM + Int(item.mauvaiseReponse)
@@ -213,11 +208,8 @@ class StatistiqueTableViewController: UITableViewController {
                     IndicativoPluscuamperfectoB = IndicativoPluscuamperfectoB + Int(item.bonneReponse)
                     IndicativoPluscuamperfectoM = IndicativoPluscuamperfectoM + Int(item.mauvaiseReponse)
                 case .Presentecontinuo:
-                    
                     IndicativoPresentecontinuoB = IndicativoPresentecontinuoB + Int(item.bonneReponse)
                     IndicativoPresentecontinuoM = IndicativoPresentecontinuoM + Int(item.mauvaiseReponse)
-                    print(IndicativoPresentecontinuoB)
-                    print(IndicativoPresentecontinuoM)
                 case .SubjuntivoImperfecto:
                     SubjuntivoImperfectoB = SubjuntivoImperfectoB + Int(item.bonneReponse)
                     SubjuntivoImperfectoM = SubjuntivoImperfectoM + Int(item.mauvaiseReponse)
@@ -233,8 +225,6 @@ class StatistiqueTableViewController: UITableViewController {
                 case .SubjuntivoFuturo:
                     SubjuntivoFuturoB = SubjuntivoFuturoB + Int(item.bonneReponse)
                     SubjuntivoFuturoM = SubjuntivoFuturoM + Int(item.mauvaiseReponse)
-                    
-                    
                 }
             }
             

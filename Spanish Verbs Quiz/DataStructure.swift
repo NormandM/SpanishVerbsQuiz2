@@ -36,6 +36,22 @@ struct VerbeItalien{
         sixieme = verbeChoisi[8]
     }
 }
+struct VerbeTrie {
+    let verbe: String
+    let mode: String
+    let temps: String
+    let verbeConjugue: String
+    let personne: String
+    let n: Int
+    init(allInfoList: [[String]], n: Int){
+        self.n = n
+        mode = allInfoList[n][0]
+        temps = allInfoList[n][1]
+        verbe = allInfoList[n][2]
+        verbeConjugue = allInfoList[n][3]
+        personne = allInfoList[n][4]
+    }
+}
 //////////////////////////////
 //// MARK: Struct to assign the right pronom
 //////////////////////////////
@@ -64,13 +80,13 @@ struct Personne{
     }
     var third: String {
         if verbArray.mode == "Subjuntivo"{
-            return "que el"
+            return "que Ud/el"
         }else if verbArray.mode == "Imperativo" && verbArray.temps == "Positivo"{
-            return"(el)"
+            return"(Ud)"
         }else if verbArray.mode == "Imperativo" && verbArray.temps == "Negativo"{
-            return"(el) no"
+            return"(Ud) no"
         }else{
-            return "el"
+            return "Ud/el"
         }
     }
     var fourth: String{
@@ -97,16 +113,107 @@ struct Personne{
     }
     var sixth: String {
         if verbArray.mode == "Subjuntivo"{
-            return "que ellos"
+            return "que Uds/ellos"
         }else if verbArray.mode == "Imperativo" && verbArray.temps == "Positivo"{
-            return"(ellos)"
+            return"(Uds)"
         }else if verbArray.mode == "Imperativo" && verbArray.temps == "Negativo"{
-            return"(ellos) no"
+            return"(Uds) no"
         }else{
-            return "ellos"
+            return "Uds/ellos"
         }
     }
 
+}
+struct PersonneTrie {
+    let verbeTrie: VerbeTrie
+    var first: String{
+        var firstReturn = ""
+        if verbeTrie.personne == "1" {
+            if verbeTrie.mode == "Subjuntivo"{
+                firstReturn = "que yo"
+            }else if verbeTrie.mode == "Imperativo"{
+                firstReturn = ""
+            }else {firstReturn = "yo"}
+        }
+        return firstReturn
+    }
+    var second: String{
+        var secondReturn = ""
+        if verbeTrie.personne == "2" {
+            if verbeTrie.mode == "Subjuntivo"{
+                secondReturn = "que tu"
+            }else if verbeTrie.mode == "Imperativo" && verbeTrie.temps == "Positivo"{
+                secondReturn = "(tu)"
+            }else if verbeTrie.mode == "Imperativo" && verbeTrie.temps == "Negativo"{
+                secondReturn = "(tu) no"
+            }else{
+                secondReturn = "tu"
+            }
+        }
+        return secondReturn
+    }
+    var third: String {
+        var thirdReturn = ""
+        if verbeTrie.personne == "3" {
+            if verbeTrie.mode == "Subjuntivo"{
+                thirdReturn = "que el/Ud"
+            }else if verbeTrie.mode == "Imperativo" && verbeTrie.temps == "Positivo"{
+                thirdReturn = "(Ud)"
+            }else if verbeTrie.mode == "Imperativo" && verbeTrie.temps == "Negativo"{
+                thirdReturn = "(Ud) no"
+            }else{
+                thirdReturn = "el/Ud"
+            }
+        }
+        return thirdReturn
+    }
+    var fourth: String{
+        var fourthReturn = ""
+        if verbeTrie.personne == "4" {
+            if verbeTrie.mode == "Subjuntivo"{
+                fourthReturn = "que nosotros"
+            }else if verbeTrie.mode == "Imperativo" && verbeTrie.temps == "Positivo"{
+                fourthReturn = "(nosotros)"
+            }else if verbeTrie.mode == "Imperativo" && verbeTrie.temps == "Negativo"{
+                fourthReturn = "(nosotros) no"
+            }else{
+                fourthReturn = "nosotros"
+            }
+        }
+        return fourthReturn
+    }
+    var fifth: String{
+        var fifthReturn = ""
+        if verbeTrie.personne == "5" {
+            if verbeTrie.mode == "Subjuntivo"{
+                fifthReturn = "que vosotros"
+            }else if verbeTrie.mode == "Imperativo" && verbeTrie.temps == "Positivo"{
+                fifthReturn = "(vosotros)"
+            }else if verbeTrie.mode == "Imperativo" && verbeTrie.temps == "Negativo"{
+                fifthReturn = "(vosotros) no"
+            }else{
+                fifthReturn = "vosotros"
+            }
+        }
+        return fifthReturn
+    }
+    var sixth: String {
+        var sixthReturn = ""
+        if verbeTrie.personne == "6" {
+            if verbeTrie.mode == "Subjuntivo"{
+                sixthReturn = "que Uds/ellos"
+            }else if verbeTrie.mode == "Imperativo" && verbeTrie.temps == "Positivo"{
+                sixthReturn = "(Uds)"
+            }else if verbeTrie.mode == "Imperativo" && verbeTrie.temps == "Negativo"{
+                sixthReturn = "(Uds) no"
+            }else{
+                sixthReturn = "Uds/ellos"
+            }
+        }
+        return sixthReturn
+    }
+    
+    
 }
 
 /////////////////////////////////////
@@ -163,8 +270,8 @@ open class DataController: NSObject {
 ///////////////////////////////
 class Helper {
     func capitalize(word: String) -> (String) {
-        let firstLetter =  String(word.characters.prefix(1)).capitalized
-        let otherLetters = String(word.characters.dropFirst())
+        let firstLetter =  String(word.prefix(1)).capitalized
+        let otherLetters = String(word.dropFirst())
         return(firstLetter + otherLetters)
     }
 }
