@@ -30,25 +30,27 @@ class Selection {
         // Selecting verb tense
         tempsEtMode = choixTempsEtMode(arraySelection: arraySelection)
         listeVerbe = verbeInfinitif
+        
         if allInfoList.count == 0 {
-        for arrayVerbes in arrayVerbe {
-            
-            if listeVerbe.contains(arrayVerbes[2]){
-                for tempsEtModes in tempsEtMode {
-                    if tempsEtModes.contains(arrayVerbes[0]) && tempsEtModes.contains(arrayVerbes[1]){
-                        if arrayVerbes[3] != "" {allInfoList.append([arrayVerbes[0], arrayVerbes[1], arrayVerbes[2], arrayVerbes[3], "1"])}
-                        if arrayVerbes[4] != "" {allInfoList.append([arrayVerbes[0], arrayVerbes[1], arrayVerbes[2], arrayVerbes[4], "2"])}
-                        if arrayVerbes[5] != "" {allInfoList.append([arrayVerbes[0], arrayVerbes[1], arrayVerbes[2], arrayVerbes[5], "3"])}
-                        if arrayVerbes[6] != "" {allInfoList.append([arrayVerbes[0], arrayVerbes[1], arrayVerbes[2], arrayVerbes[6], "4"])}
-                        if arrayVerbes[7] != "" {allInfoList.append([arrayVerbes[0], arrayVerbes[1], arrayVerbes[2], arrayVerbes[7], "5"])}
-                        if arrayVerbes[8] != "" {allInfoList.append([arrayVerbes[0], arrayVerbes[1], arrayVerbes[2], arrayVerbes[8], "6"])}
+            for arrayVerbes in arrayVerbe {
+                if listeVerbe.contains(arrayVerbes[2]){
+                    for tempsEtModes in tempsEtMode {
+                        if tempsEtModes.contains(arrayVerbes[0]) && tempsEtModes.contains(arrayVerbes[1]){
+                            if arrayVerbes[3] != "" {allInfoList.append([arrayVerbes[0], arrayVerbes[1], arrayVerbes[2], arrayVerbes[3], "1"])}
+                            if arrayVerbes[4] != "" {allInfoList.append([arrayVerbes[0], arrayVerbes[1], arrayVerbes[2], arrayVerbes[4], "2"])}
+                            if arrayVerbes[5] != "" {allInfoList.append([arrayVerbes[0], arrayVerbes[1], arrayVerbes[2], arrayVerbes[5], "3"])}
+                            if arrayVerbes[6] != "" {allInfoList.append([arrayVerbes[0], arrayVerbes[1], arrayVerbes[2], arrayVerbes[6], "4"])}
+                            if arrayVerbes[7] != "" {allInfoList.append([arrayVerbes[0], arrayVerbes[1], arrayVerbes[2], arrayVerbes[7], "5"])}
+                            if arrayVerbes[8] != "" {allInfoList.append([arrayVerbes[0], arrayVerbes[1], arrayVerbes[2], arrayVerbes[8], "6"])}
+
+                        }
                     }
                 }
             }
-        }
-        let randomNumber = RandomNumber()
-        noDeverbe = allInfoList.count
-        indexDesVerbes = randomNumber.generate(from: 0, to: noDeverbe - 1, quantity: nil)
+
+            let randomNumber = RandomNumber()
+            noDeverbe = allInfoList.count
+            indexDesVerbes = randomNumber.generate(from: 0, to: noDeverbe - 1, quantity: nil)
         }
         return (allInfoList, indexDesVerbes, tempsEtMode)
     }

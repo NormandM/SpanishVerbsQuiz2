@@ -343,7 +343,6 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate {
                 let selection = Selection()
                 let choixTempsEtMode = selection.questionSpecifique(arraySelection: arraySelection, arrayVerbe: arrayVerbe, verbeInfinitif: verbeInfinitif)
                 allInfoList = choixTempsEtMode.0
-                
                 indexDesVerbes = choixTempsEtMode.1
                 tempsEtMode = choixTempsEtMode.2
             }
