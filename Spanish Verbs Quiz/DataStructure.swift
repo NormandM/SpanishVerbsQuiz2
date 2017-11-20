@@ -42,6 +42,7 @@ struct VerbeTrie {
     let temps: String
     let verbeConjugue: String
     let personne: String
+    let no2Subj: String
     let n: Int
     init(allInfoList: [[String]], n: Int){
         self.n = n
@@ -50,6 +51,7 @@ struct VerbeTrie {
         verbe = allInfoList[n][2]
         verbeConjugue = allInfoList[n][3]
         personne = allInfoList[n][4]
+        no2Subj = allInfoList[n][5]
     }
 }
 //////////////////////////////

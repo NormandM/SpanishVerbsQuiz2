@@ -26,7 +26,7 @@ class TempsVerbesChoisisViewController: UIViewController, UITableViewDataSource,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = "Le sue scelte per il Quiz"
+        titleLabel.text = "Su selección para la prueba"
         titleLabel.backgroundColor = UIColor(red: 171/255, green: 203/255, blue: 235/255, alpha: 1.0)
         titleLabel.textColor = UIColor.white
         tableViewTemps.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
@@ -52,9 +52,9 @@ class TempsVerbesChoisisViewController: UIViewController, UITableViewDataSource,
             for temp in tempsEtMode{
                 if temp[1] == "Indicativo"{
                     tempsInd.append(temp[0])
-                }else if temp[1] == "Congiuntivo"{
+                }else if temp[1] == "Subjuntivo"{
                     tempSubj.append(temp[0])
-                }else if temp[1] == "Condizionale"{
+                }else if temp[1] == "Condicional"{
                     tempCond.append(temp[0])
                 }else if temp[1] == "Imperativo"{
                     tempsImp.append(temp[0])

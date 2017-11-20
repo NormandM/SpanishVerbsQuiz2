@@ -9,8 +9,9 @@
 import UIKit
 import AudioToolbox
 import CoreData
+import GoogleMobileAds
 
-class QuizController: UIViewController, NSFetchedResultsControllerDelegate {
+class QuizController: UIViewController, NSFetchedResultsControllerDelegate, GADBannerViewDelegate {
     var tempsEtMode = [[String]]()
     var verbeInfinitif: [String] = []
     var indexChoisi: Int = 0
@@ -42,6 +43,7 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate {
     var verbeFinal: String = ""
     var modeFinal: String = ""
     var tempsFinal: String = ""
+    var showWindow = false
     var fenetre = UserDefaults.standard.bool(forKey: "fenetre")
     var testCompltete = UserDefaults.standard.bool(forKey: "testCompltete")
     let dataController = DataController.sharedInstance
@@ -52,6 +54,13 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate {
         request.sortDescriptors = [sortDescriptor]
         
         return request
+    }()
+    lazy var adBannerView: GADBannerView = {
+        let adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        adBannerView.adUnitID = "ca-app-pub-1437510869244180/3461090956"
+        adBannerView.delegate = self
+        adBannerView.rootViewController = self
+        return adBannerView
     }()
     
     var items: [ItemVerbe] = []
@@ -71,7 +80,8 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(verbeInfinitif)
+        adBannerView.load(GADRequest())
+        navigationItem.titleView = adBannerView
         masterConstraint.constant = 0.10 * screenSize.height
         tempsConstraint.constant = 0.10 * screenSize.height
         testCompltete = false
@@ -84,6 +94,12 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate {
             print("Error fetching Item objects: \(error.localizedDescription), \(error.userInfo)")
         }
         
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        if showWindow {
+            showAlert4()
+        }
+        showWindow = false
     }
     // the 3 next function moves the KeyBoards when keyboard appears or hides
  
@@ -116,11 +132,7 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate {
         controller.totalProgress = totalProgress
     }
     if segue.identifier == "showTempsVerbesChoisis" {
-        print(tempsEtMode)
-        print(verbeInfinitif)
-        print(listeVerbe)
         let controller = segue.destination as! TempsVerbesChoisisViewController
-
         controller.tempsEtMode = tempsEtMode
         controller.verbeInfinitif = verbeInfinitif
         controller.listeVerbe = listeVerbe
@@ -138,12 +150,11 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate {
         checkButton.isEnabled = true
         reponse.isEnabled = true
         selectionQuestion()
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        if testCompltete == true && fenetre == false {
-            showAlert4()
+        if fenetre == false {
+            showWindow = true
         }
     }
+
     
     
  //////////////////////////////////////
@@ -175,168 +186,13 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate {
 /////////////////////////////////////
 // MARK: ALL FUNCTIONS
 /////////////////////////////////////
-//    func selectionQuestion(){
-//        // Selecting verb tense
-//        let noTempsChoisi = arraySelection.count
-//        let indexTempsChoisi = Int(arc4random_uniform(UInt32(noTempsChoisi)))
-//        tempsChoisi = arraySelection[indexTempsChoisi]
-//        var n = 0
-//        while tempsChoisi.last == " "{
-//            tempsChoisi = String(tempsChoisi.dropLast(1))
-//            n = n + 1
-//        }
-//        if n == 0 {
-//            modeChoisi = "Indicativo"
-//        }else if n == 1{
-//            modeChoisi = "Subjuntivo"
-//        }else if n == 2{
-//            modeChoisi = "Condicional"
-//        }else if n == 3{
-//            modeChoisi = "Imperativo"
-//        }
-//
-//        //Selecting verb for question
-//        let i = arrayVerbe.count
-//        while infinitifVerb < i {
-//            let allVerbs = VerbeItalien(verbArray: arrayVerbe, n: infinitifVerb)
-//            if modeChoisi == "imperativo" && (allVerbs.verbe == "potere" || allVerbs.verbe == "dovere") {
-//                // not appending
-//            }else{
-//                listeVerbe.append(allVerbs.verbe)
-//            }
-//            infinitifVerb = infinitifVerb + 21
-//        }
-//        let noDeverbe = listeVerbe.count
-//        let indexVerbeChoisi = Int(arc4random_uniform(UInt32(noDeverbe)))
-//        verbeChoisi = listeVerbe[indexVerbeChoisi]
-//        n = 0
-//        //Selecting person for question
-//        for verb in arrayVerbe {
-//
-//            if verb[0] == modeChoisi && verb[1] == tempsChoisi && verb[2] == verbeChoisi{
-//                noItem = n
-//                break
-//            }
-//            n = n + 1
-//        }
-//        var noPossiblePersonne = 0
-//        if modeChoisi == "Imperativo"{
-//            noPossiblePersonne = 5
-//        }else{
-//            noPossiblePersonne = 6
-//        }
-//        noPersonne = Int(arc4random_uniform(UInt32(noPossiblePersonne))) + 1
-//        if modeChoisi == "Imperativo"{
-//            if noPersonne == 1 {
-//                noPersonne = 2
-//            }else if noPersonne == 2 {
-//                noPersonne = 3
-//            }else if noPersonne == 3 {
-//                noPersonne = 4
-//            }else if noPersonne == 4 {
-//                noPersonne = 5
-//            }else if noPersonne == 5 {
-//                noPersonne = 6
-//            }
-//        }
-//
-//
-//        let verbeFrancais = VerbeItalien(verbArray: arrayVerbe, n: noItem)
-//        let verbFrançaisSubj2 = VerbeItalien(verbArray: arrayVerbe, n: noItem + 1)
-//        let personneVerbe = Personne(verbArray: verbeFrancais)
-//        verbeFinal = verbeFrancais.verbe
-//        modeFinal = verbeFrancais.mode
-//        tempsFinal = verbeFrancais.temps
-//        let helper = Helper()
-//        verbe.text = helper.capitalize(word: verbeFinal)
-//        mode.text = helper.capitalize(word: modeFinal)
-//        temps.text = helper.capitalize(word: tempsFinal)
-//
-//        bonneReponse.text = ""
-//        if verbeFinal == "nevar"{
-//            noPersonne = 3
-//        }
-//        if noPersonne == 1{
-//            choixPersonne = "premier"
-//            reponseBonne = verbeFrancais.premier
-//            reponseBonneSubj2 = verbFrançaisSubj2.premier
-//            personne.text = personneVerbe.first
-//        }else if noPersonne == 2 {
-//            choixPersonne = "deuxieme"
-//            reponseBonne = verbeFrancais.deuxieme
-//            reponseBonneSubj2 = verbFrançaisSubj2.deuxieme
-//            personne.text = personneVerbe.second
-//        }else if noPersonne == 3 {
-//            choixPersonne = "troisieme"
-//            reponseBonne = verbeFrancais.troisieme
-//            reponseBonneSubj2 = verbFrançaisSubj2.troisieme
-//            personne.text = personneVerbe.third
-//        }else if noPersonne == 4 {
-//            choixPersonne = "quatrieme"
-//            reponseBonne = verbeFrancais.quatrieme
-//            reponseBonneSubj2 = verbFrançaisSubj2.quatrieme
-//            personne.text = personneVerbe.fourth
-//        }else if noPersonne == 5 {
-//            choixPersonne = "cinquieme"
-//            reponseBonne = verbeFrancais.cinquieme
-//            reponseBonneSubj2 = verbFrançaisSubj2.cinquieme
-//            personne.text = personneVerbe.fifth
-//        }else if noPersonne == 6 {
-//            choixPersonne = "sixieme"
-//            reponseBonne = verbeFrancais.sixieme
-//            reponseBonneSubj2 = verbFrançaisSubj2.sixieme
-//            personne.text = personneVerbe.sixth
-//        }
-//        if mode.text == "Subjuntivo" && (temps.text == "Imperfecto" || temps.text == "Pluscuamperfecto")  {
-//                isSecondSubjontivo = true
-//        }else{
-//                isSecondSubjontivo = false
-//        }
-//
-//    }
-//    func selectionQuestion(){
-//        if verbeInfinitif != ["Tous les verbes"] {
-//            if allInfoList.count == 0{
-//                let selection = Selection()
-//                let choixTempsEtMode = selection.questionSpecifique(arraySelection: arraySelection, arrayVerbe: arrayVerbe, verbeInfinitif: verbeInfinitif)
-//                allInfoList = choixTempsEtMode.0
-//
-//                indexDesVerbes = choixTempsEtMode.1
-//                tempsEtMode = choixTempsEtMode.2
-//            }
-//            let verbeTrie = VerbeTrie(allInfoList: allInfoList, n: indexDesVerbes[indexChoisi])
-//            let personneVerbe = PersonneTrie(verbeTrie: verbeTrie)
-//            verbeFinal = verbeTrie.verbe
-//            modeFinal = verbeTrie.mode
-//            tempsFinal = verbeTrie.temps
-//            noPersonne = Int(verbeTrie.personne)!
-//            reponseBonne = verbeTrie.verbeConjugue
-//            bonneReponse.text = ""
-//            let question = Question()
-//            let questionFinale = question.finaleSpecifique(noPersonne: noPersonne, personneVerbe: personneVerbe)
-//            choixPersonne = questionFinale[0]
-//            personne.text = questionFinale[1]
-//            totalProgress = allInfoList.count
-//
-//        }else{
-//            let selection = Selection()
-//            totalProgress = 10
-//            let choixTempsEtMode = selection.questionAleatoire(arraySelection: arraySelection, arrayVerbe: arrayVerbe)
-//            let leChoixTempsEtMode = choixTempsEtMode.0
-//            tempsEtMode = choixTempsEtMode.1
-//            verbeFinal = (leChoixTempsEtMode[0] as? String)!
-//            modeFinal = (leChoixTempsEtMode[1] as? String)!
-//            tempsFinal = (leChoixTempsEtMode[2] as? String)!
-//            bonneReponse.text = ""
-//            choixPersonne = leChoixTempsEtMode[3] as! String
-//            personne.text = leChoixTempsEtMode[4] as? String
-//            reponseBonne = leChoixTempsEtMode[5] as! String
-//        }
-//        let helper = Helper()
-//        verbe.text = helper.capitalize(word: verbeFinal)
-//        mode.text = helper.capitalize(word: modeFinal)
-//        temps.text = helper.capitalize(word: tempsFinal)
-//    }
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("Banner loaded successfully")
+    }
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        print("Fail to receive ads")
+        print(error)
+    }
     func selectionQuestion(){
         if verbeInfinitif != ["Tous les verbes"] {
             if allInfoList.count == 0{
@@ -355,17 +211,34 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate {
             noPersonne = Int(verbeTrie.personne)!
             reponseBonne = verbeTrie.verbeConjugue
             bonneReponse.text = ""
+            if modeFinal == "Subjuntivo" && (tempsFinal == "Imperfecto" || tempsFinal == "Pluscuamperfecto")  {
+                if Int(verbeTrie.no2Subj)! > 6 {
+                    let verbTrie2Subj = VerbeTrie(allInfoList: allInfoList, n: (indexDesVerbes[indexChoisi] - 6))
+                    reponseBonneSubj2 = reponseBonne
+                    reponseBonne = verbTrie2Subj.verbeConjugue
+                }else{
+                    let verbTrie2Subj = VerbeTrie(allInfoList: allInfoList, n: (indexDesVerbes[indexChoisi] + 6))
+                    reponseBonneSubj2 = verbTrie2Subj.verbeConjugue
+                }
+            }
             let question = Question()
             let questionFinale = question.finaleSpecifique(noPersonne: noPersonne, personneVerbe: personneVerbe)
             choixPersonne = questionFinale[0]
             personne.text = questionFinale[1]
             totalProgress = allInfoList.count
+            if modeFinal == "Subjuntivo" && (tempsFinal == "Imperfecto" || tempsFinal == "Pluscuamperfecto")  {
+                isSecondSubjontivo = true
+         
             
+            }else{
+                isSecondSubjontivo = false
+            }
         }else{
             let selection = Selection()
             totalProgress = 10
             let choixTempsEtMode = selection.questionAleatoire(arraySelection: arraySelection, arrayVerbe: arrayVerbe)
             let leChoixTempsEtMode = choixTempsEtMode.0
+            isSecondSubjontivo = choixTempsEtMode.2
             tempsEtMode = choixTempsEtMode.1
             verbeFinal = (leChoixTempsEtMode[0] as? String)!
             modeFinal = (leChoixTempsEtMode[1] as? String)!
@@ -374,6 +247,7 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate {
             choixPersonne = leChoixTempsEtMode[3] as! String
             personne.text = leChoixTempsEtMode[4] as? String
             reponseBonne = leChoixTempsEtMode[5] as! String
+            reponseBonneSubj2 = choixTempsEtMode.3
         }
         let helper = Helper()
         verbe.text = helper.capitalize(word: verbeFinal)
@@ -382,6 +256,7 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate {
     }
 
     func evaluationReponse(){
+
         if reponse.text == reponseBonne || (isSecondSubjontivo == true && reponse.text == reponseBonneSubj2){
             goodResponse = goodResponse + 1
             bonneReponse.text = "¡Muy Bien!"

@@ -47,6 +47,8 @@ class SpecificVerbViewController: UIViewController, UITableViewDataSource, UITab
             n = n + 1
         }
     }
+    
+
 
     // Setting up the searchBar active: Ttrue/False
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -116,7 +118,7 @@ class SpecificVerbViewController: UIViewController, UITableViewDataSource, UITab
         let modeEtTemps = selection.choixTempsEtMode(arraySelection: arraySelection)
         for mode in modeEtTemps {
             if mode.contains("Imperativo"){
-                if verbesChoisi.contains("potere") || verbesChoisi.contains("dovere") {
+                if verbesChoisi.contains("nevar") || verbesChoisi.contains("dovere") {
                     showAlertPasDImperatif()
                     okForSegue = false
                 }
@@ -145,7 +147,7 @@ class SpecificVerbViewController: UIViewController, UITableViewDataSource, UITab
         present(alertController, animated: true, completion: nil)
     }
     func showAlertPasDImperatif() {
-        let alertController = UIAlertController(title: "Non esiste alcun imperativo per questi verbi:", message: "potere, dovere. Fare un'altra scelta", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "No hay ningún imperativo para este verbo:", message: "nevar. Haga otra selección", preferredStyle: .alert)
         alertController.popoverPresentationController?.sourceView = self.view
         alertController.popoverPresentationController?.sourceRect = tableView.rectForHeader(inSection: 1)
         

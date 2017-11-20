@@ -10,6 +10,7 @@ import Foundation
 class Selection {
     var noDeverbe = 0
     var indexDesVerbes: [Int] = []
+    var isSecondSubjontivo: Bool = false
     var infinitifVerb: Int = 0
     var listeVerbe: [String] = []
     var verbeChoisi: String = ""
@@ -19,6 +20,7 @@ class Selection {
     var noItem: Int = 0
     var choixPersonne: String = ""
     var reponseBonne: String = ""
+    var reponseBonneSubj2: String = ""
     var verbeFinal: String = ""
     var modeFinal: String = ""
     var tempsFinal: String = ""
@@ -32,7 +34,6 @@ class Selection {
         listeVerbe = verbeInfinitif
         if allInfoList.count == 0 {
         for arrayVerbes in arrayVerbe {
-            
             if listeVerbe.contains(arrayVerbes[2]){
                 for tempsEtModes in tempsEtMode {
                     if tempsEtModes.contains(arrayVerbes[0]) && tempsEtModes.contains(arrayVerbes[1]){
@@ -46,6 +47,19 @@ class Selection {
                 }
             }
         }
+            
+            var n = 0
+            var i = 0
+            for list in allInfoList{
+                if list[0] == "Subjuntivo" && (list[1] == "Imperfecto" || list[1] == "Pluscuamperfecto")  {
+                    i = i + 1
+                    allInfoList[n].append(String(i))
+                }else{
+                    allInfoList[n].append("")
+                }
+                n = n + 1
+                if i == 12 {i = 0}
+            }
         let randomNumber = RandomNumber()
         noDeverbe = allInfoList.count
         indexDesVerbes = randomNumber.generate(from: 0, to: noDeverbe - 1, quantity: nil)
@@ -55,7 +69,7 @@ class Selection {
     
     
 /////////Tous les verbes
-    func questionAleatoire(arraySelection: [String], arrayVerbe: [[String]]) -> ([Any], [[String]]){
+    func questionAleatoire(arraySelection: [String], arrayVerbe: [[String]]) -> ([Any], [[String]], Bool, String){
             listeVerbe = []
             infinitifVerb = 0
             var tempsEtModeChoisi: [Any] = []
@@ -68,12 +82,12 @@ class Selection {
             let i = arrayVerbe.count
             while infinitifVerb < i {
                 let allVerbs = VerbeItalien(verbArray: arrayVerbe, n: infinitifVerb)
-                if modeChoisi == "Imperativo" && (allVerbs.verbe == "potere" || allVerbs.verbe == "dovere"){
+                if modeChoisi == "Imperativo" && (allVerbs.verbe == "nevar" || allVerbs.verbe == "dovere"){
                     // not appending
                 }else{
                     listeVerbe.append(allVerbs.verbe)
                 }
-                infinitifVerb = infinitifVerb + 16
+                infinitifVerb = infinitifVerb + 21
             }
             let noDeverbe = listeVerbe.count
             let indexVerbeChoisi = Int(arc4random_uniform(UInt32(noDeverbe)))
@@ -113,18 +127,26 @@ class Selection {
             let question = Question()
         
             let verbeFrancais = VerbeItalien(verbArray: arrayVerbe, n: noItem)
+            let verbFrançaisSubj2 = VerbeItalien(verbArray: arrayVerbe, n: noItem + 1)
             let personneVerbe = Personne(verbArray: verbeFrancais)
-            let verbeConjugue = question.finaleAleatoire(noPersonne: noPersonne, verbeFrancais: verbeFrancais, personneVerbe: personneVerbe)
+            let verbeConjugue = question.finaleAleatoire(noPersonne: noPersonne, verbeFrancais: verbeFrancais, verbFrançaisSubj2: verbFrançaisSubj2, personneVerbe: personneVerbe)
+
             verbeFinal = verbeFrancais.verbe
             modeFinal = verbeFrancais.mode
             tempsFinal = verbeFrancais.temps
             choixPersonne = verbeConjugue[0]
             let personneChoisi = verbeConjugue[1]
             reponseBonne = verbeConjugue[2]
+            if modeFinal == "Subjuntivo" && (tempsFinal == "Imperfecto" || tempsFinal == "Pluscuamperfecto")  {
+                isSecondSubjontivo = true
+                reponseBonneSubj2 = verbeConjugue[3]
+            }else{
+                isSecondSubjontivo = false
+            }
         
             let helper = Helper()
         tempsEtModeChoisi = [helper.capitalize(word: verbeFinal), helper.capitalize(word: modeFinal), helper.capitalize(word: tempsFinal), choixPersonne, personneChoisi, reponseBonne]
-        return (tempsEtModeChoisi, tempsEtMode)
+        return (tempsEtModeChoisi, tempsEtMode, isSecondSubjontivo, reponseBonneSubj2)
     }
     func choixTempsEtMode(arraySelection: [String]) -> [[String]]{
         for arraySelections in arraySelection{

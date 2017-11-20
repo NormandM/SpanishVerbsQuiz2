@@ -33,36 +33,43 @@ class Question {
         return [choixPersonne, personneChoisi]
     }
 // tous les verbes
-    func finaleAleatoire(noPersonne:Int,verbeFrancais: VerbeItalien, personneVerbe: Personne) -> [String]{
+    func finaleAleatoire(noPersonne:Int,verbeFrancais: VerbeItalien, verbFrançaisSubj2: VerbeItalien, personneVerbe: Personne) -> [String]{
 
         var reponseBonne: String = ""
+        var reponseBonneSubj2: String = ""
         var personneChoisi: String = ""
         if noPersonne == 1{
             choixPersonne = "premier"
             personneChoisi = personneVerbe.first
             reponseBonne = verbeFrancais.premier
+            reponseBonneSubj2 = verbFrançaisSubj2.premier
         }else if noPersonne == 2 {
             choixPersonne = "deuxieme"
             personneChoisi = personneVerbe.second
             reponseBonne = verbeFrancais.deuxieme
+            reponseBonneSubj2 = verbFrançaisSubj2.deuxieme
         }else if noPersonne == 3 {
             choixPersonne = "troisieme"
             personneChoisi = personneVerbe.third
             reponseBonne = verbeFrancais.troisieme
+            reponseBonneSubj2 = verbFrançaisSubj2.troisieme
         }else if noPersonne == 4 {
             choixPersonne = "quatrieme"
             personneChoisi = personneVerbe.fourth
             reponseBonne = verbeFrancais.quatrieme
+            reponseBonneSubj2 = verbFrançaisSubj2.quatrieme
         }else if noPersonne == 5 {
             choixPersonne = "cinquieme"
             personneChoisi = personneVerbe.fifth
             reponseBonne = verbeFrancais.cinquieme
+            reponseBonneSubj2 = verbFrançaisSubj2.cinquieme
         }else if noPersonne == 6 {
             choixPersonne = "sixieme"
             personneChoisi = personneVerbe.sixth
             reponseBonne = verbeFrancais.sixieme
+            reponseBonneSubj2 = verbFrançaisSubj2.sixieme
         }
-        return [choixPersonne, personneChoisi, reponseBonne]
+        return [choixPersonne, personneChoisi, reponseBonne, reponseBonneSubj2]
     }
     
 }
