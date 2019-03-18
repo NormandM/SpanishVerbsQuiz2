@@ -64,7 +64,6 @@ struct Personne{
                 return "que yo"
              }else if verbArray.mode == "Imperativo"{
                 return ""
-                
              }else{
                 return "yo"
             }

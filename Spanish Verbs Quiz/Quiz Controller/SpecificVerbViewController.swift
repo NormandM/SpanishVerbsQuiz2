@@ -9,47 +9,39 @@
 import UIKit
 
 class SpecificVerbViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
-    var randomVerb: Int = 0
-    var arrayFilter: [Any] = []
-    var listeVerbe: [String] = []
-    var listeVerbeAny: [[Any]] = []
-    var arrayVerbe: [[String]] = []
-    var arraySelection: [String] = []
-    var verbesChoisi: [String] = []
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-    
+    var arraySelectionTempsEtMode = [[String]]()
+    var listeVerbeAny: [[Any]] = []
+    var arrayFilter: [Any] = []
+    var arraySelection: [String] = []
+    var arrayVerb = [[String]]()
+    var listInfinitif = [String]()
+    var searchActive : Bool = false
+    var filtered:[String] = []
+    var verbesChoisi: [String] = []
+    var listeVerbe: [String] = []
+    var totalProgress: Double = 0
+    let fontsAndConstraints = FontsAndConstraintsOptions()
+    lazy var verbList = VerbInfinitif(arrayVerb: arrayVerb)
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Escoger de 1 a 10 verbos"
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Listo", style: .plain, target: self, action: #selector(showQuiz))
-        let i = arrayVerbe.count
-        while randomVerb < i {
-            let allVerbs = VerbeItalien(verbArray: arrayVerbe, n: randomVerb)
-            listeVerbe.append(allVerbs.verbe)
-            randomVerb = randomVerb + 21
-        }
+            navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 27/255, green: 96/255, blue: 94/255, alpha: 1.0)
         func alpha (_ s1: String, s2: String) -> Bool {
-            return s1 < s2
+            return s1.folding(options: .diacriticInsensitive, locale: .current) < s2.folding(options: .diacriticInsensitive, locale: .current)
         }
-        listeVerbe = listeVerbe.sorted(by: alpha)
-        
+        listInfinitif = verbList.verbList.sorted(by: alpha)
         var n = 0
-        for verbe in listeVerbe {
-            
+        for verbe in listInfinitif {
             listeVerbeAny.append([verbe, false, n])
-            
             n = n + 1
         }
     }
-    
-
-
     // Setting up the searchBar active: Ttrue/False
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
@@ -74,6 +66,8 @@ class SpecificVerbViewController: UIViewController, UITableViewDataSource, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let lista = self.searchBar.text == "" ? self.listeVerbeAny : self.arrayFilter
         let cellAnyArray = lista[indexPath.row] as! [Any]
+        cell.textLabel?.textColor = UIColor.black
+        cell.textLabel?.font =  fontsAndConstraints.normalItaliqueBoldFont
         let cellText = cellAnyArray[0] as! String
         cell.textLabel?.text = cellText
         // check cell based on second field
@@ -114,11 +108,9 @@ class SpecificVerbViewController: UIViewController, UITableViewDataSource, UITab
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var okForSegue = true
-        let selection = Selection()
-        let modeEtTemps = selection.choixTempsEtMode(arraySelection: arraySelection)
-        for mode in modeEtTemps {
+        for mode in arraySelectionTempsEtMode {
             if mode.contains("Imperativo"){
-                if verbesChoisi.contains("nevar") || verbesChoisi.contains("dovere") {
+                if verbesChoisi.contains("nevar") || verbesChoisi.contains("dover") {
                     showAlertPasDImperatif()
                     okForSegue = false
                 }
@@ -129,11 +121,12 @@ class SpecificVerbViewController: UIViewController, UITableViewDataSource, UITab
                 let backItem = UIBarButtonItem()
                 backItem.title = ""
                 navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
+                navigationItem.backBarButtonItem?.tintColor = UIColor(red: 27/255, green: 96/255, blue: 94/255, alpha: 1.0)
                 let controller = segue.destination as! QuizController
-                controller.arrayVerbe = arrayVerbe
-                controller.arraySelection = arraySelection
-                controller.verbeInfinitif = verbesChoisi
-                controller.listeVerbe = listeVerbe
+                controller.arrayVerb = arrayVerb
+                controller.arraySelectionTempsEtMode = arraySelectionTempsEtMode
+                controller.verbInfinitif = verbesChoisi
+                verbesChoisi = []
             }
         }
     }
@@ -142,7 +135,7 @@ class SpecificVerbViewController: UIViewController, UITableViewDataSource, UITab
         alertController.popoverPresentationController?.sourceView = self.view
         alertController.popoverPresentationController?.sourceRect = tableView.rectForHeader(inSection: 1)
         
-        let okAction = UIAlertAction(title: "Listo", style: .cancel, handler: dismissAlert)
+        let okAction = UIAlertAction(title: "Listo", style: .cancel, handler: nil)
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
     }
@@ -151,14 +144,9 @@ class SpecificVerbViewController: UIViewController, UITableViewDataSource, UITab
         alertController.popoverPresentationController?.sourceView = self.view
         alertController.popoverPresentationController?.sourceRect = tableView.rectForHeader(inSection: 1)
         
-        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: dismissAlert)
+        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
-    }
-    
-    
-    func dismissAlert(_ sender: UIAlertAction) {
-        
     }
     @objc func showQuiz() {
         choix()

@@ -7,18 +7,20 @@
 //
 
 import UIKit
-import Firebase
-import GoogleMobileAds
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var navigationBarAppearace = UINavigationBar.appearance()
+    let fontsAndConstraints = FontsAndConstraintsOptions()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        FirebaseApp.configure()
-        GADMobileAds.configure(withApplicationID: "ca-app-pub-1437510869244180/3461090956")
+        // Override point for customization after application launch.
+        navigationBarAppearace.tintColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+        navigationBarAppearace.barTintColor = UIColor(red: 178/255, green: 208/255, blue: 198/255, alpha: 1.0)
+        navigationBarAppearace.titleTextAttributes = [NSAttributedStringKey.font: fontsAndConstraints.largeFont, NSAttributedStringKey.foregroundColor:UIColor.white]
+        let currentCount = UserDefaults.standard.integer(forKey: "launchCount")
+        UserDefaults.standard.set(currentCount+1, forKey:"launchCount")
+        UserDefaults.standard.synchronize()
         return true
     }
 

@@ -14,14 +14,26 @@
 	<string>to finish</string>
 	<key>aceptar</key>
 	<string>to accept</string>
+	<key>acercar</key>
+	<string>to bring closer</string>
+	<key>acompañar</key>
+	<string>to accompany</string>
 	<key>acordar</key>
 	<string>to agree, to remember</string>
 	<key>acostar</key>
 	<string>to lie down</string>
+	<key>admirar</key>
+	<string>to admire</string>
+	<key>admitir</key>
+	<string>to admit</string>
+	<key>adorar</key>
+	<string>to adore</string>
 	<key>ahorrar</key>
 	<string>to save, to save money</string>
 	<key>alcanzar</key>
 	<string>to reach</string>
+	<key>alimentar</key>
+	<string>to feed</string>
 	<key>almorzar</key>
 	<string>to have lunch</string>
 	<key>amar</key>
@@ -32,24 +44,44 @@
 	<string>to turn off</string>
 	<key>aparecer</key>
 	<string>to appear</string>
+	<key>apetecer</key>
+	<string>to crave</string>
+	<key>apostar</key>
+	<string>to bet</string>
 	<key>aprender</key>
 	<string>to learn</string>
+	<key>aprobar</key>
+	<string>to approve</string>
+	<key>asar</key>
+	<string>to roast</string>
 	<key>asistir</key>
 	<string>to attend</string>
+	<key>atar</key>
+	<string>to tie</string>
 	<key>atraer</key>
 	<string>to attract</string>
+	<key>avisar</key>
+	<string>to warn</string>
 	<key>ayudar</key>
 	<string>to help</string>
+	<key>añadir</key>
+	<string>to add</string>
 	<key>bailar</key>
 	<string>to dance</string>
 	<key>bajar</key>
 	<string>to go down</string>
 	<key>barrer</key>
 	<string>to sweep</string>
+	<key>beber</key>
+	<string>to drink</string>
 	<key>bendecir</key>
 	<string>to bless</string>
 	<key>besar</key>
 	<string>to kiss</string>
+	<key>borrar</key>
+	<string>to delete</string>
+	<key>burlar</key>
+	<string>to make fun</string>
 	<key>buscar</key>
 	<string>to search</string>
 	<key>caber</key>
@@ -66,12 +98,18 @@
 	<string>to cancel</string>
 	<key>cansar</key>
 	<string>to tire out</string>
+	<key>cantar</key>
+	<string>to sing</string>
 	<key>casar</key>
 	<string>to marry</string>
+	<key>celebrar</key>
+	<string>to celebrate</string>
 	<key>cenar</key>
 	<string>to dine</string>
 	<key>cerrar</key>
 	<string>to close</string>
+	<key>claudicar</key>
+	<string>to give up</string>
 	<key>cocinar</key>
 	<string>to cook</string>
 	<key>coger</key>
@@ -84,6 +122,10 @@
 	<string>to eat</string>
 	<key>compartir</key>
 	<string>to share</string>
+	<key>completar</key>
+	<string>to complete</string>
+	<key>componer</key>
+	<string>to compose</string>
 	<key>comprar</key>
 	<string>to buy</string>
 	<key>comprender</key>
@@ -96,6 +138,8 @@
 	<string>to get</string>
 	<key>construir</key>
 	<string>to build</string>
+	<key>consultar</key>
+	<string>to consult</string>
 	<key>contar</key>
 	<string>to tell</string>
 	<key>contestar</key>
@@ -126,6 +170,8 @@
 	<string>to cover</string>
 	<key>cuidar</key>
 	<string>to look after</string>
+	<key>cultivar</key>
+	<string>to cultivate</string>
 	<key>cumplir</key>
 	<string>to accomplish, to achieve</string>
 	<key>dar</key>
@@ -140,6 +186,8 @@
 	<string>to defend</string>
 	<key>dejar</key>
 	<string>to leave</string>
+	<key>derrumbar</key>
+	<string>to collapse</string>
 	<key>desayunar</key>
 	<string>to have breakfast</string>
 	<key>descansar</key>
@@ -148,6 +196,8 @@
 	<string>to discover</string>
 	<key>desear</key>
 	<string>to wish</string>
+	<key>deshacer</key>
+	<string>to undo</string>
 	<key>despedir</key>
 	<string>to say goodbye, to fire</string>
 	<key>despertar</key>
@@ -188,6 +238,8 @@
 	<string>to deliver</string>
 	<key>enviar</key>
 	<string>to send</string>
+	<key>envidiar</key>
+	<string>to envy</string>
 	<key>escoger</key>
 	<string>to choose</string>
 	<key>escribir</key>
@@ -210,12 +262,16 @@
 	<string>to sign</string>
 	<key>formar</key>
 	<string>to form</string>
+	<key>fregar</key>
+	<string>to scrub</string>
 	<key>ganar</key>
 	<string>to win</string>
 	<key>gastar</key>
 	<string>to spend</string>
 	<key>graduar</key>
 	<string>to graduate</string>
+	<key>gritar</key>
+	<string>to shout</string>
 	<key>gustar</key>
 	<string>to like</string>
 	<key>haber</key>
@@ -230,14 +286,18 @@
 	<string>to inherit</string>
 	<key>herir</key>
 	<string>to wound</string>
-	<key>huir</key>
-	<string>to run away</string>
 	<key>hervir</key>
 	<string>to boil</string>
+	<key>huir</key>
+	<string>to run away</string>
+	<key>impedir</key>
+	<string>to prevent</string>
 	<key>incluir</key>
 	<string>to include</string>
 	<key>influir</key>
 	<string>to influence</string>
+	<key>inscribir</key>
+	<string>to enroll</string>
 	<key>intentar</key>
 	<string>to try</string>
 	<key>interesar</key>
@@ -272,16 +332,24 @@
 	<string>to cry</string>
 	<key>lograr</key>
 	<string>to achieve</string>
+	<key>maltratar</key>
+	<string>to mistreat</string>
 	<key>mandar</key>
 	<string>to send</string>
 	<key>manejar</key>
 	<string>to drive</string>
 	<key>mantener</key>
 	<string>to hold, to maintain</string>
+	<key>maquillar</key>
+	<string>to make up</string>
+	<key>marchar</key>
+	<string>to go</string>
 	<key>medir</key>
 	<string>to size</string>
 	<key>mentir</key>
 	<string>to lie</string>
+	<key>meter</key>
+	<string>to put</string>
 	<key>mezclar</key>
 	<string>to mix</string>
 	<key>mirar</key>
@@ -310,12 +378,16 @@
 	<string>to obey</string>
 	<key>obtener</key>
 	<string>to get</string>
+	<key>odiar</key>
+	<string>to hate</string>
 	<key>ofrecer</key>
 	<string>to offer</string>
 	<key>oler</key>
 	<string>to smell</string>
 	<key>olvidar</key>
 	<string>to forget</string>
+	<key>ordenar</key>
+	<string>to order</string>
 	<key>organizar</key>
 	<string>to organize</string>
 	<key>oír</key>
@@ -330,6 +402,8 @@
 	<string>to take part</string>
 	<key>pasar</key>
 	<string>to happen</string>
+	<key>pasear</key>
+	<string>to take a walk</string>
 	<key>patinar</key>
 	<string>to skate</string>
 	<key>pedir</key>
@@ -342,8 +416,14 @@
 	<string>to lose</string>
 	<key>permitir</key>
 	<string>to allow</string>
+	<key>pintar</key>
+	<string>to paint</string>
+	<key>planchar</key>
+	<string>to iron</string>
 	<key>poder</key>
 	<string>to ba able to</string>
+	<key>podrir</key>
+	<string>to rot</string>
 	<key>poner</key>
 	<string>to put</string>
 	<key>practicar</key>
@@ -368,6 +448,10 @@
 	<string>to want</string>
 	<key>realizar</key>
 	<string>to carry out</string>
+	<key>rebajar</key>
+	<string>to lower</string>
+	<key>rechazar</key>
+	<string>to refuse</string>
 	<key>recibir</key>
 	<string>to receive</string>
 	<key>reciclar</key>
@@ -380,10 +464,14 @@
 	<string>to recognize</string>
 	<key>recordar</key>
 	<string>to remember</string>
+	<key>regalar</key>
+	<string>to give away</string>
 	<key>regar</key>
 	<string>to water</string>
 	<key>regresar</key>
 	<string>to return</string>
+	<key>repasar</key>
+	<string>to review</string>
 	<key>repetir</key>
 	<string>to repeat</string>
 	<key>resolver</key>
@@ -392,18 +480,30 @@
 	<string>to respond</string>
 	<key>resultar</key>
 	<string>to turn out</string>
+	<key>rezar</key>
+	<string>to pray</string>
+	<key>robar</key>
+	<string>to steal</string>
+	<key>rodar</key>
+	<string>to roll, to film</string>
 	<key>rogar</key>
 	<string>to beg</string>
 	<key>romper</key>
 	<string>to break</string>
 	<key>saber</key>
 	<string>to know</string>
+	<key>saborear</key>
+	<string>to savor</string>
 	<key>sacar</key>
 	<string>to take out</string>
 	<key>sacudir</key>
 	<string>to shake</string>
 	<key>salir</key>
 	<string>to go out</string>
+	<key>saltar</key>
+	<string>to jump</string>
+	<key>saludar</key>
+	<string>to greet</string>
 	<key>secar</key>
 	<string>to dry</string>
 	<key>seguir</key>
@@ -416,10 +516,20 @@
 	<string>to be</string>
 	<key>servir</key>
 	<string>to serve</string>
+	<key>soler</key>
+	<string>to usually do</string>
 	<key>sonar</key>
 	<string>to sound</string>
+	<key>subir</key>
+	<string>to go up</string>
+	<key>suceder</key>
+	<string>to happen</string>
 	<key>suponer</key>
 	<string>to suppose</string>
+	<key>sustraer</key>
+	<string>to subtract</string>
+	<key>tardar</key>
+	<string>to delay</string>
 	<key>temer</key>
 	<string>to fear</string>
 	<key>tener</key>
@@ -434,6 +544,8 @@
 	<string>to twist</string>
 	<key>trabajar</key>
 	<string>to work</string>
+	<key>traducir</key>
+	<string>to translate</string>
 	<key>traer</key>
 	<string>to bring</string>
 	<key>tratar</key>
