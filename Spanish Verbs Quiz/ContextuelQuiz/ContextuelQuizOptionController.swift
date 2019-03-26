@@ -69,7 +69,7 @@ class ContextuelQuizOptionController: UITableViewController {
             if let text = cell2.textLabel?.text{
                 textArray = [text, modes[indexPath.section]]
             }
-            if let n = arraySelectionTempsEtMode.index(of: textArray){
+            if let n = arraySelectionTempsEtMode.firstIndex(of: textArray){
                 arraySelectionTempsEtMode.remove(at: n)
             }
         }

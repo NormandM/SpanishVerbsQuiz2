@@ -85,7 +85,7 @@ class TempsVerbesChoisisViewController: UIViewController, UITableViewDataSource,
         if tableView == self.tableViewVerbes{
             header = "Infinitivo"
         }
-        tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
+        tableView.sectionHeaderHeight = UITableView.automaticDimension;
         tableView.estimatedSectionHeaderHeight = 25
         return header
     }

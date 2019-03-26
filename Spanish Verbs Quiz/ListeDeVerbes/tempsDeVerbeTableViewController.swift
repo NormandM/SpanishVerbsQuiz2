@@ -28,7 +28,7 @@ class tempsDeVerbeTableViewController: UITableViewController {
      }
     override func viewWillAppear(_ animated: Bool) {
         tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
     }
     // MARK: - Table view data source
     

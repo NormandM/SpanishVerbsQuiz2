@@ -50,13 +50,13 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
                 }
             }
         }
-        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillChange), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillChange), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillChange), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillChange), name: UIResponder.keyboardWillHideNotification, object: nil)
         selectedSentences.shuffle()
     }
     deinit {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     override func viewWillAppear(_ animated: Bool) {
         let fonts = FontsAndConstraintsOptions()
@@ -108,13 +108,13 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
     }
     @objc func keyBoardWillChange(notification: Notification) {
         let distanceFromTextField = view.frame.size.height - (verbTextField.frame.size.height + verbTextField.frame.origin.y)
-        guard let keyBoardRec = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
+        guard let keyBoardRec = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
             return
         }
-        if notification.name == NSNotification.Name.UIKeyboardWillShow && !textFieldIsActivated{
+        if notification.name == UIResponder.keyboardWillShowNotification && !textFieldIsActivated{
             textFieldIsActivated = true
             animateViewMoving(true, moveValue: keyBoardRec.height - distanceFromTextField + 5)
-        }else if notification.name == NSNotification.Name.UIKeyboardWillHide{
+        }else if notification.name == UIResponder.keyboardWillHideNotification{
             textFieldIsActivated = false
             animateViewMoving(true, moveValue: distanceFromTextField - keyBoardRec.height - 5)
         }
@@ -199,14 +199,6 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
         let temps = sentences.tempsDuVerbe
         let reponseEvaluation = ResponseEvaluation.evaluate(modeVerb: mode, tempsVerb:  temps, infinitif: sentences.infinitif, userResponse: userRespone, rightAnswer: sentences.reponseBonne, rightHintWasSelected: rightHintWasSelected)
         sentenceLabel.textColor = UIColor(red: 178/255, green: 208/255, blue: 198/255, alpha: 1.0)
-
-//        var otraForma = String()
-//        if mode.caseInsensitiveCompare("SUBJUNTIVO") == .orderedSame && temps.caseInsensitiveCompare("Imperfecto") == .orderedSame{
-//            otraForma = " o \(reponseEvaluation.1)"
-//        }else{
-//            otraForma = ""
-//        }
-        
         switch reponseEvaluation {
         case .good, .help:
             sentenceLabel.attributedText = sentences.attributeBonneReponse
