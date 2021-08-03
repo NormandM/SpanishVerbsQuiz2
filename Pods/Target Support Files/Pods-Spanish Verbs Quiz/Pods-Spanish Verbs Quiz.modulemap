@@ -1,0 +1,6 @@
+framework module Pods_Spanish_Verbs_Quiz {
+  umbrella header "Pods-Spanish Verbs Quiz-umbrella.h"
+
+  export *
+  module * { export * }
+}

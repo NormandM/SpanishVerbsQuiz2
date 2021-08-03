@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DA73CBB5637188D5E7DC392CB8FC4931457E6A0F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C6EDD60A775CD8CD09CE059EAB227951A0563DA2" : 9223372036854775807,
+    "DA73CBB5637188D5E7DC392CB8FC4931457E6A0F" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D796D508-0E6C-4C29-A7A4-F76EF4DEB70B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C6EDD60A775CD8CD09CE059EAB227951A0563DA2" : "",
+    "DA73CBB5637188D5E7DC392CB8FC4931457E6A0F" : "Spanish%20Verbs%20Quiz\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Spanish Verbs Quiz",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Spanish Verbs Quiz.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/NormandM\/MatchDateWithEvent.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C6EDD60A775CD8CD09CE059EAB227951A0563DA2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/NormandM\/SpanishVerbsQuiz2.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DA73CBB5637188D5E7DC392CB8FC4931457E6A0F"
+    }
+  ]
+}
