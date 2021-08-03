@@ -65,7 +65,7 @@ class FinalVerbeViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        self.title = "Verbo conjugado"
+        self.title = "Verbo conjugado".localized
         backgrounColorView.layer.cornerRadius = 50
         infinitif.font = fonts.largeBoldFont
         mode.font = fonts.largeFont

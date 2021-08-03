@@ -36,6 +36,23 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
     var userRespone = String()
     lazy var sentences = Sentences(selectedSentences: selectedSentences, indexSentence: indexSentence)
     var progressInt = Int()
+    var soundPlayer: SoundPlayer?
+    var soundState = ""{
+        didSet{
+            if #available(iOS 13.0, *) {
+                
+                navigationItem.rightBarButtonItems = [UIBarButtonItem(
+                    image: UIImage(systemName: soundState),
+                    style: .plain,
+                    target: self,
+                    action: #selector(soundOnOff)
+                )]
+            } else {
+                // Fallback on earlier versions
+            }
+            navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 27/255, green: 96/255, blue: 94/255, alpha: 1.0)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         barreProgression.progress = 0.0
@@ -60,7 +77,7 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
     }
     override func viewWillAppear(_ animated: Bool) {
         let fonts = FontsAndConstraintsOptions()
-        self.title = "Conjugar el verbo"
+        self.title = "Conjugar el verbo".localized
         modeLabel.font = fonts.largeBoldFont
         tempsLabel.font = fonts.largeBoldFont
         suggestionButton.titleLabel?.font = fonts.smallItaliqueBoldFont
@@ -76,6 +93,10 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
         TextFieldProperties.initiate(verbHintButton: verbHintButton, verbResponseButton: verbResponseButton, checkButton: checkButton, verbTextField: verbTextField, difficulté: difficulté, suggestionButton: suggestionButton, hintMenuAction: hintMenuActiondAppear)
         choiceOfSentence()
         verbResponseButton.isEnabled = false
+        if let soundStateTrans = UserDefaults.standard.string(forKey: "soundState"){
+            soundState = soundStateTrans
+        }
+
     }
     override func viewDidAppear(_ animated: Bool) {
         tempsEtverbesChoisiButton.layer.cornerRadius = tempsEtverbesChoisiButton.frame.height/2
@@ -120,16 +141,17 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
         }
     }
     @objc func textFieldShouldReturn(_ reponse: UITextField) -> Bool {
-        verbTextField.resignFirstResponder()
         userRespone = verbTextField.text!
         afterUserResponse()
+        verbTextField.resignFirstResponder()
         checkButton.setTitleColor(UIColor.gray, for: .disabled)
         suggestionButton.isEnabled = false
         suggestionButton.backgroundColor = UIColor(red: 178/255, green: 208/255, blue: 198/255, alpha: 1.0)
         verbTextField.isHidden = true
         suggestionButton.isEnabled = false
         suggestionButton.backgroundColor = UIColor(red: 178/255, green: 208/255, blue: 198/255, alpha: 1.0)
-        verbResponseButton.isHidden = true
+        verbTextField.isHidden = true
+        verbResponseButton.isHidden = false
         checkButton.isHidden = true
         return true
     }
@@ -193,7 +215,11 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
             break
         }
     }
+    @objc func soundOnOff() {
+        soundState = SoundOption.soundOnOff()
+    }
     func afterUserResponse() {
+        soundPlayer = SoundPlayer()
         sentences = Sentences(selectedSentences: selectedSentences, indexSentence: indexSentence)
         let mode = sentences.modeDuverbe
         let temps = sentences.tempsDuVerbe
@@ -201,12 +227,13 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
         sentenceLabel.textColor = UIColor(red: 178/255, green: 208/255, blue: 198/255, alpha: 1.0)
         switch reponseEvaluation {
         case .good, .help:
+            soundPlayer?.playSound(soundName: "chime_clickbell_octave_up", type: "mp3", soundState: soundState)
             sentenceLabel.attributedText = sentences.attributeBonneReponse
-            verbResponseButton.setTitle("Correcto!", for: .disabled)
-            SoundResponse.goodSound()
+            verbResponseButton.setTitle("Correcto".localized, for: .disabled)
+           
         case .bad:
-            SoundResponse.badSound()
-            verbResponseButton.setTitle("Incorrecto", for: .disabled)
+            soundPlayer?.playSound(soundName: "etc_error_drum", type: "mp3", soundState: soundState)
+            verbResponseButton.setTitle("Incorrecto".localized, for: .disabled)
             sentenceLabel.attributedText = sentences.attributeMauvaiseReponse        }
         verbTextField.resignFirstResponder()
         checkButton.isEnabled = false
@@ -231,7 +258,7 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
         verbTextField.isEnabled = true
         verbTextField.textColor = UIColor.black
         verbTextField.text = ""
-        verbResponseButton.setTitle("Elige el verbo", for: .disabled)
+        verbResponseButton.setTitle("Elige el verbo".localized, for: .disabled)
         uneAutreQuestionButton.isEnabled = true
         difficulté = .DIFFICILE
         rightHintWasSelected = false

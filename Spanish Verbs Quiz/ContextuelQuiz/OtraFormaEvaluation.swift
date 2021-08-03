@@ -13,7 +13,7 @@ class OtraFormaEvaluation {
         rightAnswerNoPronoum = rightAnswerNoPronoum.removingReflexivePronom()
         var infinitifNoPronoum = infinitif
         infinitifNoPronoum = infinitifNoPronoum.removingReflexivePronomInfinitif()
-        var arrayRightAnswer = rightAnswer.components(separatedBy: .whitespaces)
+        let arrayRightAnswer = rightAnswer.components(separatedBy: .whitespaces)
         var otraForma = OtraFormaVerbSelector.otraForma(mode: modeVerb, temp: tempsVerb, infinitif: infinitifNoPronoum, verbeConjugue: rightAnswerNoPronoum)
         if arrayRightAnswer[0] == "me" || arrayRightAnswer[0] == "te" || arrayRightAnswer[0] == "se" || arrayRightAnswer[0] == "nos" || arrayRightAnswer[0] == "os" {
             otraForma = arrayRightAnswer[0] + " " + otraForma

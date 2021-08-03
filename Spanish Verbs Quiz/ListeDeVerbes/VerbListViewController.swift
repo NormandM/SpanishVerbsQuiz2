@@ -23,7 +23,7 @@ class VerbListViewController: UIViewController, UITableViewDataSource, UITableVi
     var arrayVerbe: [[String]] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Escoja un verbo"
+        self.title = "Escoja un verbo".localized
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
@@ -40,7 +40,7 @@ class VerbListViewController: UIViewController, UITableViewDataSource, UITableVi
         listeVerbe = listeVerbe.sorted(by: alpha)
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.title = "Escoja un verbo"
+        self.title = "Escoja un verbo".localized
     }
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchActive = true;

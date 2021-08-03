@@ -32,7 +32,7 @@ class QuizOptionsController: UITableViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.title = "Escoja tiempos verbales"
+        self.title = "Escoja tiempos verbales".localized
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
     }
@@ -113,8 +113,8 @@ class QuizOptionsController: UITableViewController {
         }
     }
     func showAlertNoVerbChosen () {
-        let alertController = UIAlertController(title: "Elija por lo menos un tiempo verbal", message: nil, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Listo", style: UIAlertAction.Style.default, handler: nil))
+        let alertController = UIAlertController(title: "Elija por lo menos un tiempo verbal".localized, message: nil, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Listo".localized, style: UIAlertAction.Style.default, handler: nil))
 
         
         present(alertController, animated: true, completion: nil)
@@ -123,10 +123,10 @@ class QuizOptionsController: UITableViewController {
         
     }
     func showAlertChoisirOption () {
-        let alert = UIAlertController(title: "Verbos Españoles Quiz", message: "Elige una opción", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Verbos Españoles Quiz".localized, message: "Elige una opción".localized, preferredStyle: UIAlertController.Style.alert)
         
-        alert.addAction(UIAlertAction(title: "Todos los verbos", style: UIAlertAction.Style.default, handler: {(alert: UIAlertAction!) in self.tousLesverbesAction()}))
-        alert.addAction(UIAlertAction(title: "Elige los verbos", style: UIAlertAction.Style.default, handler: {(alert: UIAlertAction!) in self.specifierUnVerbe()}))
+        alert.addAction(UIAlertAction(title: "Todos los verbos".localized, style: UIAlertAction.Style.default, handler: {(alert: UIAlertAction!) in self.tousLesverbesAction()}))
+        alert.addAction(UIAlertAction(title: "Elige los verbos".localized, style: UIAlertAction.Style.default, handler: {(alert: UIAlertAction!) in self.specifierUnVerbe()}))
         
         self.present(alert, animated: true, completion: nil)
     }

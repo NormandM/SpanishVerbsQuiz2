@@ -27,7 +27,7 @@ class TempsVerbesChoisisViewController: UIViewController, UITableViewDataSource,
     let fonts = FontsAndConstraintsOptions()
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = "Su selección para la prueba"
+        titleLabel.text = "Su selección para la prueba".localized
         titleLabel.backgroundColor = UIColor(red: 178/255, green: 208/255, blue: 198/255, alpha: 1.0)
         titleLabel.textColor = UIColor.white
         tableViewTemps.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")

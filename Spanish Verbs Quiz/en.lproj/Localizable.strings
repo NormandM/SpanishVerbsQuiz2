@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  Spanish Verbs Quiz
+
+  Created by Normand Martin on 2021-07-31.
+  Copyright © 2021 Normand Martin. All rights reserved.
+*/
+"Elija una opción" = "Elija una opción";
+"Escoja el tiempo verbal" = "Escoja el tiempo verbal";
+"Verbo conjugado" = "Verbo conjugado";
+"Escoja tiempos verbales" = "Escoja tiempos verbales";
+"Elija por lo menos un tiempo verbal" = "Elija por lo menos un tiempo verbal";
+"Verbos Españoles Quiz" = "Verbos Españoles Quiz";
+"Todos los verbos" = "Todos los verbos";
+"Elige los verbos" = "Elige los verbos";
+"Escoger de 1 a 10 verbos" = "Escoger de 1 a 10 verbos";
+"Elija al menos 1 verbo pero no más de 10" = "Elija al menos 1 verbo pero no más de 10";
+"No hay ningún imperativo para este verbo:" = "No hay ningún imperativo para este verbo:";
+"nevar. Haga otra selección" = "nevar. Haga otra selección";
+"Conjugar el verbo" = "Conjugar el verbo";
+"Elige el verbo" = "Elige el verbo";
+"Correcto" = "Correcto";
+"Incorrecto" = "Incorrecto";
+"La traducción no está disponible." = "La traducción no está disponible.";
+"¡Perfecto! " = "¡Perfecto! ";
+"%@ ¡Excelente!" = "%@ ¡Excelente!";
+"%@ ¡Muy Bien!" = "%@ ¡Muy Bien!";
+"%@ ¡Inténtelo de nuevo!" = "%@ ¡Inténtelo de nuevo!";
+"Su selección para la prueba" = "Su selección para la prueba";
+"Tiempos elegidos" = "Tiempos elegidos";
+"Escoger el verbo" = "Escoger el verbo";
+"Correcto: %@" = "Correcto: %@";
+"Con ayuda: %@" = "Con ayuda: %@";
+"Incorrecto: %@" = "Incorrecto: %@";
+"Resultado:\n%@" = "Resultado:\n%@";
+"Resultados por cada tiempo" = "Resultados por cada tiempo";
+"Número de verbos estudiados\npor este tiempo %d" = "Número de verbos estudiados\npor este tiempo %d";
+"Haga clic en el gráfico para ver más detalles" = "Haga clic en el gráfico para ver más detalles";
+"Con ayuda" = "Con ayuda";
+"Escoja un verbo" = "Escoja un verbo";
+"Elige una opción" = "Elige una opción";

@@ -16,7 +16,8 @@ struct ResponseEvaluation {
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: ItemVerbe.identifier )
             let predicateTemps = NSPredicate(format: "tempsVerbe = %@",  tempsVerb )
             let predicateMode = NSPredicate(format: "modeVerbe = %@",  modeVerb.capitalizingFirstLetter() )
-            let andPredicate = NSCompoundPredicate(type: .and, subpredicates: [predicateTemps, predicateMode])
+            let predicateInfinitif = NSPredicate(format: "verbeInfinitif = %@",  infinitif )
+            let andPredicate = NSCompoundPredicate(type: .and, subpredicates: [predicateTemps, predicateMode, predicateInfinitif])
             request.predicate = andPredicate
             return request
         }()
@@ -32,30 +33,31 @@ struct ResponseEvaluation {
             itemVerbe = NSEntityDescription.insertNewObject(forEntityName: "ItemVerbe", into: dataController.managedObjectContext) as? ItemVerbe
             itemVerbe.setValue(tempsVerb, forKey: "tempsVerbe")
             itemVerbe.setValue(modeVerb.capitalizingFirstLetter(), forKey: "modeVerbe")
+            itemVerbe.setValue(infinitif, forKey: "verbeInfinitif")
             itemVerbArray?.append(itemVerbe)
         }else{
-            itemVerbe = itemVerbArray![0]
+            itemVerbe = itemVerbArray!.first
         }
         var rightAnswerNoPronoum = rightAnswer
+        let itemVerbeUpdate = itemVerbe as NSManagedObject
         rightAnswerNoPronoum = rightAnswerNoPronoum.removingReflexivePronom()
         var infinitifNoPronoum = infinitif
         infinitifNoPronoum = infinitifNoPronoum.removingReflexivePronomInfinitif()
-        var arrayRightAnswer = rightAnswer.components(separatedBy: .whitespaces)
+        let arrayRightAnswer = rightAnswer.components(separatedBy: .whitespaces)
         var otraForma = OtraFormaVerbSelector.otraForma(mode: modeVerb, temp: tempsVerb, infinitif: infinitifNoPronoum, verbeConjugue: rightAnswerNoPronoum)
         if arrayRightAnswer[0] == "me" || arrayRightAnswer[0] == "te" || arrayRightAnswer[0] == "se" || arrayRightAnswer[0] == "nos" || arrayRightAnswer[0] == "os" {
             otraForma = arrayRightAnswer[0] + " " + otraForma
         }
+        
         if  itemVerbe.modeVerbe?.caseInsensitiveCompare(modeVerb) == .orderedSame &&  itemVerbe.tempsVerbe?.caseInsensitiveCompare(tempsVerb) == .orderedSame && (userResponse.caseInsensitiveCompare(rightAnswer) == .orderedSame || userResponse.caseInsensitiveCompare(otraForma) == .orderedSame) {
             if rightHintWasSelected {
                 itemVerbe.bonneReponseTemps = itemVerbe.bonneReponseTemps + 1
-                let itemVerbeUpdate = itemVerbe as NSManagedObject
                 itemVerbeUpdate.setValue(itemVerbe.bonneReponseTemps, forKey: "bonneReponseTemps")
                 let thisQuizHintAnswer = UserDefaults.standard.integer(forKey: "thisQuizHintAnswer")
                 UserDefaults.standard.set(thisQuizHintAnswer + 1, forKey: "thisQuizHintAnswer")
                 quizResultString = QuizResult.help.rawValue
             }else{
                 itemVerbe.bonneReponse = itemVerbe.bonneReponse + 1
-                let itemVerbeUpdate = itemVerbe as NSManagedObject
                 itemVerbeUpdate.setValue(itemVerbe.bonneReponse, forKey: "bonneReponse")
                 let thisQuizGoodAnswer = UserDefaults.standard.integer(forKey: "thisQuizGoodAnswer")
                 UserDefaults.standard.set(thisQuizGoodAnswer + 1, forKey: "thisQuizGoodAnswer")
@@ -63,12 +65,12 @@ struct ResponseEvaluation {
             }
         }else{
             itemVerbe.mauvaiseReponse = itemVerbe.mauvaiseReponse + 1
-            let itemVerbeUpdate = itemVerbe as NSManagedObject
             itemVerbeUpdate.setValue(itemVerbe.mauvaiseReponse, forKey: "mauvaiseReponse")
             let thisQuizBadAnswer = UserDefaults.standard.integer(forKey: "thisQuizBadAnswer")
             UserDefaults.standard.set(thisQuizBadAnswer + 1, forKey: "thisQuizBadAnswer")
             quizResultString = QuizResult.bad.rawValue
         }
+        itemVerbeUpdate.setValue(infinitif, forKey: "verbeInfinitif")
         dataController.saveContext()
         return QuizResult(rawValue: quizResultString)!
     }

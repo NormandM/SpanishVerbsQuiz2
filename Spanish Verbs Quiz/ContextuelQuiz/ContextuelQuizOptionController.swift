@@ -26,7 +26,7 @@ class ContextuelQuizOptionController: UITableViewController {
         header.alpha = 1.0 //make the header transparent
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.title = "Escoja tiempos verbales"
+        self.title = "Escoja tiempos verbales".localized
     }
     
     // MARK: - Table view data source
@@ -96,7 +96,7 @@ class ContextuelQuizOptionController: UITableViewController {
         }
     }
     func showAlert () {
-        let alertController = UIAlertController(title: "If faut choisir au moins un temps de verbe.", message: nil, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Elija por lo menos un tiempo verbal".localized, message: nil, preferredStyle: .alert)
         alertController.popoverPresentationController?.sourceView = self.view
         alertController.popoverPresentationController?.sourceRect = tableView.rectForHeader(inSection: 1)
         

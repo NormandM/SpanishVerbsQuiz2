@@ -26,11 +26,11 @@ class SpecificVerbViewController: UIViewController, UITableViewDataSource, UITab
     lazy var verbList = VerbInfinitif(arrayVerb: arrayVerb)
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Escoger de 1 a 10 verbos"
+        self.title = "Escoger de 1 a 10 verbos".localized
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Listo", style: .plain, target: self, action: #selector(showQuiz))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Listo".localized, style: .plain, target: self, action: #selector(showQuiz))
             navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 27/255, green: 96/255, blue: 94/255, alpha: 1.0)
         func alpha (_ s1: String, s2: String) -> Bool {
             return s1.folding(options: .diacriticInsensitive, locale: .current) < s2.folding(options: .diacriticInsensitive, locale: .current)
@@ -131,16 +131,16 @@ class SpecificVerbViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
     func showAlert () {
-        let alertController = UIAlertController(title: "Elija al menos 1 verbo pero no más de 10", message: nil, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Elija al menos 1 verbo pero no más de 10".localized, message: nil, preferredStyle: .alert)
         alertController.popoverPresentationController?.sourceView = self.view
         alertController.popoverPresentationController?.sourceRect = tableView.rectForHeader(inSection: 1)
         
-        let okAction = UIAlertAction(title: "Listo", style: .cancel, handler: nil)
+        let okAction = UIAlertAction(title: "Listo".localized, style: .cancel, handler: nil)
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
     }
     func showAlertPasDImperatif() {
-        let alertController = UIAlertController(title: "No hay ningún imperativo para este verbo:", message: "nevar. Haga otra selección", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "No hay ningún imperativo para este verbo:".localized, message: "nevar. Haga otra selección".localized, preferredStyle: .alert)
         alertController.popoverPresentationController?.sourceView = self.view
         alertController.popoverPresentationController?.sourceRect = tableView.rectForHeader(inSection: 1)
         

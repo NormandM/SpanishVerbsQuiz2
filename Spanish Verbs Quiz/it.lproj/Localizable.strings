@@ -1,0 +1,42 @@
+/* 
+  Localizable.strings
+  Spanish Verbs Quiz
+
+  Created by Normand Martin on 2021-07-31.
+  Copyright © 2021 Normand Martin. All rights reserved.
+*/
+"Elija una opción" = "Scegliere un'opzione";
+"Escoja el tiempo verbal" = "Scegliere il tempo";
+"Verbo conjugado" = "Verbo coniugato";
+"Escoja tiempos verbales" = "Scegliere i tempi";
+"Elija por lo menos un tiempo verbal" = "È necessario scegliere almeno un tempo verbale";
+"Verbos Españoles Quiz" = "Verbi Spagnoli Quiz";
+"Todos los verbos" = "Tutti i verbi";
+"Elige los verbos" = "Scegliere i verbi";
+"Escoger de 1 a 10 verbos" = "Scegliere di 1 a 10 verbi";
+"Elija al menos 1 verbo pero no más de 10" = "Si deve scegliere almeno 1 verbo e un massimo di 10";
+"No hay ningún imperativo para este verbo:" = "Non esiste alcun imperativo per questi verbi:";
+"nevar. Haga otra selección" = "nevar. Fare un'altra scelta";
+"Conjugar el verbo" = "Coniuga il verbo";
+"Elige el verbo" = "Scegli il verbo";
+"Correcto" = "Corretto";
+"Incorrecto" = "Sbaliato";
+"La traducción no está disponible." = "La traduzione non è disponibile.";
+"¡Perfecto! " = "Perfetto!";
+"%@ ¡Excelente!" = "%@ Molto Bene!";
+"%@ ¡Muy Bien!" = "%@ Bene!";
+"%@ ¡Inténtelo de nuevo!" = "%@ Prova di nuovo!";
+"Su selección para la prueba" = "Le sue scelte per il Quiz";
+"Tiempos elegidos" = "I Tempi";
+"Escoger el verbo" = "Scegli il verbo";
+"Correcto: %@" = "Corretto: %@";
+"Con ayuda: %@" = "Con l'aiuto: %@";
+"Incorrecto: %@" = "Sbaliato: %@";
+"Resultado:\n%@" = "Risultato:\n%@";
+"Resultados por cada tiempo" = "Statistiche";
+"Número de verbos estudiados\npor este tiempo %d" = "Numero di verbi studiati\nper questo tempo verbale %d";
+"Haga clic en el gráfico para ver más detalles" = "Fare clic su Grafico per vedere più dettagli";
+"Con ayuda" = "Con l'aiuto";
+"Escoja un verbo" = "Scegliere un verbo";
+"Elige una opción" = "Scegliere un'opzione";
+"Listo" = "Ok";

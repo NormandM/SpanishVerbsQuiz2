@@ -28,7 +28,6 @@
 		8E0F1C6622271EEB000EFE52 /* Auxiliere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0F1C6522271EEB000EFE52 /* Auxiliere.swift */; };
 		8E0F1C682227216F000EFE52 /* PieChartSetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0F1C672227216F000EFE52 /* PieChartSetUp.swift */; };
 		8E0F1C6C2229899C000EFE52 /* VerbesEspagnolsContextuels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E0F1C6B2229899C000EFE52 /* VerbesEspagnolsContextuels.plist */; };
-		8E1DB8EA1EC0A8550063EB1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E1DB8E91EC0A8550063EB1F /* Main.storyboard */; };
 		8E1DB8EC1EC0A85C0063EB1F /* DataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1DB8EB1EC0A85C0063EB1F /* DataStructure.swift */; };
 		8E1DB8EE1EC0A8650063EB1F /* initialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1DB8ED1EC0A8650063EB1F /* initialViewController.swift */; };
 		8E1DB8F01EC0A8700063EB1F /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1DB8EF1EC0A8700063EB1F /* OptionsViewController.swift */; };
@@ -53,6 +52,10 @@
 		8E7D263D1FBA21EC003798E5 /* TempsVerbesChoisisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D263C1FBA21EC003798E5 /* TempsVerbesChoisisViewController.swift */; };
 		8E7D263F1FBA21FB003798E5 /* FrenchEnglish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D263E1FBA21FB003798E5 /* FrenchEnglish.swift */; };
 		8E7D26411FBA2220003798E5 /* RandomNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D26401FBA2220003798E5 /* RandomNumberGenerator.swift */; };
+		8E7FC67226B5CD3000726939 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E7FC67426B5CD3000726939 /* Main.storyboard */; };
+		8E7FC67D26B5CDD800726939 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E7FC67F26B5CDD800726939 /* Localizable.strings */; };
+		8E7FC6D026B71C9C00726939 /* etc_error_drum.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8E7FC6CF26B71C9C00726939 /* etc_error_drum.mp3 */; };
+		8E7FC6D526B71D4D00726939 /* chime_clickbell_octave_up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8E7FC6D426B71D4D00726939 /* chime_clickbell_octave_up.mp3 */; };
 		8E8865902231D49200403795 /* StatistiqueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88658F2231D49100403795 /* StatistiqueTableViewController.swift */; };
 		8E8865922231D4A100403795 /* StatistiqueViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8865912231D4A000403795 /* StatistiqueViewCell.swift */; };
 		8E8865942231D4B300403795 /* FetchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8865932231D4B100403795 /* FetchRequest.swift */; };
@@ -61,6 +64,13 @@
 		8E96570F1FC366CD001AFED0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E96570E1FC366CD001AFED0 /* GoogleService-Info.plist */; };
 		8E9657111FC366E8001AFED0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E9657101FC366E8001AFED0 /* GoogleService-Info.plist */; };
 		8E9657131FC366F3001AFED0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E9657121FC366F3001AFED0 /* GoogleService-Info.plist */; };
+		8E9F9BDF26B0781000579F2F /* FirstStatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9BDE26B0781000579F2F /* FirstStatTableViewCell.swift */; };
+		8E9F9BE426B0783B00579F2F /* FetchRequestForVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9BE326B0783B00579F2F /* FetchRequestForVerb.swift */; };
+		8E9F9BE926B0784500579F2F /* FetchResultFoeOneTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9BE826B0784500579F2F /* FetchResultFoeOneTemp.swift */; };
+		8E9F9BF226B07AD100579F2F /* DetailStatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9BF126B07AD100579F2F /* DetailStatTableViewController.swift */; };
+		8E9F9BF726B07BD900579F2F /* extensionLocalisation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9BF626B07BD900579F2F /* extensionLocalisation.swift */; };
+		8E9F9BFC26B07ED100579F2F /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9BFB26B07ED100579F2F /* SoundPlayer.swift */; };
+		8E9F9C0126B07F4B00579F2F /* SoundOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9C0026B07F4B00579F2F /* SoundOption.swift */; };
 		8EC4ABCB1D17358D007359FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4ABCA1D17358D007359FF /* AppDelegate.swift */; };
 		8EC4ABD21D17358D007359FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EC4ABD11D17358D007359FF /* Assets.xcassets */; };
 		8EC4ABD51D17358D007359FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC4ABD31D17358D007359FF /* LaunchScreen.storyboard */; };
@@ -116,7 +126,6 @@
 		8E0F1C6522271EEB000EFE52 /* Auxiliere.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auxiliere.swift; sourceTree = "<group>"; };
 		8E0F1C672227216F000EFE52 /* PieChartSetUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartSetUp.swift; sourceTree = "<group>"; };
 		8E0F1C6B2229899C000EFE52 /* VerbesEspagnolsContextuels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = VerbesEspagnolsContextuels.plist; sourceTree = "<group>"; };
-		8E1DB8E91EC0A8550063EB1F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8E1DB8EB1EC0A85C0063EB1F /* DataStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructure.swift; sourceTree = "<group>"; };
 		8E1DB8ED1EC0A8650063EB1F /* initialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = initialViewController.swift; sourceTree = "<group>"; };
 		8E1DB8EF1EC0A8700063EB1F /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +150,37 @@
 		8E7D263C1FBA21EC003798E5 /* TempsVerbesChoisisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempsVerbesChoisisViewController.swift; sourceTree = "<group>"; };
 		8E7D263E1FBA21FB003798E5 /* FrenchEnglish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrenchEnglish.swift; sourceTree = "<group>"; };
 		8E7D26401FBA2220003798E5 /* RandomNumberGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNumberGenerator.swift; sourceTree = "<group>"; };
+		8E7FC67326B5CD3000726939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8E7FC67E26B5CDD800726939 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8E7FC68326B5CE0300726939 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Main.strings"; sourceTree = "<group>"; };
+		8E7FC68426B5CE0400726939 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		8E7FC68526B5CE0400726939 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		8E7FC6CF26B71C9C00726939 /* etc_error_drum.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = etc_error_drum.mp3; sourceTree = "<group>"; };
+		8E7FC6D426B71D4D00726939 /* chime_clickbell_octave_up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chime_clickbell_octave_up.mp3; sourceTree = "<group>"; };
+		8E7FC6D926B7269E00726939 /* en-US */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-US"; path = "en-US.lproj/Main.strings"; sourceTree = "<group>"; };
+		8E7FC6DA26B7269F00726939 /* en-US */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-US"; path = "en-US.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		8E7FC6DB26B726A000726939 /* en-US */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-US"; path = "en-US.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		8E7FC6DC26B726A900726939 /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/Main.strings"; sourceTree = "<group>"; };
+		8E7FC6DD26B726A900726939 /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		8E7FC6DE26B726A900726939 /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		8E7FC6DF26B726C800726939 /* en-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-CA"; path = "en-CA.lproj/Main.strings"; sourceTree = "<group>"; };
+		8E7FC6E026B726C900726939 /* en-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-CA"; path = "en-CA.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		8E7FC6E126B726C900726939 /* en-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-CA"; path = "en-CA.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		8E7FC6E226B7271300726939 /* en-NZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-NZ"; path = "en-NZ.lproj/Main.strings"; sourceTree = "<group>"; };
+		8E7FC6E326B7271300726939 /* en-NZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-NZ"; path = "en-NZ.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		8E7FC6E426B7271400726939 /* en-NZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-NZ"; path = "en-NZ.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		8E7FC6E826B73A2900726939 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		8E7FC6E926B73A2A00726939 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		8E7FC6EA26B73A2A00726939 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8E7FC6EB26B73A6000726939 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/Main.strings"; sourceTree = "<group>"; };
+		8E7FC6EC26B73A6000726939 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		8E7FC6ED26B73A6100726939 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		8E7FC6F526B9CEE000726939 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		8E7FC6F626B9CEE000726939 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		8E7FC6F726B9CEE000726939 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8E7FC6F826B9CFD700726939 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
+		8E7FC6F926B9CFD800726939 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		8E7FC6FA26B9CFD800726939 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8E88658F2231D49100403795 /* StatistiqueTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatistiqueTableViewController.swift; sourceTree = "<group>"; };
 		8E8865912231D4A000403795 /* StatistiqueViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatistiqueViewCell.swift; sourceTree = "<group>"; };
 		8E8865932231D4B100403795 /* FetchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchRequest.swift; sourceTree = "<group>"; };
@@ -150,6 +190,13 @@
 		8E96570E1FC366CD001AFED0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8E9657101FC366E8001AFED0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8E9657121FC366F3001AFED0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8E9F9BDE26B0781000579F2F /* FirstStatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstStatTableViewCell.swift; sourceTree = "<group>"; };
+		8E9F9BE326B0783B00579F2F /* FetchRequestForVerb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchRequestForVerb.swift; sourceTree = "<group>"; };
+		8E9F9BE826B0784500579F2F /* FetchResultFoeOneTemp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResultFoeOneTemp.swift; sourceTree = "<group>"; };
+		8E9F9BF126B07AD100579F2F /* DetailStatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailStatTableViewController.swift; sourceTree = "<group>"; };
+		8E9F9BF626B07BD900579F2F /* extensionLocalisation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensionLocalisation.swift; sourceTree = "<group>"; };
+		8E9F9BFB26B07ED100579F2F /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		8E9F9C0026B07F4B00579F2F /* SoundOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundOption.swift; sourceTree = "<group>"; };
 		8EC4ABC71D17358D007359FF /* Spanish Verbs Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spanish Verbs Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC4ABCA1D17358D007359FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EC4ABD11D17358D007359FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -253,11 +300,12 @@
 				8E1DB8F91EC0A8970063EB1F /* QuizController.swift */,
 				8E1DB8FB1EC0A89E0063EB1F /* ResultViewController.swift */,
 				8E7D263C1FBA21EC003798E5 /* TempsVerbesChoisisViewController.swift */,
-				8E0F1C532226FB84000EFE52 /* VerbInfinitif.swift */,
 				8E0F1C55222718DD000EFE52 /* QuizQuestion.swift */,
-				8E0F1C6122271D34000EFE52 /* ResponseEvaluation.swift */,
-				8E0F1C6322271D41000EFE52 /* SoundResponse.swift */,
+				8E9F9C0026B07F4B00579F2F /* SoundOption.swift */,
 				8E0F1C592227195F000EFE52 /* SelectVerbsForQuiz.swift */,
+				8E0F1C6122271D34000EFE52 /* ResponseEvaluation.swift */,
+				8E0F1C532226FB84000EFE52 /* VerbInfinitif.swift */,
+				8E0F1C6322271D41000EFE52 /* SoundResponse.swift */,
 				8E7D263E1FBA21FB003798E5 /* FrenchEnglish.swift */,
 				8E88659D22380AA000403795 /* OtraFormaVerbSelector.swift */,
 			);
@@ -284,10 +332,14 @@
 		8E0F1C4422248DC2000EFE52 /* StatisticView */ = {
 			isa = PBXGroup;
 			children = (
+				8E9F9BF126B07AD100579F2F /* DetailStatTableViewController.swift */,
 				8E88658F2231D49100403795 /* StatistiqueTableViewController.swift */,
 				8E8865912231D4A000403795 /* StatistiqueViewCell.swift */,
 				8E0F1C672227216F000EFE52 /* PieChartSetUp.swift */,
 				8E8865932231D4B100403795 /* FetchRequest.swift */,
+				8E9F9BDE26B0781000579F2F /* FirstStatTableViewCell.swift */,
+				8E9F9BE326B0783B00579F2F /* FetchRequestForVerb.swift */,
+				8E9F9BE826B0784500579F2F /* FetchResultFoeOneTemp.swift */,
 			);
 			path = StatisticView;
 			sourceTree = "<group>";
@@ -295,8 +347,11 @@
 		8E7D26311FBA1261003798E5 /* sound */ = {
 			isa = PBXGroup;
 			children = (
+				8E9F9BFB26B07ED100579F2F /* SoundPlayer.swift */,
 				8E7D26341FBA1600003798E5 /* Acoustic Trio.wav */,
+				8E7FC6CF26B71C9C00726939 /* etc_error_drum.mp3 */,
 				8E2A19ED1EC10B29002396E6 /* Error Warning.wav */,
+				8E7FC6D426B71D4D00726939 /* chime_clickbell_octave_up.mp3 */,
 				8E2A19EB1EC10B20002396E6 /* Incoming Text 01.wav */,
 			);
 			name = sound;
@@ -328,7 +383,8 @@
 		8EC4ABC91D17358D007359FF /* Spanish Verbs Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				8E1DB8E91EC0A8550063EB1F /* Main.storyboard */,
+				8E7FC67426B5CD3000726939 /* Main.storyboard */,
+				8E7FC67F26B5CDD800726939 /* Localizable.strings */,
 				8EC4ABCA1D17358D007359FF /* AppDelegate.swift */,
 				8E8865992232FE3B00403795 /* SpanishVerbs.plist */,
 				8ED90E992240121E008C5063 /* FrenchToEnglish.plist */,
@@ -343,6 +399,7 @@
 				8E0F1C4222248D90000EFE52 /* Quiz Controller */,
 				8E0F1C4322248DAD000EFE52 /* ContextuelQuiz */,
 				8E0F1C4422248DC2000EFE52 /* StatisticView */,
+				8E9F9BF626B07BD900579F2F /* extensionLocalisation.swift */,
 				8E1DB8EB1EC0A85C0063EB1F /* DataStructure.swift */,
 				8E1DB8ED1EC0A8650063EB1F /* initialViewController.swift */,
 				8EC4ABD61D17358D007359FF /* Info.plist */,
@@ -442,7 +499,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Normand Martin";
 				TargetAttributes = {
 					8EC4ABC61D17358D007359FF = {
@@ -469,6 +526,15 @@
 			knownRegions = (
 				en,
 				Base,
+				"en-GB",
+				"en-US",
+				"en-AU",
+				"en-CA",
+				"en-NZ",
+				fr,
+				"fr-CA",
+				es,
+				it,
 			);
 			mainGroup = 8EC4ABBE1D17358D007359FF;
 			productRefGroup = 8EC4ABC81D17358D007359FF /* Products */;
@@ -488,15 +554,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ED90E9A2240121F008C5063 /* FrenchToEnglish.plist in Resources */,
+				8E7FC67D26B5CDD800726939 /* Localizable.strings in Resources */,
 				8E88659A2232FE3F00403795 /* SpanishVerbs.plist in Resources */,
 				8E7D26351FBA1600003798E5 /* Acoustic Trio.wav in Resources */,
-				8E1DB8EA1EC0A8550063EB1F /* Main.storyboard in Resources */,
+				8E7FC67226B5CD3000726939 /* Main.storyboard in Resources */,
 				8ED90E51223EAEBC008C5063 /* DictAvoirEtre.plist in Resources */,
 				8EC4ABD51D17358D007359FF /* LaunchScreen.storyboard in Resources */,
 				8E96570F1FC366CD001AFED0 /* GoogleService-Info.plist in Resources */,
 				8E2A19EE1EC10B29002396E6 /* Error Warning.wav in Resources */,
 				8E2A19EC1EC10B20002396E6 /* Incoming Text 01.wav in Resources */,
+				8E7FC6D526B71D4D00726939 /* chime_clickbell_octave_up.mp3 in Resources */,
 				8E0F1C6C2229899C000EFE52 /* VerbesEspagnolsContextuels.plist in Resources */,
+				8E7FC6D026B71C9C00726939 /* etc_error_drum.mp3 in Resources */,
 				8EC4ABD21D17358D007359FF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -600,6 +669,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E8865942231D4B300403795 /* FetchRequest.swift in Sources */,
+				8E9F9BE926B0784500579F2F /* FetchResultFoeOneTemp.swift in Sources */,
+				8E9F9BF226B07AD100579F2F /* DetailStatTableViewController.swift in Sources */,
 				8E88659E22380AA000403795 /* OtraFormaVerbSelector.swift in Sources */,
 				8EC4ABCB1D17358D007359FF /* AppDelegate.swift in Sources */,
 				8E0F1C542226FB84000EFE52 /* VerbInfinitif.swift in Sources */,
@@ -611,6 +682,7 @@
 				8E0F1C5A2227195F000EFE52 /* SelectVerbsForQuiz.swift in Sources */,
 				8E1DB8F81EC0A8900063EB1F /* QuizOptionsController.swift in Sources */,
 				8E7D26411FBA2220003798E5 /* RandomNumberGenerator.swift in Sources */,
+				8E9F9BDF26B0781000579F2F /* FirstStatTableViewCell.swift in Sources */,
 				8E0F1C5C22271A6E000EFE52 /* TextFieldProperties.swift in Sources */,
 				8E4569C61EC107140067E575 /* VerbesEspagnols.xcdatamodeld in Sources */,
 				8E55D4B2222F23A8003C29B0 /* ContextuelQuizViewController.swift in Sources */,
@@ -626,7 +698,9 @@
 				8E1DB8F01EC0A8700063EB1F /* OptionsViewController.swift in Sources */,
 				8E1DB8F21EC0A87E0063EB1F /* VerbListViewController.swift in Sources */,
 				8E0F1C6022271B7A000EFE52 /* UnwindSegueChoice.swift in Sources */,
+				8E9F9C0126B07F4B00579F2F /* SoundOption.swift in Sources */,
 				8E1DB8F41EC0A8840063EB1F /* tempsDeVerbeTableViewController.swift in Sources */,
+				8E9F9BE426B0783B00579F2F /* FetchRequestForVerb.swift in Sources */,
 				8E0F1C58222718F6000EFE52 /* DifficultyLevel.swift in Sources */,
 				8E7D263D1FBA21EC003798E5 /* TempsVerbesChoisisViewController.swift in Sources */,
 				8E1DB8F61EC0A88A0063EB1F /* FinalVerbeViewController.swift in Sources */,
@@ -640,9 +714,11 @@
 				8E0F1C4A22249B83000EFE52 /* ModeAndTempStruct.swift in Sources */,
 				8E7D26371FBA1C8D003798E5 /* SpecificVerbViewController.swift in Sources */,
 				8E1DB8FC1EC0A89E0063EB1F /* ResultViewController.swift in Sources */,
+				8E9F9BF726B07BD900579F2F /* extensionLocalisation.swift in Sources */,
 				8E8865922231D4A100403795 /* StatistiqueViewCell.swift in Sources */,
 				8E0F1C5222249F92000EFE52 /* ChoixDu Pronom.swift in Sources */,
 				8E0F1C6622271EEB000EFE52 /* Auxiliere.swift in Sources */,
+				8E9F9BFC26B07ED100579F2F /* SoundPlayer.swift in Sources */,
 				8E0F1C5022249EF2000EFE52 /* ExtensionCapitalizedFirstLetter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -679,10 +755,53 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		8E7FC67426B5CD3000726939 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E7FC67326B5CD3000726939 /* Base */,
+				8E7FC68326B5CE0300726939 /* en-GB */,
+				8E7FC6D926B7269E00726939 /* en-US */,
+				8E7FC6DC26B726A900726939 /* en-AU */,
+				8E7FC6DF26B726C800726939 /* en-CA */,
+				8E7FC6E226B7271300726939 /* en-NZ */,
+				8E7FC6E826B73A2900726939 /* fr */,
+				8E7FC6EB26B73A6000726939 /* fr-CA */,
+				8E7FC6F526B9CEE000726939 /* es */,
+				8E7FC6F826B9CFD700726939 /* it */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8E7FC67F26B5CDD800726939 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E7FC67E26B5CDD800726939 /* en */,
+				8E7FC68526B5CE0400726939 /* en-GB */,
+				8E7FC6DB26B726A000726939 /* en-US */,
+				8E7FC6DE26B726A900726939 /* en-AU */,
+				8E7FC6E126B726C900726939 /* en-CA */,
+				8E7FC6E426B7271400726939 /* en-NZ */,
+				8E7FC6EA26B73A2A00726939 /* fr */,
+				8E7FC6ED26B73A6100726939 /* fr-CA */,
+				8E7FC6F726B9CEE000726939 /* es */,
+				8E7FC6FA26B9CFD800726939 /* it */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		8EC4ABD31D17358D007359FF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				8EC4ABD41D17358D007359FF /* Base */,
+				8E7FC68426B5CE0400726939 /* en-GB */,
+				8E7FC6DA26B7269F00726939 /* en-US */,
+				8E7FC6DD26B726A900726939 /* en-AU */,
+				8E7FC6E026B726C900726939 /* en-CA */,
+				8E7FC6E326B7271300726939 /* en-NZ */,
+				8E7FC6E926B73A2A00726939 /* fr */,
+				8E7FC6EC26B73A6000726939 /* fr-CA */,
+				8E7FC6F626B9CEE000726939 /* es */,
+				8E7FC6F926B9CFD800726939 /* it */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -714,6 +833,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -738,7 +858,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -771,6 +891,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -789,7 +910,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
