@@ -10,7 +10,7 @@ import UIKit
 import AudioToolbox
 import CoreData
 
-class QuizController: UIViewController, NSFetchedResultsControllerDelegate{
+class QuizController: UIViewController, NSFetchedResultsControllerDelegate,UITextFieldDelegate{
     @IBOutlet weak var autreQuestionLabel: UIButton!
     @IBOutlet weak var verbe: UILabel!
     @IBOutlet weak var mode: UILabel!
@@ -27,6 +27,13 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate{
     @IBOutlet weak var verbResponseButton: UIButton!
     @IBOutlet weak var personneResponse: UILabel!
     @IBOutlet weak var wrongAnswerCorrection: UILabel!
+    
+    @IBOutlet weak var verbeVerticalConstraint: NSLayoutConstraint!
+    @IBOutlet weak var traductionButtonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var modeConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tempConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tempChoisiConstraint: NSLayoutConstraint!
+    
     lazy var quizQuestion = QuizQuestion(verbSelectionRandom: verbSelectionRandom, index: index)
     var difficulté = DifficultyLevel.DIFFICILE
     var textFieldIsActivated = false
@@ -129,17 +136,21 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate{
         suggestionButton.layer.cornerRadius = suggestionButton.frame.height / 2.0
         uneAutreQuestionButton.setNeedsLayout()
     }
+    
     @objc func keyBoardWillChange(notification: Notification) {
         let distanceFromTextField = view.frame.size.height - (reponse.frame.size.height + reponse.frame.origin.y)
-        guard let keyBoardRec = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
+        guard let keyBoardRec = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        else{
             return
         }
         if notification.name == UIResponder.keyboardWillShowNotification && !textFieldIsActivated{
-            textFieldIsActivated = true
-            animateViewMoving(true, moveValue: keyBoardRec.height - distanceFromTextField + 5)
-        }else if notification.name == UIResponder.keyboardWillHideNotification{
+            let moveValue = keyBoardRec.height - distanceFromTextField + 5
+            animateViewMoving(true, moveValue: moveValue)
+            if moveValue > 100 {tempsChoisiButton.isHidden = true}
+        }else if notification.name == UIResponder.keyboardWillHideNotification {
             textFieldIsActivated = false
-            animateViewMoving(true, moveValue: distanceFromTextField - keyBoardRec.height - 5)
+            animateViewMoving(false, moveValue: distanceFromTextField - keyBoardRec.height - 5)
+            tempsChoisiButton.isHidden = false
         }
     }
     func setQuestion() {
@@ -165,7 +176,26 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate{
         UIView.beginAnimations( "animateView", context: nil)
         UIView.setAnimationBeginsFromCurrentState(true)
         UIView.setAnimationDuration(movementDuration )
-        self.view.frame = self.view.frame.offsetBy(dx: 0,  dy: movement)
+        if !textFieldIsActivated {
+            let newRatio = movement/view.frame.height
+            if up{
+                self.view.frame = self.view.frame.offsetBy(dx: 0,  dy: movement)
+                verbeVerticalConstraint.constant = -newRatio * view.frame.height
+                traductionButtonConstraint.constant = -newRatio * view.frame.height
+                modeConstraint.constant = -newRatio * view.frame.height
+                tempConstraint.constant = -newRatio * view.frame.height
+                tempChoisiConstraint.constant = -newRatio * view.frame.height
+                textFieldIsActivated = true
+            }else{
+                self.view.frame = self.view.frame.offsetBy(dx: 0,  dy: -movement)
+                verbeVerticalConstraint.constant = 0.27
+                traductionButtonConstraint.constant = 0.44
+                modeConstraint.constant = 0.65
+                tempConstraint.constant = 0.74
+                tempChoisiConstraint.constant = 0.92
+                textFieldIsActivated = false
+            }
+        }
         UIView.commitAnimations()
     }
  

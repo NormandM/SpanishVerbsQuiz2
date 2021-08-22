@@ -904,16 +904,21 @@
                         <outlet property="barreProgression" destination="eQk-HF-ot7" id="wMj-rX-VH2"/>
                         <outlet property="checkButton" destination="90c-oz-vvX" id="YNO-64-O5G"/>
                         <outlet property="mode" destination="dbh-XN-Zce" id="hx6-CK-pAV"/>
+                        <outlet property="modeConstraint" destination="7bO-db-CSA" id="Wa6-8W-PN4"/>
                         <outlet property="personne" destination="gbi-oD-xbf" id="7Xf-Z3-1kH"/>
                         <outlet property="personneResponse" destination="cic-zx-CJ6" id="i4S-vq-nCP"/>
                         <outlet property="reponse" destination="FUI-lh-J6X" id="PTW-hg-KxT"/>
                         <outlet property="suggestionButton" destination="N36-qp-fk3" id="pNn-tr-Q2Q"/>
+                        <outlet property="tempChoisiConstraint" destination="2ab-gM-b40" id="Tlz-AL-sZV"/>
+                        <outlet property="tempConstraint" destination="Ytg-E7-qOd" id="6Ip-qe-3br"/>
                         <outlet property="temps" destination="1oC-1F-Xrp" id="4mE-Kk-uQV"/>
                         <outlet property="tempsChoisiButton" destination="Sbm-JI-goz" id="TtF-nJ-YRz"/>
                         <outlet property="traductionAnglaiseButton" destination="gBh-ZB-1UM" id="kct-lY-IjO"/>
+                        <outlet property="traductionButtonConstraint" destination="oBS-gt-byD" id="omL-MQ-bO0"/>
                         <outlet property="uneAutreQuestionButton" destination="Fq1-77-0vW" id="TrE-Rp-tvt"/>
                         <outlet property="verbResponseButton" destination="asP-A9-gW6" id="a1a-QJ-XWI"/>
                         <outlet property="verbe" destination="dDz-dN-PnW" id="wLN-D6-cWh"/>
+                        <outlet property="verbeVerticalConstraint" destination="TWd-2u-bxw" id="25v-nA-TGR"/>
                         <outlet property="wrongAnswerCorrection" destination="ihU-mO-gYf" id="wO7-bp-50r"/>
                         <outletCollection property="verbHintButton" destination="NYB-rZ-dFq" collectionClass="NSMutableArray" id="HRe-VU-EvJ"/>
                         <outletCollection property="verbHintButton" destination="aw8-U2-ajg" collectionClass="NSMutableArray" id="DVi-30-iNf"/>
@@ -1418,9 +1423,13 @@
                     <connections>
                         <outlet property="barreProgression" destination="jI6-Bp-b8e" id="ICM-aG-JVa"/>
                         <outlet property="checkButton" destination="J5T-My-b86" id="MWc-Qa-ppN"/>
+                        <outlet property="modeConstraint" destination="YNY-sb-gqR" id="8s6-qg-Elm"/>
                         <outlet property="modeLabel" destination="2JX-lm-f2v" id="ecs-t0-UzQ"/>
+                        <outlet property="sentenceConstraint" destination="M7a-jc-NZP" id="0va-z2-0m6"/>
                         <outlet property="sentenceLabel" destination="JdB-wF-dGA" id="xZS-72-k69"/>
                         <outlet property="suggestionButton" destination="EOE-dH-uAh" id="94R-V4-gMc"/>
+                        <outlet property="tempConstraint" destination="qau-ob-zZX" id="1XA-7M-JLz"/>
+                        <outlet property="tempsChoisiConstraint" destination="SOL-j7-fO5" id="zJX-gY-QNJ"/>
                         <outlet property="tempsEtverbesChoisiButton" destination="p5V-Vv-51F" id="qLV-6G-p52"/>
                         <outlet property="tempsLabel" destination="UJ5-Ao-mpa" id="DRu-Jv-5EB"/>
                         <outlet property="uneAutreQuestionButton" destination="dwi-58-7Ak" id="12L-Z1-AS7"/>
@@ -1603,13 +1612,13 @@
         <!--Detail Stat Table View Controller-->
         <scene sceneID="1KT-6C-2TJ">
             <objects>
-                <tableViewController id="WOu-rL-MU1" customClass="DetailStatTableViewController" customModule="QuizVerbesItaliens" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="WOu-rL-MU1" customClass="DetailStatTableViewController" customModule="Spanish_Verbs_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lTO-xE-BgW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="178" id="gri-B7-DRA" customClass="FirstStatTableViewCell" customModule="QuizVerbesItaliens" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="178" id="gri-B7-DRA" customClass="FirstStatTableViewCell" customModule="Spanish_Verbs_Quiz" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="178"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gri-B7-DRA" id="pID-2d-ooF">
@@ -1683,7 +1692,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KgR-Sm-Ege"/>
+        <segue reference="Vzp-qd-Gyw"/>
         <segue reference="GcL-9O-SNo"/>
     </inferredMetricsTieBreakers>
     <resources>
