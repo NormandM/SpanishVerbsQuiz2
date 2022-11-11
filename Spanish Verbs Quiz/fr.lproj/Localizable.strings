@@ -18,7 +18,7 @@
 "No hay ningún imperativo para este verbo:" = "Il n'y a pas d'impératif pour ce verbe:";
 "nevar. Haga otra selección" = "nevar. Faites un autre choix";
 "Conjugar el verbo" = "Conjuguer le verbe";
-"Elige el verbo" = "Choisissez le verbe";
+ = "Choisissez le verbe";
 "Correcto" = "Correct";
 "Incorrecto" = "Incorrect";
 "La traducción no está disponible." = "La traduction n'est pas disponible.";
@@ -40,3 +40,5 @@
 "Escoja un verbo" = "Choisissez un verbe";
 "Elige una opción" = "Choisir une option";
 "Listo" = "Ok";
+"FrenchToEnglish" = "SpanishFrench";
+"Haga clic en el verbo\npara escuchar la pronunciación" = "Cliquez sur le verbe pour entendre la prononciation";

@@ -6,7 +6,7 @@ target 'Spanish Verbs Quiz' do
   use_frameworks!
 
   # Pods for Spanish Verbs Quiz
-	pod 'Charts'
+  pod 'Charts', '~> 4.1'
 
 
   target 'Spanish Verbs QuizTests' do

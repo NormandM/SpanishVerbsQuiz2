@@ -29,6 +29,7 @@ class FinalVerbeViewController: UIViewController {
     @IBOutlet weak var fifth: UILabel!
     @IBOutlet weak var sixth: UILabel!
     @IBOutlet weak var otraForma: UIButton!
+    @IBOutlet weak var listenLabel: UILabel!
     var isOn = false
     let fonts = FontsAndConstraintsOptions()
     var verbInfinitif = String()
@@ -37,6 +38,7 @@ class FinalVerbeViewController: UIViewController {
     typealias ListedVerb = Verb
     override func viewDidLoad() {
         super.viewDidLoad()
+        let notificationCenter = NotificationCenter.default
         let chosenVerb = ChosenVerb(infinitif: verbInfinitif, mode: modeVerb, temp: temp)
         let verb: ListedVerb = chosenVerb.conjugatedVerb
         infinitif.text = verb.verbInfinitif.capitalizingFirstLetter()
@@ -49,12 +51,21 @@ class FinalVerbeViewController: UIViewController {
         let choixDeLaPersonne4 = ChoixDuPronom(mode:  verb.mode, temps: verb.temp, infinitif: verb.verbInfinitif, personne: "4", conjugatedVerb: verb.fourthPersonVerb)
         let choixDeLaPersonne5 = ChoixDuPronom(mode:  verb.mode, temps: verb.temp, infinitif: verb.verbInfinitif, personne: "5", conjugatedVerb: verb.fifthPersonVerb)
         let choixDeLaPersonne6 = ChoixDuPronom(mode:  verb.mode, temps: verb.temp, infinitif: verb.verbInfinitif, personne: "6", conjugatedVerb: verb.sixthPersonVerb)
+        listenLabel.text = "Haga clic en el verbo\npara escuchar la pronunciación".localized
         first.text = choixDeLaPersonne1.pronom
         second.text = choixDeLaPersonne2.pronom
         third.text = choixDeLaPersonne3.pronom
         fourth.text = choixDeLaPersonne4.pronom
         fifth.text = choixDeLaPersonne5.pronom
         sixth.text = choixDeLaPersonne6.pronom
+        let voiceStopped = Notification.Name("voiceStopped")
+        notificationCenter.addObserver(self,selector: #selector(voiceDidTerminate),name: voiceStopped,object: nil)
+        premier.clickLabel()
+        deuxieme.clickLabel()
+        troisieme.clickLabel()
+        quatrieme.clickLabel()
+        cinquieme.clickLabel()
+        sixieme.clickLabel()
         if modeVerb.caseInsensitiveCompare("SUBJUNTIVO")  == .orderedSame && (temp.caseInsensitiveCompare("Imperfecto") == .orderedSame || temp.caseInsensitiveCompare("Pluscuamperfecto") == .orderedSame){
             otraForma.isEnabled = true
             otraForma.isHidden = false
@@ -105,6 +116,15 @@ class FinalVerbeViewController: UIViewController {
         quatrieme.text = fourth
         cinquieme.text = fifth
         sixieme.text = sixth
+    }
+    @objc func voiceDidTerminate(_ notification: NSNotification){
+        print("Voice did stop")
+        premier.textColor = .black
+        deuxieme.textColor = .black
+        troisieme.textColor = .black
+        quatrieme.textColor = .black
+        cinquieme.textColor = .black
+        sixieme.textColor = .black
     }
     
 }

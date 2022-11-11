@@ -26,9 +26,11 @@ struct ChoixDuPronom {
         case "1":
             if mode == "Subjuntivo"{
                 pronomTrans = "que yo"
-            }else if mode == "Imperativo"{
-                pronomTrans = ""
-            }else {pronomTrans = "yo"}
+            }
+//            else if mode == "Imperativo"{
+//                pronomTrans = ""
+//            }
+            else if mode != "Imperativo"{pronomTrans = "yo"}
         case "2":
             if mode == "Subjuntivo"{
                 pronomTrans = "que tu"
@@ -43,7 +45,7 @@ struct ChoixDuPronom {
             if mode == "Subjuntivo"{
                 pronomTrans = "que Ud/el"
             }else if mode == "Imperativo"  && temps == "Positivo"{
-                pronomTrans = "((Ud))"
+                pronomTrans = "(Ud)"
             }else if mode == "Imperativo" && temps == "Negativo"{
                 pronomTrans = "(Ud) no"
             }else{

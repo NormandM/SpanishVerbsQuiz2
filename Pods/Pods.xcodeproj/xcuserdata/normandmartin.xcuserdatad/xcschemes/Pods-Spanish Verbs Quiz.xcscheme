@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1200"
+   LastUpgradeVersion = "1410"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F1F4C8FC957665A4A7914BDAA6BA3DBF"
+               BlueprintIdentifier = "DE628089EAAC1C80AC6057400E88134D"
                BuildableName = "Pods_Spanish_Verbs_Quiz.framework"
                BlueprintName = "Pods-Spanish Verbs Quiz"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -40,15 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F1F4C8FC957665A4A7914BDAA6BA3DBF"
-            BuildableName = "Pods_Spanish_Verbs_Quiz.framework"
-            BlueprintName = "Pods-Spanish Verbs Quiz"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

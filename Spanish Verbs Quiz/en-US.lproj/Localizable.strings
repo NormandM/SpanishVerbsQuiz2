@@ -22,7 +22,7 @@
 "Elige el verbo" = "Choose verb";
 "Correcto" = "Correct";
 "Incorrecto" = "Wrong";
-"La traducción no está disponible." = "La traducción no está disponible.";
+"La traducción no está disponible." = "The translation is not available.";
 "¡Perfecto! " = "Perfect!";
 "%@ ¡Excelente!" = "%@ Very Good!";
 "%@ ¡Muy Bien!" = "%@ Good";
@@ -41,3 +41,5 @@
 "Con ayuda" = "With hints";
 "Escoja un verbo" = "Choose a verb";
 "Elige una opción" = "Choose an option";
+"FrenchToEnglish" = "FrenchToEnglish";
+"Haga clic en el verbo\npara escuchar la pronunciación" = "Click on the verb to hear the pronunciation";

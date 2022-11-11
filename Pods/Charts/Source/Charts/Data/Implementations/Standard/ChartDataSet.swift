@@ -9,6 +9,7 @@
 //  https://github.com/danielgindi/Charts
 //
 
+import Algorithms
 import Foundation
 
 /// Determines how to round DataSet index values for `ChartDataSet.entryIndex(x, rounding)` when an exact x-value is not found.
@@ -26,30 +27,28 @@ open class ChartDataSet: ChartBaseDataSet
 {
     public required init()
     {
-        values = []
-
+        entries = []
+        
         super.init()
     }
     
-    public override init(label: String?)
+    public override convenience init(label: String)
     {
-        values = []
-
-        super.init(label: label)
+        self.init(entries: [], label: label)
     }
     
-    @objc public init(values: [ChartDataEntry]?, label: String?)
+    @objc public init(entries: [ChartDataEntry], label: String)
     {
-        self.values = values ?? []
+        self.entries = entries 
 
         super.init(label: label)
 
         self.calcMinMax()
     }
     
-    @objc public convenience init(values: [ChartDataEntry]?)
+    @objc public convenience init(entries: [ChartDataEntry])
     {
-        self.init(values: values, label: "DataSet")
+        self.init(entries: entries, label: "DataSet")
     }
     
     // MARK: - Data functions and accessors
@@ -57,20 +56,19 @@ open class ChartDataSet: ChartBaseDataSet
     /// - Note: Calls `notifyDataSetChanged()` after setting a new value.
     /// - Returns: The array of y-values that this DataSet represents.
     /// the entries that this dataset represents / holds together
-   // @available(*, deprecated, message: "Use `subscript(position:)` instead.")
-    @objc open var values: [ChartDataEntry]
-        {
-        didSet
-        {
-            if isIndirectValuesCall {
-                isIndirectValuesCall = false
-                return
-            }
-            notifyDataSetChanged()
-        }
+    @objc
+    open private(set) var entries: [ChartDataEntry]
+
+    /// Used to replace all entries of a data set while retaining styling properties.
+    /// This is a separate method from a setter on `entries` to encourage usage
+    /// of `Collection` conformances.
+    ///
+    /// - Parameter entries: new entries to replace existing entries in the dataset
+    @objc
+    public func replaceEntries(_ entries: [ChartDataEntry]) {
+        self.entries = entries
+        notifyDataSetChanged()
     }
-    // TODO: Temporary fix for performance. Will be removed in 4.0
-    private var isIndirectValuesCall = false
 
     /// maximum y-value in the value array
     internal var _yMax: Double = -Double.greatestFiniteMagnitude
@@ -103,36 +101,25 @@ open class ChartDataSet: ChartBaseDataSet
 
         guard !isEmpty else { return }
         
-        let indexFrom = entryIndex(x: fromX, closestToY: Double.nan, rounding: .down)
-        let indexTo = entryIndex(x: toX, closestToY: Double.nan, rounding: .up)
+        let indexFrom = entryIndex(x: fromX, closestToY: .nan, rounding: .closest)
+        var indexTo = entryIndex(x: toX, closestToY: .nan, rounding: .up)
+        if indexTo == -1 { indexTo = entryIndex(x: toX, closestToY: .nan, rounding: .closest) }
         
-        guard !(indexTo < indexFrom) else { return }
+        guard indexTo >= indexFrom else { return }
         // only recalculate y
         self[indexFrom...indexTo].forEach(calcMinMaxY)
     }
     
     @objc open func calcMinMaxX(entry e: ChartDataEntry)
     {
-        if e.x < _xMin
-        {
-            _xMin = e.x
-        }
-        if e.x > _xMax
-        {
-            _xMax = e.x
-        }
+        _xMin = Swift.min(e.x, _xMin)
+        _xMax = Swift.max(e.x, _xMax)
     }
     
     @objc open func calcMinMaxY(entry e: ChartDataEntry)
     {
-        if e.y < _yMin
-        {
-            _yMin = e.y
-        }
-        if e.y > _yMax
-        {
-            _yMax = e.y
-        }
+        _yMin = Swift.min(e.y, _yMin)
+        _yMax = Swift.max(e.y, _yMax)
     }
     
     /// Updates the min and max x and y value of this DataSet based on the given Entry.
@@ -146,16 +133,16 @@ open class ChartDataSet: ChartBaseDataSet
     }
     
     /// The minimum y-value this DataSet holds
-    open override var yMin: Double { return _yMin }
+    @objc open override var yMin: Double { return _yMin }
     
     /// The maximum y-value this DataSet holds
-    open override var yMax: Double { return _yMax }
+    @objc open override var yMax: Double { return _yMax }
     
     /// The minimum x-value this DataSet holds
-    open override var xMin: Double { return _xMin }
+    @objc open override var xMin: Double { return _xMin }
     
     /// The maximum x-value this DataSet holds
-    open override var xMax: Double { return _xMax }
+    @objc open override var xMax: Double { return _xMax }
     
     /// The number of y-values this DataSet represents
     @available(*, deprecated, message: "Use `count` instead")
@@ -167,7 +154,7 @@ open class ChartDataSet: ChartBaseDataSet
     @available(*, deprecated, message: "Use `subscript(index:)` instead.")
     open override func entryForIndex(_ i: Int) -> ChartDataEntry?
     {
-        guard i >= startIndex, i < endIndex else {
+        guard indices.contains(i) else {
             return nil
         }
         return self[i]
@@ -210,58 +197,12 @@ open class ChartDataSet: ChartBaseDataSet
     /// An empty array if no Entry object at that index.
     open override func entriesForXValue(_ xValue: Double) -> [ChartDataEntry]
     {
-        var entries = [ChartDataEntry]()
-        
-        var low = values.startIndex
-        var high = values.endIndex - 1
-        
-        while low <= high
-        {
-            var m = (high + low) / 2
-            var entry = values[m]
-            
-            // if we have a match
-            if xValue == entry.x
-            {
-                while m > 0 && values[m - 1].x == xValue
-                {
-                    m -= 1
-                }
-                
-                high = values.endIndex
-                
-                // loop over all "equal" entries
-                while m < high
-                {
-                    entry = values[m]
-                    if entry.x == xValue
-                    {
-                        entries.append(entry)
-                    }
-                    else
-                    {
-                        break
-                    }
-                    
-                    m += 1
-                }
-                
-                break
-            }
-            else
-            {
-                if xValue > entry.x
-                {
-                    low = m + 1
-                }
-                else
-                {
-                    high = m - 1
-                }
-            }
-        }
-        
-        return entries
+        let match: (ChartDataEntry) -> Bool = { $0.x == xValue }
+        var partitioned = self.entries
+        _ = partitioned.partition(by: match)
+        let i = partitioned.partitioningIndex(where: match)
+        guard i < endIndex else { return [] }
+        return partitioned[i...].prefix(while: match)
     }
     
     /// - Parameters:
@@ -275,98 +216,66 @@ open class ChartDataSet: ChartBaseDataSet
         closestToY yValue: Double,
         rounding: ChartDataSetRounding) -> Int
     {
-        var low = values.startIndex
-        var high = values.endIndex - 1
-        var closest = high
-        
-        while low < high
-        {
-            let m = (low + high) / 2
-            
-            let d1 = values[m].x - xValue
-            let d2 = values[m + 1].x - xValue
-            let ad1 = abs(d1), ad2 = abs(d2)
-            
-            if ad2 < ad1
+        var closest = partitioningIndex { $0.x >= xValue }
+        guard closest < endIndex else { return index(before: endIndex) }
+
+        var closestXValue = self[closest].x
+
+        switch rounding {
+        case .up:
+            // If rounding up, and found x-value is lower than specified x, and we can go upper...
+            if closestXValue < xValue && closest < index(before: endIndex)
             {
-                // [m + 1] is closer to xValue
-                // Search in an higher place
-                low = m + 1
+                formIndex(after: &closest)
             }
-            else if ad1 < ad2
+
+        case .down:
+            // If rounding down, and found x-value is upper than specified x, and we can go lower...
+            if closestXValue > xValue && closest > startIndex
             {
-                // [m] is closer to xValue
-                // Search in a lower place
-                high = m
+                formIndex(before: &closest)
             }
-            else
-            {
-                // We have multiple sequential x-value with same distance
-                
-                if d1 >= 0.0
+
+        case .closest:
+            // The closest value in the beginning of this function
+            // `var closest = partitioningIndex { $0.x >= xValue }`
+            // doesn't guarantee closest rounding method
+            if closest > startIndex {
+                let distanceAfter = abs(self[closest].x - xValue)
+                let distanceBefore = abs(self[index(before: closest)].x - xValue)
+                if distanceBefore < distanceAfter
                 {
-                    // Search in a lower place
-                    high = m
+                    closest = index(before: closest)
                 }
-                else if d1 < 0.0
-                {
-                    // Search in an higher place
-                    low = m + 1
-                }
+                closestXValue = self[closest].x
             }
-            
-            closest = high
         }
-        
-        if closest != -1
+
+        // Search by closest to y-value
+        if !yValue.isNaN
         {
-            let closestXValue = values[closest].x
-            
-            if rounding == .up
+            while closest > startIndex && self[index(before: closest)].x == closestXValue
             {
-                // If rounding up, and found x-value is lower than specified x, and we can go upper...
-                if closestXValue < xValue && closest < values.endIndex - 1
+                formIndex(before: &closest)
+            }
+
+            var closestYValue = self[closest].y
+            var closestYIndex = closest
+
+            while closest < index(before: endIndex)
+            {
+                formIndex(after: &closest)
+                let value = self[closest]
+
+                if value.x != closestXValue { break }
+                if abs(value.y - yValue) <= abs(closestYValue - yValue)
                 {
-                    closest += 1
+                    closestYValue = yValue
+                    closestYIndex = closest
                 }
             }
-            else if rounding == .down
-            {
-                // If rounding down, and found x-value is upper than specified x, and we can go lower...
-                if closestXValue > xValue && closest > 0
-                {
-                    closest -= 1
-                }
-            }
-            
-            // Search by closest to y-value
-            if !yValue.isNaN
-            {
-                while closest > 0 && values[closest - 1].x == closestXValue
-                {
-                    closest -= 1
-                }
-                
-                var closestYValue = values[closest].y
-                var closestYIndex = closest
-                
-                while true
-                {
-                    closest += 1
-                    if closest >= values.endIndex { break }
-                    
-                    let value = values[closest]
-                    
-                    if value.x != closestXValue { break }
-                    if abs(value.y - yValue) <= abs(closestYValue - yValue)
-                    {
-                        closestYValue = yValue
-                        closestYIndex = closest
-                    }
-                }
-                
-                closest = closestYIndex
-            }
+
+            closest = closestYIndex
         }
         
         return closest
@@ -375,6 +284,7 @@ open class ChartDataSet: ChartBaseDataSet
     /// - Parameters:
     ///   - e: the entry to search for
     /// - Returns: The array-index of the specified entry
+    // TODO: Should be returning `nil` to follow Swift convention
     @available(*, deprecated, message: "Use `firstIndex(of:)` or `lastIndex(of:)`")
     open override func entryIndex(entry e: ChartDataEntry) -> Int
     {
@@ -388,7 +298,8 @@ open class ChartDataSet: ChartBaseDataSet
     /// - Parameters:
     ///   - e: the entry to add
     /// - Returns: True
-    @available(*, deprecated, message: "Use `append(_:)` instead")
+    // TODO: This should return `Void` to follow Swift convention
+    @available(*, deprecated, message: "Use `append(_:)` instead", renamed: "append(_:)")
     open override func addEntry(_ e: ChartDataEntry) -> Bool
     {
         append(e)
@@ -402,19 +313,16 @@ open class ChartDataSet: ChartBaseDataSet
     /// - Parameters:
     ///   - e: the entry to add
     /// - Returns: True
+    // TODO: This should return `Void` to follow Swift convention
     open override func addEntryOrdered(_ e: ChartDataEntry) -> Bool
     {
-        calcMinMax(entry: e)
-        
-        isIndirectValuesCall = true
         if let last = last, last.x > e.x
         {
-            var closestIndex = entryIndex(x: e.x, closestToY: e.y, rounding: .up)
-            while self[closestIndex].x < e.x
-            {
-                closestIndex += 1
-            }
-            values.insert(e, at: closestIndex)
+            let startIndex = entryIndex(x: e.x, closestToY: e.y, rounding: .up)
+            let closestIndex = self[startIndex...].lastIndex { $0.x < e.x }
+                ?? startIndex
+            calcMinMax(entry: e)
+            entries.insert(e, at: closestIndex)
         }
         else
         {
@@ -427,7 +335,7 @@ open class ChartDataSet: ChartBaseDataSet
     @available(*, renamed: "remove(_:)")
     open override func removeEntry(_ entry: ChartDataEntry) -> Bool
     {
-        return remove(entry)
+        remove(entry)
     }
 
     /// Removes an Entry from the DataSet dynamically.
@@ -446,6 +354,7 @@ open class ChartDataSet: ChartBaseDataSet
     /// Removes the first Entry (at index 0) of this DataSet from the entries array.
     ///
     /// - Returns: `true` if successful, `false` if not.
+    // TODO: This should return the removed entry to follow Swift convention.
     @available(*, deprecated, message: "Use `func removeFirst() -> ChartDataEntry` instead.")
     open override func removeFirst() -> Bool
     {
@@ -456,6 +365,7 @@ open class ChartDataSet: ChartBaseDataSet
     /// Removes the last Entry (at index size-1) of this DataSet from the entries array.
     ///
     /// - Returns: `true` if successful, `false` if not.
+    // TODO: This should return the removed entry to follow Swift convention.
     @available(*, deprecated, message: "Use `func removeLast() -> ChartDataEntry` instead.")
     open override func removeLast() -> Bool
     {
@@ -471,14 +381,14 @@ open class ChartDataSet: ChartBaseDataSet
     }
     
     // MARK: - Data functions and accessors
-
+    
     // MARK: - NSCopying
     
     open override func copy(with zone: NSZone? = nil) -> Any
     {
         let copy = super.copy(with: zone) as! ChartDataSet
         
-        copy.values = values
+        copy.entries = entries
         copy._yMax = _yMax
         copy._yMin = _yMin
         copy._xMax = _xMax
@@ -494,15 +404,15 @@ extension ChartDataSet: MutableCollection {
     public typealias Element = ChartDataEntry
 
     public var startIndex: Index {
-        return values.startIndex
+        return entries.startIndex
     }
 
     public var endIndex: Index {
-        return values.endIndex
+        return entries.endIndex
     }
 
     public func index(after: Index) -> Index {
-        return values.index(after: after)
+        return entries.index(after: after)
     }
 
     @objc
@@ -510,12 +420,11 @@ extension ChartDataSet: MutableCollection {
         get {
             // This is intentionally not a safe subscript to mirror
             // the behaviour of the built in Swift Collection Types
-            return values[position]
+            return entries[position]
         }
         set {
-            isIndirectValuesCall = true
             calcMinMax(entry: newValue)
-            self.values[position] = newValue
+            entries[position] = newValue
         }
     }
 }
@@ -523,47 +432,58 @@ extension ChartDataSet: MutableCollection {
 // MARK: RandomAccessCollection
 extension ChartDataSet: RandomAccessCollection {
     public func index(before: Index) -> Index {
-        return values.index(before: before)
+        return entries.index(before: before)
     }
 }
 
 // MARK: RangeReplaceableCollection
 extension ChartDataSet: RangeReplaceableCollection {
+    public func replaceSubrange<C>(_ subrange: Swift.Range<Index>, with newElements: C) where C : Collection, Element == C.Element {
+        entries.replaceSubrange(subrange, with: newElements)
+        notifyDataSetChanged()
+    }
+    
     public func append(_ newElement: Element) {
-        isIndirectValuesCall = true
         calcMinMax(entry: newElement)
-        self.values.append(newElement)
+        entries.append(newElement)
     }
 
     public func remove(at position: Index) -> Element {
-        let element = self.values.remove(at: position)
+        let element = entries.remove(at: position)
+        notifyDataSetChanged()
         return element
     }
 
     public func removeFirst() -> Element {
-        let element = self.values.removeFirst()
+        let element = entries.removeFirst()
+        notifyDataSetChanged()
         return element
     }
 
     public func removeFirst(_ n: Int) {
-        self.values.removeFirst(n)
+        entries.removeFirst(n)
+        notifyDataSetChanged()
     }
 
     public func removeLast() -> Element {
-        let element = self.values.removeLast()
+        let element = entries.removeLast()
+        notifyDataSetChanged()
         return element
     }
 
     public func removeLast(_ n: Int) {
-        self.values.removeLast(n)
+        entries.removeLast(n)
+        notifyDataSetChanged()
     }
 
     public func removeSubrange<R>(_ bounds: R) where R : RangeExpression, Index == R.Bound {
-        self.values.removeSubrange(bounds)
+        entries.removeSubrange(bounds)
+        notifyDataSetChanged()
     }
 
     @objc
     public func removeAll(keepingCapacity keepCapacity: Bool) {
-        self.values.removeAll(keepingCapacity: keepCapacity)
+        entries.removeAll(keepingCapacity: keepCapacity)
+        notifyDataSetChanged()
     }
 }

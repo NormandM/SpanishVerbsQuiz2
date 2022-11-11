@@ -24,12 +24,9 @@ class OptionsViewController: UIViewController {
         UserDefaults.standard.set(0, forKey: "thisQuizGoodAnswer")
         UserDefaults.standard.set(0, forKey: "thisQuizBadAnswer")
         if currentCount >= 10 {
-            if #available(iOS 10.3, *) {
-                SKStoreReviewController.requestReview()
-                UserDefaults.standard.set(0, forKey: "launchCount")
-            }
+            SKStoreReviewController.requestReview()
+            UserDefaults.standard.set(0, forKey: "launchCount")
         }
-
         if let plistPath = Bundle.main.path(forResource: "SpanishVerbs", ofType: "plist"),
             let verbArray = NSArray(contentsOfFile: plistPath){
             arrayVerbe = verbArray as! [[String]]
