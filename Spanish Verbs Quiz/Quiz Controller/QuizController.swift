@@ -28,7 +28,9 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate,UITex
     @IBOutlet weak var verbResponseButton: UIButton!
     @IBOutlet weak var personneResponse: UILabel!
     @IBOutlet weak var wrongAnswerCorrection: UILabel!
-    
+    @IBOutlet weak var incorectLabel: UILabel!
+    @IBOutlet weak var correctLabel: SpeechLabel!
+    @IBOutlet weak var correctAnswerCorrection: SpeechLabel!
     @IBOutlet weak var verbeVerticalConstraint: NSLayoutConstraint!
     @IBOutlet weak var traductionButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var modeConstraint: NSLayoutConstraint!
@@ -82,8 +84,10 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate,UITex
         verbe.font = fonts.largeBoldFont
         mode.font = fonts.largeFont
         temps.font = fonts.largeFont
-        wrongAnswerCorrection.font = fonts.normalFont
         wrongAnswerCorrection.isHidden = true
+        incorectLabel.isHidden = true
+        correctLabel.isHidden = true
+        correctAnswerCorrection.isHidden = true
         suggestionButton.titleLabel?.font = fonts.smallItaliqueBoldFont
         tempsChoisiButton.titleLabel?.font = fonts.smallFont
         traductionAnglaiseButton.titleLabel?.font = fonts.smallFont
@@ -246,6 +250,9 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate,UITex
         personne.isHidden = false
         reponse.isHidden = false
         wrongAnswerCorrection.isHidden = true
+        incorectLabel.isHidden = true
+        correctLabel.isHidden = true
+        correctAnswerCorrection.isHidden = true
         personneResponse.isHidden = true
         checkButton.isEnabled = true
         reponse.isEnabled = true
@@ -306,31 +313,50 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate,UITex
         correctionResponse = "\(pronom) \(conjugatedVerb)"
         switch reponseEvaluation {
         case .good, .help:
-            wrongAnswerCorrection.isHidden = false
-            print(temps!)
             if mode != "Imperativo"{
-                Speak.text(text: "\(pronom) \(conjugatedVerb)")
+              //  Speak.text(text: "\(pronom) \(conjugatedVerb)")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    SpeechManager.shared.speak(text: "\(pronom) \(self.conjugatedVerb)", rate: 0.4)
+                }
             }else{
                 if temps.text == "Positivo"{
-                    Speak.text(text: "\(conjugatedVerb)")
+              //      Speak.text(text: "\(conjugatedVerb)")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        SpeechManager.shared.speak(text: "\(self.conjugatedVerb)", rate: 0.4)
+                    }
+
                 }else{
-                    Speak.text(text: "No \(conjugatedVerb)")
+                //    Speak.text(text: "No \(conjugatedVerb)")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        SpeechManager.shared.speak(text: "No \(self.conjugatedVerb)", rate: 0.4)
+                    }
+
                 }
                 
             }
- 
             wrongAnswerCorrection.textColor = UIColor.black
+           // Speak.text(text: correctionResponse)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                SpeechManager.shared.speak(text: "\(self.correctionResponse)", rate: 0.4)
+            }
+            wrongAnswerCorrection.isHidden = false
             wrongAnswerCorrection.text = correctionResponse
             verbResponseButton.setTitle("Correcto".localized, for: .disabled)
-            wrongAnswerCorrection.clickLabel()
 
         case .bad:
             soundPlayer?.playSound(soundName: "etc_error_drum", type: "mp3")
             verbResponseButton.setTitle("Incorrecto".localized, for: .disabled)
             wrongAnswerCorrection.isHidden = false
+            incorectLabel.isHidden = false
+            correctLabel.isHidden = false
+            correctAnswerCorrection.isHidden = false
+            attributeSettingForAnswer(label: incorectLabel, systemName: "x.circle.fill", color: .red, text: " Incorrecto:".localized)
+            wrongAnswerCorrection.text = ("\(pronom) \(userRespone)")
+            attributeSettingForAnswer(label: correctLabel, systemName: "checkmark.circle.fill", color: UIColor(red: 27/255, green: 95/255, blue: 94/255, alpha: 1.0), text: " Correcto:".localized)
+            correctLabel.textColor = .black
+            correctAnswerCorrection.text = correctionResponse
+            correctAnswerCorrection.textColor = UIColor(red: 27/255, green: 95/255, blue: 94/255, alpha: 1.0)
             wrongAnswerCorrection.textColor = UIColor.red
-            wrongAnswerCorrection.text = correctionResponse
-            wrongAnswerCorrection.clickLabel()
         }
         reponse.resignFirstResponder()
         personneResponse.isHidden = true
@@ -373,15 +399,24 @@ class QuizController: UIViewController, NSFetchedResultsControllerDelegate,UITex
         present(alertController, animated: true, completion: nil)
     }
     @objc func voiceDidTerminate(_ notification: NSNotification){
-        print("terminate")
         switch reponseEvaluation {
         case .good:
             wrongAnswerCorrection.textColor = .black
         case .help:
             wrongAnswerCorrection.textColor = .black
+            correctAnswerCorrection.textColor = .black
         case .bad:
-            wrongAnswerCorrection.textColor = .red
-        }
+            correctAnswerCorrection.textColor = UIColor(red: 27/255, green: 95/255, blue: 94/255, alpha: 1.0)        }
+    }
+    func attributeSettingForAnswer(label: UILabel, systemName: String, color: UIColor, text: String) {
+        let attachment = NSTextAttachment()
+        let config = UIImage.SymbolConfiguration(scale: .large)
+        attachment.image = UIImage(systemName: systemName, withConfiguration: config)?.withTintColor(color)
+        let imageString = NSMutableAttributedString(attachment: attachment)
+        let textString = NSAttributedString(string: text)
+        imageString.append(textString)
+        label.attributedText = imageString
+        label.sizeToFit()
     }
     
     

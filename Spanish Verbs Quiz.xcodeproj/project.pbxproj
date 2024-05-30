@@ -39,12 +39,12 @@
 		8E1DB8FC1EC0A89E0063EB1F /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1DB8FB1EC0A89E0063EB1F /* ResultViewController.swift */; };
 		8E2A19EC1EC10B20002396E6 /* Incoming Text 01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8E2A19EB1EC10B20002396E6 /* Incoming Text 01.wav */; };
 		8E2A19EE1EC10B29002396E6 /* Error Warning.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8E2A19ED1EC10B29002396E6 /* Error Warning.wav */; };
+		8E2ECE3B2C062CA8000F37C9 /* SpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2ECE3A2C062CA8000F37C9 /* SpeechManager.swift */; };
+		8E2ECE3D2C062CAF000F37C9 /* SpeechLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2ECE3C2C062CAF000F37C9 /* SpeechLabel.swift */; };
+		8E2ECE3F2C066B22000F37C9 /* ProcessAndSpeakText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2ECE3E2C066B22000F37C9 /* ProcessAndSpeakText.swift */; };
 		8E4569C61EC107140067E575 /* VerbesEspagnols.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E4569C41EC107140067E575 /* VerbesEspagnols.xcdatamodeld */; };
 		8E4569C91EC107C30067E575 /* ItemVerbe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4569C71EC107C30067E575 /* ItemVerbe+CoreDataClass.swift */; };
 		8E4569CA1EC107C30067E575 /* ItemVerbe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4569C81EC107C30067E575 /* ItemVerbe+CoreDataProperties.swift */; };
-		8E4DE075291589D80000EFAE /* Speak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4DE072291589D80000EFAE /* Speak.swift */; };
-		8E4DE076291589D80000EFAE /* SynthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4DE073291589D80000EFAE /* SynthViewModel.swift */; };
-		8E4DE077291589D80000EFAE /* UILAbelExtensionForVoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4DE074291589D80000EFAE /* UILAbelExtensionForVoice.swift */; };
 		8E5413C32919B21800ED56AF /* SpanishItalian.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E5413C22919B21800ED56AF /* SpanishItalian.plist */; };
 		8E5413C52919B21C00ED56AF /* SpanishFrench.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E5413C42919B21C00ED56AF /* SpanishFrench.plist */; };
 		8E55D4B0222F239D003C29B0 /* ContextuelQuizOptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E55D4AF222F239D003C29B0 /* ContextuelQuizOptionController.swift */; };
@@ -142,12 +142,13 @@
 		8E1DB8FB1EC0A89E0063EB1F /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		8E2A19EB1EC10B20002396E6 /* Incoming Text 01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Incoming Text 01.wav"; sourceTree = "<group>"; };
 		8E2A19ED1EC10B29002396E6 /* Error Warning.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Error Warning.wav"; sourceTree = "<group>"; };
+		8E2ECE3A2C062CA8000F37C9 /* SpeechManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechManager.swift; sourceTree = "<group>"; };
+		8E2ECE3C2C062CAF000F37C9 /* SpeechLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechLabel.swift; sourceTree = "<group>"; };
+		8E2ECE3E2C066B22000F37C9 /* ProcessAndSpeakText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessAndSpeakText.swift; sourceTree = "<group>"; };
+		8E2ECE402C08FAF5000F37C9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		8E4569C51EC107140067E575 /* VerbesEspagnols.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VerbesEspagnols.xcdatamodel; sourceTree = "<group>"; };
 		8E4569C71EC107C30067E575 /* ItemVerbe+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ItemVerbe+CoreDataClass.swift"; path = "../ItemVerbe+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8E4569C81EC107C30067E575 /* ItemVerbe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ItemVerbe+CoreDataProperties.swift"; path = "../ItemVerbe+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		8E4DE072291589D80000EFAE /* Speak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speak.swift; sourceTree = "<group>"; };
-		8E4DE073291589D80000EFAE /* SynthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SynthViewModel.swift; sourceTree = "<group>"; };
-		8E4DE074291589D80000EFAE /* UILAbelExtensionForVoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILAbelExtensionForVoice.swift; sourceTree = "<group>"; };
 		8E5413C22919B21800ED56AF /* SpanishItalian.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SpanishItalian.plist; sourceTree = "<group>"; };
 		8E5413C42919B21C00ED56AF /* SpanishFrench.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SpanishFrench.plist; sourceTree = "<group>"; };
 		8E55D4AF222F239D003C29B0 /* ContextuelQuizOptionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextuelQuizOptionController.swift; sourceTree = "<group>"; };
@@ -360,9 +361,9 @@
 		8E4DE071291589D80000EFAE /* VoiceSynth */ = {
 			isa = PBXGroup;
 			children = (
-				8E4DE072291589D80000EFAE /* Speak.swift */,
-				8E4DE073291589D80000EFAE /* SynthViewModel.swift */,
-				8E4DE074291589D80000EFAE /* UILAbelExtensionForVoice.swift */,
+				8E2ECE3A2C062CA8000F37C9 /* SpeechManager.swift */,
+				8E2ECE3C2C062CAF000F37C9 /* SpeechLabel.swift */,
+				8E2ECE3E2C066B22000F37C9 /* ProcessAndSpeakText.swift */,
 			);
 			path = VoiceSynth;
 			sourceTree = "<group>";
@@ -406,6 +407,7 @@
 		8EC4ABC91D17358D007359FF /* Spanish Verbs Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				8E2ECE402C08FAF5000F37C9 /* PrivacyInfo.xcprivacy */,
 				8E7FC67426B5CD3000726939 /* Main.storyboard */,
 				8E7FC67F26B5CDD800726939 /* Localizable.strings */,
 				8EC4ABCA1D17358D007359FF /* AppDelegate.swift */,
@@ -642,7 +644,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Spanish Verbs Quiz/Pods-Spanish Verbs Quiz-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Spanish Verbs Quiz/Pods-Spanish Verbs Quiz-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftAlgorithms/Algorithms.framework",
 			);
@@ -653,7 +655,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Spanish Verbs Quiz/Pods-Spanish Verbs Quiz-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Spanish Verbs Quiz/Pods-Spanish Verbs Quiz-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8D4A64A1E2C650CE8EC0FF54 /* [CP] Check Pods Manifest.lock */ = {
@@ -704,6 +706,7 @@
 				8E9F9BF226B07AD100579F2F /* DetailStatTableViewController.swift in Sources */,
 				8E88659E22380AA000403795 /* OtraFormaVerbSelector.swift in Sources */,
 				8EC4ABCB1D17358D007359FF /* AppDelegate.swift in Sources */,
+				8E2ECE3F2C066B22000F37C9 /* ProcessAndSpeakText.swift in Sources */,
 				8E0F1C542226FB84000EFE52 /* VerbInfinitif.swift in Sources */,
 				8E0F1C6422271D41000EFE52 /* SoundResponse.swift in Sources */,
 				8E0F1C682227216F000EFE52 /* PieChartSetUp.swift in Sources */,
@@ -732,20 +735,19 @@
 				8E9F9C0126B07F4B00579F2F /* SoundOption.swift in Sources */,
 				8E1DB8F41EC0A8840063EB1F /* tempsDeVerbeTableViewController.swift in Sources */,
 				8E9F9BE426B0783B00579F2F /* FetchRequestForVerb.swift in Sources */,
-				8E4DE076291589D80000EFAE /* SynthViewModel.swift in Sources */,
-				8E4DE077291589D80000EFAE /* UILAbelExtensionForVoice.swift in Sources */,
 				8E0F1C58222718F6000EFE52 /* DifficultyLevel.swift in Sources */,
 				8E7D263D1FBA21EC003798E5 /* TempsVerbesChoisisViewController.swift in Sources */,
 				8E1DB8F61EC0A88A0063EB1F /* FinalVerbeViewController.swift in Sources */,
 				8E55D4B6222F265D003C29B0 /* Sentence.swift in Sources */,
 				8E4569C91EC107C30067E575 /* ItemVerbe+CoreDataClass.swift in Sources */,
 				8E0F1C4C22249D93000EFE52 /* Verb.swift in Sources */,
+				8E2ECE3B2C062CA8000F37C9 /* SpeechManager.swift in Sources */,
 				8E0F1C5E22271B31000EFE52 /* ChoixFacileVerbeConjugue.swift in Sources */,
 				8E0F1C4E22249DA1000EFE52 /* ChosenVerb.swift in Sources */,
 				8E0F1C56222718DD000EFE52 /* QuizQuestion.swift in Sources */,
 				8E0F1C6222271D34000EFE52 /* ResponseEvaluation.swift in Sources */,
+				8E2ECE3D2C062CAF000F37C9 /* SpeechLabel.swift in Sources */,
 				8E0F1C4A22249B83000EFE52 /* ModeAndTempStruct.swift in Sources */,
-				8E4DE075291589D80000EFAE /* Speak.swift in Sources */,
 				8E7D26371FBA1C8D003798E5 /* SpecificVerbViewController.swift in Sources */,
 				8E1DB8FC1EC0A89E0063EB1F /* ResultViewController.swift in Sources */,
 				8E9F9BF726B07BD900579F2F /* extensionLocalisation.swift in Sources */,
@@ -963,10 +965,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = X6D769Z7F4;
 				INFOPLIST_FILE = "Spanish Verbs Quiz/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 4.2;
+				MARKETING_VERSION = 4.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "NM.Spanish-Verbs-Quiz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -982,10 +985,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = X6D769Z7F4;
 				INFOPLIST_FILE = "Spanish Verbs Quiz/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 4.2;
+				MARKETING_VERSION = 4.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "NM.Spanish-Verbs-Quiz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

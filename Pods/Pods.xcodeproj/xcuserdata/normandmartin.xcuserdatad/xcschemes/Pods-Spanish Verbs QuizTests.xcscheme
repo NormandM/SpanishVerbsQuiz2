@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1410"
+   LastUpgradeVersion = "1500"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "66059C07A19DF3C85448DA3A3A20DD45"
+               BlueprintIdentifier = "C9731C59F5344E665B039BE33F028356"
                BuildableName = "Pods_Spanish_Verbs_QuizTests.framework"
                BlueprintName = "Pods-Spanish Verbs QuizTests"
                ReferencedContainer = "container:Pods.xcodeproj">

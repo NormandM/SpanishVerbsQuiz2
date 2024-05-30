@@ -16,7 +16,7 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
     @IBOutlet weak var tempsLabel: UILabel!
     @IBOutlet weak var tempsEtverbesChoisiButton: UIButton!
     @IBOutlet weak var suggestionButton: UIButton!
-    @IBOutlet weak var sentenceLabel: UILabel!
+    @IBOutlet weak var sentenceLabel: SpeechLabel!
     @IBOutlet weak var verbTextField: UITextField!
     @IBOutlet weak var uneAutreQuestionButton: UIButton!
     @IBOutlet weak var barreProgression: UIProgressView!
@@ -27,7 +27,8 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
     @IBOutlet weak var tempConstraint: NSLayoutConstraint!
     @IBOutlet weak var tempsChoisiConstraint: NSLayoutConstraint!
     @IBOutlet weak var sentenceConstraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var wrondResponseCorrectionLabel: UILabel!
+    @IBOutlet weak var errorLabel: UILabel!
     
     var soundURL: NSURL?
     var soundID:SystemSoundID = 0
@@ -70,6 +71,8 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     override func viewWillAppear(_ animated: Bool) {
+        errorLabel.isHidden = true
+        wrondResponseCorrectionLabel.isHidden = true
         let fonts = FontsAndConstraintsOptions()
         self.title = "Conjugar el verbo".localized
         modeLabel.font = fonts.largeBoldFont
@@ -111,11 +114,7 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
         uneAutreQuestionButton.setNeedsLayout()
     }
     func animateViewMoving (_ up:Bool, moveValue :CGFloat){
-     //   let movementDuration:TimeInterval = 0.3
         let movement:CGFloat = ( up ? -moveValue : moveValue)
-    //    UIView.beginAnimations( "animateView", context: nil)
-    //    UIView.setAnimationBeginsFromCurrentState(true)
-    //    UIView.setAnimationDuration(movementDuration )
         let newRatio = movement/view.frame.height
         if up{
             self.view.frame = self.view.frame.offsetBy(dx: 0,  dy: movement)
@@ -130,7 +129,6 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
             tempsChoisiConstraint.constant = 0.6
             textFieldIsActivated = false
         }
-    //    UIView.commitAnimations()
     }
     @objc func keyBoardWillChange(notification: Notification) {
         let distanceFromTextField = view.frame.size.height - (verbTextField.frame.size.height + verbTextField.frame.origin.y)
@@ -235,13 +233,22 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
         case .good, .help:
             sentenceLabel.attributedText = sentences.attributeBonneReponse
             verbResponseButton.setTitle("Correcto".localized, for: .disabled)
-            Speak.text(text: sentenceLabel.text!)
-            sentenceLabel.clickLabel()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                SpeechManager.shared.speak(text: self.sentenceLabel.text!, for: self.sentenceLabel, rate: 0.4)
+            }
         case .bad:
             soundPlayer?.playSound(soundName: "etc_error_drum", type: "mp3")
             verbResponseButton.setTitle("Incorrecto".localized, for: .disabled)
             sentenceLabel.attributedText = sentences.attributeMauvaiseReponse
-            sentenceLabel.clickLabel()
+            errorLabel.isHidden = false
+            wrondResponseCorrectionLabel.isHidden = false
+            attributeSettingForAnswer(label: errorLabel, systemName: "x.circle.fill", color: .red, text: " Incorrecto:".localized)
+            errorLabel.textColor = .black
+            let fonts = FontsAndConstraintsOptions()
+            errorLabel.font = fonts.normalFont
+            wrondResponseCorrectionLabel.font = fonts.normalFont
+            wrondResponseCorrectionLabel.text = userRespone
+            wrondResponseCorrectionLabel.textColor = .red
         }
         verbTextField.resignFirstResponder()
         checkButton.isEnabled = false
@@ -261,6 +268,8 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
         }
     }
     func selectionAutreQuestion() {
+        errorLabel.isHidden = true
+        wrondResponseCorrectionLabel.isHidden = true
         sentenceLabel.textColor = UIColor.black
         checkButton.isEnabled = true
         verbTextField.isEnabled = true
@@ -272,6 +281,16 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
         rightHintWasSelected = false
         TextFieldProperties.initiate(verbHintButton: verbHintButton, verbResponseButton: verbResponseButton, checkButton: checkButton, verbTextField: verbTextField, difficulté: difficulté, suggestionButton: suggestionButton, hintMenuAction: hintMenuActiondAppear)
         choiceOfSentence()
+    }
+    func attributeSettingForAnswer(label: UILabel, systemName: String, color: UIColor, text: String) {
+        let attachment = NSTextAttachment()
+        let config = UIImage.SymbolConfiguration(scale: .large)
+        attachment.image = UIImage(systemName: systemName, withConfiguration: config)?.withTintColor(color)
+        let imageString = NSMutableAttributedString(attachment: attachment)
+        let textString = NSAttributedString(string: text)
+        imageString.append(textString)
+        label.attributedText = imageString
+        label.sizeToFit()
     }
     // MARK: Buttons
     @IBAction func uneAutreQuestionButtonPushed(_ sender: UIButton) {
@@ -290,8 +309,8 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
         checkButton.isHidden = true
     }
     @IBAction func verbHintPressed(_ sender: UIButton) {
+        userRespone = (sender.titleLabel?.text?.lowercased())!
         if reponseBonne.lowercased() == sender.titleLabel?.text?.lowercased() {
-            userRespone = (sender.titleLabel?.text?.lowercased())!
             rightHintWasSelected = true
         }else{
             rightHintWasSelected = false
